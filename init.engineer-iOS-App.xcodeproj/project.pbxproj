@@ -91,7 +91,6 @@
 				473094CBC420EC8874628C12 /* Pods-init.engineer-iOS-App.debug.xcconfig */,
 				B24E1EAE0845F9C313AFE92B /* Pods-init.engineer-iOS-App.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -341,13 +340,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z3R5U977LQ;
+				DEVELOPMENT_TEAM = SRRZK8QVK5;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kantai.developer.init-engineer-iOS-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "tico88612.init-engineer-iOS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,13 +359,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z3R5U977LQ;
+				DEVELOPMENT_TEAM = SRRZK8QVK5;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kantai.developer.init-engineer-iOS-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "tico88612.init-engineer-iOS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
