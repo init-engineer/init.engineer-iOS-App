@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,11 +15,15 @@
 		A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */; };
 		A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E856244DE50F00953132 /* Assets.xcassets */; };
 		A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */; };
+		F21CF1D5247B94700078DACA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CF1D4247B94700078DACA /* ContentView.swift */; };
+		F2EE2D44247BC3FA00276C4C /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F2EE2D43247BC3FA00276C4C /* OAuthSwift */; };
+		F2EE2D46247BC45900276C4C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE2D45247BC45900276C4C /* Utility.swift */; };
+		F2EE2D49247BC49C00276C4C /* Kaobei.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE2D48247BC49C00276C4C /* Kaobei.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		473094CBC420EC8874628C12 /* Pods-init.engineer-iOS-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.debug.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.debug.xcconfig"; sourceTree = "<group>"; };
-		A7D2E847244DE50E00953132 /* init.engineer-iOS-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "init.engineer-iOS-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7D2E847244DE50E00953132 /* 純靠北工程師.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "純靠北工程師.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D2E84A244DE50E00953132 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D2E84C244DE50E00953132 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A7D2E84E244DE50E00953132 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +34,9 @@
 		A7D2E85B244DE50F00953132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACCA24EB2179F93637C284B5 /* Pods_init_engineer_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_init_engineer_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24E1EAE0845F9C313AFE92B /* Pods-init.engineer-iOS-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.release.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.release.xcconfig"; sourceTree = "<group>"; };
+		F21CF1D4247B94700078DACA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2EE2D45247BC45900276C4C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		F2EE2D48247BC49C00276C4C /* Kaobei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaobei.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EE2D44247BC3FA00276C4C /* OAuthSwift in Frameworks */,
 				A47D606AEC895E624B914382 /* Pods_init_engineer_iOS_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +73,7 @@
 		A7D2E848244DE50E00953132 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A7D2E847244DE50E00953132 /* init.engineer-iOS-App.app */,
+				A7D2E847244DE50E00953132 /* 純靠北工程師.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +83,10 @@
 			children = (
 				A7D2E84A244DE50E00953132 /* AppDelegate.swift */,
 				A7D2E84C244DE50E00953132 /* SceneDelegate.swift */,
+				F21CF1D7247B948E0078DACA /* Extensions */,
+				F21CF1D2247B943C0078DACA /* Models */,
+				F21CF1D1247B94320078DACA /* Views */,
+				F21CF1D3247B94520078DACA /* ViewModels */,
 				A7D2E84E244DE50E00953132 /* ViewController.swift */,
 				A7D2E850244DE50E00953132 /* Main.storyboard */,
 				A7D2E856244DE50F00953132 /* Assets.xcassets */,
@@ -91,8 +103,46 @@
 				473094CBC420EC8874628C12 /* Pods-init.engineer-iOS-App.debug.xcconfig */,
 				B24E1EAE0845F9C313AFE92B /* Pods-init.engineer-iOS-App.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F21CF1D1247B94320078DACA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F21CF1D4247B94700078DACA /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F21CF1D2247B943C0078DACA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2EE2D47247BC48700276C4C /* Kaobei */,
+				F2EE2D45247BC45900276C4C /* Utility.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F21CF1D3247B94520078DACA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F21CF1D7247B948E0078DACA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F2EE2D47247BC48700276C4C /* Kaobei */ = {
+			isa = PBXGroup;
+			children = (
+				F2EE2D48247BC49C00276C4C /* Kaobei.swift */,
+			);
+			path = Kaobei;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,8 +162,11 @@
 			dependencies = (
 			);
 			name = "init.engineer-iOS-App";
+			packageProductDependencies = (
+				F2EE2D43247BC3FA00276C4C /* OAuthSwift */,
+			);
 			productName = "init.engineer-iOS-App";
-			productReference = A7D2E847244DE50E00953132 /* init.engineer-iOS-App.app */;
+			productReference = A7D2E847244DE50E00953132 /* 純靠北工程師.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -140,6 +193,9 @@
 				Base,
 			);
 			mainGroup = A7D2E83E244DE50E00953132;
+			packageReferences = (
+				F2EE2D42247BC3FA00276C4C /* XCRemoteSwiftPackageReference "OAuthSwift" */,
+			);
 			productRefGroup = A7D2E848244DE50E00953132 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -193,6 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */,
+				F21CF1D5247B94700078DACA /* ContentView.swift in Sources */,
+				F2EE2D46247BC45900276C4C /* Utility.swift in Sources */,
+				F2EE2D49247BC49C00276C4C /* Kaobei.swift in Sources */,
 				A7D2E84F244DE50E00953132 /* ViewController.swift in Sources */,
 				A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */,
 				A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */,
@@ -340,15 +399,19 @@
 			baseConfigurationReference = 473094CBC420EC8874628C12 /* Pods-init.engineer-iOS-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z3R5U977LQ;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kantai.developer.init-engineer-iOS-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_NAME = "純靠北工程師";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -359,15 +422,19 @@
 			baseConfigurationReference = B24E1EAE0845F9C313AFE92B /* Pods-init.engineer-iOS-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z3R5U977LQ;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kantai.developer.init-engineer-iOS-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_NAME = "純靠北工程師";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -395,6 +462,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2EE2D42247BC3FA00276C4C /* XCRemoteSwiftPackageReference "OAuthSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OAuthSwift/OAuthSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2EE2D43247BC3FA00276C4C /* OAuthSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2EE2D42247BC3FA00276C4C /* XCRemoteSwiftPackageReference "OAuthSwift" */;
+			productName = OAuthSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */ = {
