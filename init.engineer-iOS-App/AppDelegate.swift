@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool
     {
-        guard url.host == Kaobei.callbackScheme else {
+        guard url.host == Kaobei.Callback.scheme else {
             
             return false
         }

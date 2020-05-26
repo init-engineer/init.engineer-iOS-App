@@ -10,8 +10,29 @@ import SwiftUI
 
 public struct ContentView: View
 {
+    @State
+    var token: String? = nil
+    
     public var body: some View {
         
-        Text("View")
+        Group {
+            
+            if self.token == nil {
+                
+                LoginView(token: self.$token)
+            } else {
+                
+                Text("Logged in")
+            }
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider
+{
+    static var previews: some View {
+        
+        ContentView()
+            .edgesIgnoringSafeArea(.all)
     }
 }

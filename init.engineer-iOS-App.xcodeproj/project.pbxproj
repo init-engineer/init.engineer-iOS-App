@@ -15,15 +15,24 @@
 		A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */; };
 		A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E856244DE50F00953132 /* Assets.xcassets */; };
 		A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */; };
+		F2061400247CFBB50042DF27 /* LoginButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20613FF247CFBB50042DF27 /* LoginButtonStyle.swift */; };
+		F2061402247D04BF0042DF27 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2061401247D04BF0042DF27 /* ColorExtension.swift */; };
+		F2061405247D06520042DF27 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2061404247D06520042DF27 /* HostingController.swift */; };
 		F21CF1D5247B94700078DACA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CF1D4247B94700078DACA /* ContentView.swift */; };
 		F2EE2D44247BC3FA00276C4C /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F2EE2D43247BC3FA00276C4C /* OAuthSwift */; };
 		F2EE2D46247BC45900276C4C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE2D45247BC45900276C4C /* Utility.swift */; };
 		F2EE2D49247BC49C00276C4C /* Kaobei.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE2D48247BC49C00276C4C /* Kaobei.swift */; };
+		F2F076AC247CCAFA00BF7DD5 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F076AB247CCAFA00BF7DD5 /* Random.swift */; };
+		F2F076B0247CE4BC00BF7DD5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F076AF247CE4BC00BF7DD5 /* LoginView.swift */; };
+		F2F076B3247CE83100BF7DD5 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F2F076B2247CE83100BF7DD5 /* SDWebImageSwiftUI */; };
+		F2F076B6247CE8BF00BF7DD5 /* BackgroundImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = F2F076B5247CE8BF00BF7DD5 /* BackgroundImage.gif */; };
+		F2F076B9247CEA8000BF7DD5 /* PreviewDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F076B7247CEA7F00BF7DD5 /* PreviewDeviceExtension.swift */; };
+		F2F076BA247CEA8000BF7DD5 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F076B8247CEA7F00BF7DD5 /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		473094CBC420EC8874628C12 /* Pods-init.engineer-iOS-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.debug.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.debug.xcconfig"; sourceTree = "<group>"; };
-		A7D2E847244DE50E00953132 /* 純靠北工程師.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "純靠北工程師.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7D2E847244DE50E00953132 /* init_engineer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = init_engineer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D2E84A244DE50E00953132 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D2E84C244DE50E00953132 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A7D2E84E244DE50E00953132 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,9 +43,17 @@
 		A7D2E85B244DE50F00953132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACCA24EB2179F93637C284B5 /* Pods_init_engineer_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_init_engineer_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24E1EAE0845F9C313AFE92B /* Pods-init.engineer-iOS-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.release.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.release.xcconfig"; sourceTree = "<group>"; };
+		F20613FF247CFBB50042DF27 /* LoginButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonStyle.swift; sourceTree = "<group>"; };
+		F2061401247D04BF0042DF27 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		F2061404247D06520042DF27 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		F21CF1D4247B94700078DACA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2EE2D45247BC45900276C4C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		F2EE2D48247BC49C00276C4C /* Kaobei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaobei.swift; sourceTree = "<group>"; };
+		F2F076AB247CCAFA00BF7DD5 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		F2F076AF247CE4BC00BF7DD5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F2F076B5247CE8BF00BF7DD5 /* BackgroundImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BackgroundImage.gif; sourceTree = "<group>"; };
+		F2F076B7247CEA7F00BF7DD5 /* PreviewDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewDeviceExtension.swift; sourceTree = "<group>"; };
+		F2F076B8247CEA7F00BF7DD5 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F076B3247CE83100BF7DD5 /* SDWebImageSwiftUI in Frameworks */,
 				F2EE2D44247BC3FA00276C4C /* OAuthSwift in Frameworks */,
 				A47D606AEC895E624B914382 /* Pods_init_engineer_iOS_App.framework in Frameworks */,
 			);
@@ -73,7 +91,7 @@
 		A7D2E848244DE50E00953132 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A7D2E847244DE50E00953132 /* 純靠北工程師.app */,
+				A7D2E847244DE50E00953132 /* init_engineer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +105,8 @@
 				F21CF1D2247B943C0078DACA /* Models */,
 				F21CF1D1247B94320078DACA /* Views */,
 				F21CF1D3247B94520078DACA /* ViewModels */,
+				F2061403247D062E0042DF27 /* ViewController */,
+				F2F076B4247CE8AD00BF7DD5 /* Resource */,
 				A7D2E84E244DE50E00953132 /* ViewController.swift */,
 				A7D2E850244DE50E00953132 /* Main.storyboard */,
 				A7D2E856244DE50F00953132 /* Assets.xcassets */,
@@ -106,10 +126,28 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F20613FE247CFB930042DF27 /* ButtonStyle */ = {
+			isa = PBXGroup;
+			children = (
+				F20613FF247CFBB50042DF27 /* LoginButtonStyle.swift */,
+			);
+			path = ButtonStyle;
+			sourceTree = "<group>";
+		};
+		F2061403247D062E0042DF27 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F2061404247D06520042DF27 /* HostingController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		F21CF1D1247B94320078DACA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F20613FE247CFB930042DF27 /* ButtonStyle */,
 				F21CF1D4247B94700078DACA /* ContentView.swift */,
+				F2F076AF247CE4BC00BF7DD5 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +171,10 @@
 		F21CF1D7247B948E0078DACA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F2061401247D04BF0042DF27 /* ColorExtension.swift */,
+				F2F076B7247CEA7F00BF7DD5 /* PreviewDeviceExtension.swift */,
+				F2F076AB247CCAFA00BF7DD5 /* Random.swift */,
+				F2F076B8247CEA7F00BF7DD5 /* ViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,6 +185,14 @@
 				F2EE2D48247BC49C00276C4C /* Kaobei.swift */,
 			);
 			path = Kaobei;
+			sourceTree = "<group>";
+		};
+		F2F076B4247CE8AD00BF7DD5 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F2F076B5247CE8BF00BF7DD5 /* BackgroundImage.gif */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,9 +214,10 @@
 			name = "init.engineer-iOS-App";
 			packageProductDependencies = (
 				F2EE2D43247BC3FA00276C4C /* OAuthSwift */,
+				F2F076B2247CE83100BF7DD5 /* SDWebImageSwiftUI */,
 			);
 			productName = "init.engineer-iOS-App";
-			productReference = A7D2E847244DE50E00953132 /* 純靠北工程師.app */;
+			productReference = A7D2E847244DE50E00953132 /* init_engineer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -195,6 +246,7 @@
 			mainGroup = A7D2E83E244DE50E00953132;
 			packageReferences = (
 				F2EE2D42247BC3FA00276C4C /* XCRemoteSwiftPackageReference "OAuthSwift" */,
+				F2F076B1247CE83100BF7DD5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = A7D2E848244DE50E00953132 /* Products */;
 			projectDirPath = "";
@@ -210,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F076B6247CE8BF00BF7DD5 /* BackgroundImage.gif in Resources */,
 				A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */,
 				A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */,
 				A7D2E852244DE50E00953132 /* Main.storyboard in Resources */,
@@ -249,12 +302,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */,
+				F2061400247CFBB50042DF27 /* LoginButtonStyle.swift in Sources */,
 				F21CF1D5247B94700078DACA /* ContentView.swift in Sources */,
 				F2EE2D46247BC45900276C4C /* Utility.swift in Sources */,
+				F2061405247D06520042DF27 /* HostingController.swift in Sources */,
+				F2F076B0247CE4BC00BF7DD5 /* LoginView.swift in Sources */,
+				F2F076B9247CEA8000BF7DD5 /* PreviewDeviceExtension.swift in Sources */,
 				F2EE2D49247BC49C00276C4C /* Kaobei.swift in Sources */,
+				F2F076BA247CEA8000BF7DD5 /* ViewExtension.swift in Sources */,
 				A7D2E84F244DE50E00953132 /* ViewController.swift in Sources */,
 				A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */,
 				A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */,
+				F2F076AC247CCAFA00BF7DD5 /* Random.swift in Sources */,
+				F2061402247D04BF0042DF27 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +470,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kantai.developer.init-engineer-iOS-App";
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_NAME = "純靠北工程師";
+				PRODUCT_NAME = init_engineer;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,7 +493,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kantai.developer.init-engineer-iOS-App";
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_NAME = "純靠北工程師";
+				PRODUCT_NAME = init_engineer;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -472,6 +532,14 @@
 				minimumVersion = 2.1.2;
 			};
 		};
+		F2F076B1247CE83100BF7DD5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -479,6 +547,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F2EE2D42247BC3FA00276C4C /* XCRemoteSwiftPackageReference "OAuthSwift" */;
 			productName = OAuthSwift;
+		};
+		F2F076B2247CE83100BF7DD5 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2F076B1247CE83100BF7DD5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import OAuthSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate
 {
@@ -22,16 +23,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate
         
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
+            .edgesIgnoringSafeArea(.all)
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = HostingController(rootView: contentView)
             window.makeKeyAndVisible()
             
             self.window = window
         }
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
+    {
+        guard let url = URLContexts.first?.url, url.host == Kaobei.Callback.scheme else {
+            
+            return
+        }
+        
+        OAuthSwift.handle(url: url)
     }
     
     func sceneDidDisconnect(_ scene: UIScene)
