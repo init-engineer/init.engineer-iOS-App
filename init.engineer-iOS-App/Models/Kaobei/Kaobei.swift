@@ -33,6 +33,8 @@ public struct Kaobei
         let oauthSwift = OAuth2Swift(consumerKey: OAuth.clientId, consumerSecret: OAuth.clientSecret, authorizeUrl: OAuth.authorizeUrl, accessTokenUrl: OAuth.tokenUrl, responseType: "code")
         oauthSwift.authorize(withCallbackURL: callbackUrl, scope: "*", state: state, completionHandler: completionHandler)
     }
+    
+    private init() { }
 }
 
 public extension Kaobei

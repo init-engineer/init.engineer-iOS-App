@@ -54,7 +54,22 @@ public extension LoginView
 {
     func loginAction()
     {
+        let completion: Kaobei.AuthorizeCompletionHandler = {
+            
+            result in
+            
+            do {
+                
+                let token: Kaobei.Token = try result.get()
+                
+                self.token = token
+            } catch {
+                
+                print("Error: \(error)")
+            }
+        }
         
+        Kaobei.authorize(completion: completion)
     }
 }
 
