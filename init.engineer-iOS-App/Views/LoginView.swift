@@ -26,7 +26,7 @@ public struct LoginView: View
                 
                 Button("登入", action: self.loginAction)
                     .foregroundColor(.white)
-                .buttonStyle(LoginButtonStyle())
+                    .buttonStyle(LoginButtonStyle())
             }
         }
     }
