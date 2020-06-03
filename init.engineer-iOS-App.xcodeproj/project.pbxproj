@@ -75,14 +75,38 @@
 			children = (
 				A7D2E84A244DE50E00953132 /* AppDelegate.swift */,
 				A7D2E84C244DE50E00953132 /* SceneDelegate.swift */,
-				A7D2E84E244DE50E00953132 /* ViewController.swift */,
-				A7D2E850244DE50E00953132 /* Main.storyboard */,
+				C4DCC3E62487F1020061C1BD /* Data Model */,
+				C4DCC3E42487F0740061C1BD /* View */,
+				C4DCC3E52487F07F0061C1BD /* Controller */,
 				A7D2E856244DE50F00953132 /* Assets.xcassets */,
-				A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */,
 				A7D2E85B244DE50F00953132 /* Info.plist */,
-				A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */,
 			);
 			path = "init.engineer-iOS-App";
+			sourceTree = "<group>";
+		};
+		C4DCC3E42487F0740061C1BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A7D2E850244DE50E00953132 /* Main.storyboard */,
+				A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C4DCC3E52487F07F0061C1BD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A7D2E84E244DE50E00953132 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C4DCC3E62487F1020061C1BD /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		C6D4AA7D36DF06C8FA96CF7B /* Pods */ = {
