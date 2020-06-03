@@ -15,6 +15,7 @@
 		A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */; };
 		A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E856244DE50F00953132 /* Assets.xcassets */; };
 		A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */; };
+		C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A7D2E85B244DE50F00953132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACCA24EB2179F93637C284B5 /* Pods_init_engineer_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_init_engineer_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24E1EAE0845F9C313AFE92B /* Pods-init.engineer-iOS-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.release.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.release.xcconfig"; sourceTree = "<group>"; };
+		C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fixedsys500c.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				C4DCC3E52487F07F0061C1BD /* Controller */,
 				A7D2E856244DE50F00953132 /* Assets.xcassets */,
 				A7D2E85B244DE50F00953132 /* Info.plist */,
+				C4DCC3E92487FFCE0061C1BD /* Fonts */,
 			);
 			path = "init.engineer-iOS-App";
 			sourceTree = "<group>";
@@ -107,6 +110,14 @@
 				A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */,
 			);
 			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		C4DCC3E92487FFCE0061C1BD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		C6D4AA7D36DF06C8FA96CF7B /* Pods */ = {
@@ -181,6 +192,7 @@
 				A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */,
 				A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */,
 				A7D2E852244DE50E00953132 /* Main.storyboard in Resources */,
+				C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
