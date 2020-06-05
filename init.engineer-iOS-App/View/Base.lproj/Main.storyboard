@@ -36,8 +36,8 @@
                                             <constraint firstAttribute="width" secondItem="ilb-w5-0Ux" secondAttribute="height" multiplier="15:8" id="P3R-cR-uWb"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="fPh-Mn-LN5">
-                                        <rect key="frame" x="28.5" y="114.5" width="120" height="218.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="hYX-Er-n8g">
+                                        <rect key="frame" x="28.5" y="141" width="120" height="59.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="大頭菜計算器" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yje-DO-gK8">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="22.5"/>
@@ -46,29 +46,33 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="輕鬆致富" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lH7-4o-Hef">
-                                                <rect key="frame" x="0.0" y="79.5" width="120" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="40.5" width="120" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSX-xe-2TW">
-                                                <rect key="frame" x="0.0" y="159" width="120" height="59.5"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <state key="normal" title="點我發大財">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lH7-4o-Hef" firstAttribute="top" secondItem="Yje-DO-gK8" secondAttribute="bottom" constant="18" id="pP2-kK-WKL"/>
+                                        </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSX-xe-2TW">
+                                        <rect key="frame" x="46" y="302" width="85" height="31"/>
+                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                        <state key="normal" title="點我發大財">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ilb-w5-0Ux" firstAttribute="top" secondItem="Bhl-Nt-beD" secondAttribute="top" id="0aa-kT-Cdk"/>
                                     <constraint firstAttribute="trailing" secondItem="ilb-w5-0Ux" secondAttribute="trailing" id="81v-WB-zZw"/>
-                                    <constraint firstItem="fPh-Mn-LN5" firstAttribute="centerX" secondItem="Bhl-Nt-beD" secondAttribute="centerX" id="SvP-Iz-BRP"/>
+                                    <constraint firstItem="hYX-Er-n8g" firstAttribute="centerX" secondItem="Bhl-Nt-beD" secondAttribute="centerX" id="DVP-vE-lNl"/>
+                                    <constraint firstItem="hSX-xe-2TW" firstAttribute="centerX" secondItem="Bhl-Nt-beD" secondAttribute="centerX" id="OaE-5Q-a9K"/>
+                                    <constraint firstItem="hYX-Er-n8g" firstAttribute="centerY" secondItem="Bhl-Nt-beD" secondAttribute="centerY" id="di8-we-Px2"/>
                                     <constraint firstItem="ilb-w5-0Ux" firstAttribute="leading" secondItem="Bhl-Nt-beD" secondAttribute="leading" id="g2q-oX-2ff"/>
-                                    <constraint firstAttribute="bottom" secondItem="fPh-Mn-LN5" secondAttribute="bottom" constant="8" id="j36-hH-TOp"/>
-                                    <constraint firstItem="fPh-Mn-LN5" firstAttribute="top" secondItem="ilb-w5-0Ux" secondAttribute="bottom" constant="20" id="jkJ-VJ-JXR"/>
+                                    <constraint firstItem="hSX-xe-2TW" firstAttribute="bottom" secondItem="Bhl-Nt-beD" secondAttribute="bottomMargin" id="jl6-0f-cE0"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bP3-Yh-EqA">
@@ -80,11 +84,42 @@
                                             <constraint firstAttribute="width" secondItem="pok-Q8-Orh" secondAttribute="height" multiplier="15:8" id="4gz-lB-7VN"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYW-bl-9NP">
+                                        <rect key="frame" x="71.5" y="302" width="34" height="31"/>
+                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                        <state key="normal" title="我吸">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="4YL-Nn-ZDc">
+                                        <rect key="frame" x="9" y="141" width="159" height="59.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Facebook 粉絲頁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-4C-mB1">
+                                                <rect key="frame" x="0.0" y="0.0" width="159" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="很純" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKF-qP-gMj">
+                                                <rect key="frame" x="0.0" y="40.5" width="159" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="SKF-qP-gMj" firstAttribute="top" secondItem="vKg-4C-mB1" secondAttribute="bottom" constant="18" id="lpW-Tl-wrz"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="4YL-Nn-ZDc" firstAttribute="centerX" secondItem="bP3-Yh-EqA" secondAttribute="centerX" id="FFM-2Q-1tq"/>
+                                    <constraint firstItem="gYW-bl-9NP" firstAttribute="centerX" secondItem="bP3-Yh-EqA" secondAttribute="centerX" id="FUI-Sr-ziX"/>
                                     <constraint firstItem="pok-Q8-Orh" firstAttribute="top" secondItem="bP3-Yh-EqA" secondAttribute="top" id="NCu-ve-SRK"/>
                                     <constraint firstItem="pok-Q8-Orh" firstAttribute="leading" secondItem="bP3-Yh-EqA" secondAttribute="leading" id="Pog-kw-sUo"/>
+                                    <constraint firstAttribute="bottom" secondItem="gYW-bl-9NP" secondAttribute="bottom" constant="8" id="Z63-0n-9OW"/>
+                                    <constraint firstItem="4YL-Nn-ZDc" firstAttribute="centerY" secondItem="bP3-Yh-EqA" secondAttribute="centerY" id="hyZ-hq-cuJ"/>
                                     <constraint firstAttribute="trailing" secondItem="pok-Q8-Orh" secondAttribute="trailing" id="ieZ-ln-zyk"/>
                                 </constraints>
                             </view>
@@ -97,11 +132,42 @@
                                             <constraint firstAttribute="width" secondItem="Aph-uD-YCa" secondAttribute="height" multiplier="15:8" id="vbv-6X-jrD"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdC-wN-v3I">
+                                        <rect key="frame" x="71.5" y="302" width="34" height="31"/>
+                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                        <state key="normal" title="吸吸">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Q9n-W4-fzV">
+                                        <rect key="frame" x="14.5" y="141" width="148" height="59.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Twitter 粉絲頁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDB-Bh-q4t">
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="也很純" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-I0-q25">
+                                                <rect key="frame" x="0.0" y="40.5" width="148" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="xPT-I0-q25" firstAttribute="top" secondItem="wDB-Bh-q4t" secondAttribute="bottom" constant="18" id="ZeM-hZ-7ee"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Q9n-W4-fzV" firstAttribute="centerX" secondItem="hBs-bo-Pu4" secondAttribute="centerX" id="BZu-lf-Gh3"/>
                                     <constraint firstAttribute="trailing" secondItem="Aph-uD-YCa" secondAttribute="trailing" id="DgM-wy-zWx"/>
+                                    <constraint firstItem="HdC-wN-v3I" firstAttribute="centerX" secondItem="hBs-bo-Pu4" secondAttribute="centerX" id="MhY-xh-haT"/>
                                     <constraint firstItem="Aph-uD-YCa" firstAttribute="width" secondItem="Aph-uD-YCa" secondAttribute="height" multiplier="15:8" id="cvH-zL-TuS"/>
+                                    <constraint firstAttribute="bottom" secondItem="HdC-wN-v3I" secondAttribute="bottom" constant="8" id="eF0-Z0-V5v"/>
+                                    <constraint firstItem="Q9n-W4-fzV" firstAttribute="centerY" secondItem="hBs-bo-Pu4" secondAttribute="centerY" id="fBn-le-905"/>
                                     <constraint firstItem="Aph-uD-YCa" firstAttribute="leading" secondItem="hBs-bo-Pu4" secondAttribute="leading" id="lQk-hC-zu9"/>
                                     <constraint firstItem="Aph-uD-YCa" firstAttribute="top" secondItem="hBs-bo-Pu4" secondAttribute="top" id="r2v-Ev-Lba"/>
                                 </constraints>
@@ -115,12 +181,43 @@
                                             <constraint firstAttribute="width" secondItem="BYK-Lo-0x1" secondAttribute="height" multiplier="15:8" id="sTa-5o-mtH"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KK-nF-7xG">
+                                        <rect key="frame" x="71.5" y="302" width="34" height="31"/>
+                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                        <state key="normal" title="吸爆">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="vkZ-ST-x1A">
+                                        <rect key="frame" x="25.5" y="141" width="126" height="59.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Plurk 粉絲頁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6R-4T-E7z">
+                                                <rect key="frame" x="0.0" y="0.0" width="126" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="也是很純" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bm-eb-rV9">
+                                                <rect key="frame" x="0.0" y="40.5" width="126" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="4bm-eb-rV9" firstAttribute="top" secondItem="F6R-4T-E7z" secondAttribute="bottom" constant="18" id="pBJ-Ac-kcL"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="vkZ-ST-x1A" firstAttribute="centerY" secondItem="MOZ-MG-QjJ" secondAttribute="centerY" id="5zU-5k-zXG"/>
                                     <constraint firstItem="BYK-Lo-0x1" firstAttribute="width" secondItem="BYK-Lo-0x1" secondAttribute="height" multiplier="15:8" id="7yb-Jc-dZv"/>
                                     <constraint firstItem="BYK-Lo-0x1" firstAttribute="leading" secondItem="MOZ-MG-QjJ" secondAttribute="leading" id="BtW-Eh-hgq"/>
                                     <constraint firstItem="BYK-Lo-0x1" firstAttribute="top" secondItem="MOZ-MG-QjJ" secondAttribute="top" id="CQs-yA-pO3"/>
+                                    <constraint firstAttribute="bottom" secondItem="1KK-nF-7xG" secondAttribute="bottom" constant="8" id="F0o-ZL-RV2"/>
+                                    <constraint firstItem="vkZ-ST-x1A" firstAttribute="centerX" secondItem="MOZ-MG-QjJ" secondAttribute="centerX" id="SaV-85-ANY"/>
+                                    <constraint firstItem="1KK-nF-7xG" firstAttribute="centerX" secondItem="MOZ-MG-QjJ" secondAttribute="centerX" id="Ze9-NO-t4c"/>
                                     <constraint firstAttribute="trailing" secondItem="BYK-Lo-0x1" secondAttribute="trailing" id="x4o-XW-UwT"/>
                                 </constraints>
                             </view>
