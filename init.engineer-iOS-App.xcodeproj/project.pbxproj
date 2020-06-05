@@ -10,7 +10,7 @@
 		A47D606AEC895E624B914382 /* Pods_init_engineer_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCA24EB2179F93637C284B5 /* Pods_init_engineer_iOS_App.framework */; };
 		A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84A244DE50E00953132 /* AppDelegate.swift */; };
 		A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84C244DE50E00953132 /* SceneDelegate.swift */; };
-		A7D2E84F244DE50E00953132 /* IndexFregmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84E244DE50E00953132 /* IndexFregmentController.swift */; };
+		A7D2E84F244DE50E00953132 /* IndexFragmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84E244DE50E00953132 /* IndexFragmentController.swift */; };
 		A7D2E852244DE50E00953132 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E850244DE50E00953132 /* Main.storyboard */; };
 		A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */; };
 		A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E856244DE50F00953132 /* Assets.xcassets */; };
@@ -23,7 +23,7 @@
 		A7D2E847244DE50E00953132 /* 純靠北工程師.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "純靠北工程師.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D2E84A244DE50E00953132 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D2E84C244DE50E00953132 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A7D2E84E244DE50E00953132 /* IndexFregmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexFregmentController.swift; sourceTree = "<group>"; };
+		A7D2E84E244DE50E00953132 /* IndexFragmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexFragmentController.swift; sourceTree = "<group>"; };
 		A7D2E851244DE50E00953132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7D2E854244DE50E00953132 /* init_engineer_iOS_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = init_engineer_iOS_App.xcdatamodel; sourceTree = "<group>"; };
 		A7D2E856244DE50F00953132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		C4DCC3E52487F07F0061C1BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A7D2E84E244DE50E00953132 /* IndexFregmentController.swift */,
+				A7D2E84E244DE50E00953132 /* IndexFragmentController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */,
-				A7D2E84F244DE50E00953132 /* IndexFregmentController.swift in Sources */,
+				A7D2E84F244DE50E00953132 /* IndexFragmentController.swift in Sources */,
 				A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */,
 				A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */,
 			);
