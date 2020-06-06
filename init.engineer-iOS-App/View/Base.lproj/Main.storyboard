@@ -278,14 +278,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文章列表 Article" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5y-du-l9j">
-                                <rect key="frame" x="135.5" y="64" width="143" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文章列表 Article list" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5y-du-l9j">
+                                <rect key="frame" x="112" y="108" width="190" height="19"/>
                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oWL-7i-Kx2">
-                                <rect key="frame" x="20" y="91" width="374" height="702"/>
+                                <rect key="frame" x="20" y="135" width="374" height="658"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cbh-g0-8cb">
                                     <size key="itemSize" width="128" height="128"/>
@@ -294,13 +294,16 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iCQ-xO-zgD">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iCQ-xO-zgD" customClass="ArticleCell" customModule="純靠北工程師" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Qmk-J8-SiH">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="GSj-ts-Dua" kind="show" id="Xhw-Yv-HFO"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -317,10 +320,290 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="文章列表" id="R9B-7x-joA"/>
+                    <navigationItem key="navigationItem" id="Iz0-QP-aCe"/>
+                    <connections>
+                        <outlet property="articleList" destination="oWL-7i-Kx2" id="hHd-1j-Xwu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-791" y="942"/>
+            <point key="canvasLocation" x="130" y="1209"/>
+        </scene>
+        <!--Article View Controller-->
+        <scene sceneID="lSS-o1-fjD">
+            <objects>
+                <viewController id="GSj-ts-Dua" customClass="ArticleViewController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DhT-su-j1Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="996"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PUk-iF-u1O">
+                                <rect key="frame" x="20" y="135" width="374" height="236"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PUk-iF-u1O" secondAttribute="height" multiplier="187:118" id="6Rz-b4-2rV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文章 Article" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-3x-m42">
+                                <rect key="frame" x="152.5" y="108" width="109" height="19"/>
+                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbw-9S-Iyx">
+                                <rect key="frame" x="20" y="379" width="374" height="267"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sKy-JM-Dbw">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="267"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BW7-Fb-1mT">
+                                                <rect key="frame" x="0.0" y="0.0" width="59" height="59"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="59" id="kd2-2T-iHL"/>
+                                                    <constraint firstAttribute="height" constant="59" id="pRL-LS-pc2"/>
+                                                    <constraint firstAttribute="width" secondItem="BW7-Fb-1mT" secondAttribute="height" multiplier="1:1" id="xjg-gy-F4n"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="動物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zv4-UT-1Wr">
+                                                <rect key="frame" x="0.0" y="59" width="59" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVl-tW-F9b">
+                                                <rect key="frame" x="0.0" y="78" width="59" height="189"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="NUH-9M-F6i"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HHO-OB-eLW">
+                                        <rect key="frame" x="59" y="0.0" width="315" height="267"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N小時前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqv-Zx-drc">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="文章" translatesAutoresizingMaskIntoConstraints="NO" id="0Eu-Af-SkQ">
+                                                <rect key="frame" x="0.0" y="19" width="315" height="248"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="250" id="NQV-Sr-pMe"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QF-Ra-lW1">
+                                <rect key="frame" x="327" y="654" width="67" height="31"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                <state key="normal" title="⎋ Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ord-ci-eCl">
+                                <rect key="frame" x="20" y="693" width="374" height="69"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9gO-fv-jb7">
+                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="69"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXo-MQ-Bip">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahr-uD-PrI">
+                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <state key="normal" title="FB主站">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-qG-IcF">
+                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xdI-DQ-9to">
+                                        <rect key="frame" x="93.5" y="0.0" width="93.5" height="69"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hee-Aj-PFd">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nx-K0-zpf">
+                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <state key="normal" title="FB次站">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-O5-A0Y">
+                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="okT-Ej-AK6">
+                                        <rect key="frame" x="187" y="0.0" width="93.5" height="69"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZo-WW-v61">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcE-5c-Ngr">
+                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <state key="normal" title="Plurk">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yji-ov-wG1">
+                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jh1-r3-rNL">
+                                        <rect key="frame" x="280.5" y="0.0" width="93.5" height="69"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW1-SX-QuZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msZ-7R-P34">
+                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
+                                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <state key="normal" title="Twitter">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tO-bU-8jQ">
+                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9gO-fv-jb7" firstAttribute="width" secondItem="jh1-r3-rNL" secondAttribute="width" id="cZb-qQ-K8k"/>
+                                    <constraint firstItem="9gO-fv-jb7" firstAttribute="width" secondItem="xdI-DQ-9to" secondAttribute="width" id="fBd-5a-2QG"/>
+                                    <constraint firstItem="9gO-fv-jb7" firstAttribute="width" secondItem="okT-Ej-AK6" secondAttribute="width" id="kgd-jT-saf"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="留言 Comments" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrU-3c-AED">
+                                <rect key="frame" x="148" y="770" width="118.5" height="19"/>
+                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已經到最後一個了" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrZ-Lz-IrP">
+                                <rect key="frame" x="139" y="874" width="136" height="19"/>
+                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="clv-g2-MQk">
+                                <rect key="frame" x="20" y="797" width="374" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="WlC-T1-ldf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ord-ci-eCl" firstAttribute="top" secondItem="0QF-Ra-lW1" secondAttribute="bottom" constant="8" id="BGC-aI-Aji"/>
+                            <constraint firstItem="twt-Ti-Haz" firstAttribute="trailing" secondItem="0QF-Ra-lW1" secondAttribute="trailing" constant="20" id="DaS-14-CAA"/>
+                            <constraint firstItem="TrZ-Lz-IrP" firstAttribute="top" secondItem="clv-g2-MQk" secondAttribute="bottom" constant="8" id="EtT-6f-esA"/>
+                            <constraint firstItem="Cbw-9S-Iyx" firstAttribute="top" secondItem="PUk-iF-u1O" secondAttribute="bottom" constant="8" id="HFG-7R-If6"/>
+                            <constraint firstItem="0QF-Ra-lW1" firstAttribute="top" secondItem="Cbw-9S-Iyx" secondAttribute="bottom" constant="8" id="TBw-IL-nwc"/>
+                            <constraint firstItem="twt-Ti-Haz" firstAttribute="trailing" secondItem="PUk-iF-u1O" secondAttribute="trailing" constant="20" id="V8n-bE-IKq"/>
+                            <constraint firstItem="Cbw-9S-Iyx" firstAttribute="leading" secondItem="twt-Ti-Haz" secondAttribute="leading" constant="20" id="W4p-tE-t3p"/>
+                            <constraint firstItem="mrU-3c-AED" firstAttribute="centerX" secondItem="twt-Ti-Haz" secondAttribute="centerX" id="Wmz-xV-ryW"/>
+                            <constraint firstItem="cRe-3x-m42" firstAttribute="top" secondItem="twt-Ti-Haz" secondAttribute="top" constant="20" id="X3n-8g-ESY"/>
+                            <constraint firstItem="twt-Ti-Haz" firstAttribute="trailing" secondItem="Ord-ci-eCl" secondAttribute="trailing" constant="20" id="YID-9Z-EFR"/>
+                            <constraint firstItem="mrU-3c-AED" firstAttribute="top" secondItem="Ord-ci-eCl" secondAttribute="bottom" constant="8" id="aQ3-1O-Tz0"/>
+                            <constraint firstItem="twt-Ti-Haz" firstAttribute="trailing" secondItem="Cbw-9S-Iyx" secondAttribute="trailing" constant="20" id="b9z-79-2YV"/>
+                            <constraint firstItem="PUk-iF-u1O" firstAttribute="leading" secondItem="twt-Ti-Haz" secondAttribute="leading" constant="20" id="dCL-aq-iIv"/>
+                            <constraint firstItem="clv-g2-MQk" firstAttribute="top" secondItem="mrU-3c-AED" secondAttribute="bottom" constant="8" id="er5-jC-LhP"/>
+                            <constraint firstItem="0QF-Ra-lW1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="twt-Ti-Haz" secondAttribute="leading" symbolic="YES" id="gkl-FY-oTd"/>
+                            <constraint firstItem="twt-Ti-Haz" firstAttribute="bottom" secondItem="TrZ-Lz-IrP" secondAttribute="bottom" constant="20" id="h2c-8v-ICI"/>
+                            <constraint firstItem="clv-g2-MQk" firstAttribute="leading" secondItem="twt-Ti-Haz" secondAttribute="leading" constant="20" id="i4y-Wr-dLb"/>
+                            <constraint firstItem="Ord-ci-eCl" firstAttribute="leading" secondItem="twt-Ti-Haz" secondAttribute="leading" constant="20" id="inZ-yc-DeK"/>
+                            <constraint firstItem="PUk-iF-u1O" firstAttribute="top" secondItem="cRe-3x-m42" secondAttribute="bottom" constant="8" id="o2D-uv-6Xo"/>
+                            <constraint firstItem="twt-Ti-Haz" firstAttribute="trailing" secondItem="clv-g2-MQk" secondAttribute="trailing" constant="20" id="oKW-bb-bET"/>
+                            <constraint firstItem="cRe-3x-m42" firstAttribute="centerX" secondItem="twt-Ti-Haz" secondAttribute="centerX" id="u9p-x7-oYx"/>
+                            <constraint firstItem="TrZ-Lz-IrP" firstAttribute="centerX" secondItem="twt-Ti-Haz" secondAttribute="centerX" id="wKo-lR-A7F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="twt-Ti-Haz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iGN-1k-Aei"/>
+                    <size key="freeformSize" width="414" height="996"/>
+                    <connections>
+                        <outlet property="alterFBLikeLabel" destination="Hee-Aj-PFd" id="Xf6-HE-AU6"/>
+                        <outlet property="alterFBShareLabel" destination="j4c-O5-A0Y" id="Y5V-v5-eFu"/>
+                        <outlet property="anonymousImg" destination="BW7-Fb-1mT" id="x24-br-xoR"/>
+                        <outlet property="anonymousLabel" destination="zv4-UT-1Wr" id="NcA-v4-0ma"/>
+                        <outlet property="articleImg" destination="PUk-iF-u1O" id="voJ-8e-q4K"/>
+                        <outlet property="articleText" destination="0Eu-Af-SkQ" id="ITT-ie-ElT"/>
+                        <outlet property="commentListView" destination="clv-g2-MQk" id="QD4-WO-iIx"/>
+                        <outlet property="mainFBLikeLabel" destination="aXo-MQ-Bip" id="1kv-1d-r6S"/>
+                        <outlet property="mainFBShareLabel" destination="QzP-qG-IcF" id="Kkw-y3-YmN"/>
+                        <outlet property="plurkLikeLabel" destination="fZo-WW-v61" id="Mlt-a3-MJO"/>
+                        <outlet property="plurkShareLabel" destination="yji-ov-wG1" id="voJ-Tf-Fcj"/>
+                        <outlet property="publishTimeLabel" destination="fqv-Zx-drc" id="xCx-RF-Gz4"/>
+                        <outlet property="twitterLikeLabel" destination="kW1-SX-QuZ" id="pe5-cz-h2B"/>
+                        <outlet property="twitterShareLabel" destination="1tO-bU-8jQ" id="ikx-iu-ld1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bot-JW-lpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="1242"/>
+        </scene>
+        <!--文章列表-->
+        <scene sceneID="QdW-h9-8AF">
+            <objects>
+                <navigationController id="mOY-C4-phr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="文章列表" id="FqJ-hO-lJb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OkH-Nt-rDT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QiZ-8m-Xa8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ukX-4k-bea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-791" y="1209"/>
         </scene>
         <!--儀錶板-->
         <scene sceneID="r5F-2n-kl4">
@@ -422,9 +705,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="dmE-e9-gNw" kind="relationship" relationship="viewControllers" id="t5p-XF-V6t"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="vNO-se-jhV"/>
-                        <segue destination="Zzm-8s-lRu" kind="relationship" relationship="viewControllers" id="Cna-0i-l7H"/>
-                        <segue destination="ifS-1X-e4W" kind="relationship" relationship="viewControllers" id="w4u-Rs-xEN"/>
+                        <segue destination="mOY-C4-phr" kind="relationship" relationship="viewControllers" id="GFh-At-7sC"/>
+                        <segue destination="Zzm-8s-lRu" kind="relationship" relationship="viewControllers" id="D0G-69-fNq"/>
+                        <segue destination="ifS-1X-e4W" kind="relationship" relationship="viewControllers" id="oKF-of-pOn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2Y-es-97N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,7 +8,16 @@
 
 import UIKit
 
-class ArticleTabController: UIViewController {
+class ArticleTabController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet weak var articleList: UICollectionView!
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,4 +25,9 @@ class ArticleTabController: UIViewController {
     }
 
 
+}
+
+
+class ArticleCell: UICollectionViewCell {
+    
 }
