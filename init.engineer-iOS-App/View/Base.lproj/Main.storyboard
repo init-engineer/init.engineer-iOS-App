@@ -31,7 +31,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhl-Nt-beD">
                                 <rect key="frame" x="20" y="91" width="177" height="341"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kohlrabi" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-w5-0Ux">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kohlrabi" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-w5-0Ux">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="94.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ilb-w5-0Ux" secondAttribute="height" multiplier="15:8" id="P3R-cR-uWb"/>
@@ -82,7 +82,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bP3-Yh-EqA">
                                 <rect key="frame" x="217" y="91" width="177" height="341"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_flag1" translatesAutoresizingMaskIntoConstraints="NO" id="pok-Q8-Orh">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_flag1" translatesAutoresizingMaskIntoConstraints="NO" id="pok-Q8-Orh">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="94.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pok-Q8-Orh" secondAttribute="height" multiplier="15:8" id="4gz-lB-7VN"/>
