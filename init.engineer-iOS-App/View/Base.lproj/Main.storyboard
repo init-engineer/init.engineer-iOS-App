@@ -63,6 +63,9 @@
                                         <state key="normal" title="點我發大財">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="turnipBtn:" destination="dmE-e9-gNw" eventType="touchUpInside" id="ADC-w0-Xdn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,6 +94,9 @@
                                         <state key="normal" title="我吸">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="facebookBtn:" destination="dmE-e9-gNw" eventType="touchUpInside" id="MTF-vq-Fhf"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="4YL-Nn-ZDc">
                                         <rect key="frame" x="9" y="141" width="159" height="59.5"/>
@@ -139,6 +145,9 @@
                                         <state key="normal" title="吸吸">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="twitterBtn:" destination="dmE-e9-gNw" eventType="touchUpInside" id="4Hb-yI-kkQ"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Q9n-W4-fzV">
                                         <rect key="frame" x="14.5" y="141" width="148" height="59.5"/>
@@ -188,6 +197,9 @@
                                         <state key="normal" title="吸爆">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="plurkBtn:" destination="dmE-e9-gNw" eventType="touchUpInside" id="MpF-ge-Onp"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="vkZ-ST-x1A">
                                         <rect key="frame" x="25.5" y="141" width="126" height="59.5"/>
@@ -247,6 +259,12 @@
                         <viewLayoutGuide key="safeArea" id="XyI-jv-bdt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="首頁" id="dp0-3C-EPp"/>
+                    <connections>
+                        <outlet property="facebookImg" destination="pok-Q8-Orh" id="6db-IG-mwe"/>
+                        <outlet property="plurkImg" destination="BYK-Lo-0x1" id="dXO-vA-5Uk"/>
+                        <outlet property="turnipCalculatorImg" destination="ilb-w5-0Ux" id="gn5-9G-Jco"/>
+                        <outlet property="twitterImg" destination="Aph-uD-YCa" id="fr7-Bz-xZQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ich-0S-Lnl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
