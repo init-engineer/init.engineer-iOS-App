@@ -1,14 +1,14 @@
 //
-//  IndexFragmentController.swift
+//  ArticleTabController.swift
 //  init.engineer-iOS-App
 //
-//  Created by 乾太 on 2020/4/20.
+//  Created by horo on 6/6/20.
 //  Copyright © 2020 Kantai Developer. All rights reserved.
 //
 
 import UIKit
 
-class IndexFragmentController: UIViewController {
+class ArticleTabController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,4 +17,3 @@ class IndexFragmentController: UIViewController {
 
 
 }
-
