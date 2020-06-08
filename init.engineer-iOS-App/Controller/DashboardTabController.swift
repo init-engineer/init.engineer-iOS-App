@@ -9,7 +9,8 @@
 import UIKit
 
 class DashboardTabController: UIViewController {
-
+    @IBOutlet weak var userImg: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

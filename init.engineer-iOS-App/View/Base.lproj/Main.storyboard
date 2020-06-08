@@ -614,19 +614,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="儀錶板 Dashboard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbC-Yo-O3A">
-                                <rect key="frame" x="135" y="108" width="144.5" height="19"/>
+                                <rect key="frame" x="137.5" y="108" width="139.5" height="20"/>
                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rJg-gQ-NbV">
-                                <rect key="frame" x="335" y="88" width="59" height="59"/>
+                                <rect key="frame" x="334" y="88" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rJg-gQ-NbV" secondAttribute="height" multiplier="1:1" id="h5I-xH-Rbr"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vXf-vP-K88">
-                                <rect key="frame" x="20" y="155" width="374" height="638"/>
+                                <rect key="frame" x="20" y="156" width="374" height="637"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lgs-ZJ-7IN">
                                     <size key="itemSize" width="128" height="128"/>
@@ -666,6 +666,7 @@
                     <tabBarItem key="tabBarItem" title="儀錶板" id="g8e-zp-7sM"/>
                     <navigationItem key="navigationItem" id="jgb-qh-ess"/>
                     <connections>
+                        <outlet property="userImg" destination="rJg-gQ-NbV" id="mU0-P0-yxZ"/>
                         <segue destination="hrF-ea-Cq1" kind="show" id="63W-j3-dLV"/>
                     </connections>
                 </viewController>
@@ -738,6 +739,9 @@
                                 <state key="normal" title="上傳圖片">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="imageUploadBtn:" destination="Zzm-8s-lRu" eventType="touchUpInside" id="ncH-UD-Qm7"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7c-uw-e0V">
                                 <rect key="frame" x="20" y="602" width="374" height="191"/>
@@ -786,6 +790,11 @@
                     <tabBarItem key="tabBarItem" title="發表文章" id="WFH-pU-0Ld"/>
                     <navigationItem key="navigationItem" id="O1b-93-HiR"/>
                     <connections>
+                        <outlet property="articleImg" destination="TLV-RG-mcW" id="cjv-mw-rPY"/>
+                        <outlet property="articleText" destination="TXB-wb-BF5" id="Tie-av-7Bw"/>
+                        <outlet property="fontPicker" destination="70g-av-MVZ" id="ZnY-gb-U7k"/>
+                        <outlet property="themePicker" destination="b2Z-uQ-nag" id="Wlv-Cb-zZW"/>
+                        <outlet property="userImg" destination="u8u-aM-YDh" id="PyH-NM-6jr"/>
                         <segue destination="hrF-ea-Cq1" kind="show" id="edM-bp-uxV"/>
                     </connections>
                 </viewController>
@@ -796,7 +805,6 @@
         <!--發表文章-->
         <scene sceneID="tyz-R6-OoN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VQK-ge-Wjc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="mha-7H-uOT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="發表文章" id="IHW-XO-mgn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e8M-XN-J6T">
@@ -807,6 +815,7 @@
                         <segue destination="Zzm-8s-lRu" kind="relationship" relationship="rootViewController" id="fwW-fS-xmR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQK-ge-Wjc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130" y="-149"/>
         </scene>
