@@ -20,15 +20,16 @@ class IndexTabController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-    @IBAction func turnipBtn(_ sender: Any) {
+    
+    @IBAction func kohlrabiButtonPressed(_ sender: UIButton) {
     }
-    @IBAction func facebookBtn(_ sender: Any) {
+    @IBAction func facebookButtonPressed(_ sender: UIButton) {
     }
-    @IBAction func twitterBtn(_ sender: Any) {
+    @IBAction func twitterButtonPressed(_ sender: UIButton) {
     }
-    @IBAction func plurkBtn(_ sender: Any) {
+    @IBAction func plurkButtonPressed(_ sender: UIButton) {
     }
+    
     
 }
 

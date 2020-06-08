@@ -64,7 +64,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="turnipBtn:" destination="dmE-e9-gNw" eventType="touchUpInside" id="ADC-w0-Xdn"/>
+                                            <action selector="kohlrabiButtonPressed:" destination="dmE-e9-gNw" eventType="touchUpInside" id="LmG-QS-0gs"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -95,7 +95,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="facebookBtn:" destination="dmE-e9-gNw" eventType="touchUpInside" id="MTF-vq-Fhf"/>
+                                            <action selector="facebookButtonPressed:" destination="dmE-e9-gNw" eventType="touchUpInside" id="NWC-Sc-hAM"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="4YL-Nn-ZDc">
@@ -146,7 +146,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="twitterBtn:" destination="dmE-e9-gNw" eventType="touchUpInside" id="4Hb-yI-kkQ"/>
+                                            <action selector="twitterButtonPressed:" destination="dmE-e9-gNw" eventType="touchUpInside" id="Wt0-dA-36x"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Q9n-W4-fzV">
@@ -198,7 +198,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="plurkBtn:" destination="dmE-e9-gNw" eventType="touchUpInside" id="MpF-ge-Onp"/>
+                                            <action selector="plurkButtonPressed:" destination="dmE-e9-gNw" eventType="touchUpInside" id="Ul6-1j-ai3"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="vkZ-ST-x1A">
