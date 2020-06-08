@@ -11,11 +11,13 @@ import UIKit
 class ArticleTabController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var articleList: UICollectionView!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        
+        return ArticleCell.init()
     }
     
 
