@@ -1,20 +1,23 @@
 //
-//  DashboardTabController.swift
+//  LoginController.swift
 //  init.engineer-iOS-App
 //
-//  Created by horo on 6/6/20.
+//  Created by horo on 6/8/20.
 //  Copyright © 2020 Kantai Developer. All rights reserved.
 //
 
 import UIKit
 
-class DashboardTabController: UIViewController {
-    @IBOutlet weak var userImg: UIImageView!
+protocol LoginCheckerProtocol {
+    func isLoggingIn() -> Bool
+}
+
+class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    @IBAction func loginBtn(_ sender: Any) {
+    }
 }
