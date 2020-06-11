@@ -8,8 +8,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class IndexTabController: UIViewController {
+class IndexTabController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var turnipCalculatorImg: UIImageView!
     @IBOutlet weak var facebookImg: UIImageView!
@@ -20,15 +21,48 @@ class IndexTabController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func kohlrabiButtonPressed(_ sender: UIButton) {
+        let urlString = "https://kaobei.engineer/animal/kohlrabi"
 
-    @IBAction func turnipBtn(_ sender: Any) {
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            vc.delegate = self
+
+            present(vc, animated: true)
+        }
     }
-    @IBAction func facebookBtn(_ sender: Any) {
+    @IBAction func facebookButtonPressed(_ sender: UIButton) {
+        let urlString = "https://www.facebook.com/init.kobeengineer"
+
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            vc.delegate = self
+
+            present(vc, animated: true)
+        }
     }
-    @IBAction func twitterBtn(_ sender: Any) {
+    @IBAction func twitterButtonPressed(_ sender: UIButton) {
+        let urlString = "https://twitter.com/kaobei_engineer"
+
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            vc.delegate = self
+
+            present(vc, animated: true)
+        }
     }
-    @IBAction func plurkBtn(_ sender: Any) {
+    @IBAction func plurkButtonPressed(_ sender: UIButton) {
+        let urlString = "https://www.plurk.com/kaobei_engineer"
+
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            vc.delegate = self
+
+            present(vc, animated: true)
+        }
     }
+    
     
 }
 

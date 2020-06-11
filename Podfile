@@ -6,7 +6,7 @@ target 'init.engineer-iOS-App' do
   use_frameworks!
 
   # Pods for init.engineer-iOS-App
-  pod 'MaterialComponents'
+  # pod 'MaterialComponents'
   
   
 end
