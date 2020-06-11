@@ -1,20 +1,23 @@
 //
-//  IndexFragmentController.swift
+//  LoginController.swift
 //  init.engineer-iOS-App
 //
-//  Created by 乾太 on 2020/4/20.
+//  Created by horo on 6/8/20.
 //  Copyright © 2020 Kantai Developer. All rights reserved.
 //
 
 import UIKit
 
-class IndexFragmentController: UIViewController {
+protocol LoginCheckerProtocol {
+    func isLoggingIn() -> Bool
+}
 
+class LoginController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    @IBAction func loginBtn(_ sender: Any) {
+    }
 }
-
