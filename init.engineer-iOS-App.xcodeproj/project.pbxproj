@@ -3,26 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A47D606AEC895E624B914382 /* Pods_init_engineer_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCA24EB2179F93637C284B5 /* Pods_init_engineer_iOS_App.framework */; };
 		A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84A244DE50E00953132 /* AppDelegate.swift */; };
 		A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84C244DE50E00953132 /* SceneDelegate.swift */; };
-		A7D2E84F244DE50E00953132 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84E244DE50E00953132 /* ViewController.swift */; };
+		A7D2E84F244DE50E00953132 /* IndexFragmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84E244DE50E00953132 /* IndexFragmentController.swift */; };
 		A7D2E852244DE50E00953132 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E850244DE50E00953132 /* Main.storyboard */; };
 		A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */; };
 		A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E856244DE50F00953132 /* Assets.xcassets */; };
 		A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */; };
+		C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		473094CBC420EC8874628C12 /* Pods-init.engineer-iOS-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.debug.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.debug.xcconfig"; sourceTree = "<group>"; };
-		A7D2E847244DE50E00953132 /* init.engineer-iOS-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "init.engineer-iOS-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7D2E847244DE50E00953132 /* 純靠北工程師.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "純靠北工程師.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D2E84A244DE50E00953132 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D2E84C244DE50E00953132 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A7D2E84E244DE50E00953132 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7D2E84E244DE50E00953132 /* IndexFragmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexFragmentController.swift; sourceTree = "<group>"; };
 		A7D2E851244DE50E00953132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7D2E854244DE50E00953132 /* init_engineer_iOS_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = init_engineer_iOS_App.xcdatamodel; sourceTree = "<group>"; };
 		A7D2E856244DE50F00953132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,6 +31,7 @@
 		A7D2E85B244DE50F00953132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACCA24EB2179F93637C284B5 /* Pods_init_engineer_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_init_engineer_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24E1EAE0845F9C313AFE92B /* Pods-init.engineer-iOS-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.release.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.release.xcconfig"; sourceTree = "<group>"; };
+		C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fixedsys500c.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,7 @@
 		A7D2E848244DE50E00953132 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A7D2E847244DE50E00953132 /* init.engineer-iOS-App.app */,
+				A7D2E847244DE50E00953132 /* 純靠北工程師.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,14 +77,47 @@
 			children = (
 				A7D2E84A244DE50E00953132 /* AppDelegate.swift */,
 				A7D2E84C244DE50E00953132 /* SceneDelegate.swift */,
-				A7D2E84E244DE50E00953132 /* ViewController.swift */,
-				A7D2E850244DE50E00953132 /* Main.storyboard */,
+				C4DCC3E62487F1020061C1BD /* Data Model */,
+				C4DCC3E42487F0740061C1BD /* View */,
+				C4DCC3E52487F07F0061C1BD /* Controller */,
 				A7D2E856244DE50F00953132 /* Assets.xcassets */,
-				A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */,
 				A7D2E85B244DE50F00953132 /* Info.plist */,
-				A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */,
+				C4DCC3E92487FFCE0061C1BD /* Fonts */,
 			);
 			path = "init.engineer-iOS-App";
+			sourceTree = "<group>";
+		};
+		C4DCC3E42487F0740061C1BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A7D2E850244DE50E00953132 /* Main.storyboard */,
+				A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C4DCC3E52487F07F0061C1BD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A7D2E84E244DE50E00953132 /* IndexFragmentController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C4DCC3E62487F1020061C1BD /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		C4DCC3E92487FFCE0061C1BD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		C6D4AA7D36DF06C8FA96CF7B /* Pods */ = {
@@ -105,6 +140,7 @@
 				A7D2E843244DE50E00953132 /* Sources */,
 				A7D2E844244DE50E00953132 /* Frameworks */,
 				A7D2E845244DE50E00953132 /* Resources */,
+				D3D848ED90F4BFC11E7A5751 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -112,7 +148,7 @@
 			);
 			name = "init.engineer-iOS-App";
 			productName = "init.engineer-iOS-App";
-			productReference = A7D2E847244DE50E00953132 /* init.engineer-iOS-App.app */;
+			productReference = A7D2E847244DE50E00953132 /* 純靠北工程師.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -156,6 +192,7 @@
 				A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */,
 				A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */,
 				A7D2E852244DE50E00953132 /* Main.storyboard in Resources */,
+				C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +221,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3D848ED90F4BFC11E7A5751 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -192,7 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */,
-				A7D2E84F244DE50E00953132 /* ViewController.swift in Sources */,
+				A7D2E84F244DE50E00953132 /* IndexFragmentController.swift in Sources */,
 				A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */,
 				A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */,
 			);
@@ -342,12 +396,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SRRZK8QVK5;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tico88612.init-engineer-iOS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "純靠北工程師";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -361,12 +417,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SRRZK8QVK5;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tico88612.init-engineer-iOS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "純靠北工程師";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

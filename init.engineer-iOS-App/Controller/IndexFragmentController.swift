@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  IndexFragmentController.swift
 //  init.engineer-iOS-App
 //
 //  Created by 乾太 on 2020/4/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class IndexFragmentController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
