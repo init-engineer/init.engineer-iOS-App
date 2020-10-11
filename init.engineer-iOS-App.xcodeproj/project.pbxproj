@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,8 +11,14 @@
 		127FD91D248BAAC1002E9645 /* PublishTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FD91C248BAAC1002E9645 /* PublishTabController.swift */; };
 		127FD91F248BAACF002E9645 /* DashboardTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FD91E248BAACF002E9645 /* DashboardTabController.swift */; };
 		12C64454248E129A005A2974 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C64453248E129A005A2974 /* LoginController.swift */; };
+		12C8B00F2533750C0072F653 /* KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; };
+		12C8B0162533750C0072F653 /* KaobeiAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8B0152533750C0072F653 /* KaobeiAPITests.swift */; };
+		12C8B0182533750C0072F653 /* KaobeiAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 12C8B0082533750C0072F653 /* KaobeiAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12C8B01B2533750C0072F653 /* KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; };
+		12C8B01C2533750C0072F653 /* KaobeiAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		12C8B027253375430072F653 /* KaobeiConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8B026253375430072F653 /* KaobeiConnection.swift */; };
 		12CA61C9248C1B580020E606 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA61C8248C1B580020E606 /* ArticleViewController.swift */; };
-		A47D606AEC895E624B914382 /* Pods_init_engineer_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCA24EB2179F93637C284B5 /* Pods_init_engineer_iOS_App.framework */; };
+		6A6EFDE86EF5F04003672132 /* Pods_init_engineer_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF3E7B37A76BD0BD61D1570 /* Pods_init_engineer_iOS_App.framework */; };
 		A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84A244DE50E00953132 /* AppDelegate.swift */; };
 		A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84C244DE50E00953132 /* SceneDelegate.swift */; };
 		A7D2E84F244DE50E00953132 /* IndexTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84E244DE50E00953132 /* IndexTabController.swift */; };
@@ -23,13 +29,59 @@
 		C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		12C8B0102533750C0072F653 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7D2E83F244DE50E00953132 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12C8B0052533750C0072F653;
+			remoteInfo = KaobeiAPI;
+		};
+		12C8B0122533750C0072F653 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7D2E83F244DE50E00953132 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7D2E846244DE50E00953132;
+			remoteInfo = "init.engineer-iOS-App";
+		};
+		12C8B0192533750C0072F653 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7D2E83F244DE50E00953132 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12C8B0052533750C0072F653;
+			remoteInfo = KaobeiAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		12C8B01D2533750C0072F653 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				12C8B01C2533750C0072F653 /* KaobeiAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		127FD91A248BAAA4002E9645 /* ArticleTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTabController.swift; sourceTree = "<group>"; };
 		127FD91C248BAAC1002E9645 /* PublishTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishTabController.swift; sourceTree = "<group>"; };
 		127FD91E248BAACF002E9645 /* DashboardTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabController.swift; sourceTree = "<group>"; };
 		12C64453248E129A005A2974 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		12C8B0062533750C0072F653 /* KaobeiAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KaobeiAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12C8B0082533750C0072F653 /* KaobeiAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KaobeiAPI.h; sourceTree = "<group>"; };
+		12C8B0092533750C0072F653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12C8B00E2533750C0072F653 /* KaobeiAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaobeiAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12C8B0152533750C0072F653 /* KaobeiAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiAPITests.swift; sourceTree = "<group>"; };
+		12C8B0172533750C0072F653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12C8B026253375430072F653 /* KaobeiConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiConnection.swift; sourceTree = "<group>"; };
 		12CA61C8248C1B580020E606 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
-		473094CBC420EC8874628C12 /* Pods-init.engineer-iOS-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.debug.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.debug.xcconfig"; sourceTree = "<group>"; };
+		26DD8EFD722FC010F6F5075C /* Pods-init.engineer-iOS-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.debug.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.debug.xcconfig"; sourceTree = "<group>"; };
+		9EF3E7B37A76BD0BD61D1570 /* Pods_init_engineer_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_init_engineer_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D2E847244DE50E00953132 /* 純靠北工程師.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "純靠北工程師.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D2E84A244DE50E00953132 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D2E84C244DE50E00953132 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,38 +91,66 @@
 		A7D2E856244DE50F00953132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7D2E859244DE50F00953132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7D2E85B244DE50F00953132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACCA24EB2179F93637C284B5 /* Pods_init_engineer_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_init_engineer_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B24E1EAE0845F9C313AFE92B /* Pods-init.engineer-iOS-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.release.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.release.xcconfig"; sourceTree = "<group>"; };
 		C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fixedsys500c.ttf; sourceTree = "<group>"; };
+		E58A7CD688381E2001E5C580 /* Pods-init.engineer-iOS-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.release.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		12C8B0032533750C0072F653 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12C8B00B2533750C0072F653 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12C8B00F2533750C0072F653 /* KaobeiAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A7D2E844244DE50E00953132 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A47D606AEC895E624B914382 /* Pods_init_engineer_iOS_App.framework in Frameworks */,
+				12C8B01B2533750C0072F653 /* KaobeiAPI.framework in Frameworks */,
+				6A6EFDE86EF5F04003672132 /* Pods_init_engineer_iOS_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0AAB3D4BA5BA2AD0D79C93FE /* Frameworks */ = {
+		12C8B0072533750C0072F653 /* KaobeiAPI */ = {
 			isa = PBXGroup;
 			children = (
-				ACCA24EB2179F93637C284B5 /* Pods_init_engineer_iOS_App.framework */,
+				12C8B0082533750C0072F653 /* KaobeiAPI.h */,
+				12C8B0092533750C0072F653 /* Info.plist */,
+				12C8B026253375430072F653 /* KaobeiConnection.swift */,
 			);
-			name = Frameworks;
+			path = KaobeiAPI;
+			sourceTree = "<group>";
+		};
+		12C8B0142533750C0072F653 /* KaobeiAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				12C8B0152533750C0072F653 /* KaobeiAPITests.swift */,
+				12C8B0172533750C0072F653 /* Info.plist */,
+			);
+			path = KaobeiAPITests;
 			sourceTree = "<group>";
 		};
 		A7D2E83E244DE50E00953132 = {
 			isa = PBXGroup;
 			children = (
 				A7D2E849244DE50E00953132 /* init.engineer-iOS-App */,
+				12C8B0072533750C0072F653 /* KaobeiAPI */,
+				12C8B0142533750C0072F653 /* KaobeiAPITests */,
 				A7D2E848244DE50E00953132 /* Products */,
 				C6D4AA7D36DF06C8FA96CF7B /* Pods */,
-				0AAB3D4BA5BA2AD0D79C93FE /* Frameworks */,
+				E5CDB5D8E1E29D263F3EFAA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				A7D2E847244DE50E00953132 /* 純靠北工程師.app */,
+				12C8B0062533750C0072F653 /* KaobeiAPI.framework */,
+				12C8B00E2533750C0072F653 /* KaobeiAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,27 +220,85 @@
 		C6D4AA7D36DF06C8FA96CF7B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				473094CBC420EC8874628C12 /* Pods-init.engineer-iOS-App.debug.xcconfig */,
-				B24E1EAE0845F9C313AFE92B /* Pods-init.engineer-iOS-App.release.xcconfig */,
+				26DD8EFD722FC010F6F5075C /* Pods-init.engineer-iOS-App.debug.xcconfig */,
+				E58A7CD688381E2001E5C580 /* Pods-init.engineer-iOS-App.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E5CDB5D8E1E29D263F3EFAA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9EF3E7B37A76BD0BD61D1570 /* Pods_init_engineer_iOS_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		12C8B0012533750C0072F653 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12C8B0182533750C0072F653 /* KaobeiAPI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		A7D2E846244DE50E00953132 /* init.engineer-iOS-App */ = {
+		12C8B0052533750C0072F653 /* KaobeiAPI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7D2E85E244DE50F00953132 /* Build configuration list for PBXNativeTarget "init.engineer-iOS-App" */;
+			buildConfigurationList = 12C8B0222533750C0072F653 /* Build configuration list for PBXNativeTarget "KaobeiAPI" */;
 			buildPhases = (
-				C4392A470799B808E8E7A1AB /* [CP] Check Pods Manifest.lock */,
-				A7D2E843244DE50E00953132 /* Sources */,
-				A7D2E844244DE50E00953132 /* Frameworks */,
-				A7D2E845244DE50E00953132 /* Resources */,
+				12C8B0012533750C0072F653 /* Headers */,
+				12C8B0022533750C0072F653 /* Sources */,
+				12C8B0032533750C0072F653 /* Frameworks */,
+				12C8B0042533750C0072F653 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = KaobeiAPI;
+			productName = KaobeiAPI;
+			productReference = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		12C8B00D2533750C0072F653 /* KaobeiAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12C8B0232533750C0072F653 /* Build configuration list for PBXNativeTarget "KaobeiAPITests" */;
+			buildPhases = (
+				12C8B00A2533750C0072F653 /* Sources */,
+				12C8B00B2533750C0072F653 /* Frameworks */,
+				12C8B00C2533750C0072F653 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12C8B0112533750C0072F653 /* PBXTargetDependency */,
+				12C8B0132533750C0072F653 /* PBXTargetDependency */,
+			);
+			name = KaobeiAPITests;
+			productName = KaobeiAPITests;
+			productReference = 12C8B00E2533750C0072F653 /* KaobeiAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A7D2E846244DE50E00953132 /* init.engineer-iOS-App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7D2E85E244DE50F00953132 /* Build configuration list for PBXNativeTarget "init.engineer-iOS-App" */;
+			buildPhases = (
+				00896FA45A7EB94233115716 /* [CP] Check Pods Manifest.lock */,
+				A7D2E843244DE50E00953132 /* Sources */,
+				A7D2E844244DE50E00953132 /* Frameworks */,
+				A7D2E845244DE50E00953132 /* Resources */,
+				12C8B01D2533750C0072F653 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12C8B01A2533750C0072F653 /* PBXTargetDependency */,
 			);
 			name = "init.engineer-iOS-App";
 			productName = "init.engineer-iOS-App";
@@ -171,10 +311,18 @@
 		A7D2E83F244DE50E00953132 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Kantai Developer";
 				TargetAttributes = {
+					12C8B0052533750C0072F653 = {
+						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
+					};
+					12C8B00D2533750C0072F653 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = A7D2E846244DE50E00953132;
+					};
 					A7D2E846244DE50E00953132 = {
 						CreatedOnToolsVersion = 11.4;
 					};
@@ -194,11 +342,27 @@
 			projectRoot = "";
 			targets = (
 				A7D2E846244DE50E00953132 /* init.engineer-iOS-App */,
+				12C8B0052533750C0072F653 /* KaobeiAPI */,
+				12C8B00D2533750C0072F653 /* KaobeiAPITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		12C8B0042533750C0072F653 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12C8B00C2533750C0072F653 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A7D2E845244DE50E00953132 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,7 +377,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C4392A470799B808E8E7A1AB /* [CP] Check Pods Manifest.lock */ = {
+		00896FA45A7EB94233115716 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,6 +402,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		12C8B0022533750C0072F653 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12C8B027253375430072F653 /* KaobeiConnection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12C8B00A2533750C0072F653 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12C8B0162533750C0072F653 /* KaobeiAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A7D2E843244DE50E00953132 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +435,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12C8B0112533750C0072F653 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12C8B0052533750C0072F653 /* KaobeiAPI */;
+			targetProxy = 12C8B0102533750C0072F653 /* PBXContainerItemProxy */;
+		};
+		12C8B0132533750C0072F653 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7D2E846244DE50E00953132 /* init.engineer-iOS-App */;
+			targetProxy = 12C8B0122533750C0072F653 /* PBXContainerItemProxy */;
+		};
+		12C8B01A2533750C0072F653 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12C8B0052533750C0072F653 /* KaobeiAPI */;
+			targetProxy = 12C8B0192533750C0072F653 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A7D2E850244DE50E00953132 /* Main.storyboard */ = {
@@ -276,6 +474,111 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		12C8B01E2533750C0072F653 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SRRZK8QVK5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KaobeiAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		12C8B01F2533750C0072F653 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SRRZK8QVK5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KaobeiAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		12C8B0202533750C0072F653 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E27MCP7UYM;
+				INFOPLIST_FILE = KaobeiAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/純靠北工程師.app/純靠北工程師";
+			};
+			name = Debug;
+		};
+		12C8B0212533750C0072F653 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E27MCP7UYM;
+				INFOPLIST_FILE = KaobeiAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/純靠北工程師.app/純靠北工程師";
+			};
+			name = Release;
+		};
 		A7D2E85C244DE50F00953132 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -392,8 +695,9 @@
 		};
 		A7D2E85F244DE50F00953132 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 473094CBC420EC8874628C12 /* Pods-init.engineer-iOS-App.debug.xcconfig */;
+			baseConfigurationReference = 26DD8EFD722FC010F6F5075C /* Pods-init.engineer-iOS-App.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SRRZK8QVK5;
@@ -412,8 +716,9 @@
 		};
 		A7D2E860244DE50F00953132 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B24E1EAE0845F9C313AFE92B /* Pods-init.engineer-iOS-App.release.xcconfig */;
+			baseConfigurationReference = E58A7CD688381E2001E5C580 /* Pods-init.engineer-iOS-App.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SRRZK8QVK5;
@@ -433,6 +738,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12C8B0222533750C0072F653 /* Build configuration list for PBXNativeTarget "KaobeiAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12C8B01E2533750C0072F653 /* Debug */,
+				12C8B01F2533750C0072F653 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12C8B0232533750C0072F653 /* Build configuration list for PBXNativeTarget "KaobeiAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12C8B0202533750C0072F653 /* Debug */,
+				12C8B0212533750C0072F653 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A7D2E842244DE50E00953132 /* Build configuration list for PBXProject "init.engineer-iOS-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
