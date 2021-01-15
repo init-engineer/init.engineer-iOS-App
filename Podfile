@@ -17,3 +17,10 @@ target 'KaobeiAPI' do
   pod 'Alamofire', '~> 5.4.0'
   
 end
+
+target 'KaobeiAPITests' do
+  
+  use_frameworks!
+  pod 'Alamofire', '~> 5.4.0'
+  
+end

@@ -10,7 +10,6 @@ import Foundation
 import Alamofire
 
 public protocol KaobeiRequestProtocol {
-    var baseURL: URL? { get }
     associatedtype responseType: Codable // or a protocol based on codable to receive data
     var apiPath: String { get }
     var method: HTTPMethod { get }
@@ -18,12 +17,7 @@ public protocol KaobeiRequestProtocol {
     var parameters: [String: Any]? { get }
 }
 
-extension KaobeiRequestProtocol {
-    var baseURL: URL? {
-        let basePath = KaobeiURL.basePath
-        return URL(string: basePath)
-    }
-    
+public extension KaobeiRequestProtocol {
     var headers: HTTPHeaders? {
         return getOAuthHeader()
     }
@@ -33,7 +27,7 @@ extension KaobeiRequestProtocol {
     }
     
     func getOAuthHeader() -> HTTPHeaders {
-        var header = [String: String]()
+        var header = HTTPHeaders()
         // get OAuth token from app datamanager
         // header["Authorization"] = "OAuth2 \(String(describing: token))"
         
@@ -48,6 +42,6 @@ extension KaobeiRequestProtocol {
     }
     
     func getAPIRequestURL() -> URL? {
-        return baseURL?.appendingPathComponent(apiPath)
+        return URL(string: apiPath)
     }
 }

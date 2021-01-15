@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Alamofire
 @testable import KaobeiAPI
 
 class KaobeiAPITests: XCTestCase {
@@ -19,9 +20,37 @@ class KaobeiAPITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testArticleList() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let request = KBGetArticleList.init(page: 1)
+        
+        let expect = expectation(description: "Waiting for response")
+        
+        KaobeiConnection.sendRequest(api: request) { (response) in
+            //let str = String(data: response.data ?? Data.init(), encoding: .utf8)!
+            //print(str)
+            print("Status result: \(response.result)")
+            switch response.result {
+            case .success(let data):
+                print("Type of data is: \(type(of: data))")
+                XCTAssert(type(of: data) == KBArticleList.self)
+                XCTAssertEqual(data.meta.pagination.currentPage, 1)
+                break
+            case .failure(let error):
+                XCTFail(error.errorDescription ?? "")
+                XCTFail("Faill to fetch data")
+                break
+            }
+            
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3) { error in
+            if let _ = error {
+                XCTFail("timeout")
+            }
+        }
     }
 
     func testPerformanceExample() throws {

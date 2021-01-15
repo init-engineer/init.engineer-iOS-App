@@ -8,32 +8,51 @@
 
 import Foundation
 
-struct KBArticleList: Codable {
+public struct KBArticleList: Codable {
     let data: [Article]
     let meta: Meta
 }
 
 // MARK: - Datum
-struct Article: Codable {
+public struct Article: Codable {
     let id: Int
     let content: String
     let image: String
     let createdAt, createdDiff, updatedAt, updatedDiff: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case content
+        case image
+        case createdAt = "created_at"
+        case createdDiff = "created_diff"
+        case updatedAt = "updated_at"
+        case updatedDiff = "updated_diff"
+    }
 }
 
 // MARK: - Meta
-struct Meta: Codable {
+public struct Meta: Codable {
     let pagination: Pagination
 }
 
 // MARK: - Pagination
-struct Pagination: Codable {
+public struct Pagination: Codable {
     let total, count, perPage, currentPage: Int
     let totalPages: Int
-    let links: Links
+    let links: Links?
+    
+    enum CodingKeys: String, CodingKey {
+        case total
+        case count
+        case perPage = "per_page"
+        case currentPage = "current_page"
+        case totalPages = "total_pages"
+        case links
+    }
 }
 
 // MARK: - Links
-struct Links: Codable {
-    let next: String
+public struct Links: Codable {
+    let next: String?
 }

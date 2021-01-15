@@ -10,5 +10,5 @@ import Foundation
 
 struct KaobeiURL {
     static let basePath = "https://kaobei.engineer/"
-    
+    static let articleList = "https://kaobei.engineer/api/frontend/social/cards?page="
 }
