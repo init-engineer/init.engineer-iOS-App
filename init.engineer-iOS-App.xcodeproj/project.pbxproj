@@ -23,6 +23,10 @@
 		85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6C3C625AC918B00544802 /* KaobeiURL.swift */; };
 		85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */; };
 		85AB734A25B1F4ED00F6238A /* KBArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */; };
+		85AB734E25B1FE6200F6238A /* KBGetArticleStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734D25B1FE6200F6238A /* KBGetArticleStats.swift */; };
+		85AB735225B1FE6E00F6238A /* KBArticleStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735125B1FE6E00F6238A /* KBArticleStats.swift */; };
+		85AB735625B2002500F6238A /* KBGetArticleComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735525B2002500F6238A /* KBGetArticleComments.swift */; };
+		85AB735D25B2003400F6238A /* KBArticleComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735C25B2003400F6238A /* KBArticleComments.swift */; };
 		85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */; };
 		85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CB253E9A2200CEA9DF /* KBArticleList.swift */; };
 		85C012CF253F25D900CEA9DF /* KBGetArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */; };
@@ -97,6 +101,10 @@
 		85A6C3C625AC918B00544802 /* KaobeiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiURL.swift; sourceTree = "<group>"; };
 		85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleDetail.swift; sourceTree = "<group>"; };
 		85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleDetail.swift; sourceTree = "<group>"; };
+		85AB734D25B1FE6200F6238A /* KBGetArticleStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleStats.swift; sourceTree = "<group>"; };
+		85AB735125B1FE6E00F6238A /* KBArticleStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleStats.swift; sourceTree = "<group>"; };
+		85AB735525B2002500F6238A /* KBGetArticleComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleComments.swift; sourceTree = "<group>"; };
+		85AB735C25B2003400F6238A /* KBArticleComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleComments.swift; sourceTree = "<group>"; };
 		85C012C4253E63AC00CEA9DF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiRequestProtocol.swift; sourceTree = "<group>"; };
 		85C012CB253E9A2200CEA9DF /* KBArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleList.swift; sourceTree = "<group>"; };
@@ -185,6 +193,8 @@
 			children = (
 				85C012CB253E9A2200CEA9DF /* KBArticleList.swift */,
 				85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */,
+				85AB735125B1FE6E00F6238A /* KBArticleStats.swift */,
+				85AB735C25B2003400F6238A /* KBArticleComments.swift */,
 			);
 			path = response;
 			sourceTree = "<group>";
@@ -194,6 +204,8 @@
 			children = (
 				85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */,
 				85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */,
+				85AB734D25B1FE6200F6238A /* KBGetArticleStats.swift */,
+				85AB735525B2002500F6238A /* KBGetArticleComments.swift */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -540,12 +552,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85AB735D25B2003400F6238A /* KBArticleComments.swift in Sources */,
 				85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */,
 				85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */,
+				85AB734E25B1FE6200F6238A /* KBGetArticleStats.swift in Sources */,
 				85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */,
 				85AB734A25B1F4ED00F6238A /* KBArticleDetail.swift in Sources */,
 				85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */,
+				85AB735625B2002500F6238A /* KBGetArticleComments.swift in Sources */,
 				85C012CF253F25D900CEA9DF /* KBGetArticleList.swift in Sources */,
+				85AB735225B1FE6E00F6238A /* KBArticleStats.swift in Sources */,
 				12C8B027253375430072F653 /* KaobeiConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

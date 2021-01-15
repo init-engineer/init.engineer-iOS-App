@@ -13,24 +13,6 @@ public struct KBArticleList: Codable {
     let meta: Meta
 }
 
-// MARK: - Datum
-public struct Article: Codable {
-    let id: Int
-    let content: String
-    let image: String
-    let createdAt, createdDiff, updatedAt, updatedDiff: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case content
-        case image
-        case createdAt = "created_at"
-        case createdDiff = "created_diff"
-        case updatedAt = "updated_at"
-        case updatedDiff = "updated_diff"
-    }
-}
-
 // MARK: - Meta
 public struct Meta: Codable {
     let pagination: Pagination
