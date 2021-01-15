@@ -10,18 +10,16 @@ import Foundation
 import Alamofire
 
 public class KaobeiConnection {
-    
-    
     static func sendRequest<T: KaobeiRequestProtocol>(api: T, apiData: @escaping (AFDataResponse<T.responseType>) -> ()){
-        let decoder = JSONDecoder()
         if let apiURL = api.getAPIRequestURL() {
-            AF.request(apiURL, method: api.method).responseDecodable(of: T.responseType.self) { (response) in
+            AF.request(apiURL, method: api.method, parameters: api.parameters, headers: api.headers).responseDecodable(of: T.responseType.self) { (response) in
                 switch response.result{
                     case .success(_):
+                        print("Data received")
                         break
                     case .failure(_):
                         if let status = response.response?.statusCode {
-                            print(status)
+                            print("Data failure with: \(status)")
                         }
                         break
                 }

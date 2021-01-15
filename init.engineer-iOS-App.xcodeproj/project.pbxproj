@@ -21,6 +21,8 @@
 		74688D99406E7F6D5E319A76 /* Pods_KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F75E0F325103C1EE1ECCB /* Pods_KaobeiAPI.framework */; };
 		7F83F980A3CA12F608CA42E9 /* Pods_KaobeiAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE7A59F8A3905C66DF470A /* Pods_KaobeiAPITests.framework */; };
 		85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6C3C625AC918B00544802 /* KaobeiURL.swift */; };
+		85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */; };
+		85AB734A25B1F4ED00F6238A /* KBArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */; };
 		85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */; };
 		85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CB253E9A2200CEA9DF /* KBArticleList.swift */; };
 		85C012CF253F25D900CEA9DF /* KBGetArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */; };
@@ -93,6 +95,8 @@
 		674F75E0F325103C1EE1ECCB /* Pods_KaobeiAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaobeiAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E61DE6AE35827733A6448BC /* Pods-init.engineer-iOS-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.debug.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.debug.xcconfig"; sourceTree = "<group>"; };
 		85A6C3C625AC918B00544802 /* KaobeiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiURL.swift; sourceTree = "<group>"; };
+		85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleDetail.swift; sourceTree = "<group>"; };
+		85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleDetail.swift; sourceTree = "<group>"; };
 		85C012C4253E63AC00CEA9DF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiRequestProtocol.swift; sourceTree = "<group>"; };
 		85C012CB253E9A2200CEA9DF /* KBArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleList.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				85C012CB253E9A2200CEA9DF /* KBArticleList.swift */,
+				85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */,
 			);
 			path = response;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */,
+				85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -535,7 +541,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */,
+				85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */,
 				85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */,
+				85AB734A25B1F4ED00F6238A /* KBArticleDetail.swift in Sources */,
 				85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */,
 				85C012CF253F25D900CEA9DF /* KBGetArticleList.swift in Sources */,
 				12C8B027253375430072F653 /* KaobeiConnection.swift in Sources */,
