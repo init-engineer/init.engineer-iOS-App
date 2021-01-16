@@ -16,9 +16,9 @@ struct KaobeiURL {
     static let articleDetail = "https://kaobei.engineer/api/frontend/social/cards/"
     static let articleDetailSuffix = "/show"
     //取得文章社群連結、讚數、分享數
-    static let articleStats = ""
+    static let articleStats = "/links"
     //取得文章回覆
-    static let articleComments = ""
+    static let articleComments = "/comments"
     //（AUTH：API）取得使用者個人資訊
     
     //（AUTH：API）取得自己文章列表
@@ -26,8 +26,6 @@ struct KaobeiURL {
     //（AUTH：API）發表文章
     
     //（AUTH：API）取得自己文章列表
-    
-    //（AUTH : TOKEN）發表文章
     
     //OAuth 取得授權碼
     
@@ -38,11 +36,5 @@ struct KaobeiURL {
     //（AUTH : API）將文章審核通過
     
     //（AUTH : API）將文章審核不通過
-    
-    //（AUTH : TOKEN）取得需要審核的文章列表
-    
-    //（AUTH : TOKEN）將文章審核通過
-    
-    //（AUTH : TOKEN）將文章審核不通過
     
 }
