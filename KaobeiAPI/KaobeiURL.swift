@@ -11,14 +11,13 @@ import Foundation
 struct KaobeiURL {
     static let basePath = "https://kaobei.engineer/"
     //取得文章列表
-    static let articleList = "https://kaobei.engineer/api/frontend/social/cards?page="
+    static let articleList = "https://kaobei.engineer/api/frontend/social/cards?page=%d"
     //取得文章詳細資訊
-    static let articleDetail = "https://kaobei.engineer/api/frontend/social/cards/"
-    static let articleDetailSuffix = "/show"
+    static let articleDetail = "https://kaobei.engineer/api/frontend/social/cards/%d/show"
     //取得文章社群連結、讚數、分享數
-    static let articleStats = "/links"
+    static let articleStats = "https://kaobei.engineer/api/frontend/social/cards/%d/links"
     //取得文章回覆
-    static let articleComments = "/comments"
+    static let articleComments = "https://kaobei.engineer/api/frontend/social/cards/%d/comments"
     //（AUTH：API）取得使用者個人資訊
     
     //（AUTH：API）取得自己文章列表

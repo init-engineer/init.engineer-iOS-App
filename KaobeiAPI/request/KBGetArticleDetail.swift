@@ -17,6 +17,6 @@ struct KBGetArticleDetail: KaobeiRequestProtocol {
     public typealias responseType = KBArticleDetail
     
     init(id: Int) {
-        apiPath = String(format: "%@%d%@", KaobeiURL.articleDetail, id, KaobeiURL.articleDetailSuffix)
+        apiPath = String(format: KaobeiURL.articleDetail, id)
     }
 }
