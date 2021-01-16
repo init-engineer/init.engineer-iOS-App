@@ -27,6 +27,11 @@
 		85AB735225B1FE6E00F6238A /* KBArticleStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735125B1FE6E00F6238A /* KBArticleStats.swift */; };
 		85AB735625B2002500F6238A /* KBGetArticleComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735525B2002500F6238A /* KBGetArticleComments.swift */; };
 		85AB735D25B2003400F6238A /* KBArticleComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735C25B2003400F6238A /* KBArticleComments.swift */; };
+		85AB736225B3597800F6238A /* GrantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB736125B3597800F6238A /* GrantRequest.swift */; };
+		85AB736625B3598900F6238A /* TokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB736525B3598900F6238A /* TokenRequest.swift */; };
+		85AB736B25B359C400F6238A /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB736A25B359C400F6238A /* KeyChainManager.swift */; };
+		85AB736F25B35C5800F6238A /* ResourceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB736E25B35C5800F6238A /* ResourceRequest.swift */; };
+		85AB737325B35E0200F6238A /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB737225B35E0200F6238A /* AuthenticationManager.swift */; };
 		85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */; };
 		85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CB253E9A2200CEA9DF /* KBArticleList.swift */; };
 		85C012CF253F25D900CEA9DF /* KBGetArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */; };
@@ -105,6 +110,11 @@
 		85AB735125B1FE6E00F6238A /* KBArticleStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleStats.swift; sourceTree = "<group>"; };
 		85AB735525B2002500F6238A /* KBGetArticleComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleComments.swift; sourceTree = "<group>"; };
 		85AB735C25B2003400F6238A /* KBArticleComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleComments.swift; sourceTree = "<group>"; };
+		85AB736125B3597800F6238A /* GrantRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantRequest.swift; sourceTree = "<group>"; };
+		85AB736525B3598900F6238A /* TokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequest.swift; sourceTree = "<group>"; };
+		85AB736A25B359C400F6238A /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		85AB736E25B35C5800F6238A /* ResourceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRequest.swift; sourceTree = "<group>"; };
+		85AB737225B35E0200F6238A /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		85C012C4253E63AC00CEA9DF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiRequestProtocol.swift; sourceTree = "<group>"; };
 		85C012CB253E9A2200CEA9DF /* KBArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleList.swift; sourceTree = "<group>"; };
@@ -164,6 +174,7 @@
 				85A6C3C625AC918B00544802 /* KaobeiURL.swift */,
 				85C012CD253F259400CEA9DF /* request */,
 				85C012CA253E99F800CEA9DF /* response */,
+				85AB736025B3589900F6238A /* authentication */,
 			);
 			path = KaobeiAPI;
 			sourceTree = "<group>";
@@ -186,6 +197,25 @@
 				08BE7A59F8A3905C66DF470A /* Pods_KaobeiAPITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85AB736025B3589900F6238A /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				85AB737225B35E0200F6238A /* AuthenticationManager.swift */,
+				85AB736125B3597800F6238A /* GrantRequest.swift */,
+				85AB736525B3598900F6238A /* TokenRequest.swift */,
+				85AB736E25B35C5800F6238A /* ResourceRequest.swift */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		85AB736925B359A300F6238A /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				85AB736A25B359C400F6238A /* KeyChainManager.swift */,
+			);
+			path = Token;
 			sourceTree = "<group>";
 		};
 		85C012CA253E99F800CEA9DF /* response */ = {
@@ -235,6 +265,7 @@
 		A7D2E849244DE50E00953132 /* init.engineer-iOS-App */ = {
 			isa = PBXGroup;
 			children = (
+				85AB736925B359A300F6238A /* Token */,
 				A7D2E84A244DE50E00953132 /* AppDelegate.swift */,
 				A7D2E84C244DE50E00953132 /* SceneDelegate.swift */,
 				C4DCC3E62487F1020061C1BD /* Data Model */,
@@ -554,13 +585,17 @@
 			files = (
 				85AB735D25B2003400F6238A /* KBArticleComments.swift in Sources */,
 				85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */,
+				85AB736225B3597800F6238A /* GrantRequest.swift in Sources */,
+				85AB737325B35E0200F6238A /* AuthenticationManager.swift in Sources */,
 				85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */,
+				85AB736625B3598900F6238A /* TokenRequest.swift in Sources */,
 				85AB734E25B1FE6200F6238A /* KBGetArticleStats.swift in Sources */,
 				85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */,
 				85AB734A25B1F4ED00F6238A /* KBArticleDetail.swift in Sources */,
 				85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */,
 				85AB735625B2002500F6238A /* KBGetArticleComments.swift in Sources */,
 				85C012CF253F25D900CEA9DF /* KBGetArticleList.swift in Sources */,
+				85AB736F25B35C5800F6238A /* ResourceRequest.swift in Sources */,
 				85AB735225B1FE6E00F6238A /* KBArticleStats.swift in Sources */,
 				12C8B027253375430072F653 /* KaobeiConnection.swift in Sources */,
 			);
@@ -585,6 +620,7 @@
 				12C64454248E129A005A2974 /* LoginController.swift in Sources */,
 				A7D2E84F244DE50E00953132 /* IndexTabController.swift in Sources */,
 				A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */,
+				85AB736B25B359C400F6238A /* KeyChainManager.swift in Sources */,
 				127FD91F248BAACF002E9645 /* DashboardTabController.swift in Sources */,
 				A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */,
 			);
