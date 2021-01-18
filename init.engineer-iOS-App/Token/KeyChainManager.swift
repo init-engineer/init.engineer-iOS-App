@@ -14,6 +14,9 @@ class KeyChainManager {
     private var token: String?
     private let serviceName = "kaobei" // This name should chance to a constant value in a secret constant file.
     
+    // TODO: Add passcode/biometry lock
+    // Can refer from :https://cocoapods.org/pods/KeychainAccess
+    
     func saveToken(_ token: String) {
         let key = Keychain(service: serviceName)
         self.token = token
