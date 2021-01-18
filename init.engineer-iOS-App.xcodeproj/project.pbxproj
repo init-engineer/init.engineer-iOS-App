@@ -114,6 +114,7 @@
 		85AB73BD25B4A8E300F6238A /* TokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenRequest.swift; sourceTree = "<group>"; };
 		85AB73BE25B4A8E300F6238A /* GrantRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrantRequest.swift; sourceTree = "<group>"; };
 		85AB73BF25B4A8E300F6238A /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		85AB740725B564F300F6238A /* 純靠北工程師.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "純靠北工程師.entitlements"; sourceTree = "<group>"; };
 		85C012C4253E63AC00CEA9DF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiRequestProtocol.swift; sourceTree = "<group>"; };
 		85C012CB253E9A2200CEA9DF /* KBArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleList.swift; sourceTree = "<group>"; };
@@ -264,6 +265,7 @@
 		A7D2E849244DE50E00953132 /* init.engineer-iOS-App */ = {
 			isa = PBXGroup;
 			children = (
+				85AB740725B564F300F6238A /* 純靠北工程師.entitlements */,
 				85AB73BB25B4A8BE00F6238A /* authentication */,
 				85AB736925B359A300F6238A /* Token */,
 				A7D2E84A244DE50E00953132 /* AppDelegate.swift */,
@@ -410,7 +412,7 @@
 		A7D2E83F244DE50E00953132 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Kantai Developer";
 				TargetAttributes = {
@@ -897,6 +899,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E27MCP7UYM;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
@@ -907,6 +910,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tico88612.init-engineer-iOS-App";
 				PRODUCT_NAME = "純靠北工程師";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -918,6 +922,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E27MCP7UYM;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
@@ -928,6 +933,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tico88612.init-engineer-iOS-App";
 				PRODUCT_NAME = "純靠北工程師";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
