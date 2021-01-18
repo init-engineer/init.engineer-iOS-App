@@ -19,5 +19,8 @@ class LoginController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func loginBtn(_ sender: Any) {
+        AuthenticationManager.loginWithKaobeiAccount() { token in
+            print("Get: \(token)")
+        }
     }
 }

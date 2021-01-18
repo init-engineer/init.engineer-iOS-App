@@ -23,14 +23,6 @@ enum AuthorizationServer {
 
 public class AuthenticationManager {
     
-    static func loginWithGithub(complite token: @escaping (String) -> ()) {
-        
-    }
-    
-    static func loginWithBitbucket(complite token: @escaping (String) -> ()) {
-        
-    }
-    
     static func loginWithOauth2(server: AuthorizationServer, complite accessToken: @escaping (String) -> ()) { // Use this one if the flow is same, and remove others
         GrantRequest.get() {(grant) in
             TokenRequest.get(with: grant) {(token) in
@@ -39,7 +31,7 @@ public class AuthenticationManager {
         }
     }
     
-    static func loginWithKaobeiAccount() {
+    static func loginWithKaobeiAccount(complite token: @escaping (String) -> ()) {
         
     }
     
