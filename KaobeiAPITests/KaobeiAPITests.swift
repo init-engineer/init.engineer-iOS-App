@@ -52,6 +52,100 @@ class KaobeiAPITests: XCTestCase {
             }
         }
     }
+    
+    func testArticleDetail() throws {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let request = KBGetArticleDetail.init(id: 5000)
+        
+        let expect = expectation(description: "Waiting for response")
+        
+        KaobeiConnection.sendRequest(api: request) { (response) in
+            //let str = String(data: response.data ?? Data.init(), encoding: .utf8)!
+            //print(str)
+            print("Status result: \(response.result)")
+            switch response.result {
+            case .success(let data):
+                print("Type of data is: \(type(of: data))")
+                XCTAssert(type(of: data) == KBArticleDetail.self)
+                XCTAssertEqual(data.data.id, 5000)
+                break
+            case .failure(let error):
+                XCTFail(error.errorDescription ?? "")
+                XCTFail("Faill to fetch data")
+                break
+            }
+            
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3) { error in
+            if let _ = error {
+                XCTFail("timeout")
+            }
+        }
+    }
+    
+    func testArticleStats() throws {
+        
+    }
+    
+    func testArticleComments() throws {
+        
+    }
+    
+    func testUserProfile() throws {
+        
+    }
+    
+    func testUserPosts() throws {
+        
+    }
+    
+    func testUserPublishing() throws {
+        
+    }
+    
+    func testRequestGrant() throws { // looks like this one should be removed
+        
+    }
+    
+    func testRequestToken() throws { // looks like this one should be removed
+        
+    }
+    
+    func testArticleReviewList() throws {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let request = KBGetArticleReviewList.init(accessToken: "")
+        
+        let expect = expectation(description: "Waiting for response")
+        
+        KaobeiConnection.sendRequest(api: request) { (response) in
+            //let str = String(data: response.data ?? Data.init(), encoding: .utf8)!
+            //print(str)
+            print("Status result: \(response.result)")
+            switch response.result {
+            case .success(let data):
+                print("Type of data is: \(type(of: data))")
+                XCTAssert(type(of: data) == KBArticleReviewList.self)
+                XCTAssertEqual(data.data.count, data.meta.pagination.count)
+                break
+            case .failure(let error):
+                XCTFail(error.errorDescription ?? "")
+                XCTFail("Faill to fetch data")
+                break
+            }
+            
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3) { error in
+            if let _ = error {
+                XCTFail("timeout")
+            }
+        }
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

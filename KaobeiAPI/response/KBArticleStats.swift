@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct KBGetArticleStats {
+public struct KBArticleStats: Codable {
     let data: [StatsSource]
 }
 
 // MARK: - Datum
-struct StatsSource {
+struct StatsSource: Codable {
     let type, connections: String
     let url: String
     let like, share: Int

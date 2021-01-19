@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import Alamofire
+
+struct KBGetArticleComments: KaobeiRequestProtocol {
+    var apiPath: String
+    
+    var method: HTTPMethod = .get
+    
+    public typealias responseType = KBArticleComments
+    
+    init(id: Int, page: Int = 1) {
+        apiPath = String(format: KaobeiURL.articleComments, id, page)
+    }
+}
+

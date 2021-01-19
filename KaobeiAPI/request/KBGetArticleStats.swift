@@ -7,4 +7,16 @@
 //
 
 import Foundation
+import Alamofire
 
+struct KBGetArticleStats: KaobeiRequestProtocol {
+    var apiPath: String
+    
+    var method: HTTPMethod = .get
+    
+    public typealias responseType = KBArticleStats
+    
+    init(id: Int) {
+        apiPath = String(format: KaobeiURL.articleStats, id)
+    }
+}

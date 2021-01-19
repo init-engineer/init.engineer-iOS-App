@@ -9,18 +9,18 @@
 import Foundation
 
 // MARK: - Welcome
-public struct KBArticleComments {
+public struct KBArticleComments: Codable {
     let data: [Comment]
     let meta: Meta
 }
 
 // MARK: - Datum
-struct Comment {
+struct Comment: Codable {
     let name, avatar, content, created: String
     let media: Media
 }
 
 // MARK: - Media
-struct Media {
+struct Media: Codable {
     let type, connections: String
 }
