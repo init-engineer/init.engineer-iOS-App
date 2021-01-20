@@ -25,13 +25,11 @@ class KeyChainManager {
     
     func getToken() -> String? {
         if self.token == nil {
-            var token: String?
             let key = Keychain(service: serviceName)
-            token = key["token"]
-            self.token = token
+            self.token = key["token"]
         }
         
-        return self.token!
+        return self.token
     }
     
     func deleteToken() {
