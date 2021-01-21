@@ -13,7 +13,12 @@ class DashboardTabController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if let accessToken = KeyChainManager.shared.getToken() {
+            print(accessToken)
+        }
+        else {
+            self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
+        }
     }
 
 

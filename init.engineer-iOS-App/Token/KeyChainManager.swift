@@ -12,7 +12,7 @@ import KeychainAccess
 class KeyChainManager {
     static let shared = KeyChainManager()
     private var token: String?
-    private let serviceName = "kaobei" // This name should chance to a constant value in a secret constant file.
+    private let serviceName = K.getInfoPlistByKey("Keychain Service Name")!
     
     // TODO: Add passcode/biometry lock
     // Can refer from :https://cocoapods.org/pods/KeychainAccess
