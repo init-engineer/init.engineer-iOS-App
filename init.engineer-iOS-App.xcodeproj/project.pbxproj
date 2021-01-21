@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011A7F81433BD78B6944CA62 /* Pods_init_engineer_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D02188F77B62C9B4DF421A /* Pods_init_engineer_iOS_App.framework */; };
+		0881FFC1687649BE8C1939EC /* Pods_KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC44641C6C82E7D81C2169A /* Pods_KaobeiAPI.framework */; };
 		127FD91B248BAAA4002E9645 /* ArticleTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FD91A248BAAA4002E9645 /* ArticleTabController.swift */; };
 		127FD91D248BAAC1002E9645 /* PublishTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FD91C248BAAC1002E9645 /* PublishTabController.swift */; };
 		127FD91F248BAACF002E9645 /* DashboardTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FD91E248BAACF002E9645 /* DashboardTabController.swift */; };
@@ -18,6 +20,7 @@
 		12C8B01C2533750C0072F653 /* KaobeiAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		12C8B027253375430072F653 /* KaobeiConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8B026253375430072F653 /* KaobeiConnection.swift */; };
 		12CA61C9248C1B580020E606 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA61C8248C1B580020E606 /* ArticleViewController.swift */; };
+		19A7A7371DAC5393260A287D /* Pods_KaobeiAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6AF4F39385A0B08C5A553C /* Pods_KaobeiAPITests.framework */; };
 		85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6C3C625AC918B00544802 /* KaobeiURL.swift */; };
 		85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */; };
 		85AB734A25B1F4ED00F6238A /* KBArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */; };
@@ -25,6 +28,7 @@
 		85AB735225B1FE6E00F6238A /* KBArticleStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735125B1FE6E00F6238A /* KBArticleStats.swift */; };
 		85AB735625B2002500F6238A /* KBGetArticleComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735525B2002500F6238A /* KBGetArticleComments.swift */; };
 		85AB735D25B2003400F6238A /* KBArticleComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735C25B2003400F6238A /* KBArticleComments.swift */; };
+		85AB736B25B359C400F6238A /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB736A25B359C400F6238A /* KeyChainManager.swift */; };
 		85AB742125B7603100F6238A /* KBGetUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742025B7603100F6238A /* KBGetUserProfile.swift */; };
 		85AB742525B7604900F6238A /* KBGetUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742425B7604900F6238A /* KBGetUserPosts.swift */; };
 		85AB742925B7605800F6238A /* KBPostUserPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742825B7605800F6238A /* KBPostUserPublishing.swift */; };
@@ -42,7 +46,6 @@
 		85AB745925B7611D00F6238A /* KBArticleVoteAye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */; };
 		85AB745D25B7612900F6238A /* KBArticleVoteNay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */; };
 		85AB746125B762D500F6238A /* KBCommonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB746025B762D500F6238A /* KBCommonTypes.swift */; };
-		85AB736B25B359C400F6238A /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB736A25B359C400F6238A /* KeyChainManager.swift */; };
 		85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */; };
 		85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CB253E9A2200CEA9DF /* KBArticleList.swift */; };
 		85C012CF253F25D900CEA9DF /* KBGetArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */; };
@@ -100,6 +103,7 @@
 		127FD91A248BAAA4002E9645 /* ArticleTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTabController.swift; sourceTree = "<group>"; };
 		127FD91C248BAAC1002E9645 /* PublishTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishTabController.swift; sourceTree = "<group>"; };
 		127FD91E248BAACF002E9645 /* DashboardTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabController.swift; sourceTree = "<group>"; };
+		12BBBADBC235401597761DDE /* Pods-init.engineer-iOS-App.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.staging.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.staging.xcconfig"; sourceTree = "<group>"; };
 		12C64453248E129A005A2974 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		12C8B0062533750C0072F653 /* KaobeiAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KaobeiAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C8B0082533750C0072F653 /* KaobeiAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KaobeiAPI.h; sourceTree = "<group>"; };
@@ -109,6 +113,12 @@
 		12C8B0172533750C0072F653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12C8B026253375430072F653 /* KaobeiConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiConnection.swift; sourceTree = "<group>"; };
 		12CA61C8248C1B580020E606 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		25E9CA91079871EB6E8A4C84 /* Pods-KaobeiAPITests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPITests.staging.xcconfig"; path = "Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests.staging.xcconfig"; sourceTree = "<group>"; };
+		546A52BA299D9C3DCB7AAB2E /* Pods-init.engineer-iOS-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.debug.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.debug.xcconfig"; sourceTree = "<group>"; };
+		5CC44641C6C82E7D81C2169A /* Pods_KaobeiAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaobeiAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D02188F77B62C9B4DF421A /* Pods_init_engineer_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_init_engineer_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF4A8C2324C724E21FF0DDF /* Pods-KaobeiAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPI.release.xcconfig"; path = "Target Support Files/Pods-KaobeiAPI/Pods-KaobeiAPI.release.xcconfig"; sourceTree = "<group>"; };
+		82D820903B5F9E348B505004 /* Pods-KaobeiAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPITests.debug.xcconfig"; path = "Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests.debug.xcconfig"; sourceTree = "<group>"; };
 		85A6C3C625AC918B00544802 /* KaobeiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiURL.swift; sourceTree = "<group>"; };
 		85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleDetail.swift; sourceTree = "<group>"; };
 		85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleDetail.swift; sourceTree = "<group>"; };
@@ -116,6 +126,8 @@
 		85AB735125B1FE6E00F6238A /* KBArticleStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleStats.swift; sourceTree = "<group>"; };
 		85AB735525B2002500F6238A /* KBGetArticleComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleComments.swift; sourceTree = "<group>"; };
 		85AB735C25B2003400F6238A /* KBArticleComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleComments.swift; sourceTree = "<group>"; };
+		85AB736A25B359C400F6238A /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		85AB740725B564F300F6238A /* 純靠北工程師.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "純靠北工程師.entitlements"; sourceTree = "<group>"; };
 		85AB742025B7603100F6238A /* KBGetUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetUserProfile.swift; sourceTree = "<group>"; };
 		85AB742425B7604900F6238A /* KBGetUserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetUserPosts.swift; sourceTree = "<group>"; };
 		85AB742825B7605800F6238A /* KBPostUserPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBPostUserPublishing.swift; sourceTree = "<group>"; };
@@ -133,8 +145,6 @@
 		85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleVoteAye.swift; sourceTree = "<group>"; };
 		85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleVoteNay.swift; sourceTree = "<group>"; };
 		85AB746025B762D500F6238A /* KBCommonTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBCommonTypes.swift; sourceTree = "<group>"; };
-		85AB736A25B359C400F6238A /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
-		85AB740725B564F300F6238A /* 純靠北工程師.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "純靠北工程師.entitlements"; sourceTree = "<group>"; };
 		85C012C4253E63AC00CEA9DF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiRequestProtocol.swift; sourceTree = "<group>"; };
 		85C012CB253E9A2200CEA9DF /* KBArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleList.swift; sourceTree = "<group>"; };
@@ -148,11 +158,16 @@
 		A7D2E856244DE50F00953132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7D2E859244DE50F00953132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7D2E85B244DE50F00953132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2FC4893AB8F71E6DB6F0830 /* Pods-KaobeiAPI.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPI.staging.xcconfig"; path = "Target Support Files/Pods-KaobeiAPI/Pods-KaobeiAPI.staging.xcconfig"; sourceTree = "<group>"; };
+		BB64078BB32035F0DE07E9F0 /* Pods-KaobeiAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPI.debug.xcconfig"; path = "Target Support Files/Pods-KaobeiAPI/Pods-KaobeiAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		C45A3A1B25B9363F00F484F1 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		C45A3A2525B9372E00F484F1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		C45A3A3025B945C600F484F1 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		C45A3A4E25B9897300F484F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fixedsys500c.ttf; sourceTree = "<group>"; };
+		DF6AF4F39385A0B08C5A553C /* Pods_KaobeiAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaobeiAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E417F87633043DC2066422C8 /* Pods-init.engineer-iOS-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.release.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.release.xcconfig"; sourceTree = "<group>"; };
+		EB8B05CEF044A6C92F664071 /* Pods-KaobeiAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPITests.release.xcconfig"; path = "Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0881FFC1687649BE8C1939EC /* Pods_KaobeiAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12C8B00F2533750C0072F653 /* KaobeiAPI.framework in Frameworks */,
+				19A7A7371DAC5393260A287D /* Pods_KaobeiAPITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12C8B01B2533750C0072F653 /* KaobeiAPI.framework in Frameworks */,
+				011A7F81433BD78B6944CA62 /* Pods_init_engineer_iOS_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				85C012C4253E63AC00CEA9DF /* Alamofire.framework */,
+				5CC44641C6C82E7D81C2169A /* Pods_KaobeiAPI.framework */,
+				DF6AF4F39385A0B08C5A553C /* Pods_KaobeiAPITests.framework */,
+				68D02188F77B62C9B4DF421A /* Pods_init_engineer_iOS_App.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -352,6 +373,15 @@
 		C6D4AA7D36DF06C8FA96CF7B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				BB64078BB32035F0DE07E9F0 /* Pods-KaobeiAPI.debug.xcconfig */,
+				6AF4A8C2324C724E21FF0DDF /* Pods-KaobeiAPI.release.xcconfig */,
+				B2FC4893AB8F71E6DB6F0830 /* Pods-KaobeiAPI.staging.xcconfig */,
+				82D820903B5F9E348B505004 /* Pods-KaobeiAPITests.debug.xcconfig */,
+				EB8B05CEF044A6C92F664071 /* Pods-KaobeiAPITests.release.xcconfig */,
+				25E9CA91079871EB6E8A4C84 /* Pods-KaobeiAPITests.staging.xcconfig */,
+				546A52BA299D9C3DCB7AAB2E /* Pods-init.engineer-iOS-App.debug.xcconfig */,
+				E417F87633043DC2066422C8 /* Pods-init.engineer-iOS-App.release.xcconfig */,
+				12BBBADBC235401597761DDE /* Pods-init.engineer-iOS-App.staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -374,6 +404,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12C8B0222533750C0072F653 /* Build configuration list for PBXNativeTarget "KaobeiAPI" */;
 			buildPhases = (
+				D41EB112B5DA517EE6F1B7B1 /* [CP] Check Pods Manifest.lock */,
 				12C8B0012533750C0072F653 /* Headers */,
 				12C8B0022533750C0072F653 /* Sources */,
 				12C8B0032533750C0072F653 /* Frameworks */,
@@ -392,9 +423,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12C8B0232533750C0072F653 /* Build configuration list for PBXNativeTarget "KaobeiAPITests" */;
 			buildPhases = (
+				F3BCB6EC37483996162AD42A /* [CP] Check Pods Manifest.lock */,
 				12C8B00A2533750C0072F653 /* Sources */,
 				12C8B00B2533750C0072F653 /* Frameworks */,
 				12C8B00C2533750C0072F653 /* Resources */,
+				4E646F6180B01D36D74791D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,10 +444,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D2E85E244DE50F00953132 /* Build configuration list for PBXNativeTarget "init.engineer-iOS-App" */;
 			buildPhases = (
+				0C50DCA77E9BDA9658A8D377 /* [CP] Check Pods Manifest.lock */,
 				A7D2E843244DE50E00953132 /* Sources */,
 				A7D2E844244DE50E00953132 /* Frameworks */,
 				A7D2E845244DE50E00953132 /* Resources */,
 				12C8B01D2533750C0072F653 /* Embed Frameworks */,
+				45F2616B904A1F5FA820E8E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -497,6 +532,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C50DCA77E9BDA9658A8D377 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-init.engineer-iOS-App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45F2616B904A1F5FA820E8E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E646F6180B01D36D74791D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D41EB112B5DA517EE6F1B7B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KaobeiAPI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3BCB6EC37483996162AD42A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KaobeiAPITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		12C8B0022533750C0072F653 /* Sources */ = {
@@ -602,6 +740,7 @@
 /* Begin XCBuildConfiguration section */
 		12C8B01E2533750C0072F653 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB64078BB32035F0DE07E9F0 /* Pods-KaobeiAPI.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -634,6 +773,7 @@
 		};
 		12C8B01F2533750C0072F653 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AF4A8C2324C724E21FF0DDF /* Pods-KaobeiAPI.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -665,6 +805,7 @@
 		};
 		12C8B0202533750C0072F653 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82D820903B5F9E348B505004 /* Pods-KaobeiAPITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -687,6 +828,7 @@
 		};
 		12C8B0212533750C0072F653 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB8B05CEF044A6C92F664071 /* Pods-KaobeiAPITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -825,10 +967,12 @@
 		};
 		A7D2E85F244DE50F00953132 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 546A52BA299D9C3DCB7AAB2E /* Pods-init.engineer-iOS-App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E27MCP7UYM;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
@@ -847,10 +991,12 @@
 		};
 		A7D2E860244DE50F00953132 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E417F87633043DC2066422C8 /* Pods-init.engineer-iOS-App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E27MCP7UYM;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
@@ -924,10 +1070,12 @@
 		};
 		C45A3A3225B945F800F484F1 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12BBBADBC235401597761DDE /* Pods-init.engineer-iOS-App.staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E27MCP7UYM;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
@@ -946,6 +1094,7 @@
 		};
 		C45A3A3325B945F800F484F1 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2FC4893AB8F71E6DB6F0830 /* Pods-KaobeiAPI.staging.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -977,6 +1126,7 @@
 		};
 		C45A3A3425B945F800F484F1 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E9CA91079871EB6E8A4C84 /* Pods-KaobeiAPITests.staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
