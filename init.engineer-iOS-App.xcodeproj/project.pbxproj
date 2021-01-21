@@ -32,20 +32,17 @@
 		85AB742125B7603100F6238A /* KBGetUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742025B7603100F6238A /* KBGetUserProfile.swift */; };
 		85AB742525B7604900F6238A /* KBGetUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742425B7604900F6238A /* KBGetUserPosts.swift */; };
 		85AB742925B7605800F6238A /* KBPostUserPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742825B7605800F6238A /* KBPostUserPublishing.swift */; };
-		85AB742D25B7606E00F6238A /* KBGetRequestGrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742C25B7606E00F6238A /* KBGetRequestGrant.swift */; };
-		85AB743125B7607D00F6238A /* KBPostRequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB743025B7607D00F6238A /* KBPostRequestToken.swift */; };
 		85AB743525B7609000F6238A /* KBGetArticleReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB743425B7609000F6238A /* KBGetArticleReviewList.swift */; };
 		85AB743925B760A100F6238A /* KBGetArticleVoteAye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB743825B760A100F6238A /* KBGetArticleVoteAye.swift */; };
 		85AB743D25B760B100F6238A /* KBGetArticleVoteNay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB743C25B760B100F6238A /* KBGetArticleVoteNay.swift */; };
 		85AB744125B760C600F6238A /* KBUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB744025B760C600F6238A /* KBUserProfile.swift */; };
 		85AB744525B760D500F6238A /* KBUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB744425B760D500F6238A /* KBUserPosts.swift */; };
 		85AB744925B760E700F6238A /* KBUserPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB744825B760E700F6238A /* KBUserPublishing.swift */; };
-		85AB744D25B760F500F6238A /* KBRequestGrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB744C25B760F500F6238A /* KBRequestGrant.swift */; };
-		85AB745125B7610500F6238A /* KBRequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745025B7610500F6238A /* KBRequestToken.swift */; };
 		85AB745525B7611100F6238A /* KBArticleReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745425B7611100F6238A /* KBArticleReviewList.swift */; };
 		85AB745925B7611D00F6238A /* KBArticleVoteAye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */; };
 		85AB745D25B7612900F6238A /* KBArticleVoteNay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */; };
 		85AB746125B762D500F6238A /* KBCommonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB746025B762D500F6238A /* KBCommonTypes.swift */; };
+		85AB74B425BA2EFE00F6238A /* TestingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB74B325BA2EFE00F6238A /* TestingConstants.swift */; };
 		85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */; };
 		85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CB253E9A2200CEA9DF /* KBArticleList.swift */; };
 		85C012CF253F25D900CEA9DF /* KBGetArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */; };
@@ -131,20 +128,17 @@
 		85AB742025B7603100F6238A /* KBGetUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetUserProfile.swift; sourceTree = "<group>"; };
 		85AB742425B7604900F6238A /* KBGetUserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetUserPosts.swift; sourceTree = "<group>"; };
 		85AB742825B7605800F6238A /* KBPostUserPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBPostUserPublishing.swift; sourceTree = "<group>"; };
-		85AB742C25B7606E00F6238A /* KBGetRequestGrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetRequestGrant.swift; sourceTree = "<group>"; };
-		85AB743025B7607D00F6238A /* KBPostRequestToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBPostRequestToken.swift; sourceTree = "<group>"; };
 		85AB743425B7609000F6238A /* KBGetArticleReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleReviewList.swift; sourceTree = "<group>"; };
 		85AB743825B760A100F6238A /* KBGetArticleVoteAye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleVoteAye.swift; sourceTree = "<group>"; };
 		85AB743C25B760B100F6238A /* KBGetArticleVoteNay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleVoteNay.swift; sourceTree = "<group>"; };
 		85AB744025B760C600F6238A /* KBUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBUserProfile.swift; sourceTree = "<group>"; };
 		85AB744425B760D500F6238A /* KBUserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBUserPosts.swift; sourceTree = "<group>"; };
 		85AB744825B760E700F6238A /* KBUserPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBUserPublishing.swift; sourceTree = "<group>"; };
-		85AB744C25B760F500F6238A /* KBRequestGrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBRequestGrant.swift; sourceTree = "<group>"; };
-		85AB745025B7610500F6238A /* KBRequestToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBRequestToken.swift; sourceTree = "<group>"; };
 		85AB745425B7611100F6238A /* KBArticleReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleReviewList.swift; sourceTree = "<group>"; };
 		85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleVoteAye.swift; sourceTree = "<group>"; };
 		85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleVoteNay.swift; sourceTree = "<group>"; };
 		85AB746025B762D500F6238A /* KBCommonTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBCommonTypes.swift; sourceTree = "<group>"; };
+		85AB74B325BA2EFE00F6238A /* TestingConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingConstants.swift; sourceTree = "<group>"; };
 		85C012C4253E63AC00CEA9DF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiRequestProtocol.swift; sourceTree = "<group>"; };
 		85C012CB253E9A2200CEA9DF /* KBArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleList.swift; sourceTree = "<group>"; };
@@ -218,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				12C8B0152533750C0072F653 /* KaobeiAPITests.swift */,
+				85AB74B325BA2EFE00F6238A /* TestingConstants.swift */,
 				12C8B0172533750C0072F653 /* Info.plist */,
 			);
 			path = KaobeiAPITests;
@@ -253,8 +248,6 @@
 				85AB744025B760C600F6238A /* KBUserProfile.swift */,
 				85AB744425B760D500F6238A /* KBUserPosts.swift */,
 				85AB744825B760E700F6238A /* KBUserPublishing.swift */,
-				85AB744C25B760F500F6238A /* KBRequestGrant.swift */,
-				85AB745025B7610500F6238A /* KBRequestToken.swift */,
 				85AB745425B7611100F6238A /* KBArticleReviewList.swift */,
 				85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */,
 				85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */,
@@ -272,8 +265,6 @@
 				85AB742025B7603100F6238A /* KBGetUserProfile.swift */,
 				85AB742425B7604900F6238A /* KBGetUserPosts.swift */,
 				85AB742825B7605800F6238A /* KBPostUserPublishing.swift */,
-				85AB742C25B7606E00F6238A /* KBGetRequestGrant.swift */,
-				85AB743025B7607D00F6238A /* KBPostRequestToken.swift */,
 				85AB743425B7609000F6238A /* KBGetArticleReviewList.swift */,
 				85AB743825B760A100F6238A /* KBGetArticleVoteAye.swift */,
 				85AB743C25B760B100F6238A /* KBGetArticleVoteNay.swift */,
@@ -641,13 +632,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85AB743125B7607D00F6238A /* KBPostRequestToken.swift in Sources */,
 				85AB745525B7611100F6238A /* KBArticleReviewList.swift in Sources */,
 				85AB735D25B2003400F6238A /* KBArticleComments.swift in Sources */,
 				85AB743525B7609000F6238A /* KBGetArticleReviewList.swift in Sources */,
 				85AB744125B760C600F6238A /* KBUserProfile.swift in Sources */,
 				85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */,
-				85AB744D25B760F500F6238A /* KBRequestGrant.swift in Sources */,
 				85AB742925B7605800F6238A /* KBPostUserPublishing.swift in Sources */,
 				85AB744525B760D500F6238A /* KBUserPosts.swift in Sources */,
 				85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */,
@@ -657,7 +646,6 @@
 				85AB746125B762D500F6238A /* KBCommonTypes.swift in Sources */,
 				85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */,
 				85AB735625B2002500F6238A /* KBGetArticleComments.swift in Sources */,
-				85AB742D25B7606E00F6238A /* KBGetRequestGrant.swift in Sources */,
 				85AB744925B760E700F6238A /* KBUserPublishing.swift in Sources */,
 				85AB743925B760A100F6238A /* KBGetArticleVoteAye.swift in Sources */,
 				85AB742525B7604900F6238A /* KBGetUserPosts.swift in Sources */,
@@ -667,7 +655,6 @@
 				85AB743D25B760B100F6238A /* KBGetArticleVoteNay.swift in Sources */,
 				85AB742125B7603100F6238A /* KBGetUserProfile.swift in Sources */,
 				85AB745D25B7612900F6238A /* KBArticleVoteNay.swift in Sources */,
-				85AB745125B7610500F6238A /* KBRequestToken.swift in Sources */,
 				12C8B027253375430072F653 /* KaobeiConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85AB74B425BA2EFE00F6238A /* TestingConstants.swift in Sources */,
 				12C8B0162533750C0072F653 /* KaobeiAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,7 +732,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -981,7 +969,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tico88612.init-engineer-iOS-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer-iOS-App";
 				PRODUCT_NAME = "純靠北工程師";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1005,7 +993,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tico88612.init-engineer-iOS-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer-iOS-App";
 				PRODUCT_NAME = "純靠北工程師";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1084,7 +1072,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tico88612.init-engineer-iOS-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer-iOS-App";
 				PRODUCT_NAME = "純靠北工程師";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
