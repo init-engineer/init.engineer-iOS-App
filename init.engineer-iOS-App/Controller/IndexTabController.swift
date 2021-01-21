@@ -26,7 +26,7 @@ class IndexTabController: UIViewController, SFSafariViewControllerDelegate {
         let urlString = "https://kaobei.engineer/animal/kohlrabi"
 
         if let url = URL(string: urlString) {
-            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            let vc = SFSafariViewController(url: url)
             vc.delegate = self
 
             present(vc, animated: true)
@@ -36,7 +36,7 @@ class IndexTabController: UIViewController, SFSafariViewControllerDelegate {
         let urlString = "https://www.facebook.com/init.kobeengineer"
 
         if let url = URL(string: urlString) {
-            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            let vc = SFSafariViewController(url: url)
             vc.delegate = self
 
             present(vc, animated: true)
@@ -46,7 +46,7 @@ class IndexTabController: UIViewController, SFSafariViewControllerDelegate {
         let urlString = "https://twitter.com/kaobei_engineer"
 
         if let url = URL(string: urlString) {
-            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            let vc = SFSafariViewController(url: url)
             vc.delegate = self
 
             present(vc, animated: true)
@@ -56,7 +56,7 @@ class IndexTabController: UIViewController, SFSafariViewControllerDelegate {
         let urlString = "https://www.plurk.com/kaobei_engineer"
 
         if let url = URL(string: urlString) {
-            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            let vc = SFSafariViewController(url: url)
             vc.delegate = self
 
             present(vc, animated: true)
