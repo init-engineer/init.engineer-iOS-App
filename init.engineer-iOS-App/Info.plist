@@ -18,8 +18,20 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Keychain Service Name</key>
+	<string>$(KEYCHAIN_SERVICE_NAME)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>OAuth2 Client ID</key>
+	<string>$(OAUTH2_CLIENT_ID)</string>
+	<key>OAuth2 Client Secret</key>
+	<string>$(OAUTH2_CLIENT_SECRET)</string>
+	<key>OAuth2 Redirect URI</key>
+	<string>$(OAUTH2_SCHEME)://$(OAUTH2_PATH)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fixedsys500c.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -53,10 +65,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Fixedsys500c.ttf</string>
-	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -64,13 +72,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>OAuth2 Client ID</key>
-	<string>$(OAUTH2_CLIENT_ID)</string>
-	<key>OAuth2 Client Secret</key>
-	<string>$(OAUTH2_CLIENT_SECRET)</string>
-	<key>OAuth2 Redirect URI</key>
-	<string>$(OAUTH2_SCHEME)://$(OAUTH2_PATH)</string>
-	<key>Keychain Service Name</key>
-	<string>$(KEYCHAIN_SERVICE_NAME)</string>
 </dict>
 </plist>

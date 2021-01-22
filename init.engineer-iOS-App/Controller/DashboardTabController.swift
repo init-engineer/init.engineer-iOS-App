@@ -13,6 +13,9 @@ class DashboardTabController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if let accessToken = KeyChainManager.shared.getToken() {
             print(accessToken)
         }
