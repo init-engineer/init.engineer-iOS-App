@@ -7,3 +7,30 @@
 //
 
 import Foundation
+import Alamofire
+
+struct KBGetArticleVoteNay: KaobeiRequestProtocol {
+    var apiPath: String
+    
+    var method: HTTPMethod = .get
+    
+    var token: String
+    
+    public typealias responseType = KBArticleVoteNay
+    
+    var headers: HTTPHeaders? {
+        var header = HTTPHeaders()
+        let authorization = "Bearer \(token)"
+        
+        header.add(name: "Accept", value: "application/json")
+        header.add(name: "Content-Type", value: "application/x-www-form-urlencoded")
+        header.add(name: "Authorization", value: authorization)
+        
+        return header
+    }
+    
+    init(accessToken: String, id: Int) {
+        apiPath = String(format: KaobeiURL.articleVoteNay, id)
+        self.token = accessToken
+    }
+}

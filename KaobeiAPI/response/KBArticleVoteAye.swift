@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct KBArticleVoteAye: Codable {
+    let data: VotedArticle
+}

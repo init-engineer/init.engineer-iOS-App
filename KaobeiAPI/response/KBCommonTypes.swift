@@ -34,3 +34,18 @@ public struct Links: Codable {
     let next: String?
 }
 
+struct VotedArticle: Codable {
+    let id: Int
+    let content: String
+    let image: String
+    let succeeded, failed: Int
+    let createdAt, createdDiff, updatedAt, updatedDiff: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, content, image, succeeded, failed
+        case createdAt = "created_at"
+        case createdDiff = "created_diff"
+        case updatedAt = "updated_at"
+        case updatedDiff = "updated_diff"
+    }
+}
