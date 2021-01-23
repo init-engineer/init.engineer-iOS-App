@@ -29,7 +29,7 @@ struct KaobeiURL {
     //OAuth 取得 access_token
     static let requestToken = "https://kaobei.engineer/oauth/token"
     //（AUTH : API）取得需要審核的文章列表
-    static let articleReviewList = "http://kaobei.engineer/api/frontend/social/cards/api/review"
+    static let articleReviewList = "https://kaobei.engineer/api/frontend/social/cards/api/review"
     //（AUTH : API）將文章審核通過(Int)
     static let articleVoteAye = "https://kaobei.engineer/api/frontend/social/cards/api/review/%d/succeeded"
     //（AUTH : API）將文章審核不通過(Int)
