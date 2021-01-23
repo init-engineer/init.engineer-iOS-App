@@ -10,12 +10,12 @@ import Foundation
 import Alamofire
 
 struct KBPostUserPublishing: KaobeiRequestProtocol {
-    enum Theme {
-        
+    enum Theme: String, CodingKey {
+        case 黑底綠字 = "2e6046c7387d8fbe9acd700394a3add3"
     }
     
-    enum Fonts {
-        
+    enum Fonts: String, CodingKey {
+        case Auraka = "ea98dde8987df3cd8aef75479019b688"
     }
     
     enum ContentType: String {
@@ -31,6 +31,8 @@ struct KBPostUserPublishing: KaobeiRequestProtocol {
     
     var contentTpye = ContentType.article
     
+    var httpBody = [String: Any]()
+    
     public typealias responseType = KBUserPublishing
     
     var headers: HTTPHeaders? {
@@ -44,14 +46,22 @@ struct KBPostUserPublishing: KaobeiRequestProtocol {
         return header
     }
     
-    init(accessToken: String, article: String, font: Fonts, theme: Theme) {
-        apiPath = String(format: KaobeiURL.userPublishing)
-        self.token = accessToken
+    var parameters: [String : Any]? {
+        return httpBody
     }
     
-    init(accessToken: String, image: String) { // image link?
+    init(accessToken: String, article: String, font: Fonts, theme: Theme, image: Data? = nil) {
         apiPath = String(format: KaobeiURL.userPublishing)
         self.token = accessToken
-        contentTpye = .image
+        
+        httpBody["content"] = article
+        httpBody["themeStyle"] = theme // TODO: Needs to convert to string
+        httpBody["fontStyle"] = font // TODO: Needs to convert to string
+        
+        if let image = image {
+            contentTpye = .image
+            // add image file to body
+            httpBody["avatar"] = image
+        }
     }
 }

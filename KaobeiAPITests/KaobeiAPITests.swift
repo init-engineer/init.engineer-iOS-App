@@ -134,7 +134,40 @@ class KaobeiAPITests: XCTestCase {
     }
     
     func testUserPublishing() throws {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
         
+        // Comment the line below for testing
+        XCTFail("Do need test this one unless it is necessary.")
+        
+        let request = KBPostUserPublishing.init(accessToken: TestingConstrants.getToken(), article: "純靠Android App測試\n靠！不小心送出了", font: .Auraka, theme: .黑底綠字)
+        
+        let expect = expectation(description: "Waiting for response")
+        
+        KaobeiConnection.sendRequest(api: request) { (response) in
+            //let str = String(data: response.data ?? Data.init(), encoding: .utf8)!
+            //print(str)
+            print("Status result: \(response.result)")
+            switch response.result {
+            case .success(let data):
+                print("Type of data is: \(type(of: data))")
+                XCTAssert(type(of: data) == KBUserPublishing.self)
+                XCTAssertEqual(data.data.id, 5744)
+                break
+            case .failure(let error):
+                XCTFail(error.errorDescription ?? "")
+                XCTFail("Faill to fetch data")
+                break
+            }
+            
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3) { error in
+            if let _ = error {
+                XCTFail("timeout")
+            }
+        }
     }
     
     func testArticleReviewList() throws {

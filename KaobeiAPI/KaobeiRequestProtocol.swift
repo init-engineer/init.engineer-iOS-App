@@ -19,26 +19,11 @@ public protocol KaobeiRequestProtocol {
 
 public extension KaobeiRequestProtocol {
     var headers: HTTPHeaders? {
-        return getOAuthHeader()
+        return HTTPHeaders()
     }
     
     var parameters: [String: Any]? {
-        return getDefaultParameters()
-    }
-    
-    func getOAuthHeader() -> HTTPHeaders {
-        var header = HTTPHeaders()
-        // get OAuth token from app datamanager
-        // header["Authorization"] = "OAuth2 \(String(describing: token))"
-        
-        return header
-    }
-    
-    func getDefaultParameters() -> [String: Any] {
-        var parameters = [String: Any]()
-        
-        
-        return parameters
+        return [String: Any]()
     }
     
     func getAPIRequestURL() -> URL? {

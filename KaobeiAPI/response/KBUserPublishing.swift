@@ -9,5 +9,5 @@
 import Foundation
 
 struct KBUserPublishing: Codable {
-    
+    let data: Article
 }
