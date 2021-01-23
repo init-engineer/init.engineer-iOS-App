@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hXg-Fs-gLu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hXg-Fs-gLu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,13 +24,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="首頁 Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ar-FU-LEh">
-                                <rect key="frame" x="162" y="64" width="90.5" height="19"/>
+                                <rect key="frame" x="166.5" y="64" width="81" height="20"/>
                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhl-Nt-beD">
-                                <rect key="frame" x="20" y="91" width="177" height="341"/>
+                                <rect key="frame" x="20" y="92" width="177" height="340.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kohlrabi" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-w5-0Ux">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="94.5"/>
@@ -38,16 +39,16 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="hYX-Er-n8g">
-                                        <rect key="frame" x="28.5" y="141" width="120" height="59.5"/>
+                                        <rect key="frame" x="28.5" y="139.5" width="120" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="大頭菜計算器" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yje-DO-gK8">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="22.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="輕鬆致富" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lH7-4o-Hef">
-                                                <rect key="frame" x="0.0" y="40.5" width="120" height="19"/>
+                                                <rect key="frame" x="0.0" y="41.5" width="120" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -57,8 +58,8 @@
                                             <constraint firstItem="lH7-4o-Hef" firstAttribute="top" secondItem="Yje-DO-gK8" secondAttribute="bottom" constant="18" id="pP2-kK-WKL"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSX-xe-2TW">
-                                        <rect key="frame" x="46" y="302" width="85" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSX-xe-2TW">
+                                        <rect key="frame" x="46" y="300.5" width="85" height="32"/>
                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                         <state key="normal" title="點我發大財">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,7 +81,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bP3-Yh-EqA">
-                                <rect key="frame" x="217" y="91" width="177" height="341"/>
+                                <rect key="frame" x="217" y="92" width="177" height="340.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_flag1" translatesAutoresizingMaskIntoConstraints="NO" id="pok-Q8-Orh">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="94.5"/>
@@ -88,8 +89,8 @@
                                             <constraint firstAttribute="width" secondItem="pok-Q8-Orh" secondAttribute="height" multiplier="15:8" id="4gz-lB-7VN"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYW-bl-9NP">
-                                        <rect key="frame" x="71.5" y="302" width="34" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYW-bl-9NP">
+                                        <rect key="frame" x="71.5" y="300.5" width="34" height="32"/>
                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                         <state key="normal" title="我吸">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,16 +100,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="4YL-Nn-ZDc">
-                                        <rect key="frame" x="9" y="141" width="159" height="59.5"/>
+                                        <rect key="frame" x="11.5" y="139.5" width="154.5" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Facebook 粉絲頁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-4C-mB1">
-                                                <rect key="frame" x="0.0" y="0.0" width="159" height="22.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="154.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="很純" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKF-qP-gMj">
-                                                <rect key="frame" x="0.0" y="40.5" width="159" height="19"/>
+                                                <rect key="frame" x="0.0" y="41.5" width="154.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -131,7 +132,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBs-bo-Pu4">
-                                <rect key="frame" x="20" y="452" width="177" height="341"/>
+                                <rect key="frame" x="20" y="452.5" width="177" height="340.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_twitter" translatesAutoresizingMaskIntoConstraints="NO" id="Aph-uD-YCa">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="94.5"/>
@@ -139,8 +140,8 @@
                                             <constraint firstAttribute="width" secondItem="Aph-uD-YCa" secondAttribute="height" multiplier="15:8" id="vbv-6X-jrD"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdC-wN-v3I">
-                                        <rect key="frame" x="71.5" y="302" width="34" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdC-wN-v3I">
+                                        <rect key="frame" x="71.5" y="300.5" width="34" height="32"/>
                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                         <state key="normal" title="吸吸">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -150,16 +151,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Q9n-W4-fzV">
-                                        <rect key="frame" x="14.5" y="141" width="148" height="59.5"/>
+                                        <rect key="frame" x="26.5" y="139.5" width="124.5" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Twitter 粉絲頁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDB-Bh-q4t">
-                                                <rect key="frame" x="0.0" y="0.0" width="148" height="22.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="也很純" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-I0-q25">
-                                                <rect key="frame" x="0.0" y="40.5" width="148" height="19"/>
+                                                <rect key="frame" x="0.0" y="41.5" width="124.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -183,7 +184,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOZ-MG-QjJ">
-                                <rect key="frame" x="217" y="452" width="177" height="341"/>
+                                <rect key="frame" x="217" y="452.5" width="177" height="340.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_plurk" translatesAutoresizingMaskIntoConstraints="NO" id="BYK-Lo-0x1">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="94.5"/>
@@ -191,8 +192,8 @@
                                             <constraint firstAttribute="width" secondItem="BYK-Lo-0x1" secondAttribute="height" multiplier="15:8" id="sTa-5o-mtH"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KK-nF-7xG">
-                                        <rect key="frame" x="71.5" y="302" width="34" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KK-nF-7xG">
+                                        <rect key="frame" x="71.5" y="300.5" width="34" height="32"/>
                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                         <state key="normal" title="吸爆">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -202,16 +203,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="vkZ-ST-x1A">
-                                        <rect key="frame" x="25.5" y="141" width="126" height="59.5"/>
+                                        <rect key="frame" x="33" y="139.5" width="111.5" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Plurk 粉絲頁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6R-4T-E7z">
-                                                <rect key="frame" x="0.0" y="0.0" width="126" height="22.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="也是很純" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bm-eb-rV9">
-                                                <rect key="frame" x="0.0" y="40.5" width="126" height="19"/>
+                                                <rect key="frame" x="0.0" y="41.5" width="111.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -235,6 +236,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="XyI-jv-bdt"/>
                         <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XyI-jv-bdt" firstAttribute="bottom" secondItem="MOZ-MG-QjJ" secondAttribute="bottom" constant="20" id="1XY-RG-x5n"/>
@@ -256,7 +258,6 @@
                             <constraint firstItem="Bhl-Nt-beD" firstAttribute="top" secondItem="bP3-Yh-EqA" secondAttribute="top" id="tZ9-Yo-XSU"/>
                             <constraint firstItem="bP3-Yh-EqA" firstAttribute="trailing" secondItem="MOZ-MG-QjJ" secondAttribute="trailing" id="u7u-cR-WR3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="XyI-jv-bdt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="首頁" id="dp0-3C-EPp"/>
                     <connections>
@@ -308,6 +309,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.13333499430000001" green="0.13333114979999999" blue="0.13333195449999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="oWL-7i-Kx2" firstAttribute="top" secondItem="G5y-du-l9j" secondAttribute="bottom" constant="8" id="52O-e6-XwA"/>
@@ -317,7 +319,6 @@
                             <constraint firstItem="G5y-du-l9j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="o7y-VN-Ekz"/>
                             <constraint firstItem="oWL-7i-Kx2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="x6j-1x-t3L"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="文章列表" id="R9B-7x-joA"/>
                     <navigationItem key="navigationItem" id="Iz0-QP-aCe"/>
@@ -338,7 +339,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文章 Article" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-3x-m42">
-                                <rect key="frame" x="152.5" y="108" width="109" height="19"/>
+                                <rect key="frame" x="163.5" y="108" width="87" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="lB3-3K-uYc"/>
                                 </constraints>
@@ -367,10 +368,10 @@
                                 <rect key="frame" x="20" y="355.5" width="374" height="134.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbw-9S-Iyx">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="148"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="149"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sKy-JM-Dbw">
-                                                <rect key="frame" x="0.0" y="0.0" width="59" height="148"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="59" height="149"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BW7-Fb-1mT">
                                                         <rect key="frame" x="0.0" y="0.0" width="59" height="59"/>
@@ -381,13 +382,13 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="動物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zv4-UT-1Wr">
-                                                        <rect key="frame" x="0.0" y="59" width="59" height="19"/>
+                                                        <rect key="frame" x="0.0" y="59" width="59" height="20"/>
                                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVl-tW-F9b">
-                                                        <rect key="frame" x="0.0" y="78" width="59" height="70"/>
+                                                        <rect key="frame" x="0.0" y="79" width="59" height="70"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" id="NUH-9M-F6i"/>
@@ -396,16 +397,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HHO-OB-eLW">
-                                                <rect key="frame" x="59" y="0.0" width="315" height="148"/>
+                                                <rect key="frame" x="59" y="0.0" width="315" height="149"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N小時前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqv-Zx-drc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="20"/>
                                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="文章" translatesAutoresizingMaskIntoConstraints="NO" id="0Eu-Af-SkQ">
-                                                        <rect key="frame" x="0.0" y="19" width="315" height="129"/>
+                                                        <rect key="frame" x="0.0" y="20" width="315" height="129"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" priority="249" constant="100" id="NQV-Sr-pMe"/>
@@ -426,8 +427,8 @@
                                     <constraint firstItem="Cbw-9S-Iyx" firstAttribute="top" secondItem="zIS-s4-vxK" secondAttribute="top" id="uvN-sK-MGA"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QF-Ra-lW1">
-                                <rect key="frame" x="173.5" y="498" width="67" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QF-Ra-lW1">
+                                <rect key="frame" x="177" y="498" width="60" height="31"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="9Zg-Q4-YYe"/>
@@ -443,22 +444,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9gO-fv-jb7">
                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="69"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXo-MQ-Bip">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXo-MQ-Bip">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahr-uD-PrI">
-                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
-                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahr-uD-PrI">
+                                                <rect key="frame" x="0.0" y="20" width="93.5" height="32"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <state key="normal" title="FB主站">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-qG-IcF">
-                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-qG-IcF">
+                                                <rect key="frame" x="0.0" y="52" width="93.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -468,22 +469,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xdI-DQ-9to">
                                         <rect key="frame" x="93.5" y="0.0" width="93.5" height="69"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hee-Aj-PFd">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hee-Aj-PFd">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nx-K0-zpf">
-                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
-                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nx-K0-zpf">
+                                                <rect key="frame" x="0.0" y="20" width="93.5" height="29"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <state key="normal" title="FB次站">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-O5-A0Y">
-                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-O5-A0Y">
+                                                <rect key="frame" x="0.0" y="49" width="93.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -493,22 +494,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="okT-Ej-AK6">
                                         <rect key="frame" x="187" y="0.0" width="93.5" height="69"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZo-WW-v61">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZo-WW-v61">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcE-5c-Ngr">
-                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcE-5c-Ngr">
+                                                <rect key="frame" x="0.0" y="20" width="93.5" height="29"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <state key="normal" title="Plurk">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yji-ov-wG1">
-                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yji-ov-wG1">
+                                                <rect key="frame" x="0.0" y="49" width="93.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -518,22 +519,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jh1-r3-rNL">
                                         <rect key="frame" x="280.5" y="0.0" width="93.5" height="69"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW1-SX-QuZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW1-SX-QuZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msZ-7R-P34">
-                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msZ-7R-P34">
+                                                <rect key="frame" x="0.0" y="20" width="93.5" height="29"/>
+                                                <color key="backgroundColor" systemColor="systemTealColor"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <state key="normal" title="Twitter">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tO-bU-8jQ">
-                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tO-bU-8jQ">
+                                                <rect key="frame" x="0.0" y="49" width="93.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -567,6 +568,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="twt-Ti-Haz"/>
                         <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="twt-Ti-Haz" firstAttribute="trailing" secondItem="zIS-s4-vxK" secondAttribute="trailing" constant="20" id="068-TQ-EZ4"/>
@@ -590,7 +592,6 @@
                             <constraint firstItem="cRe-3x-m42" firstAttribute="centerX" secondItem="twt-Ti-Haz" secondAttribute="centerX" id="u9p-x7-oYx"/>
                             <constraint firstItem="0QF-Ra-lW1" firstAttribute="centerX" secondItem="twt-Ti-Haz" secondAttribute="centerX" id="wE4-Kv-sHC"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="twt-Ti-Haz"/>
                     </view>
                     <navigationItem key="navigationItem" id="iGN-1k-Aei"/>
                     <connections>
@@ -675,6 +676,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="aq3-Jp-RTS"/>
                         <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rJg-gQ-NbV" firstAttribute="bottom" secondItem="lbC-Yo-O3A" secondAttribute="bottom" constant="20" id="1SL-JW-Iqd"/>
@@ -687,13 +689,12 @@
                             <constraint firstItem="aq3-Jp-RTS" firstAttribute="trailing" secondItem="vXf-vP-K88" secondAttribute="trailing" constant="20" id="oNJ-Xu-faf"/>
                             <constraint firstItem="aq3-Jp-RTS" firstAttribute="bottom" secondItem="vXf-vP-K88" secondAttribute="bottom" constant="20" id="pdX-bx-Pxc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="aq3-Jp-RTS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="儀錶板" id="g8e-zp-7sM"/>
                     <navigationItem key="navigationItem" id="jgb-qh-ess"/>
                     <connections>
                         <outlet property="userImg" destination="rJg-gQ-NbV" id="mU0-P0-yxZ"/>
-                        <segue destination="hrF-ea-Cq1" kind="show" id="63W-j3-dLV"/>
+                        <segue destination="hrF-ea-Cq1" kind="show" identifier="DashboardToLogin" id="63W-j3-dLV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MH1-zz-Msa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -758,7 +759,7 @@
                                 <rect key="frame" x="211" y="427" width="183" height="128"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHO-xl-KvB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHO-xl-KvB">
                                 <rect key="frame" x="173" y="563" width="68" height="31"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
@@ -774,7 +775,7 @@
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">板規Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8u-aM-YDh">
@@ -784,6 +785,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="v5X-aM-Yal"/>
                         <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="v5X-aM-Yal" firstAttribute="trailing" secondItem="u8u-aM-YDh" secondAttribute="trailing" constant="20" id="2Wj-Y4-f5l"/>
@@ -811,7 +813,6 @@
                             <constraint firstItem="p7c-uw-e0V" firstAttribute="leading" secondItem="v5X-aM-Yal" secondAttribute="leading" constant="20" id="q6v-XY-Nn6"/>
                             <constraint firstItem="Ujf-cJ-dOJ" firstAttribute="centerX" secondItem="v5X-aM-Yal" secondAttribute="centerX" id="znP-K4-KUL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="v5X-aM-Yal"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="發表文章" id="WFH-pU-0Ld"/>
                     <navigationItem key="navigationItem" id="O1b-93-HiR"/>
@@ -821,7 +822,7 @@
                         <outlet property="fontPicker" destination="70g-av-MVZ" id="ZnY-gb-U7k"/>
                         <outlet property="themePicker" destination="b2Z-uQ-nag" id="Wlv-Cb-zZW"/>
                         <outlet property="userImg" destination="u8u-aM-YDh" id="PyH-NM-6jr"/>
-                        <segue destination="hrF-ea-Cq1" kind="show" id="edM-bp-uxV"/>
+                        <segue destination="hrF-ea-Cq1" kind="show" identifier="PublishToLogin" id="edM-bp-uxV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ng-Dq-p4A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -859,30 +860,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzz-Tx-KD7">
-                                <rect key="frame" x="176" y="435" width="62" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzz-Tx-KD7">
+                                <rect key="frame" x="172" y="428" width="70" height="40"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Dzz-Tx-KD7" secondAttribute="height" multiplier="2:1" id="M4h-iy-dzD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Mug-pI-7nS"/>
+                                    <constraint firstAttribute="height" constant="40" id="u4O-sb-aVn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                 <state key="normal" title="登入">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginBtn:" destination="hrF-ea-Cq1" eventType="touchUpInside" id="e5g-Wz-Vax"/>
+                                    <action selector="loginButtonPressed:" destination="hrF-ea-Cq1" eventType="touchUpInside" id="YYV-u1-ZaN"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6nd-OR-ryw"/>
                         <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Dzz-Tx-KD7" firstAttribute="centerX" secondItem="6nd-OR-ryw" secondAttribute="centerX" id="8sd-NN-9gr"/>
-                            <constraint firstItem="Dzz-Tx-KD7" firstAttribute="centerY" secondItem="6nd-OR-ryw" secondAttribute="centerY" id="lUZ-X2-6Tk"/>
-                            <constraint firstItem="Dzz-Tx-KD7" firstAttribute="height" secondItem="35v-r5-wdR" secondAttribute="height" multiplier="1.03333" id="qlX-ZF-aOl"/>
+                            <constraint firstItem="Dzz-Tx-KD7" firstAttribute="centerY" secondItem="h80-GN-I3h" secondAttribute="centerY" id="BOY-gP-Hsj"/>
+                            <constraint firstItem="Dzz-Tx-KD7" firstAttribute="centerX" secondItem="h80-GN-I3h" secondAttribute="centerX" id="Tg5-11-OBZ"/>
                             <constraint firstItem="35v-r5-wdR" firstAttribute="centerX" secondItem="6nd-OR-ryw" secondAttribute="centerX" id="rwN-La-CeE"/>
                             <constraint firstItem="35v-r5-wdR" firstAttribute="centerY" secondItem="6nd-OR-ryw" secondAttribute="centerY" multiplier="0.8" id="vSE-It-JGw"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6nd-OR-ryw"/>
                     </view>
                     <navigationItem key="navigationItem" id="jcy-Jd-Kg3"/>
                 </viewController>
@@ -911,14 +912,23 @@
             <point key="canvasLocation" x="-789" y="175"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="edM-bp-uxV"/>
+        <segue reference="BFQ-kT-KEe"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="img_flag1" width="960" height="540"/>
         <image name="img_plurk" width="200" height="200"/>
         <image name="img_twitter" width="770" height="439"/>
         <image name="kohlrabi" width="720" height="405"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="63W-j3-dLV"/>
-        <segue reference="BFQ-kT-KEe"/>
-    </inferredMetricsTieBreakers>
 </document>

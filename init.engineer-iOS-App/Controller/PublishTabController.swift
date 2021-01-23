@@ -17,7 +17,15 @@ class PublishTabController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let accessToken = KeyChainManager.shared.getToken() {
+            print(accessToken)
+        }
+        else {
+            self.performSegue(withIdentifier: K.publishToLoginSegue, sender: self)
+        }
     }
 
     @IBAction func imageUploadBtn(_ sender: Any) {

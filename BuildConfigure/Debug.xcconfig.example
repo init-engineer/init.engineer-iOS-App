@@ -1,0 +1,21 @@
+//
+//  Debug.xcconfig
+//  init.engineer-iOS-App
+//
+//  Created by 楊承昊 on 2021/1/21.
+//  Copyright © 2021 Kantai Developer. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Application Setting
+KEYCHAIN_SERVICE_NAME=YOUR_SERVICE_NAME
+
+// OAuth Client
+OAUTH2_CLIENT_ID=0000
+OAUTH2_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+OAUTH2_SCHEME=YOUR_CUSTOM_SCHEME
+OAUTH2_HOST=engineer.kaobei
+OAUTH2_PATH=YOUR_CUSTOM_CALLBACK_PATH
