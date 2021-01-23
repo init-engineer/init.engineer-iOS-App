@@ -133,12 +133,11 @@ class KaobeiAPITests: XCTestCase {
         
     }
     
-    func testUserPublishing() throws {
+    
+    // add "test" to this function for testing
+    func UserPublishing() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        // Comment the line below for testing
-        XCTFail("Do need test this one unless it is necessary.")
         
         let request = KBPostUserPublishing.init(accessToken: TestingConstrants.getToken(), article: "純靠Android App測試\n靠！不小心送出了", font: .Auraka, theme: .黑底綠字)
         
@@ -173,7 +172,7 @@ class KaobeiAPITests: XCTestCase {
     func testArticleReviewList() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let request = KBGetArticleReviewList.init(accessToken: "")
+        let request = KBGetArticleReviewList.init(accessToken: TestingConstrants.getToken())
         
         let expect = expectation(description: "Waiting for response")
         
