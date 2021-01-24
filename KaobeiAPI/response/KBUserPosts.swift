@@ -8,20 +8,20 @@
 
 import Foundation
 
-struct KBUserPosts: Codable {
-    let data: [Post]
-    let meta: Meta
+public struct KBUserPosts: Codable {
+    public let data: [Post]
+    public let meta: Meta
 }
 
-struct Post: Codable {
-    let id: Int
-    let content: String
-    let image: String
-    let isBanned: Int
-    let bannedRemarks: String? // What is this?
-    let createdAt, createdDiff, updatedAt, updatedDiff: String
+public struct Post: Codable {
+    public let id: Int
+    public let content: String
+    public let image: String
+    public let isBanned: Int
+    public let bannedRemarks: String? // What is this?
+    public let createdAt, createdDiff, updatedAt, updatedDiff: String
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case id, content, image
         case isBanned = "is_banned"
         case bannedRemarks = "banned_remarks"

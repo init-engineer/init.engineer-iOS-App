@@ -9,16 +9,16 @@
 import Foundation
 import Alamofire
 
-struct KBGetUserPosts: KaobeiRequestProtocol {
-    var apiPath: String
+public struct KBGetUserPosts: KaobeiRequestProtocol {
+    public var apiPath: String
     
-    var method: HTTPMethod = .get
+    public var method: HTTPMethod = .get
     
-    var token: String
+    public var token: String
     
     public typealias responseType = KBUserPosts
     
-    var headers: HTTPHeaders? {
+    public var headers: HTTPHeaders? {
         var header = HTTPHeaders()
         let authorization = "Bearer \(token)"
         
@@ -29,7 +29,7 @@ struct KBGetUserPosts: KaobeiRequestProtocol {
         return header
     }
     
-    init(accessToken: String, page: Int = 1) {
+    public init(accessToken: String, page: Int = 1) {
         apiPath = String(format: KaobeiURL.userPosts, page)
         self.token = accessToken
     }

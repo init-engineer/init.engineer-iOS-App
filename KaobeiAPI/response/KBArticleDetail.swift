@@ -9,6 +9,6 @@
 import Foundation
 
 public struct KBArticleDetail: Codable {
-    let data: Article
+    public let data: Article
 }
 

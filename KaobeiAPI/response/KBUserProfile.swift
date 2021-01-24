@@ -8,20 +8,20 @@
 
 import Foundation
 
-struct KBUserProfile: Codable {
-    let data: Profile
+public struct KBUserProfile: Codable {
+    public let data: Profile
 }
 
-struct Profile: Codable {
-    let id: Int
-    let uuid: String
-    let fullName, lastName, firstName: String?
-    let email: String
-    let avatar: String
-    let active, confirmed: Bool
-    let timezone: String
+public struct Profile: Codable {
+    public let id: Int
+    public let uuid: String
+    public let fullName, lastName, firstName: String?
+    public let email: String
+    public let avatar: String
+    public let active, confirmed: Bool
+    public let timezone: String
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case id, uuid
         case fullName = "full_name"
         case lastName = "last_name"

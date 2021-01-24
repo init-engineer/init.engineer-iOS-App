@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct KBUserPublishing: Codable {
-    let data: Article
+public struct KBUserPublishing: Codable {
+    public let data: Article
 }

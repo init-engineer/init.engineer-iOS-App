@@ -9,14 +9,14 @@
 import Foundation
 import Alamofire
 
-struct KBGetArticleDetail: KaobeiRequestProtocol {
-    var apiPath: String
+public struct KBGetArticleDetail: KaobeiRequestProtocol {
+    public var apiPath: String
     
-    var method: HTTPMethod = .get
+    public var method: HTTPMethod = .get
     
     public typealias responseType = KBArticleDetail
     
-    init(id: Int) {
+    public init(id: Int) {
         apiPath = String(format: KaobeiURL.articleDetail, id)
     }
 }

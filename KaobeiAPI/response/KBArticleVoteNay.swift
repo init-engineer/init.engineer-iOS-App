@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct KBArticleVoteNay: Codable {
-    let data: VotedArticle
+public struct KBArticleVoteNay: Codable {
+    public let data: VotedArticle
 }
 

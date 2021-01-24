@@ -9,33 +9,33 @@
 import Foundation
 import Alamofire
 
-struct KBPostUserPublishing: KaobeiRequestProtocol {
-    enum Theme: String, CodingKey {
+public struct KBPostUserPublishing: KaobeiRequestProtocol {
+    public enum Theme: String, CodingKey {
         case 黑底綠字 = "2e6046c7387d8fbe9acd700394a3add3"
     }
     
-    enum Fonts: String, CodingKey {
+    public enum Fonts: String, CodingKey {
         case Auraka = "ea98dde8987df3cd8aef75479019b688"
     }
     
-    enum ContentType: String {
+    public enum ContentType: String {
         case image = "multipart/form-data"
         case article = "application/x-www-form-urlencoded"
     }
     
-    var apiPath: String
+    public var apiPath: String
     
-    var method: HTTPMethod = .post
+    public var method: HTTPMethod = .post
     
-    var token: String
+    public var token: String
     
-    var contentTpye = ContentType.article
+    public var contentTpye = ContentType.article
     
-    var httpBody = [String: Any]()
+    public var httpBody = [String: Any]()
     
     public typealias responseType = KBUserPublishing
     
-    var headers: HTTPHeaders? {
+    public var headers: HTTPHeaders? {
         var header = HTTPHeaders()
         let authorization = "Bearer \(token)"
         
@@ -46,11 +46,11 @@ struct KBPostUserPublishing: KaobeiRequestProtocol {
         return header
     }
     
-    var parameters: [String : Any]? {
+    public var parameters: [String : Any]? {
         return httpBody
     }
     
-    init(accessToken: String, article: String, font: Fonts, theme: Theme, image: Data? = nil) {
+    public init(accessToken: String, article: String, font: Fonts, theme: Theme, image: Data? = nil) {
         apiPath = String(format: KaobeiURL.userPublishing)
         self.token = accessToken
         

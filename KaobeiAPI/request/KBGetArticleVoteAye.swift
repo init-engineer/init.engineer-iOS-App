@@ -9,16 +9,16 @@
 import Foundation
 import Alamofire
 
-struct KBGetArticleVoteAye: KaobeiRequestProtocol {
-    var apiPath: String
+public struct KBGetArticleVoteAye: KaobeiRequestProtocol {
+    public var apiPath: String
     
-    var method: HTTPMethod = .get
+    public var method: HTTPMethod = .get
     
-    var token: String
+    public var token: String
     
     public typealias responseType = KBArticleVoteAye
     
-    var headers: HTTPHeaders? {
+    public var headers: HTTPHeaders? {
         var header = HTTPHeaders()
         let authorization = "Bearer \(token)"
         
@@ -29,7 +29,7 @@ struct KBGetArticleVoteAye: KaobeiRequestProtocol {
         return header
     }
     
-    init(accessToken: String, id: Int) {
+    public init(accessToken: String, id: Int) {
         apiPath = String(format: KaobeiURL.articleVoteAye, id)
         self.token = accessToken
     }

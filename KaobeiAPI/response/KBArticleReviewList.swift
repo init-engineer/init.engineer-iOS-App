@@ -8,20 +8,20 @@
 
 import Foundation
 
-struct KBArticleReviewList: Codable {
-    let data: [ArticleUnderReview]
-    let meta: Meta
+public struct KBArticleReviewList: Codable {
+    public let data: [ArticleUnderReview]
+    public let meta: Meta
 }
 
-struct ArticleUnderReview: Codable {
-    let id: Int
-    let content: String
-    let image: String
-    let succeeded, failed: Int
-    let createdAt, createdDiff, updatedAt, updatedDiff: String
-    let review: Int
+public struct ArticleUnderReview: Codable {
+    public let id: Int
+    public let content: String
+    public let image: String
+    public let succeeded, failed: Int
+    public let createdAt, createdDiff, updatedAt, updatedDiff: String
+    public let review: Int
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case id, content, image, succeeded, failed
         case createdAt = "created_at"
         case createdDiff = "created_diff"

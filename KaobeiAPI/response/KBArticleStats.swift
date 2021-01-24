@@ -9,12 +9,12 @@
 import Foundation
 
 public struct KBArticleStats: Codable {
-    let data: [StatsSource]
+    public let data: [StatsSource]
 }
 
 // MARK: - Datum
-struct StatsSource: Codable {
-    let type, connections: String
-    let url: String
-    let like, share: Int
+public struct StatsSource: Codable {
+    public let type, connections: String
+    public let url: String
+    public let like, share: Int
 }

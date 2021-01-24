@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct KBArticleVoteAye: Codable {
-    let data: VotedArticle
+public struct KBArticleVoteAye: Codable {
+    public let data: VotedArticle
 }
