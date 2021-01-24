@@ -9,7 +9,7 @@
 import Foundation
 
 public struct KBArticleList: Codable {
-    let data: [Article]
-    let meta: Meta
+    public let data: [Article]
+    public let meta: Meta
 }
 

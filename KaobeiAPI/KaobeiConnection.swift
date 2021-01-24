@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 public class KaobeiConnection {
-    static func sendRequest<T: KaobeiRequestProtocol>(api: T, apiData: @escaping (AFDataResponse<T.responseType>) -> ()){
+    public static func sendRequest<T: KaobeiRequestProtocol>(api: T, apiData: @escaping (AFDataResponse<T.responseType>) -> ()){
         if let apiURL = api.getAPIRequestURL() {
             AF.request(apiURL, method: api.method, parameters: api.parameters, headers: api.headers).responseDecodable(of: T.responseType.self) { (response) in
                 switch response.result{

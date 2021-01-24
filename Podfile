@@ -26,3 +26,10 @@ target 'KaobeiAPITests' do
   pod 'Alamofire', '~> 5.4.0'
   
 end
+
+target 'KaobeiWidgetExtension' do
+  
+  use_frameworks!
+  pod 'Alamofire', '~> 5.4.0'
+  
+end

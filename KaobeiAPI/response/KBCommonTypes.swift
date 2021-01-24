@@ -51,11 +51,11 @@ struct VotedArticle: Codable {
 }
 
 // MARK: - Article
-struct Article: Codable {
-    let id: Int
-    let content: String
-    let image: String
-    let createdAt, createdDiff, updatedAt, updatedDiff: String
+public struct Article: Codable {
+    public let id: Int
+    public let content: String
+    public let image: String
+    public let createdAt, createdDiff, updatedAt, updatedDiff: String
 
     enum CodingKeys: String, CodingKey {
         case id, content, image
