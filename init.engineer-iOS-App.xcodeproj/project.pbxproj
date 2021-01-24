@@ -27,6 +27,7 @@
 		853D8EDD25BD204B00AD1548 /* KaobeiWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D8EDC25BD204B00AD1548 /* KaobeiWidget.swift */; };
 		853D8EDF25BD205600AD1548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853D8EDE25BD205600AD1548 /* Assets.xcassets */; };
 		853D8EE325BD205600AD1548 /* KaobeiWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 853D8ED625BD204B00AD1548 /* KaobeiWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		853D8F0B25BD528600AD1548 /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
 		85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6C3C625AC918B00544802 /* KaobeiURL.swift */; };
 		85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */; };
 		85AB734A25B1F4ED00F6238A /* KBArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */; };
@@ -603,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				853D8EDF25BD205600AD1548 /* Assets.xcassets in Resources */,
+				853D8F0B25BD528600AD1548 /* Fixedsys500c.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

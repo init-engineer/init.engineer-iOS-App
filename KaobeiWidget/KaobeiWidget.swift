@@ -59,9 +59,18 @@ struct KaobeiWidgetEntryView : View {
 
     var body: some View {
         ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
-            Text(entry.article).foregroundColor(.green)
+            ColorConstants.themeBackgroundColor.edgesIgnoringSafeArea(.all)
+            Text(entry.article).foregroundColor(ColorConstants.textColor).font(FontConstant.textFont)
         }
+    }
+    
+    struct ColorConstants {
+        static let textColor = Color.init(red: 0x28/255.0, green: 0xa7/255.0, blue: 0x45/255.0)
+        static let themeBackgroundColor = Color.init(red: 0x21/255.0, green: 0x25/255.0, blue: 0x29/255.0)
+    }
+    
+    struct FontConstant {
+        static let textFont = Font.custom("Fixedsys500c", size: UIFont.systemFontSize)
     }
 }
 
