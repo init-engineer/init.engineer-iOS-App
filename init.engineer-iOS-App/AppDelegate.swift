@@ -9,12 +9,20 @@
 import UIKit
 import CoreData
 import AppAuth
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var currentAuthorizationFlow: OIDExternalUserAgentSession?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        return true
+    }
     
     func application(_ app: UIApplication,
                      open url: URL,

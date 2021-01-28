@@ -8,15 +8,17 @@
 
 import UIKit
 import AppAuth
+import GoogleMobileAds
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, GADBannerViewDelegate {
     
     private var authState: OIDAuthState?
+    var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        navigationItem.hidesBackButton = true
+        setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,6 +27,15 @@ class LoginController: UIViewController {
         }
     }
     
+    func setupUI() {
+        navigationItem.hidesBackButton = true
+        // In this case, we instantiate the banner with desired ad size.
+        bannerView = GADBannerView(adSize: kGADAdSizeLargeBanner)
+        bannerView.adUnitID = K.getInfoPlistByKey("GAD AdsBanner1") ?? ""
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
+    }
     
     
     func loginFailed(failedMessage: String = "授權未成功 QAQ，請稍後再試") {
@@ -65,5 +76,32 @@ class LoginController: UIViewController {
                     self.loginFailed()
                 }
             }
+    }
+}
+
+extension LoginController {
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: bottomLayoutGuide,
+                              attribute: .top,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        addBannerViewToView(bannerView)
     }
 }

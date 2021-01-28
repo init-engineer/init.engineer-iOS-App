@@ -7,9 +7,9 @@ target 'init.engineer-iOS-App' do
   # Pods for init.engineer-iOS-App
   # pod 'MaterialComponents'
   pod 'Alamofire'
-  pod 'OAuthSwift'
   pod 'AppAuth'
   pod 'KeychainAccess'
+  pod 'Google-Mobile-Ads-SDK'
   
 end
 
