@@ -28,25 +28,25 @@
             </objects>
             <point key="canvasLocation" x="-789" y="175"/>
         </scene>
+        <!--IndexView-->
+        <scene sceneID="Y0m-BF-HEP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="IndexView" id="S7C-Vi-l0H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="WVu-xM-qpE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3K-ni-kXd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-176" y="87"/>
+        </scene>
         <!--ArticleView-->
         <scene sceneID="VfT-Fa-2Iw">
             <objects>
                 <viewControllerPlaceholder storyboardName="ArticleView" id="VHY-Q3-yda" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="fIl-RS-cpF"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="fIl-RS-cpF"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mwa-gu-iF5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-171" y="131"/>
-        </scene>
-        <!--DashboardView-->
-        <scene sceneID="V7H-cV-Br3">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DashboardView" id="pi1-Hi-YF9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Qge-tr-EE9"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fd1-7b-P9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-151" y="259"/>
         </scene>
         <!--PublishView-->
         <scene sceneID="mZl-8q-51F">
@@ -58,16 +58,6 @@
             </objects>
             <point key="canvasLocation" x="-167" y="175"/>
         </scene>
-        <!--IndexView-->
-        <scene sceneID="Y0m-BF-HEP">
-            <objects>
-                <viewControllerPlaceholder storyboardName="IndexView" id="S7C-Vi-l0H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WVu-xM-qpE"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3K-ni-kXd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-176" y="87"/>
-        </scene>
         <!--ReviewView-->
         <scene sceneID="zin-PB-mfU">
             <objects>
@@ -77,6 +67,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhd-rD-VlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-167" y="216"/>
+        </scene>
+        <!--DashboardView-->
+        <scene sceneID="V7H-cV-Br3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DashboardView" id="pi1-Hi-YF9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Qge-tr-EE9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fd1-7b-P9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-151" y="259"/>
         </scene>
     </scenes>
 </document>
