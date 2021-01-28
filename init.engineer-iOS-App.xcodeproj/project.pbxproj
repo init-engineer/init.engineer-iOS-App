@@ -66,6 +66,10 @@
 		C45A3A4F25B9897300F484F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A3A4E25B9897300F484F1 /* Constants.swift */; };
 		C4A2246625C30D5000DEB3C5 /* ArticleView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2246425C30D5000DEB3C5 /* ArticleView.storyboard */; };
 		C4A2246C25C321CE00DEB3C5 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2246A25C321CE00DEB3C5 /* LoginView.storyboard */; };
+		C4A2247525C323C000DEB3C5 /* DashboardView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2247325C323C000DEB3C5 /* DashboardView.storyboard */; };
+		C4A2247B25C3240400DEB3C5 /* PublishView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2247925C3240400DEB3C5 /* PublishView.storyboard */; };
+		C4A2248125C3243300DEB3C5 /* IndexView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2247F25C3243300DEB3C5 /* IndexView.storyboard */; };
+		C4A2248725C3246B00DEB3C5 /* ReviewView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2248525C3246B00DEB3C5 /* ReviewView.storyboard */; };
 		C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
 /* End PBXBuildFile section */
 
@@ -201,6 +205,10 @@
 		C45A3A4E25B9897300F484F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4A2246525C30D5000DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArticleView.storyboard; sourceTree = "<group>"; };
 		C4A2246B25C321CE00DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginView.storyboard; sourceTree = "<group>"; };
+		C4A2247425C323C000DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DashboardView.storyboard; sourceTree = "<group>"; };
+		C4A2247A25C3240400DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PublishView.storyboard; sourceTree = "<group>"; };
+		C4A2248025C3243300DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IndexView.storyboard; sourceTree = "<group>"; };
+		C4A2248625C3246B00DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ReviewView.storyboard; sourceTree = "<group>"; };
 		C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fixedsys500c.ttf; sourceTree = "<group>"; };
 		DA3850D8518AC48AC774F3F2 /* Pods-KaobeiWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-KaobeiWidgetExtension/Pods-KaobeiWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		DF6AF4F39385A0B08C5A553C /* Pods_KaobeiAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaobeiAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -408,7 +416,11 @@
 				853D8F8B25C23A2B00AD1548 /* Components */,
 				A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */,
 				A7D2E850244DE50E00953132 /* Main.storyboard */,
+				C4A2247F25C3243300DEB3C5 /* IndexView.storyboard */,
 				C4A2246425C30D5000DEB3C5 /* ArticleView.storyboard */,
+				C4A2248525C3246B00DEB3C5 /* ReviewView.storyboard */,
+				C4A2247925C3240400DEB3C5 /* PublishView.storyboard */,
+				C4A2247325C323C000DEB3C5 /* DashboardView.storyboard */,
 				C4A2246A25C321CE00DEB3C5 /* LoginView.storyboard */,
 			);
 			path = View;
@@ -632,8 +644,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A2248125C3243300DEB3C5 /* IndexView.storyboard in Resources */,
 				C4A2246625C30D5000DEB3C5 /* ArticleView.storyboard in Resources */,
 				A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */,
+				C4A2247B25C3240400DEB3C5 /* PublishView.storyboard in Resources */,
+				C4A2247525C323C000DEB3C5 /* DashboardView.storyboard in Resources */,
+				C4A2248725C3246B00DEB3C5 /* ReviewView.storyboard in Resources */,
 				A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */,
 				A7D2E852244DE50E00953132 /* Main.storyboard in Resources */,
 				C4A2246C25C321CE00DEB3C5 /* LoginView.storyboard in Resources */,
@@ -894,6 +910,38 @@
 				C4A2246B25C321CE00DEB3C5 /* Base */,
 			);
 			name = LoginView.storyboard;
+			sourceTree = "<group>";
+		};
+		C4A2247325C323C000DEB3C5 /* DashboardView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4A2247425C323C000DEB3C5 /* Base */,
+			);
+			name = DashboardView.storyboard;
+			sourceTree = "<group>";
+		};
+		C4A2247925C3240400DEB3C5 /* PublishView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4A2247A25C3240400DEB3C5 /* Base */,
+			);
+			name = PublishView.storyboard;
+			sourceTree = "<group>";
+		};
+		C4A2247F25C3243300DEB3C5 /* IndexView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4A2248025C3243300DEB3C5 /* Base */,
+			);
+			name = IndexView.storyboard;
+			sourceTree = "<group>";
+		};
+		C4A2248525C3246B00DEB3C5 /* ReviewView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4A2248625C3246B00DEB3C5 /* Base */,
+			);
+			name = ReviewView.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

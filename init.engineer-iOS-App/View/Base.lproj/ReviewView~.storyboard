@@ -4,9 +4,27 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--審核文章-->
+        <scene sceneID="577-Xd-HxP">
+            <objects>
+                <viewController id="JdV-9f-1Pw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yEP-N6-TZR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="rxH-Oj-10V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="審核文章" id="Tpi-sF-Sup"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Aj-tR-HFF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="-626"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iD6-31-BUH">
             <objects>
@@ -19,7 +37,7 @@
                     <connections>
                         <segue destination="S7C-Vi-l0H" kind="relationship" relationship="viewControllers" id="t5p-XF-V6t"/>
                         <segue destination="VHY-Q3-yda" kind="relationship" relationship="viewControllers" id="GFh-At-7sC"/>
-                        <segue destination="fau-qf-Clv" kind="relationship" relationship="viewControllers" id="Vkg-Py-PRG"/>
+                        <segue destination="JdV-9f-1Pw" kind="relationship" relationship="viewControllers" id="Vkg-Py-PRG"/>
                         <segue destination="FAc-80-V5H" kind="relationship" relationship="viewControllers" id="mi8-Z9-zfX"/>
                         <segue destination="pi1-Hi-YF9" kind="relationship" relationship="viewControllers" id="IEV-XP-R9C"/>
                     </connections>
@@ -36,7 +54,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mwa-gu-iF5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-171" y="131"/>
+            <point key="canvasLocation" x="-791" y="1209"/>
         </scene>
         <!--LoginView-->
         <scene sceneID="AGP-XQ-EZp">
@@ -46,7 +64,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhT-vR-4sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="175"/>
+            <point key="canvasLocation" x="1928" y="175"/>
         </scene>
         <!--DashboardView-->
         <scene sceneID="V7H-cV-Br3">
@@ -56,7 +74,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fd1-7b-P9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="259"/>
+            <point key="canvasLocation" x="130" y="500"/>
         </scene>
         <!--PublishView-->
         <scene sceneID="mZl-8q-51F">
@@ -66,7 +84,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDX-MS-3yJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-167" y="175"/>
+            <point key="canvasLocation" x="130" y="-149"/>
         </scene>
         <!--IndexView-->
         <scene sceneID="Y0m-BF-HEP">
@@ -76,17 +94,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3K-ni-kXd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-176" y="87"/>
-        </scene>
-        <!--ReviewView-->
-        <scene sceneID="zin-PB-mfU">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ReviewView" id="fau-qf-Clv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="D2B-P2-6qm"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mhd-rD-VlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-167" y="216"/>
+            <point key="canvasLocation" x="-791.304347826087" y="-529.01785714285711"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

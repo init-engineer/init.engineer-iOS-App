@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mji-zJ-1ZD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Fixedsys500c.ttf">
+            <string>FixedsysTTF</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--儀錶板-->
+        <scene sceneID="r5F-2n-kl4">
+            <objects>
+                <viewController id="ifS-1X-e4W" customClass="DashboardTabController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LjI-ly-DiX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="儀錶板 Dashboard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbC-Yo-O3A">
+                                <rect key="frame" x="135" y="108" width="144.5" height="19"/>
+                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rJg-gQ-NbV">
+                                <rect key="frame" x="335" y="88" width="59" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rJg-gQ-NbV" secondAttribute="height" multiplier="1:1" id="h5I-xH-Rbr"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aq3-Jp-RTS"/>
+                        <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rJg-gQ-NbV" firstAttribute="bottom" secondItem="lbC-Yo-O3A" secondAttribute="bottom" constant="20" id="1SL-JW-Iqd"/>
+                            <constraint firstItem="aq3-Jp-RTS" firstAttribute="trailing" secondItem="rJg-gQ-NbV" secondAttribute="trailing" constant="20" id="D5a-KY-QgS"/>
+                            <constraint firstItem="lbC-Yo-O3A" firstAttribute="top" secondItem="aq3-Jp-RTS" secondAttribute="top" constant="20" id="DMc-2Z-2b6"/>
+                            <constraint firstItem="lbC-Yo-O3A" firstAttribute="centerX" secondItem="aq3-Jp-RTS" secondAttribute="centerX" id="h7o-y1-sWw"/>
+                            <constraint firstItem="rJg-gQ-NbV" firstAttribute="top" secondItem="aq3-Jp-RTS" secondAttribute="top" id="msl-Uy-f3j"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="儀錶板" id="g8e-zp-7sM"/>
+                    <navigationItem key="navigationItem" id="jgb-qh-ess"/>
+                    <connections>
+                        <outlet property="userImg" destination="rJg-gQ-NbV" id="mU0-P0-yxZ"/>
+                        <segue destination="Qut-Ki-2E0" kind="show" identifier="DashboardToLogin" id="63W-j3-dLV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MH1-zz-Msa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="500"/>
+        </scene>
+        <!--儀錶板-->
+        <scene sceneID="SG3-3Z-eri">
+            <objects>
+                <navigationController id="Mji-zJ-1ZD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="儀錶板" id="3bg-63-nfF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nfD-Sy-qC9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ifS-1X-e4W" kind="relationship" relationship="rootViewController" id="s6K-mc-aha"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ccc-gi-UsG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="500"/>
+        </scene>
+        <!--LoginView-->
+        <scene sceneID="AGP-XQ-EZp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginView" id="Qut-Ki-2E0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="n0v-ED-UIB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YhT-vR-4sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="500"/>
+        </scene>
+    </scenes>
+</document>
