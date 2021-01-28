@@ -48,16 +48,6 @@
             </objects>
             <point key="canvasLocation" x="-171" y="131"/>
         </scene>
-        <!--PublishView-->
-        <scene sceneID="mZl-8q-51F">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PublishView" id="FAc-80-V5H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="n2s-Kw-W9a"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mDX-MS-3yJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-167" y="175"/>
-        </scene>
         <!--ReviewView-->
         <scene sceneID="zin-PB-mfU">
             <objects>
@@ -67,6 +57,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhd-rD-VlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-167" y="216"/>
+        </scene>
+        <!--PublishView-->
+        <scene sceneID="mZl-8q-51F">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PublishView" id="FAc-80-V5H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="n2s-Kw-W9a"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mDX-MS-3yJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="175"/>
         </scene>
         <!--DashboardView-->
         <scene sceneID="V7H-cV-Br3">
