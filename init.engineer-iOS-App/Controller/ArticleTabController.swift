@@ -17,7 +17,7 @@ class ArticleTabController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        return ArticleCell.init()
+        return UICollectionViewCell.init()
     }
     
 
@@ -30,6 +30,4 @@ class ArticleTabController: UIViewController, UICollectionViewDelegate, UICollec
 }
 
 
-class ArticleCell: UICollectionViewCell {
-    
-}
+

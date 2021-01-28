@@ -28,6 +28,8 @@
 		853D8EDF25BD205600AD1548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853D8EDE25BD205600AD1548 /* Assets.xcassets */; };
 		853D8EE325BD205600AD1548 /* KaobeiWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 853D8ED625BD204B00AD1548 /* KaobeiWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		853D8F0B25BD528600AD1548 /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
+		853D8F9A25C23C4000AD1548 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D8F9925C23C4000AD1548 /* ArticleCell.swift */; };
+		853D8F9F25C2715F00AD1548 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D8F9E25C2715F00AD1548 /* UIConstants.swift */; };
 		85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6C3C625AC918B00544802 /* KaobeiURL.swift */; };
 		85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */; };
 		85AB734A25B1F4ED00F6238A /* KBArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */; };
@@ -150,6 +152,8 @@
 		853D8EDE25BD205600AD1548 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		853D8EE025BD205600AD1548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		853D8EE425BD205900AD1548 /* KaobeiWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KaobeiWidgetExtension.entitlements; sourceTree = "<group>"; };
+		853D8F9925C23C4000AD1548 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		853D8F9E25C2715F00AD1548 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		85A6C3C625AC918B00544802 /* KaobeiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiURL.swift; sourceTree = "<group>"; };
 		85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBGetArticleDetail.swift; sourceTree = "<group>"; };
 		85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleDetail.swift; sourceTree = "<group>"; };
@@ -288,6 +292,15 @@
 			path = KaobeiWidget;
 			sourceTree = "<group>";
 		};
+		853D8F8B25C23A2B00AD1548 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				853D8F9925C23C4000AD1548 /* ArticleCell.swift */,
+				853D8F9E25C2715F00AD1548 /* UIConstants.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		85AB736925B359A300F6238A /* Token */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +401,7 @@
 		C4DCC3E42487F0740061C1BD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				853D8F8B25C23A2B00AD1548 /* Components */,
 				A7D2E850244DE50E00953132 /* Main.storyboard */,
 				A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */,
 			);
@@ -800,6 +814,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853D8F9F25C2715F00AD1548 /* UIConstants.swift in Sources */,
 				A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */,
 				C45A3A4F25B9897300F484F1 /* Constants.swift in Sources */,
 				12CA61C9248C1B580020E606 /* ArticleViewController.swift in Sources */,
@@ -808,6 +823,7 @@
 				12C64454248E129A005A2974 /* LoginController.swift in Sources */,
 				A7D2E84F244DE50E00953132 /* IndexTabController.swift in Sources */,
 				A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */,
+				853D8F9A25C23C4000AD1548 /* ArticleCell.swift in Sources */,
 				85AB736B25B359C400F6238A /* KeyChainManager.swift in Sources */,
 				127FD91F248BAACF002E9645 /* DashboardTabController.swift in Sources */,
 				A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */,
