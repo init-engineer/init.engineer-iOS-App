@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hrF-ea-Cq1">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Fixedsys500c.ttf">
+            <string>FixedsysTTF</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login Controller-->
+        <scene sceneID="P25-X8-42a">
+            <objects>
+                <viewController id="hrF-ea-Cq1" customClass="LoginController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h80-GN-I3h">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="純靠北工程師" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35v-r5-wdR">
+                                <rect key="frame" x="126" y="345.5" width="162" height="30"/>
+                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzz-Tx-KD7">
+                                <rect key="frame" x="172" y="428" width="70" height="40"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Mug-pI-7nS"/>
+                                    <constraint firstAttribute="height" constant="40" id="u4O-sb-aVn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                <state key="normal" title="登入">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="hrF-ea-Cq1" eventType="touchUpInside" id="YYV-u1-ZaN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6nd-OR-ryw"/>
+                        <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dzz-Tx-KD7" firstAttribute="centerY" secondItem="h80-GN-I3h" secondAttribute="centerY" id="BOY-gP-Hsj"/>
+                            <constraint firstItem="Dzz-Tx-KD7" firstAttribute="centerX" secondItem="h80-GN-I3h" secondAttribute="centerX" id="Tg5-11-OBZ"/>
+                            <constraint firstItem="35v-r5-wdR" firstAttribute="centerX" secondItem="6nd-OR-ryw" secondAttribute="centerX" id="rwN-La-CeE"/>
+                            <constraint firstItem="35v-r5-wdR" firstAttribute="centerY" secondItem="6nd-OR-ryw" secondAttribute="centerY" multiplier="0.8" id="vSE-It-JGw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jcy-Jd-Kg3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zil-ob-EsE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928" y="175"/>
+        </scene>
+    </scenes>
+</document>

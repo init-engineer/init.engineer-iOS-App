@@ -321,7 +321,7 @@
                     <navigationItem key="navigationItem" id="jgb-qh-ess"/>
                     <connections>
                         <outlet property="userImg" destination="rJg-gQ-NbV" id="mU0-P0-yxZ"/>
-                        <segue destination="Qut-Ki-2E0" kind="show" identifier="DashboardToLogin" id="63W-j3-dLV"/>
+                        <segue destination="hrF-ea-Cq1" kind="show" identifier="DashboardToLogin" id="63W-j3-dLV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MH1-zz-Msa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -449,7 +449,7 @@
                         <outlet property="fontPicker" destination="70g-av-MVZ" id="ZnY-gb-U7k"/>
                         <outlet property="themePicker" destination="b2Z-uQ-nag" id="Wlv-Cb-zZW"/>
                         <outlet property="userImg" destination="u8u-aM-YDh" id="PyH-NM-6jr"/>
-                        <segue destination="Qut-Ki-2E0" kind="show" identifier="PublishToLogin" id="edM-bp-uxV"/>
+                        <segue destination="hrF-ea-Cq1" kind="show" identifier="PublishToLogin" id="edM-bp-uxV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ng-Dq-p4A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -473,6 +473,51 @@
             </objects>
             <point key="canvasLocation" x="130" y="-149"/>
         </scene>
+        <!--Login Controller-->
+        <scene sceneID="P25-X8-42a">
+            <objects>
+                <viewController id="hrF-ea-Cq1" customClass="LoginController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h80-GN-I3h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="純靠北工程師" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35v-r5-wdR">
+                                <rect key="frame" x="126" y="345.5" width="162" height="30"/>
+                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzz-Tx-KD7">
+                                <rect key="frame" x="172" y="428" width="70" height="40"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Mug-pI-7nS"/>
+                                    <constraint firstAttribute="height" constant="40" id="u4O-sb-aVn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                <state key="normal" title="登入">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="hrF-ea-Cq1" eventType="touchUpInside" id="YYV-u1-ZaN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6nd-OR-ryw"/>
+                        <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dzz-Tx-KD7" firstAttribute="centerY" secondItem="h80-GN-I3h" secondAttribute="centerY" id="BOY-gP-Hsj"/>
+                            <constraint firstItem="Dzz-Tx-KD7" firstAttribute="centerX" secondItem="h80-GN-I3h" secondAttribute="centerX" id="Tg5-11-OBZ"/>
+                            <constraint firstItem="35v-r5-wdR" firstAttribute="centerX" secondItem="6nd-OR-ryw" secondAttribute="centerX" id="rwN-La-CeE"/>
+                            <constraint firstItem="35v-r5-wdR" firstAttribute="centerY" secondItem="6nd-OR-ryw" secondAttribute="centerY" multiplier="0.8" id="vSE-It-JGw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jcy-Jd-Kg3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zil-ob-EsE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928" y="175"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iD6-31-BUH">
             <objects>
@@ -486,8 +531,8 @@
                         <segue destination="dmE-e9-gNw" kind="relationship" relationship="viewControllers" id="t5p-XF-V6t"/>
                         <segue destination="VHY-Q3-yda" kind="relationship" relationship="viewControllers" id="GFh-At-7sC"/>
                         <segue destination="JdV-9f-1Pw" kind="relationship" relationship="viewControllers" id="Vkg-Py-PRG"/>
-                        <segue destination="mha-7H-uOT" kind="relationship" relationship="viewControllers" id="mi8-Z9-zfX"/>
                         <segue destination="Mji-zJ-1ZD" kind="relationship" relationship="viewControllers" id="IEV-XP-R9C"/>
+                        <segue destination="mha-7H-uOT" kind="relationship" relationship="viewControllers" id="mi8-Z9-zfX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2Y-es-97N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -504,19 +549,9 @@
             </objects>
             <point key="canvasLocation" x="-791" y="1209"/>
         </scene>
-        <!--LoginView-->
-        <scene sceneID="AGP-XQ-EZp">
-            <objects>
-                <viewControllerPlaceholder storyboardName="LoginView" id="Qut-Ki-2E0" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="n0v-ED-UIB"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YhT-vR-4sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1928" y="175"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="edM-bp-uxV"/>
+        <segue reference="63W-j3-dLV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="img_flag1" width="960" height="540"/>

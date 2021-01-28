@@ -64,6 +64,8 @@
 		A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */; };
 		C45A3A1C25B9363F00F484F1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C45A3A1B25B9363F00F484F1 /* Debug.xcconfig */; };
 		C45A3A4F25B9897300F484F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A3A4E25B9897300F484F1 /* Constants.swift */; };
+		C4A2246625C30D5000DEB3C5 /* ArticleView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2246425C30D5000DEB3C5 /* ArticleView.storyboard */; };
+		C4A2246C25C321CE00DEB3C5 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2246A25C321CE00DEB3C5 /* LoginView.storyboard */; };
 		C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +199,8 @@
 		C45A3A2525B9372E00F484F1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		C45A3A3025B945C600F484F1 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		C45A3A4E25B9897300F484F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C4A2246525C30D5000DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArticleView.storyboard; sourceTree = "<group>"; };
+		C4A2246B25C321CE00DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginView.storyboard; sourceTree = "<group>"; };
 		C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fixedsys500c.ttf; sourceTree = "<group>"; };
 		DA3850D8518AC48AC774F3F2 /* Pods-KaobeiWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-KaobeiWidgetExtension/Pods-KaobeiWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		DF6AF4F39385A0B08C5A553C /* Pods_KaobeiAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaobeiAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -402,8 +406,10 @@
 			isa = PBXGroup;
 			children = (
 				853D8F8B25C23A2B00AD1548 /* Components */,
-				A7D2E850244DE50E00953132 /* Main.storyboard */,
 				A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */,
+				A7D2E850244DE50E00953132 /* Main.storyboard */,
+				C4A2246425C30D5000DEB3C5 /* ArticleView.storyboard */,
+				C4A2246A25C321CE00DEB3C5 /* LoginView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -626,9 +632,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A2246625C30D5000DEB3C5 /* ArticleView.storyboard in Resources */,
 				A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */,
 				A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */,
 				A7D2E852244DE50E00953132 /* Main.storyboard in Resources */,
+				C4A2246C25C321CE00DEB3C5 /* LoginView.storyboard in Resources */,
 				C45A3A1C25B9363F00F484F1 /* Debug.xcconfig in Resources */,
 				C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */,
 			);
@@ -870,6 +878,22 @@
 				A7D2E859244DE50F00953132 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C4A2246425C30D5000DEB3C5 /* ArticleView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4A2246525C30D5000DEB3C5 /* Base */,
+			);
+			name = ArticleView.storyboard;
+			sourceTree = "<group>";
+		};
+		C4A2246A25C321CE00DEB3C5 /* LoginView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4A2246B25C321CE00DEB3C5 /* Base */,
+			);
+			name = LoginView.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
