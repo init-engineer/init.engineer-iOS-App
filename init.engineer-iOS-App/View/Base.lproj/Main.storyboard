@@ -38,16 +38,6 @@
             </objects>
             <point key="canvasLocation" x="-171" y="131"/>
         </scene>
-        <!--LoginView-->
-        <scene sceneID="AGP-XQ-EZp">
-            <objects>
-                <viewControllerPlaceholder storyboardName="LoginView" id="Qut-Ki-2E0" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="n0v-ED-UIB"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YhT-vR-4sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="133" y="175"/>
-        </scene>
         <!--DashboardView-->
         <scene sceneID="V7H-cV-Br3">
             <objects>
