@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JdV-9f-1Pw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K0k-qp-VNL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,24 +9,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--審核文章-->
+        <!--Review Tab Controller-->
         <scene sceneID="577-Xd-HxP">
             <objects>
-                <viewController id="JdV-9f-1Pw" sceneMemberID="viewController">
+                <viewController id="JdV-9f-1Pw" customClass="ReviewTabController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yEP-N6-TZR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="rxH-Oj-10V"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="審核文章" id="Tpi-sF-Sup"/>
+                    <navigationItem key="navigationItem" id="xJ8-HZ-Vai"/>
+                    <connections>
+                        <segue destination="fN6-oe-E6S" kind="show" identifier="ReviewToLogin" id="rEv-5I-Eiq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Aj-tR-HFF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="339" y="-626"/>
+            <point key="canvasLocation" x="1247.8260869565217" y="-626.11607142857144"/>
+        </scene>
+        <!--LoginView-->
+        <scene sceneID="LxL-xo-3WY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginView" id="fN6-oe-E6S" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="75V-Cw-88T"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5j-wy-XOM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905.7971014492755" y="-626.11607142857144"/>
+        </scene>
+        <!--審核文章-->
+        <scene sceneID="H0r-88-qUQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K0k-qp-VNL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="審核文章" image="baseline_gavel_black_24pt" landscapeImage="baseline_gavel_black_18pt" id="Tpi-sF-Sup"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="huF-eF-0p6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JdV-9f-1Pw" kind="relationship" relationship="rootViewController" id="eCk-Oq-7SS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIC-Hi-3qg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="337.68115942028987" y="-626.11607142857144"/>
         </scene>
     </scenes>
     <resources>
+        <image name="baseline_gavel_black_18pt" width="18" height="18"/>
+        <image name="baseline_gavel_black_24pt" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

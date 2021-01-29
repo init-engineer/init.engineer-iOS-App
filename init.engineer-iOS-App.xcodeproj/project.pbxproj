@@ -64,6 +64,7 @@
 		A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */; };
 		C45A3A1C25B9363F00F484F1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C45A3A1B25B9363F00F484F1 /* Debug.xcconfig */; };
 		C45A3A4F25B9897300F484F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A3A4E25B9897300F484F1 /* Constants.swift */; };
+		C45DF73625C43D5100415094 /* ReviewTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF73525C43D5100415094 /* ReviewTabController.swift */; };
 		C4A2246625C30D5000DEB3C5 /* ArticleView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2246425C30D5000DEB3C5 /* ArticleView.storyboard */; };
 		C4A2246C25C321CE00DEB3C5 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2246A25C321CE00DEB3C5 /* LoginView.storyboard */; };
 		C4A2247525C323C000DEB3C5 /* DashboardView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2247325C323C000DEB3C5 /* DashboardView.storyboard */; };
@@ -203,6 +204,7 @@
 		C45A3A2525B9372E00F484F1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		C45A3A3025B945C600F484F1 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		C45A3A4E25B9897300F484F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C45DF73525C43D5100415094 /* ReviewTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewTabController.swift; path = "init.engineer-iOS-App/Controller/ReviewTabController.swift"; sourceTree = SOURCE_ROOT; };
 		C4A2246525C30D5000DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArticleView.storyboard; sourceTree = "<group>"; };
 		C4A2246B25C321CE00DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginView.storyboard; sourceTree = "<group>"; };
 		C4A2247425C323C000DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DashboardView.storyboard; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				A7D2E84E244DE50E00953132 /* IndexTabController.swift */,
 				127FD91A248BAAA4002E9645 /* ArticleTabController.swift */,
 				12CA61C8248C1B580020E606 /* ArticleViewController.swift */,
+				C45DF73525C43D5100415094 /* ReviewTabController.swift */,
 				127FD91C248BAAC1002E9645 /* PublishTabController.swift */,
 				127FD91E248BAACF002E9645 /* DashboardTabController.swift */,
 				12C64453248E129A005A2974 /* LoginController.swift */,
@@ -841,6 +844,7 @@
 				853D8F9F25C2715F00AD1548 /* UIConstants.swift in Sources */,
 				A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */,
 				C45A3A4F25B9897300F484F1 /* Constants.swift in Sources */,
+				C45DF73625C43D5100415094 /* ReviewTabController.swift in Sources */,
 				12CA61C9248C1B580020E606 /* ArticleViewController.swift in Sources */,
 				127FD91D248BAAC1002E9645 /* PublishTabController.swift in Sources */,
 				127FD91B248BAAA4002E9645 /* ArticleTabController.swift in Sources */,
