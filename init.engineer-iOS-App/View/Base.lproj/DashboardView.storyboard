@@ -59,7 +59,7 @@
         <scene sceneID="SG3-3Z-eri">
             <objects>
                 <navigationController id="Mji-zJ-1ZD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="儀錶板" id="3bg-63-nfF"/>
+                    <tabBarItem key="tabBarItem" title="儀錶板" image="baseline_person_black_24pt" landscapeImage="baseline_person_black_18pt" id="3bg-63-nfF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nfD-Sy-qC9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -83,4 +83,8 @@
             <point key="canvasLocation" x="1820" y="500"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="baseline_person_black_18pt" width="18" height="18"/>
+        <image name="baseline_person_black_24pt" width="24" height="24"/>
+    </resources>
 </document>

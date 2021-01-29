@@ -128,7 +128,7 @@
         <scene sceneID="tyz-R6-OoN">
             <objects>
                 <navigationController id="mha-7H-uOT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="發表文章" id="IHW-XO-mgn"/>
+                    <tabBarItem key="tabBarItem" title="發表文章" image="baseline_edit_black_24pt" landscapeImage="baseline_edit_black_18pt" id="IHW-XO-mgn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e8M-XN-J6T">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -152,4 +152,8 @@
             <point key="canvasLocation" x="1739" y="-149"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="baseline_edit_black_18pt" width="18" height="18"/>
+        <image name="baseline_edit_black_24pt" width="24" height="24"/>
+    </resources>
 </document>

@@ -257,7 +257,7 @@
                             <constraint firstItem="bP3-Yh-EqA" firstAttribute="trailing" secondItem="MOZ-MG-QjJ" secondAttribute="trailing" id="u7u-cR-WR3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="首頁" id="dp0-3C-EPp"/>
+                    <tabBarItem key="tabBarItem" title="首頁" image="baseline_home_black_24pt" landscapeImage="baseline_home_black_18pt" id="dp0-3C-EPp"/>
                     <connections>
                         <outlet property="facebookImg" destination="pok-Q8-Orh" id="6db-IG-mwe"/>
                         <outlet property="plurkImg" destination="BYK-Lo-0x1" id="dXO-vA-5Uk"/>
@@ -271,6 +271,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="baseline_home_black_18pt" width="18" height="18"/>
+        <image name="baseline_home_black_24pt" width="24" height="24"/>
         <image name="img_flag1" width="960" height="540"/>
         <image name="img_plurk" width="200" height="200"/>
         <image name="img_twitter" width="770" height="439"/>
