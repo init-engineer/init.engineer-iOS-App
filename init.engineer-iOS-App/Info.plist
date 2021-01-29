@@ -2,17 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SKAdNetworkItems</key>
-	<array>
-		<dict>
-			<key>SKAdNetworkIdentifier</key>
-			<string>cstr6suwn9.skadnetwork</string>
-		</dict>
-	</array>
-	<key>GAD AdsBanner1</key>
-	<string>$(ADMOB_AD1)</string>
-	<key>GADApplicationIdentifier</key>
-	<string>$(ADMOB_ID)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -29,16 +18,29 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>GAD AdsBanner1</key>
+	<string>$(ADMOB_AD1)</string>
+	<key>GADApplicationIdentifier</key>
+	<string>$(ADMOB_ID)</string>
 	<key>Keychain Service Name</key>
 	<string>$(KEYCHAIN_SERVICE_NAME)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>如果要上傳自定圖片必須開啟此權限</string>
 	<key>OAuth2 Client ID</key>
 	<string>$(OAUTH2_CLIENT_ID)</string>
 	<key>OAuth2 Client Secret</key>
 	<string>$(OAUTH2_CLIENT_SECRET)</string>
 	<key>OAuth2 Redirect URI</key>
 	<string>$(OAUTH2_SCHEME)://$(OAUTH2_PATH)</string>
+	<key>SKAdNetworkItems</key>
+	<array>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>cstr6suwn9.skadnetwork</string>
+		</dict>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fixedsys500c.ttf</string>
