@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "mewe.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
