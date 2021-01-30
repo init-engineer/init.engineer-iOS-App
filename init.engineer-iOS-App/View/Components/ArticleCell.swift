@@ -37,7 +37,7 @@ class ArticleCell: UITableViewCell {
         contentView.layer.cornerRadius = 10
         self.id = content.id
         self.stringTag = tagConvert(from: content.id)
-        self.publishTime = content.createdAt
+        self.publishTime = content.createdDiff
         self.contentString = content.content
         
         commonUI()
@@ -48,7 +48,7 @@ class ArticleCell: UITableViewCell {
         contentView.layer.cornerRadius = 10
         self.id = content.id
         self.stringTag = tagConvert(from: content.id)
-        self.publishTime = content.createdAt
+        self.publishTime = content.createdDiff
         self.contentString = content.content
         self.aye = content.succeeded
         self.nay = content.failed
@@ -82,6 +82,7 @@ class ArticleCell: UITableViewCell {
             bottomView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             bottomView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             bottomView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            upperView.heightAnchor.constraint(equalToConstant: 200.0),
             bottomView.heightAnchor.constraint(equalToConstant: bottomHeight)
         ])
         
@@ -92,7 +93,7 @@ class ArticleCell: UITableViewCell {
         articleView.lineBreakMode = .byWordWrapping
         articleView.translatesAutoresizingMaskIntoConstraints = false
         
-        upperView.addSubview(contentView)
+        upperView.addSubview(articleView)
         upperView.addConstraints([
             articleView.topAnchor.constraint(equalTo: upperView.topAnchor, constant: 8.0),
             articleView.bottomAnchor.constraint(equalTo: upperView.bottomAnchor, constant: -8.0),
@@ -104,9 +105,9 @@ class ArticleCell: UITableViewCell {
         let timeLabel = UILabel()
         self.enterArticleBtn = UIButton()
         tagLabel.text = self.stringTag
-        tagLabel.font = FontConstant.Default.textFont
+        //tagLabel.font = FontConstant.Default.textFont
         timeLabel.text = self.publishTime
-        timeLabel.font = FontConstant.Default.textFont
+        //timeLabel.font = FontConstant.Default.textFont
         
         
         guard let enterArticleBtn = self.enterArticleBtn else {
@@ -115,7 +116,7 @@ class ArticleCell: UITableViewCell {
         
         enterArticleBtn.setTitle("詳細內容", for: .normal)
         enterArticleBtn.setTitleColor(ColorConstants.Default.buttonTextColor, for: .normal)
-        enterArticleBtn.titleLabel?.font = FontConstant.Default.textFont
+        //enterArticleBtn.titleLabel?.font = FontConstant.Default.textFont
         
         
         tagLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -129,9 +130,9 @@ class ArticleCell: UITableViewCell {
             ayeLabel.text = "\(self.aye ?? 0)"
             voteLabel.text = "\(self.vote ?? 0)"
             nayLabel.text = "\(self.nay ?? 0)"
-            ayeLabel.font = FontConstant.Default.textFont
-            voteLabel.font = FontConstant.Default.textFont
-            nayLabel.font = FontConstant.Default.textFont
+            //ayeLabel.font = FontConstant.Default.textFont
+            //voteLabel.font = FontConstant.Default.textFont
+            //nayLabel.font = FontConstant.Default.textFont
             ayeLabel.translatesAutoresizingMaskIntoConstraints = false
             voteLabel.translatesAutoresizingMaskIntoConstraints = false
             nayLabel.translatesAutoresizingMaskIntoConstraints = false
