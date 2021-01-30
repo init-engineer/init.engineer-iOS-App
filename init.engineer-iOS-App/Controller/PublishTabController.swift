@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PublishTabController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class PublishTabController: UIViewController {
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var articleImg: UIImageView!
     @IBOutlet weak var articleText: UITextView!
@@ -29,26 +29,6 @@ class PublishTabController: UIViewController, UIImagePickerControllerDelegate & 
     }
 
     @IBAction func imageUploadBtn(_ sender: Any) {
-        
-        let controller = UIImagePickerController()
-        controller.sourceType = .photoLibrary
-        self.present(controller, animated: true)
-        controller.delegate = self
     }
     
-}
-
-extension PublishTabController {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[.originalImage] as? UIImage
-        let imgData = NSData(data: image!.jpegData(compressionQuality: 1)!)
-        let imageSize: Int = imgData.count
-        print("actual size of image in KB: %f ", Double(imageSize) / 1000.0)
-        articleImg.image = image
-        picker.dismiss(animated: true, completion: nil)
-    }
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        articleImg.image = nil
-        picker.dismiss(animated: true, completion: nil)
-    }
 }
