@@ -29,7 +29,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.13333499430000001" green="0.13333114979999999" blue="0.13333195449999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.1483450234" green="0.14836204049999999" blue="0.14833080770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ybK-Kw-WUX" secondAttribute="bottom" id="O2G-2t-l7C"/>
                             <constraint firstItem="ybK-Kw-WUX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YUI-QM-PLc"/>

@@ -61,7 +61,7 @@ class ArticleCell: UITableViewCell {
         self.backgroundColor = .clear
         self.aye = content.succeeded
         self.nay = content.failed
-        self.vote = content.succeeded - content.failed
+        self.vote = content.succeeded + content.failed
         
         commonUI()
         self.enterArticleBtn?.addTarget(self, action: #selector(showArticleReview), for: .touchUpInside)
@@ -171,6 +171,9 @@ class ArticleCell: UITableViewCell {
             upperStackView.addArrangedSubview(voteLabel)
             upperStackView.addArrangedSubview(nayLabel)
             
+            bottomView.addSubview(upperStackView)
+            bottomView.addSubview(bottomStackView)
+            
             bottomView.addConstraints([
                 upperStackView.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 15.0),
                 upperStackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
@@ -214,6 +217,7 @@ class ArticleCell: UITableViewCell {
     
     @objc func showArticle() {
         // push/present self.id
+        // add ads here
     }
     
     @objc func showArticleReview() {
