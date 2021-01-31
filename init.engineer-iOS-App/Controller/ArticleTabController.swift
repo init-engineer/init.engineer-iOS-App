@@ -45,9 +45,12 @@ class ArticleTabController: UIViewController {
                 self?.articleList.append(contentsOf: data.data)
                 self?.articleList.append(nil)
                 self?.articleTable.reloadData()
+                self?.count += 1
                 break
             case .failure(let error):
                 print(error.responseCode ?? "")
+                self?.articleList.append(nil)
+                self?.articleTable.reloadData()
                 break
             }
         }
@@ -96,6 +99,27 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
         return tableView.sectionHeaderHeight
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section >= self.articleList.count - 1 {
+            let listRequest = KBGetArticleList.init(page: count)
+            KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
+                switch response.result {
+                case .success(let data):
+                    self?.articleList.append(contentsOf: data.data)
+                    self?.articleList.append(nil)
+                    self?.articleTable.reloadData()
+                    self?.count += 1
+                    break
+                case .failure(let error):
+                    print(error.responseCode ?? "")
+                    self?.articleList.append(nil)
+                    self?.articleTable.reloadData()
+                    break
+                }
+            }
+        }
     }
 }
 
