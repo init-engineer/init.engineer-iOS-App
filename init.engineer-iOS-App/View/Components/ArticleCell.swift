@@ -22,6 +22,8 @@ class ArticleCell: UITableViewCell {
     var id: Int?
     
     func makeAds(ads: GADBannerView) {
+        dispatchViews()
+        ads.tag = 1
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         ads.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +38,7 @@ class ArticleCell: UITableViewCell {
     }
     
     func makeArticel(content: Article) {
+        dispatchViews()
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         self.id = content.id
@@ -48,6 +51,7 @@ class ArticleCell: UITableViewCell {
     }
     
     func makeArticleInReview(content: ArticleUnderReview) {
+        dispatchViews()
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         self.id = content.id
@@ -66,6 +70,9 @@ class ArticleCell: UITableViewCell {
     private func commonUI() {
         let upperView = UIView()
         let bottomView = UIView()
+        
+        upperView.tag = 2
+        bottomView.tag = 3
         
         upperView.backgroundColor = ColorConstants.Default.backgroundColor
         bottomView.backgroundColor = .white
@@ -197,6 +204,13 @@ class ArticleCell: UITableViewCell {
             ])
         }
     }
+    
+    func dispatchViews() {
+        contentView.viewWithTag(1)?.removeFromSuperview()
+        contentView.viewWithTag(2)?.removeFromSuperview()
+        contentView.viewWithTag(3)?.removeFromSuperview()
+    }
+    
     
     @objc func showArticle() {
         // push/present self.id

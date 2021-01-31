@@ -19,7 +19,7 @@ struct ColorConstants {
 
 struct FontConstant {
     struct Default {
-        static let text = UIFont.init(name: "FixedsysTTF", size: UIFont.systemFontSize)!
-        static let title = UIFont.init(name: "FixedsysTTF", size: 16.0)!
+        static let text = UIFont.init(name: "FixedsysTTF", size: 16.0)!
+        static let title = UIFont.init(name: "FixedsysTTF", size: 36.0)!
     }
 }
