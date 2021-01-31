@@ -19,6 +19,7 @@ class ArticleTabController: UIViewController {
     
     let HEADER_ID = "header"
     let ARTICLE_ID = "article"
+    let TITLE_ID = "title"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,12 @@ class ArticleTabController: UIViewController {
         self.articleTable.delegate = self
         self.articleTable.dataSource = self
         self.articleTable.backgroundColor = .clear
+        self.articleTable.sectionHeaderHeight = 20.0
+        self.articleTable.backgroundView?.backgroundColor = .yellow
         self.articleTable.register(ArticleCell.self, forCellReuseIdentifier: ARTICLE_ID)
-        self.articleTable.register(ArticleHeader.self, forHeaderFooterViewReuseIdentifier: HEADER_ID)
+        self.articleTable.register(ArticleHeader.self, forCellReuseIdentifier: TITLE_ID)
+        self.articleTable.register(ArticleGap.self, forHeaderFooterViewReuseIdentifier: HEADER_ID)
+        self.articleList.append(nil)
         
         let listRequest = KBGetArticleList.init(page: count)
         KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
@@ -52,13 +57,6 @@ class ArticleTabController: UIViewController {
 }
 
 extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let headerView = self.articleTable.dequeueReusableHeaderFooterView(withIdentifier: HEADER_ID)
-            return headerView
-        }
-        return nil
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -69,6 +67,12 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = self.articleTable.dequeueReusableCell(withIdentifier: TITLE_ID) as! ArticleHeader
+            cell.setupUI()
+            return cell
+        }
+        
         let cell = self.articleTable.dequeueReusableCell(withIdentifier: ARTICLE_ID) as! ArticleCell
         if let article = articleList[indexPath.section] {
             cell.makeArticel(content: article)
@@ -78,25 +82,37 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return nil
+        }
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HEADER_ID) as! ArticleGap
+        header.setupUI()
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        }
+        return tableView.sectionHeaderHeight
+    }
 }
 
 
 
-fileprivate class ArticleHeader: UITableViewHeaderFooterView {
+fileprivate class ArticleHeader: UITableViewCell {
     let title = "文章列表 Article"
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    func setupUI() {
         let label = UILabel()
         label.text = title
-        //label.font = FontConstant.Default.textFont
+        label.font = FontConstant.Default.title
         label.backgroundColor = .clear
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         
         self.backgroundColor = .clear
-        self.contentView.backgroundColor = .clear
-        self.backgroundView?.backgroundColor = .clear
         
         contentView.addSubview(label)
         NSLayoutConstraint.activate([
@@ -106,8 +122,11 @@ fileprivate class ArticleHeader: UITableViewHeaderFooterView {
             label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
+}
+
+fileprivate class ArticleGap: UITableViewHeaderFooterView {
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func setupUI() {
+        self.isHidden = true
     }
 }
