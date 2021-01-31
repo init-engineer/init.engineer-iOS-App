@@ -39,6 +39,7 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="88" id="1LQ-m6-8MR"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mn4-XD-qDs" secondAttribute="trailing" constant="20" symbolic="YES" id="59b-gx-YmR"/>
                                                     <constraint firstItem="mn4-XD-qDs" firstAttribute="leading" secondItem="rg9-lB-ceE" secondAttribute="leading" id="Xa9-ty-mVe"/>
                                                     <constraint firstAttribute="bottom" secondItem="mn4-XD-qDs" secondAttribute="bottom" id="aKQ-un-oxa"/>
                                                 </constraints>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct K {
     static func getInfoPlistByKey(_ key: String) -> String? {
@@ -16,4 +17,6 @@ struct K {
     static let dashboardToLoginSegue = "DashboardToLogin"
     static let publishToLoginSegue = "PublishToLogin"
     static let reviewToLoginSegue = "ReviewToLogin"
+    static let publishArticlePlaceholderText = "跟大家分享你的靠北事吧。"
+    static let publishArticlePlaceholderTextColor = UIColor(white: 0xD3/255.0, alpha: 0.7)
 }
