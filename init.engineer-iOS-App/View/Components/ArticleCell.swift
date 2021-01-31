@@ -22,8 +22,10 @@ class ArticleCell: UITableViewCell {
     var id: Int?
     
     func makeAds(ads: GADBannerView) {
+        contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         ads.translatesAutoresizingMaskIntoConstraints = false
+        self.backgroundColor = .clear
         contentView.addSubview(ads)
         contentView.addConstraints([
             ads.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -34,22 +36,25 @@ class ArticleCell: UITableViewCell {
     }
     
     func makeArticel(content: Article) {
+        contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         self.id = content.id
         self.stringTag = tagConvert(from: content.id)
-        self.publishTime = content.createdAt
+        self.publishTime = content.createdDiff
         self.contentString = content.content
-        
+        self.backgroundColor = .clear
         commonUI()
         self.enterArticleBtn?.addTarget(self, action: #selector(showArticle), for: .touchUpInside)
     }
     
     func makeArticleInReview(content: ArticleUnderReview) {
+        contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         self.id = content.id
         self.stringTag = tagConvert(from: content.id)
-        self.publishTime = content.createdAt
+        self.publishTime = content.createdDiff
         self.contentString = content.content
+        self.backgroundColor = .clear
         self.aye = content.succeeded
         self.nay = content.failed
         self.vote = content.succeeded - content.failed
@@ -82,6 +87,7 @@ class ArticleCell: UITableViewCell {
             bottomView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             bottomView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             bottomView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            upperView.heightAnchor.constraint(equalToConstant: 200.0),
             bottomView.heightAnchor.constraint(equalToConstant: bottomHeight)
         ])
         
@@ -89,10 +95,10 @@ class ArticleCell: UITableViewCell {
         articleView.textColor = ColorConstants.Default.textColor
         articleView.text = self.contentString
         articleView.numberOfLines = 7
-        articleView.lineBreakMode = .byWordWrapping
+        articleView.lineBreakMode = .byTruncatingTail
         articleView.translatesAutoresizingMaskIntoConstraints = false
         
-        upperView.addSubview(contentView)
+        upperView.addSubview(articleView)
         upperView.addConstraints([
             articleView.topAnchor.constraint(equalTo: upperView.topAnchor, constant: 8.0),
             articleView.bottomAnchor.constraint(equalTo: upperView.bottomAnchor, constant: -8.0),
@@ -104,9 +110,9 @@ class ArticleCell: UITableViewCell {
         let timeLabel = UILabel()
         self.enterArticleBtn = UIButton()
         tagLabel.text = self.stringTag
-        tagLabel.font = FontConstant.Default.textFont
+        tagLabel.font = FontConstant.Default.text
         timeLabel.text = self.publishTime
-        timeLabel.font = FontConstant.Default.textFont
+        timeLabel.font = FontConstant.Default.text
         
         
         guard let enterArticleBtn = self.enterArticleBtn else {
@@ -115,7 +121,7 @@ class ArticleCell: UITableViewCell {
         
         enterArticleBtn.setTitle("詳細內容", for: .normal)
         enterArticleBtn.setTitleColor(ColorConstants.Default.buttonTextColor, for: .normal)
-        enterArticleBtn.titleLabel?.font = FontConstant.Default.textFont
+        enterArticleBtn.titleLabel?.font = FontConstant.Default.text
         
         
         tagLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -123,60 +129,71 @@ class ArticleCell: UITableViewCell {
         enterArticleBtn.translatesAutoresizingMaskIntoConstraints = false
         
         if let _ = self.vote {
+            let bottomStackView = UIStackView()
+            bottomStackView.axis = .horizontal
+            bottomStackView.distribution = .equalSpacing
+            bottomStackView.alignment = .center
+            
+            bottomStackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            bottomStackView.addArrangedSubview(tagLabel)
+            bottomStackView.addArrangedSubview(timeLabel)
+            bottomStackView.addArrangedSubview(enterArticleBtn)
+            
             let ayeLabel = UILabel()
             let voteLabel = UILabel()
             let nayLabel = UILabel()
             ayeLabel.text = "\(self.aye ?? 0)"
             voteLabel.text = "\(self.vote ?? 0)"
             nayLabel.text = "\(self.nay ?? 0)"
-            ayeLabel.font = FontConstant.Default.textFont
-            voteLabel.font = FontConstant.Default.textFont
-            nayLabel.font = FontConstant.Default.textFont
+            ayeLabel.font = FontConstant.Default.text
+            voteLabel.font = FontConstant.Default.text
+            nayLabel.font = FontConstant.Default.text
             ayeLabel.translatesAutoresizingMaskIntoConstraints = false
             voteLabel.translatesAutoresizingMaskIntoConstraints = false
             nayLabel.translatesAutoresizingMaskIntoConstraints = false
             
-            bottomView.addSubview(tagLabel)
-            bottomView.addSubview(timeLabel)
-            bottomView.addSubview(enterArticleBtn)
-            bottomView.addSubview(ayeLabel)
-            bottomView.addSubview(voteLabel)
-            bottomView.addSubview(nayLabel)
+            let upperStackView = UIStackView()
+            upperStackView.axis = .horizontal
+            upperStackView.distribution = .equalSpacing
+            upperStackView.alignment = .center
+            
+            upperStackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            upperStackView.addArrangedSubview(ayeLabel)
+            upperStackView.addArrangedSubview(voteLabel)
+            upperStackView.addArrangedSubview(nayLabel)
             
             bottomView.addConstraints([
-                voteLabel.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 15.0),
-                ayeLabel.centerYAnchor.constraint(equalTo: voteLabel.centerYAnchor),
-                nayLabel.centerYAnchor.constraint(equalTo: voteLabel.centerYAnchor),
-                voteLabel.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor),
-                ayeLabel.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor, constant: -bottomView.center.x / 2),
-                nayLabel.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor, constant: bottomView.center.x / 2),
-                tagLabel.centerYAnchor.constraint(equalTo: bottomView.centerYAnchor),
-                tagLabel.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -10.0),
-                tagLabel.topAnchor.constraint(equalTo: voteLabel.topAnchor, constant: 10.0),
-                timeLabel.centerYAnchor.constraint(equalTo: tagLabel.centerYAnchor),
-                enterArticleBtn.centerYAnchor.constraint(equalTo: tagLabel.centerYAnchor),
-                tagLabel.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
-                enterArticleBtn.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -19.0),
-                timeLabel.leadingAnchor.constraint(greaterThanOrEqualTo: tagLabel.trailingAnchor),
-                enterArticleBtn.leadingAnchor.constraint(greaterThanOrEqualTo: timeLabel.trailingAnchor)
+                upperStackView.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 15.0),
+                upperStackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
+                upperStackView.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -19.0),
+                bottomStackView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -10.0),
+                bottomStackView.topAnchor.constraint(equalTo: upperStackView.topAnchor, constant: 10.0),
+                bottomStackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
+                bottomStackView.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -19.0)
             ])
             
             
         } else {
-            bottomView.addSubview(tagLabel)
-            bottomView.addSubview(timeLabel)
-            bottomView.addSubview(enterArticleBtn)
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.distribution = .equalSpacing
+            stackView.alignment = .center
+            
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            stackView.addArrangedSubview(tagLabel)
+            stackView.addArrangedSubview(timeLabel)
+            stackView.addArrangedSubview(enterArticleBtn)
+            
+            bottomView.addSubview(stackView)
             
             bottomView.addConstraints([
-                tagLabel.centerYAnchor.constraint(equalTo: bottomView.centerYAnchor),
-                tagLabel.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -10.0),
-                tagLabel.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 15.0),
-                timeLabel.centerYAnchor.constraint(equalTo: tagLabel.centerYAnchor),
-                enterArticleBtn.centerYAnchor.constraint(equalTo: tagLabel.centerYAnchor),
-                tagLabel.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
-                enterArticleBtn.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -19.0),
-                timeLabel.leadingAnchor.constraint(greaterThanOrEqualTo: tagLabel.trailingAnchor),
-                enterArticleBtn.leadingAnchor.constraint(greaterThanOrEqualTo: timeLabel.trailingAnchor)
+                stackView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -10.0),
+                stackView.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 15.0),
+                stackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
+                stackView.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -19.0),
             ])
         }
     }
