@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ArticleViewController: UIViewController {
     @IBOutlet weak var articleImg: UIImageView!
@@ -23,6 +24,8 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var plurkShareLabel: UILabel!
     @IBOutlet weak var twitterShareLabel: UILabel!
     @IBOutlet weak var commentListView: UIStackView!
+    
+    var articleID: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,4 +16,6 @@ struct K {
     static let dashboardToLoginSegue = "DashboardToLogin"
     static let publishToLoginSegue = "PublishToLogin"
     static let reviewToLoginSegue = "ReviewToLogin"
+    static let ToArticleDetailsSegue = "ToArticleDetails"
+    static let ToReviewDetailsSegue = "ToReviewDetails"
 }

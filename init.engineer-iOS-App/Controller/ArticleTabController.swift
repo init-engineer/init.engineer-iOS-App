@@ -16,6 +16,7 @@ class ArticleTabController: UIViewController {
     var articleList = [Article?]()
     var count = 1
     var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
+    var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
     
     let GAP_ID = "gap"
     let ARTICLE_ID = "article"
@@ -29,6 +30,8 @@ class ArticleTabController: UIViewController {
         self.adBanner.adUnitID = K.getInfoPlistByKey("GAD AdsBanner1") ?? ""
         self.adBanner.rootViewController = self
         self.adBanner.load(GADRequest())
+        
+        self.interstitial.load(GADRequest())
         
         self.articleTable.allowsSelection = false
         self.articleTable.delegate = self
@@ -83,8 +86,10 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
         let cell = self.articleTable.dequeueReusableCell(withIdentifier: ARTICLE_ID) as! ArticleCell
         if let article = articleList[indexPath.section] {
             cell.makeArticel(content: article)
+            cell.delegate = self
         } else {
             cell.makeAds(ads: self.adBanner)
+            cell.delegate = nil
         }
         return cell
     }
@@ -113,6 +118,10 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
                 self?.reloadBlocker = false
                 switch response.result {
                 case .success(let data):
+                    if data.meta.pagination.count == 0 {
+                        self?.reloadBlocker = true
+                        break
+                    }
                     self?.articleList.append(contentsOf: data.data)
                     self?.articleList.append(nil)
                     self?.articleTable.reloadData()
@@ -129,3 +138,18 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension ArticleTabController: ArticleCellDelegate {
+    func cellClicked(with id: Int) {
+        if self.interstitial.isReady {
+            self.interstitial.present(fromRootViewController: self)
+        }
+        self.performSegue(withIdentifier: K.ToArticleDetailsSegue, sender: id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.ToArticleDetailsSegue {
+            guard let vc = segue.destination as? ArticleViewController, let id = sender as? Int else { return }
+            vc.articleID = id
+        }
+    }
+}

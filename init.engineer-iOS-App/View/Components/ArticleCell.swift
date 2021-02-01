@@ -11,6 +11,10 @@ import UIKit
 import GoogleMobileAds
 import KaobeiAPI
 
+protocol ArticleCellDelegate {
+    func cellClicked(with id: Int)
+}
+
 class ArticleCell: UITableViewCell {
     var contentString: String?
     var stringTag: String?
@@ -20,6 +24,7 @@ class ArticleCell: UITableViewCell {
     var aye: Int?
     var nay: Int?
     var id: Int?
+    var delegate: ArticleCellDelegate?
     
     func makeAds(ads: GADBannerView) {
         dispatchViews()
@@ -64,7 +69,7 @@ class ArticleCell: UITableViewCell {
         self.vote = content.succeeded + content.failed
         
         commonUI()
-        self.enterArticleBtn?.addTarget(self, action: #selector(showArticleReview), for: .touchUpInside)
+        self.enterArticleBtn?.addTarget(self, action: #selector(showArticle), for: .touchUpInside)
     }
     
     private func commonUI() {
@@ -216,12 +221,8 @@ class ArticleCell: UITableViewCell {
     
     
     @objc func showArticle() {
-        // push/present self.id
-        // add ads here
-    }
-    
-    @objc func showArticleReview() {
-        
+        guard let id = self.id else { return }
+        delegate?.cellClicked(with: id)
     }
     
     private func tagConvert(from id: Int) -> String {

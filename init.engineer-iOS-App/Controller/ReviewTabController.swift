@@ -15,14 +15,14 @@ class ReviewTabController: UIViewController {
     var userToken: String?
     @IBOutlet weak var reviewTable: UITableView!
     var reviewList = [ArticleUnderReview?]()
-    //var count = 1
+    var count = 1
     var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
     
     let GAP_ID = "gap"
     let REVIEW_ID = "review"
     let TITLE_ID = "title"
     
-    //var reloadBlocker = false
+    var reloadBlocker = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,16 +52,16 @@ class ReviewTabController: UIViewController {
             self.reviewTable.register(TableViewGap.self, forHeaderFooterViewReuseIdentifier: GAP_ID)
             self.reviewList.append(nil)
             
-            //reloadBlocker = true
-            let listRequest = KBGetArticleReviewList.init(accessToken: accessToken)
+            reloadBlocker = true
+            let listRequest = KBGetArticleReviewList.init(accessToken: accessToken, page: count)
             KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
-                //self?.reloadBlocker = false
+                self?.reloadBlocker = false
                 switch response.result {
                 case .success(let data):
                     self?.reviewList.append(contentsOf: data.data)
                     self?.reviewList.append(nil)
                     self?.reviewTable.reloadData()
-                    //self?.count += 1
+                    self?.count += 1
                     break
                 case .failure(let error):
                     print(error.responseCode ?? "")
@@ -109,8 +109,10 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
         let cell = self.reviewTable.dequeueReusableCell(withIdentifier: REVIEW_ID) as! ArticleCell
         if let review = reviewList[indexPath.section] {
             cell.makeArticleInReview(content: review)
+            cell.delegate = self
         } else {
             cell.makeAds(ads: self.adBanner)
+            cell.delegate = nil
         }
         return cell
     }
@@ -130,18 +132,21 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
         return tableView.sectionHeaderHeight
     }
     
-    /*
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if reloadBlocker == true { return }
         guard let userToken = self.userToken else { return }
         
         if indexPath.section >= self.reviewList.count - 2 {
             reloadBlocker = true
-            let listRequest = KBGetArticleReviewList.init(accessToken: userToken)
+            let listRequest = KBGetArticleReviewList.init(accessToken: userToken, page: count)
             KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
                 self?.reloadBlocker = false
                 switch response.result {
                 case .success(let data):
+                    if data.meta.pagination.count == 0 {
+                        self?.reloadBlocker = true
+                        break
+                    }
                     self?.reviewList.append(contentsOf: data.data)
                     self?.reviewList.append(nil)
                     self?.reviewTable.reloadData()
@@ -156,5 +161,17 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    */
+}
+
+extension ReviewTabController: ArticleCellDelegate {
+    func cellClicked(with id: Int) {
+        //self.performSegue(withIdentifier: K.ToReviewDetailsSegue, sender: id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.ToReviewDetailsSegue {
+            guard let vc = segue.destination as? ArticleViewController, let id = sender as? Int else { return }
+            vc.articleID = id
+        }
+    }
 }

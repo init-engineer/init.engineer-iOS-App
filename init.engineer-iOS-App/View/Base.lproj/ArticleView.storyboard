@@ -41,7 +41,7 @@
                     <navigationItem key="navigationItem" id="Iz0-QP-aCe"/>
                     <connections>
                         <outlet property="articleTable" destination="ybK-Kw-WUX" id="k8l-C2-Wgj"/>
-                        <segue destination="GSj-ts-Dua" kind="show" id="T4K-ER-cb9"/>
+                        <segue destination="GSj-ts-Dua" kind="show" identifier="ToArticleDetails" id="T4K-ER-cb9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
