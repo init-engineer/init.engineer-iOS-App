@@ -67,6 +67,9 @@
 		C45DF73625C43D5100415094 /* ReviewTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF73525C43D5100415094 /* ReviewTabController.swift */; };
 		C48F826625C54F0200D98F93 /* IndexButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F826525C54F0200D98F93 /* IndexButtonCell.swift */; };
 		C48F826B25C54F2200D98F93 /* IndexButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48F826A25C54F2200D98F93 /* IndexButtonCell.xib */; };
+		C48F830125C79A0400D98F93 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F830025C79A0400D98F93 /* FontManager.swift */; };
+		C48F830925C8464E00D98F93 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F830825C8464E00D98F93 /* ThemeManager.swift */; };
+		C48F830E25C8CEBA00D98F93 /* KaobeiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F830D25C8CEB900D98F93 /* KaobeiTabBarController.swift */; };
 		C4A2246625C30D5000DEB3C5 /* ArticleView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2246425C30D5000DEB3C5 /* ArticleView.storyboard */; };
 		C4A2246C25C321CE00DEB3C5 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2246A25C321CE00DEB3C5 /* LoginView.storyboard */; };
 		C4A2247525C323C000DEB3C5 /* DashboardView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2247325C323C000DEB3C5 /* DashboardView.storyboard */; };
@@ -209,6 +212,9 @@
 		C45DF73525C43D5100415094 /* ReviewTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewTabController.swift; path = "init.engineer-iOS-App/Controller/ReviewTabController.swift"; sourceTree = SOURCE_ROOT; };
 		C48F826525C54F0200D98F93 /* IndexButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexButtonCell.swift; sourceTree = "<group>"; };
 		C48F826A25C54F2200D98F93 /* IndexButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexButtonCell.xib; sourceTree = "<group>"; };
+		C48F830025C79A0400D98F93 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		C48F830825C8464E00D98F93 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		C48F830D25C8CEB900D98F93 /* KaobeiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiTabBarController.swift; sourceTree = "<group>"; };
 		C4A2246525C30D5000DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArticleView.storyboard; sourceTree = "<group>"; };
 		C4A2246B25C321CE00DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginView.storyboard; sourceTree = "<group>"; };
 		C4A2247425C323C000DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DashboardView.storyboard; sourceTree = "<group>"; };
@@ -444,6 +450,7 @@
 				127FD91C248BAAC1002E9645 /* PublishTabController.swift */,
 				127FD91E248BAACF002E9645 /* DashboardTabController.swift */,
 				12C64453248E129A005A2974 /* LoginController.swift */,
+				C48F830D25C8CEB900D98F93 /* KaobeiTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -452,6 +459,8 @@
 			isa = PBXGroup;
 			children = (
 				A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */,
+				C48F830025C79A0400D98F93 /* FontManager.swift */,
+				C48F830825C8464E00D98F93 /* ThemeManager.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -858,10 +867,13 @@
 				127FD91B248BAAA4002E9645 /* ArticleTabController.swift in Sources */,
 				12C64454248E129A005A2974 /* LoginController.swift in Sources */,
 				A7D2E84F244DE50E00953132 /* IndexTabController.swift in Sources */,
+				C48F830925C8464E00D98F93 /* ThemeManager.swift in Sources */,
 				A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */,
 				853D8F9A25C23C4000AD1548 /* ArticleCell.swift in Sources */,
 				85AB736B25B359C400F6238A /* KeyChainManager.swift in Sources */,
 				127FD91F248BAACF002E9645 /* DashboardTabController.swift in Sources */,
+				C48F830125C79A0400D98F93 /* FontManager.swift in Sources */,
+				C48F830E25C8CEBA00D98F93 /* KaobeiTabBarController.swift in Sources */,
 				A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
