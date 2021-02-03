@@ -108,30 +108,35 @@ class PublishTabController: UIViewController {
     }
     
     private func sendArticle(_ :UIAlertAction) {    // 發送文章實作
-//        accessToken: KeyChainManager.shared.getToken()
-//        article: articleTextView.text
-//        font:
-//        (字體名字 String)
-//        fontOptions[fontPickerView.selectedRow(inComponent: 0)]
-//        (字體 Value Base64 String)
-//        FontManager.shared.getFontValue(fontOptions[fontPickerView.selectedRow(inComponent: 0)])
-//        theme:
-//        (主題名字 String)
-//        themeOptions[themePickerView.selectedRow(inComponent: 0)]
-//        (主題 Value Base64 String)
-//        ThemeManager.shared.getThemeValue(themeOptions[themePickerView.selectedRow(inComponent: 0)])
-//        image: (UIImage?) articleImageView.image
+        guard let accessToken = KeyChainManager.shared.getToken() else {
+            return
+        }
+        let article = articleTextView.text ?? ""
+        let font: String =  FontManager.shared.getFontValue(fontOptions[fontPickerView.selectedRow(inComponent: 0)])
+        let theme: String = ThemeManager.shared.getThemeValue(themeOptions[themePickerView.selectedRow(inComponent: 0)])
+        let image: Data? = articleImageView.image?.jpegData(compressionQuality: 1.0)
 //        toBeContinuedDraw: (bool) toBeContinuedDraw.isOn
-        /*
-         如果 發送成功 則
-         */
-        publishSendSuccess()        // 顯示文章發送成功
-        resetPublishArticleForm()   // 重置發表文章表單所有內容
-        self.tabBarController?.selectedIndex = 2    // 跳轉到審核文章
-        /*
-         否則？？？？
-         （如果是 Token 過期就 Delete Token 再用 willViewAppear 的 self.performSegue 那行強制進入 LoginVC）
-         */
+        
+        let request = KBPostUserPublishing(accessToken: accessToken, article: article, font: font, theme: theme, image: image)
+        
+        KaobeiConnection.sendRequest(api: request) { [weak self] response in
+            switch response.result {
+            case .success(_):
+                /*
+                 如果 發送成功 則
+                 */
+                self?.publishSendSuccess()        // 顯示文章發送成功
+                self?.resetPublishArticleForm()   // 重置發表文章表單所有內容
+                self?.tabBarController?.selectedIndex = 2    // 跳轉到審核文章
+                break
+            case .failure(_):
+                /*
+                 否則？？？？
+                 （如果是 Token 過期就 Delete Token 再用 willViewAppear 的 self.performSegue 那行強制進入 LoginVC）
+                 */
+                break
+            }
+        }
     }
     
     @IBAction func publishButtonPressed(_ sender: UIButton) {   // 發送文章按鈕動作
@@ -139,7 +144,7 @@ class PublishTabController: UIViewController {
             publishCheckFailed(failTitle: "呃......", failedMessage: "您必須同意以上版規。")
         }
         else if articleTextView.text == K.publishArticlePlaceholderText && articleTextView.textColor == K.publishArticlePlaceholderTextColor {
-            publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "你根本沒打字 = =")
+            publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "你根本沒打字 = =") // 加上：欠閃退嗎？
         }
         else if articleTextView.text.count < 5 {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "至少 5 個字以上")

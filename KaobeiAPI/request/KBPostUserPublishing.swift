@@ -50,7 +50,7 @@ public struct KBPostUserPublishing: KaobeiRequestProtocol {
         return httpBody
     }
     
-    public init(accessToken: String, article: String, font: Fonts, theme: Theme, image: Data? = nil) {
+    public init(accessToken: String, article: String, font: String, theme: String, image: Data? = nil) {
         apiPath = String(format: KaobeiURL.userPublishing)
         self.token = accessToken
         
