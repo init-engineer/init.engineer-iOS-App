@@ -139,7 +139,7 @@ class KaobeiAPITests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        let request = KBPostUserPublishing.init(accessToken: TestingConstrants.getToken(), article: "純靠Android App測試\n靠！不小心送出了", font: .Auraka, theme: .黑底綠字)
+        let request = KBPostUserPublishing.init(accessToken: TestingConstrants.getToken(), article: "純靠Android App測試\n靠！不小心送出了", font: "Auraka", theme: "黑底綠字")
         
         let expect = expectation(description: "Waiting for response")
         

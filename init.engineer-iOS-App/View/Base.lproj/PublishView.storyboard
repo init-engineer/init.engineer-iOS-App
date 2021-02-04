@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mha-7H-uOT">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,108 +22,209 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發表文章 NewArticle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujf-cJ-dOJ">
-                                <rect key="frame" x="121.5" y="108" width="171" height="19"/>
-                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TLV-RG-mcW">
-                                <rect key="frame" x="20" y="155" width="374" height="128"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fww-ib-WxX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2QT-o7-UAT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1942"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uK-4b-vVc">
+                                                <rect key="frame" x="20" y="30" width="374" height="88"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發表文章 Publish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByZ-r8-QqA">
+                                                        <rect key="frame" x="0.0" y="48.333333333333343" width="302.66666666666669" height="39.666666666666657"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ByZ-r8-QqA" firstAttribute="leading" secondItem="7uK-4b-vVc" secondAttribute="leading" id="5LI-hy-hLj"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ByZ-r8-QqA" secondAttribute="trailing" constant="20" symbolic="YES" id="CFE-ni-cx7"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ByZ-r8-QqA" secondAttribute="bottom" id="CXq-O2-QNY"/>
+                                                    <constraint firstAttribute="height" constant="88" id="owU-xt-IPe"/>
+                                                </constraints>
+                                            </view>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dv8-R0-Eln">
+                                                <rect key="frame" x="20" y="138" width="374" height="200"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="Vwz-K3-2Wo"/>
+                                                </constraints>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                <color key="textColor" red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="0.69803921568627447" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="26"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6tV-09-H56">
+                                                <rect key="frame" x="20" y="358" width="374" height="31"/>
+                                                <subviews>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-az-bRZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="繪製 To Be Coutinued" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0E-uk-DEn">
+                                                        <rect key="frame" x="69" y="0.0" width="305" height="31"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Tt-Gg-spE">
+                                                <rect key="frame" x="20" y="409" width="374" height="216"/>
+                                            </pickerView>
+                                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdJ-mg-nvR">
+                                                <rect key="frame" x="20" y="645" width="374" height="216"/>
+                                            </pickerView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CJ-c0-2Ox">
+                                                <rect key="frame" x="20" y="881" width="374" height="32"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                <state key="normal" title="選擇圖片"/>
+                                                <connections>
+                                                    <action selector="imageUploadButtonPressed:" destination="Zzm-8s-lRu" eventType="touchUpInside" id="eMU-Nb-eZv"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-US-Mog">
+                                                <rect key="frame" x="20" y="933" width="374" height="0.0"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="Cji-fX-NMd"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf5-lA-2df">
+                                                <rect key="frame" x="20" y="953" width="374" height="856"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="板規">
+                                                        <attributes>
+                                                            <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="24" name="PingFangTC-Regular"/>
+                                                            <real key="NSKern" value="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                <tabStops/>
+                                                            </paragraphStyle>
+                                                            <color key="NSStrokeColor" red="0.12941177189350128" green="0.14509804546833038" blue="0.16078431904315948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <real key="NSStrokeWidth" value="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                        <attributes>
+                                                            <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="15" name="PingFangTC-Regular"/>
+                                                            <real key="NSKern" value="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                <tabStops/>
+                                                            </paragraphStyle>
+                                                            <color key="NSStrokeColor" red="0.12941177189350128" green="0.14509804546833038" blue="0.16078431904315948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <real key="NSStrokeWidth" value="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content">一、責任聲明：
+本站使用者須對自己所張貼之每一篇文章負責，本站毋需對站內以及其他關聯之社群媒體的言論負擔起任何的責任，責任的歸屬權屬於各位發表人。
+
+二、發表文章時之注意事項：
+1. 尊重他人意見，注意用字遣詞與口氣，避免引起爭吵。
+2. 避免在公眾區域，討論私人事務。
+3. 避免發表文章於非相關區域，文章標題及內容不符合討論區之討論主題。
+4. 禁止重複刊登相同內容或相同意義之留言。
+5. 適度引用文章，避免引用過長文章，造成閱讀困擾。
+6. 不適當的廣告、宣傳活動或商業性留言。
+7. 禁止發表謾罵、脅迫、挑釁、猥褻或不雅之文字。
+8. 禁止發表個人測試用文章或散播不實消息之文章，張貼文章，應自負相關法律責任。
+9. 轉貼任何文章請附上原作者貨來源，否則版主會親自去問授權、處理方式，並且把您的帳號封鎖。
+10. 若有未規定的部份，由版主依主觀認定，視情況處理。
+
+三、違規處理辦法：
+違反上述規定之文章或作者，版主可刪除文章或行使禁貼之處份。
+
+四、附註及補充說明：
+1. 本站歡迎網友互相討論發表己見，唯請務必遵守上述規定。
+2. 是否違反上述規定，由版主主觀認定，請謹慎用詞。
+3. 請學習包容各種意見，如遇惡意批評或攻擊之文章，切勿加入爭執，並且善用檢舉，版主會有適當之處理，否則雙方皆依上述規定處理。</string>
+                                                        <attributes>
+                                                            <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="16" name="PingFangTC-Regular"/>
+                                                            <real key="NSKern" value="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                <tabStops/>
+                                                            </paragraphStyle>
+                                                            <color key="NSStrokeColor" red="0.12941177189350128" green="0.14509804546833038" blue="0.16078431904315948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <real key="NSStrokeWidth" value="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-Iy-1vF">
+                                                <rect key="frame" x="20" y="1829" width="374" height="31"/>
+                                                <subviews>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-jL-EVC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="我已閱讀並同意以上的板規。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="210-kV-orE">
+                                                        <rect key="frame" x="69" y="0.0" width="305" height="31"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUs-Mx-bAN">
+                                                <rect key="frame" x="20" y="1880" width="374" height="32"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                <state key="normal" title="發表文章"/>
+                                                <connections>
+                                                    <action selector="publishButtonPressed:" destination="Zzm-8s-lRu" eventType="touchUpInside" id="7Y7-fM-kRc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="30" left="20" bottom="30" right="20"/>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" priority="10" constant="128" id="fui-pK-Nh8"/>
+                                    <constraint firstItem="2QT-o7-UAT" firstAttribute="trailing" secondItem="41O-YN-mPU" secondAttribute="trailing" id="MNo-D4-u4j"/>
+                                    <constraint firstItem="2QT-o7-UAT" firstAttribute="leading" secondItem="41O-YN-mPU" secondAttribute="leading" id="OtR-QT-DVa"/>
+                                    <constraint firstItem="2QT-o7-UAT" firstAttribute="bottom" secondItem="41O-YN-mPU" secondAttribute="bottom" id="Qae-ln-skU"/>
+                                    <constraint firstItem="2QT-o7-UAT" firstAttribute="top" secondItem="41O-YN-mPU" secondAttribute="top" id="qIL-bE-9PX"/>
+                                    <constraint firstItem="2QT-o7-UAT" firstAttribute="width" secondItem="Ibs-Gw-abq" secondAttribute="width" id="qtr-uv-v4w"/>
                                 </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="編輯文章" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TXB-wb-BF5">
-                                <rect key="frame" x="20" y="291" width="374" height="128"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="3io-d2-i07"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2Z-uQ-nag">
-                                <rect key="frame" x="20" y="427" width="183" height="128"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="5yw-Wh-wUz"/>
-                                </constraints>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70g-av-MVZ">
-                                <rect key="frame" x="211" y="427" width="183" height="128"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHO-xl-KvB">
-                                <rect key="frame" x="173" y="563" width="68" height="31"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                <state key="normal" title="上傳圖片">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="imageUploadBtn:" destination="Zzm-8s-lRu" eventType="touchUpInside" id="ncH-UD-Qm7"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7c-uw-e0V">
-                                <rect key="frame" x="20" y="602" width="374" height="240"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">板規Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8u-aM-YDh">
-                                <rect key="frame" x="335" y="88" width="59" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="u8u-aM-YDh" secondAttribute="height" multiplier="1:1" id="YLd-0x-JiO"/>
-                                </constraints>
-                            </imageView>
+                                <viewLayoutGuide key="contentLayoutGuide" id="41O-YN-mPU"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Ibs-Gw-abq"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v5X-aM-Yal"/>
                         <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="v5X-aM-Yal" firstAttribute="trailing" secondItem="u8u-aM-YDh" secondAttribute="trailing" constant="20" id="2Wj-Y4-f5l"/>
-                            <constraint firstItem="iHO-xl-KvB" firstAttribute="centerX" secondItem="v5X-aM-Yal" secondAttribute="centerX" id="4KE-KR-fwP"/>
-                            <constraint firstItem="v5X-aM-Yal" firstAttribute="trailing" secondItem="TLV-RG-mcW" secondAttribute="trailing" constant="20" id="5Uc-eh-hY2"/>
-                            <constraint firstItem="b2Z-uQ-nag" firstAttribute="width" secondItem="70g-av-MVZ" secondAttribute="width" id="5eb-Kd-mIM"/>
-                            <constraint firstItem="TXB-wb-BF5" firstAttribute="top" secondItem="TLV-RG-mcW" secondAttribute="bottom" constant="8" id="78L-aO-tHB"/>
-                            <constraint firstItem="v5X-aM-Yal" firstAttribute="trailing" secondItem="p7c-uw-e0V" secondAttribute="trailing" constant="20" id="Cb9-F6-SM3"/>
-                            <constraint firstItem="b2Z-uQ-nag" firstAttribute="leading" secondItem="v5X-aM-Yal" secondAttribute="leading" constant="20" id="GYb-6q-87W"/>
-                            <constraint firstItem="70g-av-MVZ" firstAttribute="top" secondItem="TXB-wb-BF5" secondAttribute="bottom" constant="8" id="LCE-UG-Ild"/>
-                            <constraint firstItem="v5X-aM-Yal" firstAttribute="trailing" secondItem="70g-av-MVZ" secondAttribute="trailing" constant="20" id="ROw-TV-Mol"/>
-                            <constraint firstItem="iHO-xl-KvB" firstAttribute="top" secondItem="b2Z-uQ-nag" secondAttribute="bottom" constant="8" id="SnE-6x-4PH"/>
-                            <constraint firstItem="Ujf-cJ-dOJ" firstAttribute="top" secondItem="v5X-aM-Yal" secondAttribute="top" constant="20" id="VK7-0Q-ULi"/>
-                            <constraint firstItem="TLV-RG-mcW" firstAttribute="top" secondItem="u8u-aM-YDh" secondAttribute="bottom" constant="8" id="Wgh-Gb-EuG"/>
-                            <constraint firstItem="70g-av-MVZ" firstAttribute="height" secondItem="b2Z-uQ-nag" secondAttribute="height" id="a0D-11-dDx"/>
-                            <constraint firstItem="p7c-uw-e0V" firstAttribute="top" secondItem="iHO-xl-KvB" secondAttribute="bottom" constant="8" id="d7V-Dt-DU9"/>
-                            <constraint firstItem="v5X-aM-Yal" firstAttribute="trailing" secondItem="TXB-wb-BF5" secondAttribute="trailing" constant="20" id="gAj-7j-EoS"/>
-                            <constraint firstItem="v5X-aM-Yal" firstAttribute="bottom" secondItem="p7c-uw-e0V" secondAttribute="bottom" constant="20" id="hSg-z5-v62"/>
-                            <constraint firstItem="u8u-aM-YDh" firstAttribute="top" secondItem="v5X-aM-Yal" secondAttribute="top" id="hre-iZ-HAX"/>
-                            <constraint firstItem="70g-av-MVZ" firstAttribute="leading" secondItem="b2Z-uQ-nag" secondAttribute="trailing" constant="8" id="lFF-7P-xGB"/>
-                            <constraint firstItem="b2Z-uQ-nag" firstAttribute="top" secondItem="TXB-wb-BF5" secondAttribute="bottom" constant="8" id="lLC-el-j9I"/>
-                            <constraint firstItem="u8u-aM-YDh" firstAttribute="bottom" secondItem="Ujf-cJ-dOJ" secondAttribute="bottom" constant="20" id="nLO-95-bdy"/>
-                            <constraint firstItem="TXB-wb-BF5" firstAttribute="leading" secondItem="v5X-aM-Yal" secondAttribute="leading" constant="20" id="nsO-OZ-2Kc"/>
-                            <constraint firstItem="TLV-RG-mcW" firstAttribute="leading" secondItem="v5X-aM-Yal" secondAttribute="leading" constant="20" id="puM-vV-BhS"/>
-                            <constraint firstItem="p7c-uw-e0V" firstAttribute="leading" secondItem="v5X-aM-Yal" secondAttribute="leading" constant="20" id="q6v-XY-Nn6"/>
-                            <constraint firstItem="Ujf-cJ-dOJ" firstAttribute="centerX" secondItem="v5X-aM-Yal" secondAttribute="centerX" id="znP-K4-KUL"/>
+                            <constraint firstItem="fww-ib-WxX" firstAttribute="trailing" secondItem="v5X-aM-Yal" secondAttribute="trailing" id="MuU-pk-keY"/>
+                            <constraint firstItem="fww-ib-WxX" firstAttribute="top" secondItem="v5X-aM-Yal" secondAttribute="top" id="P3X-hd-UyK"/>
+                            <constraint firstItem="fww-ib-WxX" firstAttribute="leading" secondItem="v5X-aM-Yal" secondAttribute="leading" id="Wia-Qa-Rx3"/>
+                            <constraint firstItem="fww-ib-WxX" firstAttribute="bottom" secondItem="v5X-aM-Yal" secondAttribute="bottom" id="vjX-EF-p2Y"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="發表文章" id="WFH-pU-0Ld"/>
                     <navigationItem key="navigationItem" id="O1b-93-HiR"/>
                     <connections>
-                        <outlet property="articleImg" destination="TLV-RG-mcW" id="cjv-mw-rPY"/>
-                        <outlet property="articleText" destination="TXB-wb-BF5" id="Tie-av-7Bw"/>
-                        <outlet property="fontPicker" destination="70g-av-MVZ" id="ZnY-gb-U7k"/>
-                        <outlet property="themePicker" destination="b2Z-uQ-nag" id="Wlv-Cb-zZW"/>
-                        <outlet property="userImg" destination="u8u-aM-YDh" id="PyH-NM-6jr"/>
+                        <outlet property="agreePublishRule" destination="zVJ-jL-EVC" id="jHi-kt-01l"/>
+                        <outlet property="articleImageView" destination="ENQ-US-Mog" id="Flr-XZ-Zoh"/>
+                        <outlet property="articleImageViewConstraintsHeight" destination="Cji-fX-NMd" id="u4F-F5-nkg"/>
+                        <outlet property="articleTextView" destination="Dv8-R0-Eln" id="sf1-EK-nq6"/>
+                        <outlet property="fontPickerView" destination="TdJ-mg-nvR" id="5Co-uz-OOk"/>
+                        <outlet property="publishScrollView" destination="fww-ib-WxX" id="NzF-lA-3Eg"/>
+                        <outlet property="ruleTextView" destination="kf5-lA-2df" id="hjB-I4-wf5"/>
+                        <outlet property="themePickerView" destination="3Tt-Gg-spE" id="l9N-Bh-oyb"/>
+                        <outlet property="toBeContinuedDraw" destination="nAb-az-bRZ" id="yBC-mG-5sh"/>
                         <segue destination="Qut-Ki-2E0" kind="show" identifier="PublishToLogin" id="edM-bp-uxV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ng-Dq-p4A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1051" y="-149"/>
+            <point key="canvasLocation" x="1050.7246376811595" y="-149.33035714285714"/>
         </scene>
         <!--發表文章-->
         <scene sceneID="tyz-R6-OoN">
@@ -155,5 +257,8 @@
     <resources>
         <image name="baseline_edit_black_18pt" width="18" height="18"/>
         <image name="baseline_edit_black_24pt" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

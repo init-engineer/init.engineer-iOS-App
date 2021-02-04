@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Kaobei Tab Bar Controller-->
         <scene sceneID="iD6-31-BUH">
             <objects>
-                <tabBarController id="hXg-Fs-gLu" sceneMemberID="viewController">
+                <tabBarController id="hXg-Fs-gLu" customClass="KaobeiTabBarController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xpR-yg-uYx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
