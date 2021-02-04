@@ -50,13 +50,14 @@ public struct KBPostUserPublishing: KaobeiRequestProtocol {
         return httpBody
     }
     
-    public init(accessToken: String, article: String, font: String, theme: String, image: Data? = nil) {
+    public init(accessToken: String, article: String, toBeContinued: Bool, font: String, theme: String, image: Data? = nil) {
         apiPath = String(format: KaobeiURL.userPublishing)
         self.token = accessToken
         
         httpBody["content"] = article
         httpBody["themeStyle"] = theme // TODO: Needs to convert to string
         httpBody["fontStyle"] = font // TODO: Needs to convert to string
+        httpBody["isFeatureToBeCoutinued"] = toBeContinued ? "1" : "0"
         
         if let image = image {
             contentTpye = .image

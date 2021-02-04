@@ -115,9 +115,9 @@ class PublishTabController: UIViewController {
         let font: String =  FontManager.shared.getFontValue(fontOptions[fontPickerView.selectedRow(inComponent: 0)])
         let theme: String = ThemeManager.shared.getThemeValue(themeOptions[themePickerView.selectedRow(inComponent: 0)])
         let image: Data? = articleImageView.image?.jpegData(compressionQuality: 1.0)
-//        toBeContinuedDraw: (bool) toBeContinuedDraw.isOn
+        let toBeContinued = toBeContinuedDraw.isOn
         
-        let request = KBPostUserPublishing(accessToken: accessToken, article: article, font: font, theme: theme, image: image)
+        let request = KBPostUserPublishing(accessToken: accessToken, article: article, toBeContinued: toBeContinued, font: font, theme: theme, image: image)
         
         KaobeiConnection.sendRequest(api: request) { [weak self] response in
             switch response.result {
