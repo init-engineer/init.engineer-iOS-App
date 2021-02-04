@@ -11,6 +11,10 @@ import UIKit
 import GoogleMobileAds
 import KaobeiAPI
 
+protocol ArticleCellDelegate {
+    func cellClicked(with id: Int)
+}
+
 class ArticleCell: UITableViewCell {
     var contentString: String?
     var stringTag: String?
@@ -20,8 +24,11 @@ class ArticleCell: UITableViewCell {
     var aye: Int?
     var nay: Int?
     var id: Int?
+    var delegate: ArticleCellDelegate?
     
     func makeAds(ads: GADBannerView) {
+        dispatchViews()
+        ads.tag = 1
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         ads.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +43,7 @@ class ArticleCell: UITableViewCell {
     }
     
     func makeArticel(content: Article) {
+        dispatchViews()
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         self.id = content.id
@@ -48,6 +56,7 @@ class ArticleCell: UITableViewCell {
     }
     
     func makeArticleInReview(content: ArticleUnderReview) {
+        dispatchViews()
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         self.id = content.id
@@ -57,15 +66,18 @@ class ArticleCell: UITableViewCell {
         self.backgroundColor = .clear
         self.aye = content.succeeded
         self.nay = content.failed
-        self.vote = content.succeeded - content.failed
+        self.vote = content.succeeded + content.failed
         
         commonUI()
-        self.enterArticleBtn?.addTarget(self, action: #selector(showArticleReview), for: .touchUpInside)
+        self.enterArticleBtn?.addTarget(self, action: #selector(showArticle), for: .touchUpInside)
     }
     
     private func commonUI() {
         let upperView = UIView()
         let bottomView = UIView()
+        
+        upperView.tag = 2
+        bottomView.tag = 3
         
         upperView.backgroundColor = ColorConstants.Default.backgroundColor
         bottomView.backgroundColor = .white
@@ -164,6 +176,9 @@ class ArticleCell: UITableViewCell {
             upperStackView.addArrangedSubview(voteLabel)
             upperStackView.addArrangedSubview(nayLabel)
             
+            bottomView.addSubview(upperStackView)
+            bottomView.addSubview(bottomStackView)
+            
             bottomView.addConstraints([
                 upperStackView.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 15.0),
                 upperStackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
@@ -198,12 +213,16 @@ class ArticleCell: UITableViewCell {
         }
     }
     
-    @objc func showArticle() {
-        // push/present self.id
+    func dispatchViews() {
+        contentView.viewWithTag(1)?.removeFromSuperview()
+        contentView.viewWithTag(2)?.removeFromSuperview()
+        contentView.viewWithTag(3)?.removeFromSuperview()
     }
     
-    @objc func showArticleReview() {
-        
+    
+    @objc func showArticle() {
+        guard let id = self.id else { return }
+        delegate?.cellClicked(with: id)
     }
     
     private func tagConvert(from id: Int) -> String {

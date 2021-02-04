@@ -29,8 +29,8 @@ public struct KBGetArticleReviewList: KaobeiRequestProtocol {
         return header
     }
     
-    public init(accessToken: String) {
-        apiPath = KaobeiURL.articleReviewList
+    public init(accessToken: String, page: Int) {
+        apiPath = String(format: KaobeiURL.articleReviewList, page)
         self.token = accessToken
     }
 }

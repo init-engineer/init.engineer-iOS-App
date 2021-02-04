@@ -20,6 +20,16 @@
 	<string>1</string>
 	<key>GAD AdsBanner1</key>
 	<string>$(ADMOB_AD1)</string>
+	<key>GAD AdsBanner2</key>
+	<string>$(ADMOB_AD2)</string>
+	<key>GAD AdsBanner3</key>
+	<string>$(ADMOB_AD3)</string>
+	<key>GAD AdsInterstitial</key>
+	<string>$(ADMOB_INTER)</string>
+	<key>GAD AdsInterstitial Video</key>
+	<string>$(ADMOB_INTERV)</string>
+	<key>GAD AdsRewarded Video</key>
+	<string>$(ADMOB_REWARD)</string>
 	<key>GADApplicationIdentifier</key>
 	<string>$(ADMOB_ID)</string>
 	<key>Keychain Service Name</key>

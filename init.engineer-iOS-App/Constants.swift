@@ -19,4 +19,6 @@ struct K {
     static let reviewToLoginSegue = "ReviewToLogin"
     static let publishArticlePlaceholderText = "跟大家分享你的靠北事吧。"
     static let publishArticlePlaceholderTextColor = UIColor(white: 0xD3/255.0, alpha: 0.7)
+    static let ToArticleDetailsSegue = "ToArticleDetails"
+    static let ToReviewDetailsSegue = "ToReviewDetails"
 }
