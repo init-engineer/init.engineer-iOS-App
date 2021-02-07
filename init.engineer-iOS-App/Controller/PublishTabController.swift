@@ -130,6 +130,11 @@ class PublishTabController: UIViewController {
                 self?.tabBarController?.selectedIndex = 2    // 跳轉到審核文章
                 break
             case .failure(_):
+                if let failTitle = response.response?.statusCode {
+                    DispatchQueue.main.async {
+                        self?.publishCheckFailed(failTitle: String(failTitle), failedMessage: "上面的數字可以記下來給版主，但應該沒什麼用，重新發一篇如何？")
+                    }
+                }
                 /*
                  否則？？？？
                  （如果是 Token 過期就 Delete Token 再用 willViewAppear 的 self.performSegue 那行強制進入 LoginVC）
