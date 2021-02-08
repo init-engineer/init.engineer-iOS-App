@@ -79,16 +79,12 @@ class ReviewTabController: UIViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func reloadReviews() { //call when return after vote
+        self.count = 1
+        self.reloadBlocker = false
+        self.reviewList.removeAll()
+        self.viewWillAppear(false)
     }
-    */
-
 }
 extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -170,8 +166,9 @@ extension ReviewTabController: ArticleCellDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.ToReviewDetailsSegue {
-            guard let vc = segue.destination as? ArticleViewController, let id = sender as? Int else { return }
-            vc.articleID = id
+            guard let vc = segue.destination as? ReviewViewController, let id = sender as? Int else { return }
+            vc.id = id
+            vc.reloadBlock = self.reloadReviews
         }
     }
 }

@@ -23,6 +23,7 @@ class ArticleCell: UITableViewCell {
     var vote: Int?
     var aye: Int?
     var nay: Int?
+    var review: Int?
     var id: Int?
     var delegate: ArticleCellDelegate?
     
@@ -67,6 +68,7 @@ class ArticleCell: UITableViewCell {
         self.aye = content.succeeded
         self.nay = content.failed
         self.vote = content.succeeded + content.failed
+        self.review = content.review
         
         commonUI()
         self.enterArticleBtn?.addTarget(self, action: #selector(showArticle), for: .touchUpInside)
@@ -155,9 +157,16 @@ class ArticleCell: UITableViewCell {
             let ayeLabel = UILabel()
             let voteLabel = UILabel()
             let nayLabel = UILabel()
-            ayeLabel.text = "\(self.aye ?? 0)"
-            voteLabel.text = "\(self.vote ?? 0)"
-            nayLabel.text = "\(self.nay ?? 0)"
+            guard let review = self.review, let aye = self.aye, let vote = self.vote, let nay = self.nay else { return }
+            if review == 0 {
+                ayeLabel.text = "==="
+                voteLabel.text = "==="
+                nayLabel.text = "==="
+            } else {
+                ayeLabel.text = "\(aye)"
+                voteLabel.text = "\(vote)"
+                nayLabel.text = "\(nay)"
+            }
             ayeLabel.font = FontConstant.Default.text
             voteLabel.font = FontConstant.Default.text
             nayLabel.font = FontConstant.Default.text
