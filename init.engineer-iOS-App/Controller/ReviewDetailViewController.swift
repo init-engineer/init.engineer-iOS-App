@@ -40,6 +40,10 @@ class ReviewDetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     func initToRadiusButton(_ button: UIButton) {
         button.layer.cornerRadius = 10;
         button.clipsToBounds = true;

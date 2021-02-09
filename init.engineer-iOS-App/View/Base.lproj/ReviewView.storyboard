@@ -70,7 +70,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-f9-ehp">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="337.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFG-uW-Wyt">
                                                 <rect key="frame" x="20" y="30" width="374" height="88"/>
@@ -96,12 +96,12 @@
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM2-jZ-S4C">
-                                                <rect key="frame" x="20" y="158" width="374" height="29"/>
+                                                <rect key="frame" x="20" y="158" width="374" height="29.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="（這裡替換成你之前做的文章內容）">
                                                         <attributes>
-                                                            <font key="NSFont" size="11" name=".PingFangTC-Regular"/>
+                                                            <font key="NSFont" metaFont="smallSystem"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -109,7 +109,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ELs-cL-tEf">
-                                                <rect key="frame" x="20" y="207" width="374" height="100"/>
+                                                <rect key="frame" x="20" y="207.5" width="374" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzT-5Y-soe">
                                                         <rect key="frame" x="0.0" y="0.0" width="174.5" height="100"/>
