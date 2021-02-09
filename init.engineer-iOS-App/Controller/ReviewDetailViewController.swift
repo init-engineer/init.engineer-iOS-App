@@ -14,6 +14,7 @@ import GoogleMobileAds
 class ReviewDetailViewController: UIViewController {
     
     @IBOutlet weak var reviewArticleTitleLabel: UILabel!
+    @IBOutlet weak var reviewArticleContentTextView: UITextView!
     @IBOutlet weak var reviewArticleImageView: UIImageView!
     @IBOutlet weak var reviewArticleImageViewConstraintsHeight: NSLayoutConstraint!
     @IBOutlet weak var agreeButton: UIButton!
@@ -32,7 +33,7 @@ class ReviewDetailViewController: UIViewController {
         guard let reviewStatus = self.reviewStatus else { return }
         // Request Success Start
         // 1. 設定 reviewArticleTitleLabel
-        // 請用ArticleCell的239~255行
+        reviewArticleTitleLabel.text = K.tagConvert(from: id!)
         // 2. loadReviewArticleImage(放上圖片) // 設定 ImageView 的 Image
         DispatchQueue.global(qos: .userInitiated).async {
             do {
@@ -46,6 +47,7 @@ class ReviewDetailViewController: UIViewController {
         }
         // 3. 設定 TextView（你自己文章列表用的，先替換掉 Storyboard 的東西）
         // textview內容用：reviewStatus.content
+        reviewArticleContentTextView.text = reviewStatus.content
         // 4. setVoteState(agree: 通過, denied: 否決, review: 使用者投票狀態)
         setVoteState(agree: reviewStatus.succeeded, denied: reviewStatus.failed, review: reviewStatus.review)
         // Request Success End

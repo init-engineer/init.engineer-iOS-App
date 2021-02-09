@@ -70,7 +70,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-f9-ehp">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="337.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="348"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFG-uW-Wyt">
                                                 <rect key="frame" x="20" y="30" width="374" height="88"/>
@@ -95,21 +95,15 @@
                                                     <constraint firstAttribute="height" id="HYE-0t-BzS"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM2-jZ-S4C">
-                                                <rect key="frame" x="20" y="158" width="374" height="29.5"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="（這裡替換成你之前做的文章內容）">
-                                                        <attributes>
-                                                            <font key="NSFont" metaFont="smallSystem"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM2-jZ-S4C">
+                                                <rect key="frame" x="20" y="158" width="374" height="40"/>
+                                                <color key="backgroundColor" name="backgroundColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ELs-cL-tEf">
-                                                <rect key="frame" x="20" y="207.5" width="374" height="100"/>
+                                                <rect key="frame" x="20" y="218" width="374" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzT-5Y-soe">
                                                         <rect key="frame" x="0.0" y="0.0" width="174.5" height="100"/>
@@ -168,6 +162,7 @@
                     <connections>
                         <outlet property="agreeButton" destination="HzT-5Y-soe" id="vXF-BM-FId"/>
                         <outlet property="deniedButton" destination="bnT-WU-EfZ" id="ozf-ku-xJU"/>
+                        <outlet property="reviewArticleContentTextView" destination="zM2-jZ-S4C" id="1OV-LA-UdM"/>
                         <outlet property="reviewArticleImageView" destination="xHV-su-aAF" id="X6D-Zh-kqI"/>
                         <outlet property="reviewArticleImageViewConstraintsHeight" destination="HYE-0t-BzS" id="1jC-LG-ktb"/>
                         <outlet property="reviewArticleTitleLabel" destination="kqH-D8-mvA" id="U2L-gt-LuN"/>

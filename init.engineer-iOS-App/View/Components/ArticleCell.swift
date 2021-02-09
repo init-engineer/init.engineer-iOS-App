@@ -49,7 +49,7 @@ class ArticleCell: UITableViewCell {
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         self.id = content.id
-        self.stringTag = tagConvert(from: content.id)
+        self.stringTag = K.tagConvert(from: content.id)
         self.publishTime = content.createdDiff
         self.contentString = content.content
         self.backgroundColor = .clear
@@ -63,7 +63,7 @@ class ArticleCell: UITableViewCell {
         contentView.layer.cornerRadius = 10
         self.id = content.id
         self.reviewingArticle = content
-        self.stringTag = tagConvert(from: content.id)
+        self.stringTag = K.tagConvert(from: content.id)
         self.publishTime = content.createdDiff
         self.contentString = content.content
         self.backgroundColor = .clear
@@ -236,21 +236,5 @@ class ArticleCell: UITableViewCell {
         delegate?.cellClicked(with: id, and: self.reviewingArticle)
     }
     
-    private func tagConvert(from id: Int) -> String {
-        var tag = ""
-        var carry = id
-        
-        while carry > 0 {
-            tag = digitMapping(from: carry % 36) + tag
-            carry = carry / 36
-        }
-        
-        tag = "#純靠北工程師" + tag
-        return tag
-    }
     
-    private func digitMapping(from num: Int) -> String { //
-        let convertMap = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-        return convertMap[num]
-    }
 }
