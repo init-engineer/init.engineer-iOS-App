@@ -33,5 +33,5 @@ struct KaobeiURL {
     //（AUTH : API）將文章審核通過(Int)
     static let articleVoteAye = "https://kaobei.engineer/api/frontend/social/cards/api/review/%d/succeeded"
     //（AUTH : API）將文章審核不通過(Int)
-    static let articleVoteNay = "https://kaobei.engineer/api/frontend/social/cards/api/review/:id/failed"
+    static let articleVoteNay = "https://kaobei.engineer/api/frontend/social/cards/api/review/%id/failed"
 }

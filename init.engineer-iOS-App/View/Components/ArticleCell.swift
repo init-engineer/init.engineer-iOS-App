@@ -12,7 +12,7 @@ import GoogleMobileAds
 import KaobeiAPI
 
 protocol ArticleCellDelegate {
-    func cellClicked(with id: Int)
+    func cellClicked(with id: Int, and article: ArticleUnderReview?)
 }
 
 class ArticleCell: UITableViewCell {
@@ -25,6 +25,7 @@ class ArticleCell: UITableViewCell {
     var nay: Int?
     var review: Int?
     var id: Int?
+    var reviewingArticle: ArticleUnderReview?
     var delegate: ArticleCellDelegate?
     
     func makeAds(ads: GADBannerView) {
@@ -61,6 +62,7 @@ class ArticleCell: UITableViewCell {
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         self.id = content.id
+        self.reviewingArticle = content
         self.stringTag = tagConvert(from: content.id)
         self.publishTime = content.createdDiff
         self.contentString = content.content
@@ -231,7 +233,7 @@ class ArticleCell: UITableViewCell {
     
     @objc func showArticle() {
         guard let id = self.id else { return }
-        delegate?.cellClicked(with: id)
+        delegate?.cellClicked(with: id, and: self.reviewingArticle)
     }
     
     private func tagConvert(from id: Int) -> String {

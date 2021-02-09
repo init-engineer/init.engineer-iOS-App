@@ -20,6 +20,7 @@ class ReviewDetailViewController: UIViewController {
     @IBOutlet weak var deniedButton: UIButton!
     
     var reloadBlock: (() -> ())?
+    var reviewStatus: ArticleUnderReview?
     var id: Int?
     
     override func viewDidLoad() {
@@ -27,11 +28,26 @@ class ReviewDetailViewController: UIViewController {
         reviewArticleImageView.isHidden = true
         initToRadiusButton(agreeButton)
         initToRadiusButton(deniedButton)
+        
+        guard let reviewStatus = self.reviewStatus else { return }
         // Request Success Start
         // 1. 設定 reviewArticleTitleLabel
+        // 請用ArticleCell的239~255行
         // 2. loadReviewArticleImage(放上圖片) // 設定 ImageView 的 Image
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let img = try UIImage(data: Data(contentsOf: URL(string: reviewStatus.image)!))
+                DispatchQueue.main.async {
+                    self.loadReviewArticleImage(img)
+                }
+            } catch is Error {
+                
+            }
+        }
         // 3. 設定 TextView（你自己文章列表用的，先替換掉 Storyboard 的東西）
+        // textview內容用：reviewStatus.content
         // 4. setVoteState(agree: 通過, denied: 否決, review: 使用者投票狀態)
+        setVoteState(agree: reviewStatus.succeeded, denied: reviewStatus.failed, review: reviewStatus.review)
         // Request Success End
         
     }
@@ -87,7 +103,23 @@ class ReviewDetailViewController: UIViewController {
         voteButtonDisable()
         // Agree Request Success Start
         deniedButton.backgroundColor = #colorLiteral(red: 0.8985503316, green: 0.3016347587, blue: 0.3388397694, alpha: 0.5) // #dc3545 0.5
-        voteCountInButton(agree: 1, denied: -1) // 投票後回傳的結果就會是已經加上使用者投票的結果，直接寫入即可
+        guard let id = self.id, let accessToken = KeyChainManager.shared.getToken() else { return }
+        
+        let ayeRequest = KBGetArticleVoteAye(accessToken: accessToken, id: id)
+        
+        KaobeiConnection.sendRequest(api: ayeRequest) {[weak self] (response) in
+            switch response.result {
+            case.success(let data):
+                DispatchQueue.main.async {
+                    self?.voteCountInButton(agree: data.data.succeeded, denied: data.data.failed)
+                    self?.reloadBlock?()
+                }
+                break
+            case.failure(_):
+                break
+            }
+        }
+        // voteCountInButton(agree: 1, denied: -1) // 投票後回傳的結果就會是已經加上使用者投票的結果，直接寫入即可
         // Agree Request Success End
     }
     
@@ -96,11 +128,23 @@ class ReviewDetailViewController: UIViewController {
         voteButtonDisable()
         // Reject Request Success Start
         agreeButton.backgroundColor = #colorLiteral(red: 0.1690405011, green: 0.6988298297, blue: 0.3400650322, alpha: 0.5) // #28a745 0.5
-        voteCountInButton(agree: 1, denied: -1) // 投票後回傳的結果就會是已經加上使用者投票的結果，直接寫入即可
+        guard let id = self.id, let accessToken = KeyChainManager.shared.getToken() else { return }
+        
+        let nayRequest = KBGetArticleVoteNay(accessToken: accessToken, id: id)
+        
+        KaobeiConnection.sendRequest(api: nayRequest) {[weak self] (response) in
+            switch response.result {
+            case.success(let data):
+                DispatchQueue.main.async {
+                    self?.voteCountInButton(agree: data.data.succeeded, denied: data.data.failed)
+                    self?.reloadBlock?()
+                }
+                break
+            case.failure(_):
+                break
+            }
+        }
+        // voteCountInButton(agree: 1, denied: -1) // 投票後回傳的結果就會是已經加上使用者投票的結果，直接寫入即可
         // Reject Request Success End
-    }
-    
-    @objc func hitVote() {
-        self.reloadBlock?()
     }
 }
