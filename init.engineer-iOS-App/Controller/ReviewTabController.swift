@@ -31,6 +31,8 @@ class ReviewTabController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         if let accessToken = KeyChainManager.shared.getToken() {
             self.userToken = accessToken
             print(accessToken)
@@ -161,12 +163,12 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
 
 extension ReviewTabController: ArticleCellDelegate {
     func cellClicked(with id: Int) {
-        //self.performSegue(withIdentifier: K.ToReviewDetailsSegue, sender: id)
+        self.performSegue(withIdentifier: K.ToReviewDetailsSegue, sender: id)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.ToReviewDetailsSegue {
-            guard let vc = segue.destination as? ReviewViewController, let id = sender as? Int else { return }
+            guard let vc = segue.destination as? ReviewDetailViewController, let id = sender as? Int else { return }
             vc.id = id
             vc.reloadBlock = self.reloadReviews
         }
