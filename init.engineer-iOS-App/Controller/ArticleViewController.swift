@@ -102,6 +102,10 @@ class ArticleViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
 }
 
 extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {

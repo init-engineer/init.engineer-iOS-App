@@ -17,6 +17,7 @@ class ReviewTabController: UIViewController {
     var reviewList = [ArticleUnderReview?]()
     var count = 1
     var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
+    var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
     
     let GAP_ID = "gap"
     let REVIEW_ID = "review"
@@ -31,6 +32,8 @@ class ReviewTabController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         if let accessToken = KeyChainManager.shared.getToken() {
             self.userToken = accessToken
             print(accessToken)
@@ -41,6 +44,8 @@ class ReviewTabController: UIViewController {
             self.adBanner.adUnitID = K.getInfoPlistByKey("GAD AdsBanner1") ?? ""
             self.adBanner.rootViewController = self
             self.adBanner.load(GADRequest())
+            
+            self.interstitial.load(GADRequest())
             
             self.reviewTable.allowsSelection = false
             self.reviewTable.delegate = self
@@ -83,7 +88,6 @@ class ReviewTabController: UIViewController {
         self.count = 1
         self.reloadBlocker = false
         self.reviewList.removeAll()
-        self.viewWillAppear(false)
     }
 }
 extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
@@ -160,14 +164,19 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ReviewTabController: ArticleCellDelegate {
-    func cellClicked(with id: Int) {
-        //self.performSegue(withIdentifier: K.ToReviewDetailsSegue, sender: id)
+    func cellClicked(with id: Int, and article: ArticleUnderReview?) {
+        guard let article = article else { return }
+        if self.interstitial.isReady {
+            self.interstitial.present(fromRootViewController: self)
+        }
+        self.performSegue(withIdentifier: K.ToReviewDetailsSegue, sender: article)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.ToReviewDetailsSegue {
-            guard let vc = segue.destination as? ReviewViewController, let id = sender as? Int else { return }
-            vc.id = id
+            guard let vc = segue.destination as? ReviewDetailViewController, let article = sender as? ArticleUnderReview else { return }
+            vc.id = article.id
+            vc.reviewStatus = article
             vc.reloadBlock = self.reloadReviews
         }
     }
