@@ -52,7 +52,7 @@ class ArticleCell: UITableViewCell {
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         self.id = content.id
-        self.stringTag = K.tagConvert(from: content.id)
+        self.stringTag = String.tagConvert(from: content.id)
         self.publishTime = content.createdDiff
         self.contentString = content.content
         self.backgroundColor = .clear
@@ -66,7 +66,7 @@ class ArticleCell: UITableViewCell {
         contentView.layer.cornerRadius = 10
         self.id = content.id
         self.reviewingArticle = content
-        self.stringTag = K.tagConvert(from: content.id)
+        self.stringTag = String.tagConvert(from: content.id)
         self.publishTime = content.createdDiff
         self.contentString = content.content
         self.backgroundColor = .clear

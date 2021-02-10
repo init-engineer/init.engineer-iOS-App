@@ -43,7 +43,7 @@ class ArticleViewController: UIViewController {
         commentsTableView.register(UINib(nibName: K.articleCommentTableViewCell, bundle: nil), forCellReuseIdentifier: K.articleCommentTableViewCellIdentifier)
         guard let id = self.articleID else { return } //back to article list
         
-        articleTitleLabel.text = K.tagConvert(from: id)
+        articleTitleLabel.text = String.tagConvert(from: id)
         
         let detailRequest = KBGetArticleDetail(id: id)
         

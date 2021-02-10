@@ -21,13 +21,15 @@ class ReviewDetailViewController: UIViewController {
     @IBOutlet weak var agreeButton: UIButton!
     @IBOutlet weak var deniedButton: UIButton!
     
-    var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .ballBeat, color: .cyan, padding: .none)
+    var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     var reloadBlock: ((Int, Int) -> ())?
     var reviewStatus: ArticleUnderReview?
     var id: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let id = self.id else { return }
+        
         reviewArticleImageView.isHidden = true
         initToRadiusButton(agreeButton)
         initToRadiusButton(deniedButton)
@@ -40,7 +42,7 @@ class ReviewDetailViewController: UIViewController {
         guard let reviewStatus = self.reviewStatus else { return }
         // Request Success Start
         // 1. 設定 reviewArticleTitleLabel
-        reviewArticleTitleLabel.text = K.tagConvert(from: id!)
+        reviewArticleTitleLabel.text = String.tagConvert(from: id)
         // 2. loadReviewArticleImage(放上圖片) // 設定 ImageView 的 Image
         self.loadingView.startAnimating()
         DispatchQueue.global(qos: .userInitiated).async {

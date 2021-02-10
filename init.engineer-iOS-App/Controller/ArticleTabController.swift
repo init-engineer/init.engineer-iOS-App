@@ -19,7 +19,7 @@ class ArticleTabController: UIViewController {
     var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
     var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
     
-    var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .ballDoubleBounce, color: .cyan, padding: .none)
+    var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     let GAP_ID = "gap"
     let ARTICLE_ID = "article"
     let TITLE_ID = "title"
