@@ -10,6 +10,7 @@ target 'init.engineer-iOS-App' do
   pod 'AppAuth'
   pod 'KeychainAccess'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'NVActivityIndicatorView'
   
 end
 

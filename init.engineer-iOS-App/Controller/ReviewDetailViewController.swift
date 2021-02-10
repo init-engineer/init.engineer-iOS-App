@@ -10,6 +10,7 @@
 import UIKit
 import KaobeiAPI
 import GoogleMobileAds
+import NVActivityIndicatorView
 
 class ReviewDetailViewController: UIViewController {
     
@@ -20,6 +21,7 @@ class ReviewDetailViewController: UIViewController {
     @IBOutlet weak var agreeButton: UIButton!
     @IBOutlet weak var deniedButton: UIButton!
     
+    var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .ballBeat, color: .cyan, padding: .none)
     var reloadBlock: ((Int, Int) -> ())?
     var reviewStatus: ArticleUnderReview?
     var id: Int?
@@ -30,19 +32,28 @@ class ReviewDetailViewController: UIViewController {
         initToRadiusButton(agreeButton)
         initToRadiusButton(deniedButton)
         
+        self.loadingView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.loadingView)
+        NSLayoutConstraint.init(item: self.loadingView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint.init(item: self.loadingView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
+        
         guard let reviewStatus = self.reviewStatus else { return }
         // Request Success Start
         // 1. 設定 reviewArticleTitleLabel
         reviewArticleTitleLabel.text = K.tagConvert(from: id!)
         // 2. loadReviewArticleImage(放上圖片) // 設定 ImageView 的 Image
+        self.loadingView.startAnimating()
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 let img = try UIImage(data: Data(contentsOf: URL(string: reviewStatus.image)!))
                 DispatchQueue.main.async {
+                    self.loadingView.stopAnimating()
                     self.loadReviewArticleImage(img)
                 }
             } catch is Error {
-                
+                DispatchQueue.main.async {
+                    self.loadingView.stopAnimating()
+                }
             }
         }
         // 3. 設定 TextView（你自己文章列表用的，先替換掉 Storyboard 的東西）
