@@ -9,6 +9,7 @@
 import UIKit
 import KaobeiAPI
 import GoogleMobileAds
+import NVActivityIndicatorView
 
 class ReviewTabController: UIViewController {
     
@@ -19,6 +20,7 @@ class ReviewTabController: UIViewController {
     var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
     var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
     
+    var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .audioEqualizer, color: .cyan, padding: .none)
     let GAP_ID = "gap"
     let REVIEW_ID = "review"
     let TITLE_ID = "title"
@@ -58,8 +60,14 @@ class ReviewTabController: UIViewController {
             self.reviewTable.register(TableViewGap.self, forHeaderFooterViewReuseIdentifier: GAP_ID)
             self.reviewList.append(nil)
             
+            self.loadingView.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(self.loadingView)
+            NSLayoutConstraint.init(item: self.loadingView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
+            NSLayoutConstraint.init(item: self.loadingView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
+            
             reloadBlocker = true
             let listRequest = KBGetArticleReviewList.init(accessToken: accessToken, page: count)
+            self.loadingView.startAnimating()
             KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
                 self?.reloadBlocker = false
                 switch response.result {
@@ -74,6 +82,10 @@ class ReviewTabController: UIViewController {
                     self?.reviewList.append(nil)
                     self?.reviewTable.reloadData()
                     break
+                }
+                
+                DispatchQueue.main.async {
+                    self?.loadingView.stopAnimating()
                 }
             }
         }

@@ -9,6 +9,7 @@
 import UIKit
 import KaobeiAPI
 import GoogleMobileAds
+import NVActivityIndicatorView
 
 class ArticleTabController: UIViewController {
     
@@ -18,6 +19,7 @@ class ArticleTabController: UIViewController {
     var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
     var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
     
+    var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .ballDoubleBounce, color: .cyan, padding: .none)
     let GAP_ID = "gap"
     let ARTICLE_ID = "article"
     let TITLE_ID = "title"
@@ -43,8 +45,14 @@ class ArticleTabController: UIViewController {
         self.articleTable.register(TableViewGap.self, forHeaderFooterViewReuseIdentifier: GAP_ID)
         self.articleList.append(nil)
         
+        self.loadingView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.loadingView)
+        NSLayoutConstraint.init(item: self.loadingView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint.init(item: self.loadingView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
+        
         reloadBlocker = true
         let listRequest = KBGetArticleList.init(page: count)
+        self.loadingView.startAnimating()
         KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
             self?.reloadBlocker = false
             switch response.result {
@@ -59,6 +67,10 @@ class ArticleTabController: UIViewController {
                 self?.articleList.append(nil)
                 self?.articleTable.reloadData()
                 break
+            }
+            
+            DispatchQueue.main.async {
+                self?.loadingView.stopAnimating()
             }
         }
     }
