@@ -11,16 +11,21 @@ import KaobeiAPI
 import GoogleMobileAds
 
 class ArticleViewController: UIViewController {
-    @IBOutlet weak var articleImg: UIImageView!
-    @IBOutlet weak var articleText: UITextView!
-    @IBOutlet weak var mainFBLikeLabel: UILabel!
-    @IBOutlet weak var alterFBLikeLabel: UILabel!
+    
+    @IBOutlet weak var articleTitleLabel: UILabel!
+    @IBOutlet weak var articleImageView: UIImageView!
+    @IBOutlet weak var articleImageViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var articleContentTextView: UITextView!
+    @IBOutlet weak var primaryFacebookLikeLabel: UILabel!
+    @IBOutlet weak var primaryFacebookShareLabel: UILabel!
+    @IBOutlet weak var secondaryFacebookLikeLabel: UILabel!
+    @IBOutlet weak var secondaryFacebookShareLabel: UILabel!
     @IBOutlet weak var plurkLikeLabel: UILabel!
-    @IBOutlet weak var twitterLikeLabel: UILabel!
-    @IBOutlet weak var mainFBShareLabel: UILabel!
-    @IBOutlet weak var alterFBShareLabel: UILabel!
     @IBOutlet weak var plurkShareLabel: UILabel!
+    @IBOutlet weak var twitterLikeLabel: UILabel!
     @IBOutlet weak var twitterShareLabel: UILabel!
+    
+    
     @IBOutlet weak var commentListTable: UITableView!
     
     var commentList = [Comment]()
@@ -32,25 +37,28 @@ class ArticleViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.commentListTable.delegate = self
-        self.commentListTable.dataSource = self
-        self.commentListTable.allowsSelection = false
-        self.articleText.isEditable = false
-        self.articleText.isSelectable = false
-        
-        // self.articleImg.addGestureRecognizer()
+//        self.commentListTable.delegate = self
+//        self.commentListTable.dataSource = self
+//        self.commentListTable.allowsSelection = false
         guard let id = self.articleID else { return } //back to article list
+        
+        articleTitleLabel.text = K.tagConvert(from: id)
         
         let detailRequest = KBGetArticleDetail(id: id)
         
         KaobeiConnection.sendRequest(api: detailRequest) { [weak self] (response) in
             switch response.result {
                 case .success(let data):
-                    self?.articleText.text = data.data.content
-                    do {
-                        try self?.articleImg.image = UIImage(data: Data(contentsOf: URL(string: data.data.image)!))
-                    } catch is Error {
-                        
+                    self?.articleContentTextView.text = data.data.content
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        do {
+                            let articleImage = try UIImage(data: Data(contentsOf: URL(string: data.data.image)!))
+                            DispatchQueue.main.async {
+                                self?.loadArticleImage(articleImage)
+                            }
+                        } catch is Error {
+                            
+                        }
                     }
                     break
                 case .failure(_):
@@ -65,18 +73,18 @@ class ArticleViewController: UIViewController {
                 case .success(let data):
                     for item in data.data {
                         if item.type == "twitter" {
-                            self?.twitterLikeLabel.text = "♥︎\(item.like)"
-                            self?.twitterShareLabel.text = "⎋\(item.share)"
+                            self?.twitterLikeLabel.text = "♥︎ \(item.like)"
+                            self?.twitterShareLabel.text = "↻ \(item.share)"
                         } else if item.type == "plurk" {
-                            self?.plurkLikeLabel.text = "♥︎\(item.like)"
-                            self?.plurkShareLabel.text = "⎋\(item.share)"
+                            self?.plurkLikeLabel.text = "♥︎ \(item.like)"
+                            self?.plurkShareLabel.text = "↻ \(item.share)"
                         } else if item.type == "facebook" {
                             if item.connections == "primary" {
-                                self?.mainFBLikeLabel.text = "♥︎\(item.like)"
-                                self?.mainFBShareLabel.text = "⎋\(item.share)"
+                                self?.primaryFacebookLikeLabel.text = "♥︎ \(item.like)"
+                                self?.primaryFacebookShareLabel.text = "↻ \(item.share)"
                             } else if item.connections == "secondary" {
-                                self?.alterFBLikeLabel.text = "♥︎\(item.like)"
-                                self?.alterFBShareLabel.text = "⎋\(item.share)"
+                                self?.secondaryFacebookLikeLabel.text = "♥︎ \(item.like)"
+                                self?.secondaryFacebookShareLabel.text = "↻ \(item.share)"
                             }
                         }
                     }
@@ -88,23 +96,39 @@ class ArticleViewController: UIViewController {
         
         let commentRequest = KBGetArticleComments(id: id)
         
-        KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
-            switch response.result {
-                case .success(let data):
-                    self?.commentList.append(contentsOf: data.data)
-                    self?.count += 1
-                    self?.commentListTable.reloadData()
-                    break
-                case .failure(_):
-                    break
-            }
-        }
-        
+//        KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
+//            switch response.result {
+//                case .success(let data):
+//                    self?.commentList.append(contentsOf: data.data)
+//                    self?.count += 1
+//                    self?.commentListTable.reloadData()
+//                    break
+//                case .failure(_):
+//                    break
+//            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    func loadArticleImage(_ presentImage: UIImage?) {
+        if let presentImage = presentImage {
+            let ratio = presentImage.size.width / presentImage.size.height                      // 計算圖片寬高比
+            let newHeight = articleImageView.frame.width / ratio
+            articleImageViewHeight.constant = newHeight                              // 計算 UIImageView 高度
+            view.layoutIfNeeded()
+            articleImageView.image = presentImage
+            articleImageView.isHidden = false                                                   // 顯示圖片並解除隱藏
+        }
+    }
+    
+
     
 }
 
