@@ -7,27 +7,81 @@
 //
 
 import UIKit
+import KaobeiAPI
 import GoogleMobileAds
 
 class DashboardTabController: UIViewController, GADBannerViewDelegate {
-    @IBOutlet weak var userImg: UIImageView!
+    
     var bannerView: GADBannerView!
-    var logoutBtn = UIButton()
+    var userToken: String?
+    
+    @IBOutlet weak var userAvatarImageView: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var userInformationStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showSettingActionSheet))
+        userInformationStackView.addGestureRecognizer(gesture)
+        addRadiusImageView(userAvatarImageView)
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         if let accessToken = KeyChainManager.shared.getToken() {
+            self.userToken = accessToken
             print(accessToken)
+            let getUserProfileRequest = KBGetUserProfile.init(accessToken: accessToken)
+            KaobeiConnection.sendRequest(api: getUserProfileRequest) { [weak self] response in
+                switch response.result {
+                case .success(let data):
+//                    self?.userAvatarImageView.
+                    self?.userName.text = data.data.fullName
+                    self?.userEmail.text = data.data.email
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        do {
+                            let userAvatarImage = try UIImage(data: Data(contentsOf: URL(string: data.data.avatar)!))
+                            DispatchQueue.main.async {
+                                self?.userAvatarImageView.image = userAvatarImage
+                            }
+                        } catch is Error {
+                            
+                        }
+                    }
+                    break
+                case .failure(let error):
+                    print(error.responseCode ?? "")
+                    break
+                }
+            }
         }
         else {
             self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
         }
     }
+    
+    func addRadiusImageView(_ iv: UIImageView) {
+        iv.layer.cornerRadius = 10
+        iv.clipsToBounds = true
+    }
+    
+    @objc func showSettingActionSheet(sender: UITapGestureRecognizer) {
+        let controller = UIAlertController(title: "", message: "你確定你要登出嗎？", preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "登出", style: .destructive, handler: logout)
+        controller.addAction(action)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
+    func logout(_ action: UIAlertAction) { // Logout action
+        KeyChainManager.shared.deleteToken()
+        self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
+    }
+    
+    
 
     func setupUI() {
         // In this case, we instantiate the banner with desired ad size.
@@ -38,22 +92,7 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         bannerView.load(GADRequest())
         //addBannerViewToView(bannerView)
         
-        logoutBtn.setTitle("logout", for: .normal)
-        logoutBtn.addTarget(self, action: #selector(logout), for: .touchUpInside)
-        logoutBtn.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(logoutBtn)
-        view.addConstraints([
-            NSLayoutConstraint(item: logoutBtn, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0),
-            NSLayoutConstraint(item: logoutBtn, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0.0)
-        ])
-        
     }
-    
-    @objc func logout() {
-        KeyChainManager.shared.deleteToken()
-        self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
-    }
-
 }
 
 extension DashboardTabController {
