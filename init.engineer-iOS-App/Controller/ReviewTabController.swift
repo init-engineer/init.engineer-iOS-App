@@ -24,6 +24,7 @@ class ReviewTabController: UIViewController {
     let TITLE_ID = "title"
     
     var reloadBlocker = false
+    var cellBlock: ((Int, Int) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,11 +165,12 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ReviewTabController: ArticleCellDelegate {
-    func cellClicked(with id: Int, and article: ArticleUnderReview?) {
-        guard let article = article else { return }
+    func cellClicked(with id: Int, and article: ArticleUnderReview?, updateCompletion: ((Int, Int) -> ())?) {
+        guard let article = article, let block = updateCompletion else { return }
         if self.interstitial.isReady {
             self.interstitial.present(fromRootViewController: self)
         }
+        self.cellBlock = block
         self.performSegue(withIdentifier: K.ToReviewDetailsSegue, sender: article)
     }
     
@@ -177,7 +179,7 @@ extension ReviewTabController: ArticleCellDelegate {
             guard let vc = segue.destination as? ReviewDetailViewController, let article = sender as? ArticleUnderReview else { return }
             vc.id = article.id
             vc.reviewStatus = article
-            vc.reloadBlock = self.reloadReviews
+            vc.reloadBlock = self.cellBlock
         }
     }
 }

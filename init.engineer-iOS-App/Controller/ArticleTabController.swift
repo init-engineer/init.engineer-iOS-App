@@ -143,7 +143,7 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ArticleTabController: ArticleCellDelegate {
-    func cellClicked(with id: Int, and article: ArticleUnderReview?) {
+    func cellClicked(with id: Int, and article: ArticleUnderReview?, updateCompletion: ((Int, Int) -> ())?) {
         if self.interstitial.isReady {
             self.interstitial.present(fromRootViewController: self)
         }

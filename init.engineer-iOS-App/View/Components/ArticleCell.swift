@@ -12,7 +12,7 @@ import GoogleMobileAds
 import KaobeiAPI
 
 protocol ArticleCellDelegate {
-    func cellClicked(with id: Int, and article: ArticleUnderReview?)
+    func cellClicked(with id: Int, and article: ArticleUnderReview?, updateCompletion: ((Int, Int) -> ())?)
 }
 
 class ArticleCell: UITableViewCell {
@@ -27,6 +27,9 @@ class ArticleCell: UITableViewCell {
     var id: Int?
     var reviewingArticle: ArticleUnderReview?
     var delegate: ArticleCellDelegate?
+    var ayeLabel = UILabel()
+    var voteLabel = UILabel()
+    var nayLabel = UILabel()
     
     func makeAds(ads: GADBannerView) {
         dispatchViews()
@@ -156,25 +159,25 @@ class ArticleCell: UITableViewCell {
             bottomStackView.addArrangedSubview(timeLabel)
             bottomStackView.addArrangedSubview(enterArticleBtn)
             
-            let ayeLabel = UILabel()
-            let voteLabel = UILabel()
-            let nayLabel = UILabel()
+            self.ayeLabel = UILabel()
+            self.voteLabel = UILabel()
+            self.nayLabel = UILabel()
             guard let review = self.review, let aye = self.aye, let vote = self.vote, let nay = self.nay else { return }
             if review == 0 {
-                ayeLabel.text = "==="
-                voteLabel.text = "==="
-                nayLabel.text = "==="
+                self.ayeLabel.text = "==="
+                self.voteLabel.text = "==="
+                self.nayLabel.text = "==="
             } else {
-                ayeLabel.text = "\(aye)"
-                voteLabel.text = "\(vote)"
-                nayLabel.text = "\(nay)"
+                self.ayeLabel.text = "\(aye)"
+                self.voteLabel.text = "\(vote)"
+                self.nayLabel.text = "\(nay)"
             }
-            ayeLabel.font = FontConstant.Default.text
-            voteLabel.font = FontConstant.Default.text
-            nayLabel.font = FontConstant.Default.text
-            ayeLabel.translatesAutoresizingMaskIntoConstraints = false
-            voteLabel.translatesAutoresizingMaskIntoConstraints = false
-            nayLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.ayeLabel.font = FontConstant.Default.text
+            self.voteLabel.font = FontConstant.Default.text
+            self.nayLabel.font = FontConstant.Default.text
+            self.ayeLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.voteLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.nayLabel.translatesAutoresizingMaskIntoConstraints = false
             
             let upperStackView = UIStackView()
             upperStackView.axis = .horizontal
@@ -183,9 +186,9 @@ class ArticleCell: UITableViewCell {
             
             upperStackView.translatesAutoresizingMaskIntoConstraints = false
             
-            upperStackView.addArrangedSubview(ayeLabel)
-            upperStackView.addArrangedSubview(voteLabel)
-            upperStackView.addArrangedSubview(nayLabel)
+            upperStackView.addArrangedSubview(self.ayeLabel)
+            upperStackView.addArrangedSubview(self.voteLabel)
+            upperStackView.addArrangedSubview(self.nayLabel)
             
             bottomView.addSubview(upperStackView)
             bottomView.addSubview(bottomStackView)
@@ -233,8 +236,13 @@ class ArticleCell: UITableViewCell {
     
     @objc func showArticle() {
         guard let id = self.id else { return }
-        delegate?.cellClicked(with: id, and: self.reviewingArticle)
+        delegate?.cellClicked(with: id, and: self.reviewingArticle) {[weak self] (aye, nay) in
+            self?.aye = aye
+            self?.nay = nay
+            self?.vote = aye + nay
+            self?.ayeLabel.text = "\(aye)"
+            self?.voteLabel.text = "\(aye + nay)"
+            self?.nayLabel.text = "\(nay)"
+        }
     }
-    
-    
 }

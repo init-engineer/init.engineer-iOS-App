@@ -20,7 +20,7 @@ class ReviewDetailViewController: UIViewController {
     @IBOutlet weak var agreeButton: UIButton!
     @IBOutlet weak var deniedButton: UIButton!
     
-    var reloadBlock: (() -> ())?
+    var reloadBlock: ((Int, Int) -> ())?
     var reviewStatus: ArticleUnderReview?
     var id: Int?
     
@@ -112,9 +112,11 @@ class ReviewDetailViewController: UIViewController {
         KaobeiConnection.sendRequest(api: ayeRequest) {[weak self] (response) in
             switch response.result {
             case.success(let data):
+                let aye = data.data.succeeded
+                let nay = data.data.failed
                 DispatchQueue.main.async {
-                    self?.voteCountInButton(agree: data.data.succeeded, denied: data.data.failed)
-                    self?.reloadBlock?()
+                    self?.voteCountInButton(agree: aye, denied: nay)
+                    self?.reloadBlock?(aye, nay)
                 }
                 break
             case.failure(_):
@@ -137,9 +139,11 @@ class ReviewDetailViewController: UIViewController {
         KaobeiConnection.sendRequest(api: nayRequest) {[weak self] (response) in
             switch response.result {
             case.success(let data):
+                let aye = data.data.succeeded
+                let nay = data.data.failed
                 DispatchQueue.main.async {
-                    self?.voteCountInButton(agree: data.data.succeeded, denied: data.data.failed)
-                    self?.reloadBlock?()
+                    self?.voteCountInButton(agree: aye, denied: nay)
+                    self?.reloadBlock?(aye, nay)
                 }
                 break
             case.failure(_):
