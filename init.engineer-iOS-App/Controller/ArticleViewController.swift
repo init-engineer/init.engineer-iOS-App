@@ -40,6 +40,7 @@ class ArticleViewController: UIViewController {
         self.commentsTableView.delegate = self
         self.commentsTableView.dataSource = self
         self.commentsTableView.allowsSelection = false
+        commentsTableView.register(UINib(nibName: K.articleCommentTableViewCell, bundle: nil), forCellReuseIdentifier: K.articleCommentTableViewCellIdentifier)
         guard let id = self.articleID else { return } //back to article list
         
         articleTitleLabel.text = K.tagConvert(from: id)
@@ -152,18 +153,45 @@ extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.commentsTableView.dequeueReusableCell(withIdentifier: "comment") as! UITableViewCell
-        cell.textLabel?.text = self.commentsList[indexPath.row].content
-        cell.textLabel?.textColor = .white
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.articleCommentTableViewCellIdentifier, for: indexPath) as! ArticleCommentTableViewCell
+        cell.commentUserContentLabel.text = commentsList[indexPath.row].content
+        cell.commentUserNameLabel.text = commentsList[indexPath.row].name
+        cell.commentCreateTimeLabel.text = commentsList[indexPath.row].created
+        if commentsList[indexPath.row].media.type == "plurk" {
+            cell.commentBubble.backgroundColor = .systemRed
+            cell.commentPlatformLabel.text = "Plurk"
+        }
+        else if commentsList[indexPath.row].media.type == "twitter" {
+            cell.commentBubble.backgroundColor = .systemTeal
+            cell.commentPlatformLabel.text = "Twitter"
+        }
+        else if commentsList[indexPath.row].media.type == "facebook" {
+            cell.commentBubble.backgroundColor = .systemBlue
+            if commentsList[indexPath.row].media.connections == "primary" {
+                cell.commentPlatformLabel.text = "Facebook 主站"
+            }
+            else if commentsList[indexPath.row].media.connections == "secondary" {
+                cell.commentPlatformLabel.text = "Facebook 次站"
+            }
+        }
+        
+        if commentsList[indexPath.row].avatar != "/img/frontend/user/nopic_192.gif" {
+            DispatchQueue.main.async {
+                do {
+                    let commentUserAvatarImage = try UIImage(data: Data(contentsOf: URL(string: self.commentsList[indexPath.row].avatar)!))
+                    DispatchQueue.main.async {
+                        cell.commentUserAvaratImageView.image = commentUserAvatarImage
+                    }
+                } catch is Error {
+                    
+                }
+            }
+        }  // 有點奇怪，載入圖片會出現重複？
+        
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let h: CGFloat = CGFloat((self.commentsList[indexPath.row].content.count / 10)) * 20.0
-        return h
     }
 }

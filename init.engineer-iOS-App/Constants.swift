@@ -21,6 +21,8 @@ struct K {
     static let publishArticlePlaceholderTextColor = UIColor(white: 0xD3/255.0, alpha: 0.7)
     static let ToArticleDetailsSegue = "ToArticleDetails"
     static let ToReviewDetailsSegue = "ToReviewDetails"
+    static let articleCommentTableViewCell = "ArticleCommentTableViewCell"
+    static let articleCommentTableViewCellIdentifier = "ArticleCommentTableViewCellIdentifier"
     static func tagConvert(from id: Int) -> String {
         var tag = ""
         var carry = id
