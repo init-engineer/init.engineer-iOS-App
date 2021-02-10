@@ -24,11 +24,11 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var plurkShareLabel: UILabel!
     @IBOutlet weak var twitterLikeLabel: UILabel!
     @IBOutlet weak var twitterShareLabel: UILabel!
+    @IBOutlet weak var commentsTableView: UITableView!
+    @IBOutlet weak var commentsTableViewHeight: NSLayoutConstraint!
     
     
-    @IBOutlet weak var commentListTable: UITableView!
-    
-    var commentList = [Comment]()
+    var commentsList = [Comment]()
     
     var articleID: Int?
     var count = 1
@@ -37,9 +37,9 @@ class ArticleViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        self.commentListTable.delegate = self
-//        self.commentListTable.dataSource = self
-//        self.commentListTable.allowsSelection = false
+        self.commentsTableView.delegate = self
+        self.commentsTableView.dataSource = self
+        self.commentsTableView.allowsSelection = false
         guard let id = self.articleID else { return } //back to article list
         
         articleTitleLabel.text = K.tagConvert(from: id)
@@ -96,25 +96,39 @@ class ArticleViewController: UIViewController {
         
         let commentRequest = KBGetArticleComments(id: id)
         
-//        KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
-//            switch response.result {
-//                case .success(let data):
-//                    self?.commentList.append(contentsOf: data.data)
-//                    self?.count += 1
-//                    self?.commentListTable.reloadData()
-//                    break
-//                case .failure(_):
-//                    break
-//            }
-//        }
+        KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
+            switch response.result {
+                case .success(let data):
+                    self?.commentsList.append(contentsOf: data.data)
+                    self?.count += 1
+                    self?.commentsTableView.reloadData()
+                    break
+                case .failure(_):
+                    break
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.commentsTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        self.commentsTableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.commentsTableView.removeObserver(self, forKeyPath: "contentSize")
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize" {
+            if object is UITableView {
+                if let newValue = change?[.newKey] {
+                    let newSize = newValue as! CGSize
+                    self.commentsTableViewHeight.constant = newSize.height
+                }
+            }
+        }
     }
     
     func loadArticleImage(_ presentImage: UIImage?) {
@@ -134,7 +148,7 @@ class ArticleViewController: UIViewController {
 
 extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.commentList.count
+        self.commentsList.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -142,14 +156,14 @@ extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.commentListTable.dequeueReusableCell(withIdentifier: "comment") as! UITableViewCell
-        cell.textLabel?.text = self.commentList[indexPath.row].content
+        let cell = self.commentsTableView.dequeueReusableCell(withIdentifier: "comment") as! UITableViewCell
+        cell.textLabel?.text = self.commentsList[indexPath.row].content
         cell.textLabel?.textColor = .white
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let h: CGFloat = CGFloat((self.commentList[indexPath.row].content.count / 10)) * 20.0
+        let h: CGFloat = CGFloat((self.commentsList[indexPath.row].content.count / 10)) * 20.0
         return h
     }
 }
