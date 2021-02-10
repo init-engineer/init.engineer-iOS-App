@@ -65,6 +65,8 @@
 		A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */; };
 		A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E856244DE50F00953132 /* Assets.xcassets */; };
 		A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */; };
+		C438F91A25D440EC001EDE58 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438F91825D440EC001EDE58 /* ArticleTableViewCell.swift */; };
+		C438F91B25D440EC001EDE58 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C438F91925D440EC001EDE58 /* ArticleTableViewCell.xib */; };
 		C45A3A1C25B9363F00F484F1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C45A3A1B25B9363F00F484F1 /* Debug.xcconfig */; };
 		C45A3A4F25B9897300F484F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A3A4E25B9897300F484F1 /* Constants.swift */; };
 		C45DF73625C43D5100415094 /* ReviewTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF73525C43D5100415094 /* ReviewTabController.swift */; };
@@ -211,6 +213,8 @@
 		A7D2E85B244DE50F00953132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2FC4893AB8F71E6DB6F0830 /* Pods-KaobeiAPI.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPI.staging.xcconfig"; path = "Target Support Files/Pods-KaobeiAPI/Pods-KaobeiAPI.staging.xcconfig"; sourceTree = "<group>"; };
 		BB64078BB32035F0DE07E9F0 /* Pods-KaobeiAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPI.debug.xcconfig"; path = "Target Support Files/Pods-KaobeiAPI/Pods-KaobeiAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		C438F91825D440EC001EDE58 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		C438F91925D440EC001EDE58 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		C45A3A1B25B9363F00F484F1 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		C45A3A2525B9372E00F484F1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		C45A3A3025B945C600F484F1 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
@@ -325,6 +329,8 @@
 		853D8F8B25C23A2B00AD1548 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C438F91825D440EC001EDE58 /* ArticleTableViewCell.swift */,
+				C438F91925D440EC001EDE58 /* ArticleTableViewCell.xib */,
 				853D8F9925C23C4000AD1548 /* ArticleCell.swift */,
 				6AB6C09125C73271006662F8 /* TableViewGap.swift */,
 				6AB6C09625C73304006662F8 /* TableViewTitle.swift */,
@@ -679,6 +685,7 @@
 				C4A2247525C323C000DEB3C5 /* DashboardView.storyboard in Resources */,
 				C4A2248725C3246B00DEB3C5 /* ReviewView.storyboard in Resources */,
 				A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */,
+				C438F91B25D440EC001EDE58 /* ArticleTableViewCell.xib in Resources */,
 				A7D2E852244DE50E00953132 /* Main.storyboard in Resources */,
 				C4A2246C25C321CE00DEB3C5 /* LoginView.storyboard in Resources */,
 				C45A3A1C25B9363F00F484F1 /* Debug.xcconfig in Resources */,
@@ -882,6 +889,7 @@
 				C48F830925C8464E00D98F93 /* ThemeManager.swift in Sources */,
 				A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */,
 				853D8F9A25C23C4000AD1548 /* ArticleCell.swift in Sources */,
+				C438F91A25D440EC001EDE58 /* ArticleTableViewCell.swift in Sources */,
 				85AB736B25B359C400F6238A /* KeyChainManager.swift in Sources */,
 				127FD91F248BAACF002E9645 /* DashboardTabController.swift in Sources */,
 				C48F830125C79A0400D98F93 /* FontManager.swift in Sources */,

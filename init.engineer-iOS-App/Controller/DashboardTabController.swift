@@ -13,31 +13,37 @@ import GoogleMobileAds
 class DashboardTabController: UIViewController, GADBannerViewDelegate {
     
     var bannerView: GADBannerView!
+    var userPosts = [Post?]()
     var userToken: String?
     
     @IBOutlet weak var userAvatarImageView: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userInformationStackView: UIStackView!
+    @IBOutlet weak var userArticleTableView: UITableView!
+    @IBOutlet weak var userArticleTableViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showSettingActionSheet))
         userInformationStackView.addGestureRecognizer(gesture)
         addRadiusImageView(userAvatarImageView)
+        userArticleTableView.register(UINib(nibName: K.articleTableViewCell, bundle: nil), forCellReuseIdentifier: K.articleTableViewCellIdentifier)
+        userArticleTableView.delegate = self
+        userArticleTableView.dataSource = self
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.userArticleTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        self.userArticleTableView.reloadData()
         if let accessToken = KeyChainManager.shared.getToken() {
             self.userToken = accessToken
-            print(accessToken)
             let getUserProfileRequest = KBGetUserProfile.init(accessToken: accessToken)
             KaobeiConnection.sendRequest(api: getUserProfileRequest) { [weak self] response in
                 switch response.result {
                 case .success(let data):
-//                    self?.userAvatarImageView.
                     self?.userName.text = data.data.fullName
                     self?.userEmail.text = data.data.email
                     DispatchQueue.global(qos: .userInitiated).async {
@@ -56,11 +62,40 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
                     break
                 }
             }
+            
+            let getUserPostsRequest = KBGetUserPosts(accessToken: accessToken)
+            KaobeiConnection.sendRequest(api: getUserPostsRequest) { [weak self] response in
+                switch response.result {
+                case .success(let data):
+                    for element in data.data {
+                        self?.userPosts.append(element)
+                    }
+                    break
+                case .failure(let error):
+                    print(error.responseCode ?? "")
+                    break
+                }
+            }
         }
         else {
             self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.userArticleTableView.removeObserver(self, forKeyPath: "contentSize")
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+            if keyPath == "contentSize" {
+                if object is UITableView {
+                    if let newValue = change?[.newKey] {
+                        let newSize = newValue as! CGSize
+                        self.userArticleTableViewHeight.constant = newSize.height
+                    }
+                }
+            }
+        }
     
     func addRadiusImageView(_ iv: UIImageView) {
         iv.layer.cornerRadius = 10
@@ -93,6 +128,31 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         //addBannerViewToView(bannerView)
         
     }
+}
+
+extension DashboardTabController: UITableViewDelegate {
+    
+}
+
+extension DashboardTabController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return userPosts.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.articleTableViewCellIdentifier, for: indexPath) as! ArticleTableViewCell
+        cell.articleContentLabel.text = userPosts[indexPath.row]?.content
+        cell.articleIDLabel.text = K.tagConvert(from: userPosts[indexPath.row]!.id)
+        cell.articleCreatedTimeLabel.text = userPosts[indexPath.row]?.createdDiff
+        return cell
+    }
+    
+    
 }
 
 extension DashboardTabController {
