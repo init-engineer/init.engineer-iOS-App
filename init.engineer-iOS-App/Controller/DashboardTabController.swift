@@ -146,7 +146,7 @@ extension DashboardTabController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.articleTableViewCellIdentifier, for: indexPath) as! ArticleTableViewCell
         cell.articleContentLabel.text = userPosts[indexPath.row]?.content
-        cell.articleIDLabel.text = K.tagConvert(from: userPosts[indexPath.row]!.id)
+        cell.articleIDLabel.text = String.tagConvert(from: userPosts[indexPath.row]!.id)
         cell.articleCreatedTimeLabel.text = userPosts[indexPath.row]?.createdDiff
         return cell
     }
