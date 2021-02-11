@@ -31,7 +31,9 @@ class ArticleViewController: UIViewController {
     var commentsList = [Comment]()
     
     var articleID: Int?
-    var count = 1
+    var commentCurrentPage = 1
+    var commentMaxPage: Int?
+    var reloadBlocker = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,13 +97,15 @@ class ArticleViewController: UIViewController {
             }
         }
         
+        reloadBlocker = true
         let commentRequest = KBGetArticleComments(id: id)
-        
         KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
+            self?.reloadBlocker = false
             switch response.result {
                 case .success(let data):
                     self?.commentsList.append(contentsOf: data.data)
-                    self?.count += 1
+                    self?.commentCurrentPage += 1
+                    self?.commentMaxPage = data.meta.pagination.totalPages
                     self?.commentsTableView.reloadData()
                     break
                 case .failure(_):
@@ -143,7 +147,30 @@ class ArticleViewController: UIViewController {
         }
     }
     
-
+    func loadMoreComment() {
+        if reloadBlocker == true {
+            return
+        }
+        print("LOADMORE")
+        reloadBlocker = true
+        guard let id = self.articleID else { return }
+        guard let maxPage = self.commentMaxPage else { return }
+        if maxPage + 1 >= self.commentCurrentPage {
+            let commentRequest = KBGetArticleComments(id: id, page: self.commentCurrentPage)
+            KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
+                self?.reloadBlocker = false
+                switch response.result {
+                    case .success(let data):
+                        self?.commentsList.append(contentsOf: data.data)
+                        self?.commentCurrentPage += 1
+                        self?.commentsTableView.reloadData()
+                        break
+                    case .failure(_):
+                        break
+                }
+            }
+        }
+    }
     
 }
 
@@ -190,8 +217,21 @@ extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
                     
                 }
             }
-        }  // 有點奇怪，載入圖片會出現重複？
+        }
+        else {
+            cell.commentUserAvaratImageView.image = UIImage(named: "no_avatar")
+        }
+        
+        if indexPath.row == commentsList.count - 1 {
+            loadMoreComment() // 載入更多留言，可是載入時機點不對，應該要滑到底下後再載入
+        }
         
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row >= self.commentsList.count - 2 {
+//            loadMoreComment()
+//        }
+//    }
 }
