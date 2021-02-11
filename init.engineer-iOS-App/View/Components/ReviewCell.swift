@@ -1,8 +1,8 @@
 //
-//  ArticleCell.swift
+//  ReviewCell.swift
 //  init.engineer-iOS-App
 //
-//  Created by horo on 1/28/21.
+//  Created by horo on 2021/02/12.
 //  Copyright © 2021 Kantai Developer. All rights reserved.
 //
 
@@ -10,17 +10,25 @@ import UIKit
 import GoogleMobileAds
 import KaobeiAPI
 
-protocol ArticleCellDelegate {
-    func cellClicked(with id: Int)
+protocol ReviewCellDelegate {
+    func cellClicked(with id: Int, and article: ArticleUnderReview?, updateCompletion: ((Int, Int) -> ())?)
 }
 
-class ArticleCell: UITableViewCell {
+class ReviewCell: UITableViewCell {
     var contentString: String?
     var stringTag: String?
     var publishTime: String?
     var enterArticleBtn: UIButton?
+    var vote: Int?
+    var aye: Int?
+    var nay: Int?
+    var review: Int?
     var id: Int?
-    var delegate: ArticleCellDelegate?
+    var reviewingArticle: ArticleUnderReview?
+    var delegate: ReviewCellDelegate?
+    var ayeLabel = UILabel()
+    var voteLabel = UILabel()
+    var nayLabel = UILabel()
     
     func makeAds(ads: GADBannerView) {
         dispatchViews()
@@ -38,16 +46,25 @@ class ArticleCell: UITableViewCell {
         ])
     }
     
-    func makeArticel(content: Article) {
+    func makeArticleInReview(content: ArticleUnderReview) {
         dispatchViews()
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         self.id = content.id
+        self.reviewingArticle = content
         self.stringTag = String.tagConvert(from: content.id)
         self.publishTime = content.createdDiff
         self.contentString = content.content
         self.backgroundColor = .clear
+        self.aye = content.succeeded
+        self.nay = content.failed
+        self.vote = content.succeeded + content.failed
+        self.review = content.review
         
+        makeUI()
+    }
+    
+    private func makeUI() {
         let upperView = UIView()
         let bottomView = UIView()
         
@@ -111,24 +128,59 @@ class ArticleCell: UITableViewCell {
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         enterArticleBtn.translatesAutoresizingMaskIntoConstraints = false
         
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.alignment = .center
+        let bottomStackView = UIStackView()
+        bottomStackView.axis = .horizontal
+        bottomStackView.distribution = .equalSpacing
+        bottomStackView.alignment = .center
         
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        bottomStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        stackView.addArrangedSubview(tagLabel)
-        stackView.addArrangedSubview(timeLabel)
-        stackView.addArrangedSubview(enterArticleBtn)
+        bottomStackView.addArrangedSubview(tagLabel)
+        bottomStackView.addArrangedSubview(timeLabel)
+        bottomStackView.addArrangedSubview(enterArticleBtn)
         
-        bottomView.addSubview(stackView)
+        self.ayeLabel = UILabel()
+        self.voteLabel = UILabel()
+        self.nayLabel = UILabel()
+        guard let review = self.review, let aye = self.aye, let vote = self.vote, let nay = self.nay else { return }
+        if review == 0 {
+            self.ayeLabel.text = "==="
+            self.voteLabel.text = "==="
+            self.nayLabel.text = "==="
+        } else {
+            self.ayeLabel.text = "\(aye)"
+            self.voteLabel.text = "\(vote)"
+            self.nayLabel.text = "\(nay)"
+        }
+        self.ayeLabel.font = FontConstant.Default.text
+        self.voteLabel.font = FontConstant.Default.text
+        self.nayLabel.font = FontConstant.Default.text
+        self.ayeLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.voteLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.nayLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        let upperStackView = UIStackView()
+        upperStackView.axis = .horizontal
+        upperStackView.distribution = .equalSpacing
+        upperStackView.alignment = .center
+        
+        upperStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        upperStackView.addArrangedSubview(self.ayeLabel)
+        upperStackView.addArrangedSubview(self.voteLabel)
+        upperStackView.addArrangedSubview(self.nayLabel)
+        
+        bottomView.addSubview(upperStackView)
+        bottomView.addSubview(bottomStackView)
         
         bottomView.addConstraints([
-            stackView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -10.0),
-            stackView.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 15.0),
-            stackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
-            stackView.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -19.0),
+            upperStackView.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 15.0),
+            upperStackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
+            upperStackView.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -19.0),
+            bottomStackView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -10.0),
+            bottomStackView.topAnchor.constraint(equalTo: upperStackView.topAnchor, constant: 10.0),
+            bottomStackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
+            bottomStackView.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -19.0)
         ])
     }
     
@@ -140,6 +192,13 @@ class ArticleCell: UITableViewCell {
     
     @objc func showArticle() {
         guard let id = self.id else { return }
-        delegate?.cellClicked(with: id)
+        delegate?.cellClicked(with: id, and: self.reviewingArticle) {[weak self] (aye, nay) in
+            self?.aye = aye
+            self?.nay = nay
+            self?.vote = aye + nay
+            self?.ayeLabel.text = "\(aye)"
+            self?.voteLabel.text = "\(aye + nay)"
+            self?.nayLabel.text = "\(nay)"
+        }
     }
 }

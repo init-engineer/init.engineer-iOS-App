@@ -55,7 +55,7 @@ class ReviewTabController: UIViewController {
             self.reviewTable.dataSource = self
             self.reviewTable.backgroundColor = .clear
             self.reviewTable.sectionHeaderHeight = 20.0
-            self.reviewTable.register(ArticleCell.self, forCellReuseIdentifier: REVIEW_ID)
+            self.reviewTable.register(ReviewCell.self, forCellReuseIdentifier: REVIEW_ID)
             self.reviewTable.register(TableViewTitle.self, forCellReuseIdentifier: TITLE_ID)
             self.reviewTable.register(TableViewGap.self, forHeaderFooterViewReuseIdentifier: GAP_ID)
             self.reviewList.append(nil)
@@ -119,7 +119,7 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
-        let cell = self.reviewTable.dequeueReusableCell(withIdentifier: REVIEW_ID) as! ArticleCell
+        let cell = self.reviewTable.dequeueReusableCell(withIdentifier: REVIEW_ID) as! ReviewCell
         if let review = reviewList[indexPath.section] {
             cell.makeArticleInReview(content: review)
             cell.delegate = self
@@ -176,7 +176,7 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension ReviewTabController: ArticleCellDelegate {
+extension ReviewTabController: ReviewCellDelegate {
     func cellClicked(with id: Int, and article: ArticleUnderReview?, updateCompletion: ((Int, Int) -> ())?) {
         guard let article = article, let block = updateCompletion else { return }
         if self.interstitial.isReady {
