@@ -94,10 +94,6 @@ class ArticleCell: UITableViewCell {
         
         contentView.addSubview(upperView)
         contentView.addSubview(bottomView)
-        var bottomHeight: CGFloat = 43.0
-        if let _ = self.vote {
-            bottomHeight = 71.0
-        }
         contentView.addConstraints([
             upperView.topAnchor.constraint(equalTo: contentView.topAnchor),
             upperView.bottomAnchor.constraint(equalTo: bottomView.topAnchor),
@@ -106,8 +102,7 @@ class ArticleCell: UITableViewCell {
             bottomView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             bottomView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             bottomView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            upperView.heightAnchor.constraint(equalToConstant: 200.0),
-            bottomView.heightAnchor.constraint(equalToConstant: bottomHeight)
+            upperView.heightAnchor.constraint(equalToConstant: 200.0)
         ])
         
         let articleView = UILabel()
