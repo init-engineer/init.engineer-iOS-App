@@ -38,6 +38,9 @@ PODS:
     - nanopb/encode (= 2.30907.0)
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - PromisesObjC (1.2.12)
 
 DEPENDENCIES:
@@ -46,6 +49,7 @@ DEPENDENCIES:
   - AppAuth
   - Google-Mobile-Ads-SDK
   - KeychainAccess
+  - NVActivityIndicatorView
 
 SPEC REPOS:
   trunk:
@@ -57,6 +61,7 @@ SPEC REPOS:
     - GoogleUtilities
     - KeychainAccess
     - nanopb
+    - NVActivityIndicatorView
     - PromisesObjC
 
 SPEC CHECKSUMS:
@@ -68,8 +73,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 5b5c569fa3e6e221dac0dc3914f904e4a2aec876
+PODFILE CHECKSUM: 6cf36bab62a168ffd673ad945558c9e88f03c8e2
 
 COCOAPODS: 1.10.1

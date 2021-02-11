@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,200 +57,193 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文章 Article" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-3x-m42">
-                                <rect key="frame" x="152.5" y="108" width="109" height="19"/>
-                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QF-Ra-lW1">
-                                <rect key="frame" x="173.5" y="567" width="67" height="31"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                <state key="normal" title="⎋ Share">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ord-ci-eCl">
-                                <rect key="frame" x="20" y="606" width="374" height="69"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7E-Cf-BCK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9gO-fv-jb7">
-                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="69"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="55R-nP-yfr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="348"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXo-MQ-Bip">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2H-dF-NUz">
+                                                <rect key="frame" x="20" y="30" width="374" height="88"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#純靠北工程師7122" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xga-73-oZh">
+                                                        <rect key="frame" x="0.0" y="48" width="315" height="40"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xga-73-oZh" secondAttribute="trailing" constant="20" symbolic="YES" id="3ES-hj-xcH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xga-73-oZh" secondAttribute="bottom" id="GWz-7t-2GA"/>
+                                                    <constraint firstItem="xga-73-oZh" firstAttribute="leading" secondItem="z2H-dF-NUz" secondAttribute="leading" id="aPx-Nw-5bQ"/>
+                                                    <constraint firstAttribute="height" constant="88" id="tti-SO-Gmy"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oBV-K1-mkB">
+                                                <rect key="frame" x="20" y="138" width="374" height="0.0"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="Fbo-Av-4jI"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mf9-kr-Oxb">
+                                                <rect key="frame" x="20" y="158" width="374" height="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahr-uD-PrI">
-                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
-                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <state key="normal" title="FB主站">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-qG-IcF">
-                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jPK-eh-t8g">
+                                                <rect key="frame" x="20" y="218" width="374" height="80"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mPg-Xg-8N6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="80"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woo-1m-cl8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="86" height="19"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsR-ap-Ifz">
+                                                                <rect key="frame" x="0.0" y="24" width="86" height="32"/>
+                                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                                <state key="normal" title="FB 主站">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↻ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64j-7b-IZL">
+                                                                <rect key="frame" x="0.0" y="61" width="86" height="19"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2yp-uN-vPl">
+                                                        <rect key="frame" x="96" y="0.0" width="86" height="80"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kr8-mI-Wo5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="86" height="19"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRU-r9-RP7">
+                                                                <rect key="frame" x="0.0" y="24" width="86" height="32"/>
+                                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                                <state key="normal" title="FB 次站">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↻ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgG-Hb-5W8">
+                                                                <rect key="frame" x="0.0" y="61" width="86" height="19"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sXr-Ye-hFZ">
+                                                        <rect key="frame" x="192" y="0.0" width="86" height="80"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX2-rc-zFY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="86" height="19"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKq-BJ-g1z">
+                                                                <rect key="frame" x="0.0" y="24" width="86" height="32"/>
+                                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                                <state key="normal" title="Plurk">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↻ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxE-rl-iNS">
+                                                                <rect key="frame" x="0.0" y="61" width="86" height="19"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="k2d-5K-du9">
+                                                        <rect key="frame" x="288" y="0.0" width="86" height="80"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTY-Cd-qsW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="86" height="19"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teD-qu-0QV">
+                                                                <rect key="frame" x="0.0" y="24" width="86" height="32"/>
+                                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                                <state key="normal" title="Twitter">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↻ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vv-d6-ylc">
+                                                                <rect key="frame" x="0.0" y="61" width="86" height="19"/>
+                                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X4v-Tt-Y2p">
+                                                <rect key="frame" x="20" y="318" width="374" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="uJc-gJ-dam"/>
+                                                </constraints>
+                                            </tableView>
                                         </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xdI-DQ-9to">
-                                        <rect key="frame" x="93.5" y="0.0" width="93.5" height="69"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hee-Aj-PFd">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nx-K0-zpf">
-                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
-                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <state key="normal" title="FB次站">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-O5-A0Y">
-                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="okT-Ej-AK6">
-                                        <rect key="frame" x="187" y="0.0" width="93.5" height="69"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZo-WW-v61">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcE-5c-Ngr">
-                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <state key="normal" title="Plurk">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yji-ov-wG1">
-                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jh1-r3-rNL">
-                                        <rect key="frame" x="280.5" y="0.0" width="93.5" height="69"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW1-SX-QuZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msZ-7R-P34">
-                                                <rect key="frame" x="0.0" y="19" width="93.5" height="31"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <state key="normal" title="Twitter">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⎋ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tO-bU-8jQ">
-                                                <rect key="frame" x="0.0" y="50" width="93.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="30" left="20" bottom="30" right="20"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="okT-Ej-AK6" firstAttribute="leading" secondItem="Ord-ci-eCl" secondAttribute="leading" constant="187" id="Ia5-yc-5YX"/>
-                                    <constraint firstItem="jh1-r3-rNL" firstAttribute="leading" secondItem="Ord-ci-eCl" secondAttribute="leading" constant="280.5" id="YHW-LS-XAZ"/>
-                                    <constraint firstItem="xdI-DQ-9to" firstAttribute="leading" secondItem="Ord-ci-eCl" secondAttribute="leading" constant="93.5" id="z8A-M4-eil"/>
+                                    <constraint firstItem="55R-nP-yfr" firstAttribute="trailing" secondItem="Wfd-8G-rXN" secondAttribute="trailing" id="3OV-eB-2XK"/>
+                                    <constraint firstItem="55R-nP-yfr" firstAttribute="top" secondItem="Wfd-8G-rXN" secondAttribute="top" id="4AH-6z-ujw"/>
+                                    <constraint firstItem="55R-nP-yfr" firstAttribute="bottom" secondItem="Wfd-8G-rXN" secondAttribute="bottom" id="86g-O1-fNW"/>
+                                    <constraint firstItem="55R-nP-yfr" firstAttribute="leading" secondItem="Wfd-8G-rXN" secondAttribute="leading" id="JSq-nH-tv5"/>
+                                    <constraint firstItem="55R-nP-yfr" firstAttribute="width" secondItem="WvP-UE-b0y" secondAttribute="width" id="dzv-IE-Cm7"/>
                                 </constraints>
-                            </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cwd-BX-vuD">
-                                <rect key="frame" x="20" y="683" width="374" height="179"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="2tQ-e7-qSk"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="comment" id="5zP-To-AF0">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5zP-To-AF0" id="iNf-ts-ngB">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="92j-in-BFc">
-                                <rect key="frame" x="20" y="343" width="374" height="216"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="systemGreenColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="knv-Cj-2KV">
-                                <rect key="frame" x="87" y="135" width="240" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="8vM-Rm-NVV"/>
-                                </constraints>
-                            </imageView>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Wfd-8G-rXN"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="WvP-UE-b0y"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="twt-Ti-Haz"/>
-                        <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="92j-in-BFc" firstAttribute="leading" secondItem="Ord-ci-eCl" secondAttribute="leading" id="5sb-sO-S3q"/>
-                            <constraint firstItem="cRe-3x-m42" firstAttribute="top" secondItem="twt-Ti-Haz" secondAttribute="top" constant="20" id="70a-NP-Gm3"/>
-                            <constraint firstItem="92j-in-BFc" firstAttribute="leading" secondItem="DhT-su-j1Q" secondAttribute="leadingMargin" id="83u-rZ-0YD"/>
-                            <constraint firstItem="knv-Cj-2KV" firstAttribute="top" secondItem="cRe-3x-m42" secondAttribute="bottom" constant="8" symbolic="YES" id="EGC-i4-fVC"/>
-                            <constraint firstItem="knv-Cj-2KV" firstAttribute="centerX" secondItem="92j-in-BFc" secondAttribute="centerX" id="Go8-8P-56R"/>
-                            <constraint firstItem="0QF-Ra-lW1" firstAttribute="top" secondItem="92j-in-BFc" secondAttribute="bottom" constant="8" symbolic="YES" id="P8g-lR-Nnb"/>
-                            <constraint firstItem="Ord-ci-eCl" firstAttribute="leading" secondItem="cwd-BX-vuD" secondAttribute="leading" id="Sol-Ti-g2R"/>
-                            <constraint firstItem="0QF-Ra-lW1" firstAttribute="centerX" secondItem="Ord-ci-eCl" secondAttribute="centerX" id="aJx-CP-sTq"/>
-                            <constraint firstItem="cRe-3x-m42" firstAttribute="centerX" secondItem="knv-Cj-2KV" secondAttribute="centerX" id="bsH-nc-GFj"/>
-                            <constraint firstItem="cwd-BX-vuD" firstAttribute="bottom" secondItem="twt-Ti-Haz" secondAttribute="bottom" id="e3W-sa-WXQ"/>
-                            <constraint firstItem="Ord-ci-eCl" firstAttribute="trailing" secondItem="cwd-BX-vuD" secondAttribute="trailing" id="fmH-qX-JP9"/>
-                            <constraint firstItem="92j-in-BFc" firstAttribute="trailing" secondItem="DhT-su-j1Q" secondAttribute="trailingMargin" id="iEL-47-Ymi"/>
-                            <constraint firstItem="Ord-ci-eCl" firstAttribute="top" secondItem="0QF-Ra-lW1" secondAttribute="bottom" constant="8" symbolic="YES" id="k11-oA-nNo"/>
-                            <constraint firstItem="knv-Cj-2KV" firstAttribute="leading" secondItem="twt-Ti-Haz" secondAttribute="leading" constant="87" id="li4-Ot-Vje"/>
-                            <constraint firstItem="twt-Ti-Haz" firstAttribute="trailing" secondItem="knv-Cj-2KV" secondAttribute="trailing" constant="87" id="m2L-gN-xe0"/>
-                            <constraint firstItem="92j-in-BFc" firstAttribute="trailing" secondItem="Ord-ci-eCl" secondAttribute="trailing" id="qCy-Ak-Hid"/>
-                            <constraint firstItem="92j-in-BFc" firstAttribute="top" secondItem="knv-Cj-2KV" secondAttribute="bottom" constant="8" symbolic="YES" id="t9Q-Ca-qJP"/>
-                            <constraint firstItem="cwd-BX-vuD" firstAttribute="top" secondItem="Ord-ci-eCl" secondAttribute="bottom" constant="8" symbolic="YES" id="t9S-uT-fsn"/>
+                            <constraint firstItem="M7E-Cf-BCK" firstAttribute="trailing" secondItem="twt-Ti-Haz" secondAttribute="trailing" id="ND9-M2-CO6"/>
+                            <constraint firstItem="M7E-Cf-BCK" firstAttribute="top" secondItem="twt-Ti-Haz" secondAttribute="top" id="b3W-Na-dev"/>
+                            <constraint firstItem="M7E-Cf-BCK" firstAttribute="leading" secondItem="twt-Ti-Haz" secondAttribute="leading" id="nWn-YR-hrT"/>
+                            <constraint firstItem="twt-Ti-Haz" firstAttribute="bottom" secondItem="M7E-Cf-BCK" secondAttribute="bottom" id="qhz-Lo-qvS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iGN-1k-Aei"/>
                     <connections>
-                        <outlet property="alterFBLikeLabel" destination="Hee-Aj-PFd" id="Xf6-HE-AU6"/>
-                        <outlet property="alterFBShareLabel" destination="j4c-O5-A0Y" id="Y5V-v5-eFu"/>
-                        <outlet property="articleImg" destination="knv-Cj-2KV" id="SIt-tr-iGb"/>
-                        <outlet property="articleText" destination="92j-in-BFc" id="6zw-Nw-6WB"/>
-                        <outlet property="commentListTable" destination="cwd-BX-vuD" id="RT9-sg-L3S"/>
-                        <outlet property="mainFBLikeLabel" destination="aXo-MQ-Bip" id="1kv-1d-r6S"/>
-                        <outlet property="mainFBShareLabel" destination="QzP-qG-IcF" id="Kkw-y3-YmN"/>
-                        <outlet property="plurkLikeLabel" destination="fZo-WW-v61" id="Mlt-a3-MJO"/>
-                        <outlet property="plurkShareLabel" destination="yji-ov-wG1" id="voJ-Tf-Fcj"/>
-                        <outlet property="twitterLikeLabel" destination="kW1-SX-QuZ" id="pe5-cz-h2B"/>
-                        <outlet property="twitterShareLabel" destination="1tO-bU-8jQ" id="ikx-iu-ld1"/>
+                        <outlet property="articleContentTextView" destination="Mf9-kr-Oxb" id="xNO-KP-nmx"/>
+                        <outlet property="articleImageView" destination="oBV-K1-mkB" id="q5Q-Sd-WmV"/>
+                        <outlet property="articleImageViewHeight" destination="Fbo-Av-4jI" id="7nG-QH-M4g"/>
+                        <outlet property="articleTitleLabel" destination="xga-73-oZh" id="vzR-Q1-cry"/>
+                        <outlet property="commentsTableView" destination="X4v-Tt-Y2p" id="oOe-Fh-WqK"/>
+                        <outlet property="commentsTableViewHeight" destination="uJc-gJ-dam" id="hDe-QI-avJ"/>
+                        <outlet property="plurkLikeLabel" destination="IX2-rc-zFY" id="EvO-P5-Adc"/>
+                        <outlet property="plurkShareLabel" destination="XxE-rl-iNS" id="7eH-IK-5MH"/>
+                        <outlet property="primaryFacebookLikeLabel" destination="woo-1m-cl8" id="Ocd-rE-Z5U"/>
+                        <outlet property="primaryFacebookShareLabel" destination="64j-7b-IZL" id="V4x-xf-H4K"/>
+                        <outlet property="secondaryFacebookLikeLabel" destination="Kr8-mI-Wo5" id="SN9-qz-lpl"/>
+                        <outlet property="secondaryFacebookShareLabel" destination="AgG-Hb-5W8" id="egl-co-bZx"/>
+                        <outlet property="twitterLikeLabel" destination="OTY-Cd-qsW" id="5bH-c9-EDN"/>
+                        <outlet property="twitterShareLabel" destination="4Vv-d6-ylc" id="HAb-8D-goe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bot-JW-lpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -277,8 +271,11 @@
     <resources>
         <image name="baseline_dashboard_black_18pt" width="18" height="18"/>
         <image name="baseline_dashboard_black_24pt" width="24" height="24"/>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="backgroundColor">
+            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

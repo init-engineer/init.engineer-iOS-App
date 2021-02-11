@@ -23,6 +23,8 @@ struct K {
     static let ToReviewDetailsSegue = "ToReviewDetails"
     static let articleTableViewCell = "ArticleTableViewCell"
     static let articleTableViewCellIdentifier = "ArticleTableViewCellIdentifier"
+    static let articleCommentTableViewCell = "ArticleCommentTableViewCell"
+    static let articleCommentTableViewCellIdentifier = "ArticleCommentTableViewCellIdentifier"
     static func tagConvert(from id: Int) -> String {
         var tag = ""
         var carry = id
