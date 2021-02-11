@@ -22,6 +22,7 @@ class ArticleCommentTableViewCell: UITableViewCell {
         commentBubble.layer.cornerRadius = commentBubble.frame.size.height / 5
         commentUserAvaratImageView.layer.cornerRadius = 10
         commentUserAvaratImageView.layer.masksToBounds = true
+        self.backgroundColor = .clear
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -42,6 +42,7 @@ class ArticleViewController: UIViewController {
         self.commentsTableView.delegate = self
         self.commentsTableView.dataSource = self
         self.commentsTableView.allowsSelection = false
+        self.commentsTableView.backgroundColor = .clear
         commentsTableView.register(UINib(nibName: K.articleCommentTableViewCell, bundle: nil), forCellReuseIdentifier: K.articleCommentTableViewCellIdentifier)
         guard let id = self.articleID else { return } //back to article list
         
