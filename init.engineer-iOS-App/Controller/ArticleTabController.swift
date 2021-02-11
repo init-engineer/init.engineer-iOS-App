@@ -95,7 +95,7 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = self.articleTable.dequeueReusableCell(withIdentifier: TITLE_ID) as! TableViewTitle
-            //cell.setupUI()
+            cell.setupUI(with: "文章列表 Article")
             return cell
         }
         
