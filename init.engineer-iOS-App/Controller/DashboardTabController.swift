@@ -117,8 +117,6 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
     }
     
-    
-
     func setupUI() {
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
@@ -152,8 +150,6 @@ extension DashboardTabController: UITableViewDataSource {
         cell.articleCreatedTimeLabel.text = userPosts[indexPath.row]?.createdDiff
         return cell
     }
-    
-    
 }
 
 extension DashboardTabController {
