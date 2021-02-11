@@ -18,6 +18,7 @@ class ArticleTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        super.backgroundColor = .clear
         articleCellView.layer.cornerRadius = 10
         articleCellView.layer.masksToBounds = true
     }

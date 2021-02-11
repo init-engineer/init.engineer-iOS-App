@@ -33,17 +33,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3S-O3-Pgf" userLabel="ArticleView">
                                         <rect key="frame" x="10" y="10" width="470" height="251"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ij0-fM-GOc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ij0-fM-GOc">
                                                 <rect key="frame" x="10" y="10" width="450" height="231"/>
-                                                <string key="text">在工作上一直有一些很困擾的事
-
-上班時有同事會問我問題,
-但有些情況我常常很尷尬的思考要不要回他,
-1.(太簡單,也許他該自己解決):
-請問我在這個func內改boolean值,外面怎麼沒改
-2.(雞湯題,問心安):我這git按push就會上傳了..對吧(水汪汪的看我)
-這些對大家都是日常嗎?
-還是我修養不好?應該細心的面帶笑容回應他?</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemGreenColor"/>
                                                 <nil key="highlightedColor"/>
@@ -62,21 +53,21 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ZUW-10-MeK">
                                                 <rect key="frame" x="10" y="10" width="470" height="21"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#純靠北工程師4hy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLf-52-cTW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="148" height="21"/>
-                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#純靠北工程師7122" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLf-52-cTW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="149.5" height="21"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一天前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrH-KX-Kwu">
-                                                        <rect key="frame" x="246" y="0.0" width="54" height="21"/>
-                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14天前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrH-KX-Kwu">
+                                                        <rect key="frame" x="249.5" y="0.0" width="53" height="21"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="詳細內容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6W-xn-OLb">
-                                                        <rect key="frame" x="398" y="0.0" width="72" height="21"/>
-                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                        <rect key="frame" x="402" y="0.0" width="68" height="21"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="17"/>
                                                         <color key="textColor" systemColor="linkColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>

@@ -29,6 +29,7 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         userInformationStackView.addGestureRecognizer(gesture)
         addRadiusImageView(userAvatarImageView)
         userArticleTableView.register(UINib(nibName: K.articleTableViewCell, bundle: nil), forCellReuseIdentifier: K.articleTableViewCellIdentifier)
+        userArticleTableView.backgroundColor = .clear
         userArticleTableView.delegate = self
         userArticleTableView.dataSource = self
         setupUI()
