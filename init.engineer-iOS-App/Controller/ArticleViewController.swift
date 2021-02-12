@@ -212,6 +212,7 @@ extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: K.articleCommentTableViewCellIdentifier, for: indexPath) as! ArticleCommentTableViewCell
+            cell.commentUserAvaratImageView.image = UIImage(named: "no_avatar")
             cell.commentUserContentLabel.text = commentsList[indexPath.row].content
             cell.commentUserNameLabel.text = commentsList[indexPath.row].name
             cell.commentCreateTimeLabel.text = commentsList[indexPath.row].created
@@ -244,9 +245,6 @@ extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
                         
                     }
                 }
-            }
-            else {
-                cell.commentUserAvaratImageView.image = UIImage(named: "no_avatar")
             }
             return cell
         } else {
