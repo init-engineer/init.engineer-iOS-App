@@ -38,6 +38,18 @@ class ArticleCell: UITableViewCell {
         ])
     }
     
+    func makePost(content: Post) {
+        dispatchViews()
+        contentView.layer.masksToBounds = true
+        contentView.layer.cornerRadius = 10
+        self.id = content.id
+        self.stringTag = String.tagConvert(from: content.id)
+        self.publishTime = content.createdDiff
+        self.contentString = content.content
+        self.backgroundColor = .clear
+        commonUI()
+    }
+    
     func makeArticle(content: Article) {
         dispatchViews()
         contentView.layer.masksToBounds = true
@@ -47,7 +59,10 @@ class ArticleCell: UITableViewCell {
         self.publishTime = content.createdDiff
         self.contentString = content.content
         self.backgroundColor = .clear
-        
+        commonUI()
+    }
+    
+    func commonUI() {
         let upperView = UIView()
         let bottomView = UIView()
         
