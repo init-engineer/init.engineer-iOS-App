@@ -182,13 +182,11 @@ class ArticleViewController: UIViewController {
 
 extension ArticleViewController: UIScrollViewDelegate {
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        // UITableView only moves in one direction, y axis
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
 
-        // Change 10.0 to adjust the distance from bottom
-        if maximumOffset - currentOffset <= 100.0 {
+        if (maximumOffset - currentOffset <= 100.0) && !reloadBlocker {
             self.loadMoreComment()
         }
     }
