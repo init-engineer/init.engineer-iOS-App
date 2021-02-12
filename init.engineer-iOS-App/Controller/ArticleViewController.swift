@@ -9,6 +9,7 @@
 import UIKit
 import KaobeiAPI
 import GoogleMobileAds
+import NVActivityIndicatorView
 
 class ArticleViewController: UIViewController {
     
@@ -28,6 +29,7 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var commentsTableView: UITableView!
     @IBOutlet weak var commentsTableViewHeight: NSLayoutConstraint!
     
+    var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     
     var commentsList = [Comment]()
     
@@ -158,9 +160,11 @@ class ArticleViewController: UIViewController {
         guard let id = self.articleID else { return }
         guard let maxPage = self.commentMaxPage else { return }
         if maxPage + 1 >= self.commentCurrentPage {
+            loadingView.startAnimating()
             let commentRequest = KBGetArticleComments(id: id, page: self.commentCurrentPage)
             KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
                 self?.reloadBlocker = false
+                self?.loadingView.stopAnimating()
                 switch response.result {
                     case .success(let data):
                         self?.commentsList.append(contentsOf: data.data)
@@ -184,7 +188,7 @@ extension ArticleViewController: UIScrollViewDelegate {
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
 
         // Change 10.0 to adjust the distance from bottom
-        if maximumOffset - currentOffset <= 10.0 {
+        if maximumOffset - currentOffset <= 100.0 {
             self.loadMoreComment()
         }
     }
@@ -194,52 +198,70 @@ extension ArticleViewController: UIScrollViewDelegate {
 extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.commentsList.count
+        if section == 0 {
+            return self.commentsList.count
+        } else if section == 1 {
+            return 1
+        } else {
+            return 0
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.articleCommentTableViewCellIdentifier, for: indexPath) as! ArticleCommentTableViewCell
-        cell.commentUserContentLabel.text = commentsList[indexPath.row].content
-        cell.commentUserNameLabel.text = commentsList[indexPath.row].name
-        cell.commentCreateTimeLabel.text = commentsList[indexPath.row].created
-        if commentsList[indexPath.row].media.type == "plurk" {
-            cell.commentBubble.backgroundColor = .systemRed
-            cell.commentPlatformLabel.text = "Plurk"
-        }
-        else if commentsList[indexPath.row].media.type == "twitter" {
-            cell.commentBubble.backgroundColor = .systemTeal
-            cell.commentPlatformLabel.text = "Twitter"
-        }
-        else if commentsList[indexPath.row].media.type == "facebook" {
-            cell.commentBubble.backgroundColor = .systemBlue
-            if commentsList[indexPath.row].media.connections == "primary" {
-                cell.commentPlatformLabel.text = "Facebook 主站"
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.articleCommentTableViewCellIdentifier, for: indexPath) as! ArticleCommentTableViewCell
+            cell.commentUserContentLabel.text = commentsList[indexPath.row].content
+            cell.commentUserNameLabel.text = commentsList[indexPath.row].name
+            cell.commentCreateTimeLabel.text = commentsList[indexPath.row].created
+            if commentsList[indexPath.row].media.type == "plurk" {
+                cell.commentBubble.backgroundColor = .systemRed
+                cell.commentPlatformLabel.text = "Plurk"
             }
-            else if commentsList[indexPath.row].media.connections == "secondary" {
-                cell.commentPlatformLabel.text = "Facebook 次站"
+            else if commentsList[indexPath.row].media.type == "twitter" {
+                cell.commentBubble.backgroundColor = .systemTeal
+                cell.commentPlatformLabel.text = "Twitter"
             }
-        }
-        
-        if commentsList[indexPath.row].avatar != "/img/frontend/user/nopic_192.gif" {
-            DispatchQueue.main.async {
-                do {
-                    let commentUserAvatarImage = try UIImage(data: Data(contentsOf: URL(string: self.commentsList[indexPath.row].avatar)!))
-                    DispatchQueue.main.async {
-                        cell.commentUserAvaratImageView.image = commentUserAvatarImage
-                    }
-                } catch is Error {
-                    
+            else if commentsList[indexPath.row].media.type == "facebook" {
+                cell.commentBubble.backgroundColor = .systemBlue
+                if commentsList[indexPath.row].media.connections == "primary" {
+                    cell.commentPlatformLabel.text = "Facebook 主站"
+                }
+                else if commentsList[indexPath.row].media.connections == "secondary" {
+                    cell.commentPlatformLabel.text = "Facebook 次站"
                 }
             }
+            
+            if commentsList[indexPath.row].avatar != "/img/frontend/user/nopic_192.gif" {
+                DispatchQueue.main.async {
+                    do {
+                        let commentUserAvatarImage = try UIImage(data: Data(contentsOf: URL(string: self.commentsList[indexPath.row].avatar)!))
+                        DispatchQueue.main.async {
+                            cell.commentUserAvaratImageView.image = commentUserAvatarImage
+                        }
+                    } catch is Error {
+                        
+                    }
+                }
+            }
+            else {
+                cell.commentUserAvaratImageView.image = UIImage(named: "no_avatar")
+            }
+            return cell
+        } else {
+            let cell = UITableViewCell()
+            cell.backgroundColor = .clear
+            cell.addSubview(loadingView)
+            cell.addConstraint(NSLayoutConstraint(item: cell, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 70))
+            loadingView.translatesAutoresizingMaskIntoConstraints = false
+            let horizontalConstraint = NSLayoutConstraint(item: loadingView, attribute: .centerX, relatedBy: .equal, toItem: cell, attribute: .centerX, multiplier: 1.0, constant: 0)
+            let verticalConstraint = NSLayoutConstraint(item: loadingView, attribute: .centerY, relatedBy: .equal, toItem: cell, attribute: .centerY, multiplier: 1.0, constant: 0)
+            cell.addConstraints([horizontalConstraint, verticalConstraint])
+            return cell
         }
-        else {
-            cell.commentUserAvaratImageView.image = UIImage(named: "no_avatar")
-        }
-        return cell
     }
     
 }
