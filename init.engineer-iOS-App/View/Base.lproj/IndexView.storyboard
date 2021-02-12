@@ -25,25 +25,14 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="y7p-D2-KA0">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rg9-lB-ceE">
-                                                <rect key="frame" x="20" y="30" width="374" height="88"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="首頁 Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn4-XD-qDs">
-                                                        <rect key="frame" x="0.0" y="48" width="191" height="40"/>
-                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="88" id="1LQ-m6-8MR"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mn4-XD-qDs" secondAttribute="trailing" constant="20" symbolic="YES" id="59b-gx-YmR"/>
-                                                    <constraint firstItem="mn4-XD-qDs" firstAttribute="leading" secondItem="rg9-lB-ceE" secondAttribute="leading" id="Xa9-ty-mVe"/>
-                                                    <constraint firstAttribute="bottom" secondItem="mn4-XD-qDs" secondAttribute="bottom" id="aKQ-un-oxa"/>
-                                                </constraints>
-                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="首頁 Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn4-XD-qDs">
+                                                <rect key="frame" x="20" y="30" width="374" height="40"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="30" left="20" bottom="30" right="20"/>
                                     </stackView>

@@ -26,27 +26,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2QT-o7-UAT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1942"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1893.6666666666667"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uK-4b-vVc">
-                                                <rect key="frame" x="20" y="30" width="374" height="88"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發表文章 Publish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByZ-r8-QqA">
-                                                        <rect key="frame" x="0.0" y="48.333333333333343" width="302.66666666666669" height="39.666666666666657"/>
-                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="ByZ-r8-QqA" firstAttribute="leading" secondItem="7uK-4b-vVc" secondAttribute="leading" id="5LI-hy-hLj"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ByZ-r8-QqA" secondAttribute="trailing" constant="20" symbolic="YES" id="CFE-ni-cx7"/>
-                                                    <constraint firstAttribute="bottom" secondItem="ByZ-r8-QqA" secondAttribute="bottom" id="CXq-O2-QNY"/>
-                                                    <constraint firstAttribute="height" constant="88" id="owU-xt-IPe"/>
-                                                </constraints>
-                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發表文章 Publish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByZ-r8-QqA">
+                                                <rect key="frame" x="20" y="29.999999999999996" width="374" height="39.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dv8-R0-Eln">
-                                                <rect key="frame" x="20" y="138" width="374" height="200"/>
+                                                <rect key="frame" x="20" y="89.666666666666657" width="374" height="199.99999999999997"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="Vwz-K3-2Wo"/>
@@ -57,7 +46,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6tV-09-H56">
-                                                <rect key="frame" x="20" y="358" width="374" height="31"/>
+                                                <rect key="frame" x="20" y="309.66666666666669" width="374" height="31"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-az-bRZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -71,13 +60,13 @@
                                                 </subviews>
                                             </stackView>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Tt-Gg-spE">
-                                                <rect key="frame" x="20" y="409" width="374" height="216"/>
+                                                <rect key="frame" x="20" y="360.66666666666669" width="374" height="216.00000000000006"/>
                                             </pickerView>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdJ-mg-nvR">
-                                                <rect key="frame" x="20" y="645" width="374" height="216"/>
+                                                <rect key="frame" x="20" y="596.66666666666663" width="374" height="216"/>
                                             </pickerView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CJ-c0-2Ox">
-                                                <rect key="frame" x="20" y="881" width="374" height="32"/>
+                                                <rect key="frame" x="20" y="832.66666666666663" width="374" height="32"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
                                                 <state key="normal" title="選擇圖片"/>
                                                 <connections>
@@ -85,13 +74,13 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-US-Mog">
-                                                <rect key="frame" x="20" y="933" width="374" height="0.0"/>
+                                                <rect key="frame" x="20" y="884.66666666666663" width="374" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="Cji-fX-NMd"/>
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf5-lA-2df">
-                                                <rect key="frame" x="20" y="953" width="374" height="856"/>
+                                                <rect key="frame" x="20" y="904.66666666666652" width="374" height="856"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="板規">
@@ -162,7 +151,7 @@ Cg
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-Iy-1vF">
-                                                <rect key="frame" x="20" y="1829" width="374" height="31"/>
+                                                <rect key="frame" x="20" y="1780.6666666666667" width="374" height="31"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-jL-EVC">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -176,7 +165,7 @@ Cg
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUs-Mx-bAN">
-                                                <rect key="frame" x="20" y="1880" width="374" height="32"/>
+                                                <rect key="frame" x="20" y="1831.6666666666667" width="374" height="32"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
                                                 <state key="normal" title="發表文章"/>
                                                 <connections>
