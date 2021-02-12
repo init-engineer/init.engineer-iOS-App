@@ -233,6 +233,7 @@
                         <outlet property="articleContentTextView" destination="Mf9-kr-Oxb" id="xNO-KP-nmx"/>
                         <outlet property="articleImageView" destination="oBV-K1-mkB" id="q5Q-Sd-WmV"/>
                         <outlet property="articleImageViewHeight" destination="Fbo-Av-4jI" id="7nG-QH-M4g"/>
+                        <outlet property="articleScrollView" destination="M7E-Cf-BCK" id="6hA-4K-yPR"/>
                         <outlet property="articleTitleLabel" destination="xga-73-oZh" id="vzR-Q1-cry"/>
                         <outlet property="commentsTableView" destination="X4v-Tt-Y2p" id="oOe-Fh-WqK"/>
                         <outlet property="commentsTableViewHeight" destination="uJc-gJ-dam" id="hDe-QI-avJ"/>

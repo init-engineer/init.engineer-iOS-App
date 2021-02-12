@@ -12,6 +12,7 @@ import GoogleMobileAds
 
 class ArticleViewController: UIViewController {
     
+    @IBOutlet weak var articleScrollView: UIScrollView!
     @IBOutlet weak var articleTitleLabel: UILabel!
     @IBOutlet weak var articleImageView: UIImageView!
     @IBOutlet weak var articleImageViewHeight: NSLayoutConstraint!
@@ -38,7 +39,7 @@ class ArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        self.articleScrollView.delegate = self
         self.commentsTableView.delegate = self
         self.commentsTableView.dataSource = self
         self.commentsTableView.allowsSelection = false
@@ -175,7 +176,23 @@ class ArticleViewController: UIViewController {
     
 }
 
+extension ArticleViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        // UITableView only moves in one direction, y axis
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+
+        // Change 10.0 to adjust the distance from bottom
+        if maximumOffset - currentOffset <= 10.0 {
+            self.loadMoreComment()
+        }
+    }
+    
+}
+
 extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.commentsList.count
     }
@@ -222,17 +239,7 @@ extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             cell.commentUserAvaratImageView.image = UIImage(named: "no_avatar")
         }
-        
-        if indexPath.row == commentsList.count - 1 {
-            loadMoreComment() // 載入更多留言，可是載入時機點不對，應該要滑到底下後再載入
-        }
-        
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if indexPath.row >= self.commentsList.count - 2 {
-//            loadMoreComment()
-//        }
-//    }
 }
