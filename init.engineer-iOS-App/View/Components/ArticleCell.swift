@@ -38,7 +38,7 @@ class ArticleCell: UITableViewCell {
         ])
     }
     
-    func makeArticel(content: Article) {
+    func makeArticle(content: Article) {
         dispatchViews()
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10

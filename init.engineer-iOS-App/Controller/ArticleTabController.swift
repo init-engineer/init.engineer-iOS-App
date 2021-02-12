@@ -101,7 +101,7 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = self.articleTable.dequeueReusableCell(withIdentifier: ARTICLE_ID) as! ArticleCell
         if let article = articleList[indexPath.section] {
-            cell.makeArticel(content: article)
+            cell.makeArticle(content: article)
             cell.delegate = self
         } else {
             cell.makeAds(ads: self.adBanner)
