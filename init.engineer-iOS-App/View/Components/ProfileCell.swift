@@ -26,6 +26,7 @@ class ProfileCell: UITableViewCell {
     }
     
     func insert(with user: KBGetUserProfile, reload: @escaping () -> ()) {
+        self.backgroundColor = .clear
         KaobeiConnection.sendRequest(api: user) { [weak self] response in
             switch response.result {
             case .success(let data):

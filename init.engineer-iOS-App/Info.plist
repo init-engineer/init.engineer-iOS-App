@@ -22,7 +22,7 @@
 	<string>$(ADMOB_BANNER)</string>
 	<key>GAD Login</key>
 	<string>$(ADMOB_LOGIN)</string>
-	<key>GAD Cell</key>
+	<key>GAD Cell1</key>
 	<string>$(ADMOB_CELL1)</string>
 	<key>GAD Cell2</key>
 	<string>$(ADMOB_CELL2)</string>

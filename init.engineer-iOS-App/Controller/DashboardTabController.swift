@@ -54,16 +54,21 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
             let getUserProfileRequest = KBGetUserProfile.init(accessToken: accessToken)
             
             
-            
+            reloadBlocker = true
             let getUserPostsRequest = KBGetUserPosts(accessToken: accessToken)
             KaobeiConnection.sendRequest(api: getUserPostsRequest) { [weak self] response in
+                self?.reloadBlocker = false
                 switch response.result {
                 case .success(let data):
                     self?.userPosts.append(contentsOf: data.data)
                     self?.userPosts.append(nil)
+                    self?.userPostsTableView.reloadData()
+                    self?.currentPage += 1
                     break
                 case .failure(let error):
                     print(error.responseCode ?? "")
+                    self?.userPosts.append(nil)
+                    self?.userPostsTableView.reloadData()
                     break
                 }
             }
