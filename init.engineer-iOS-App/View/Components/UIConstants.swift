@@ -14,6 +14,10 @@ struct ColorConstants {
         static let textColor = UIColor.init(red: 0x28/255.0, green: 0xa7/255.0, blue: 0x45/255.0, alpha: 1.0)
         static let backgroundColor = UIColor.init(red: 0x21/255.0, green: 0x25/255.0, blue: 0x29/255.0, alpha: 1.0)
         static let buttonTextColor = UIColor.init(red: 0x00/255.0, green: 0x7b/255.0, blue: 0xff/255.0, alpha: 1.0)
+        static let whiteTextColor = UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    }
+    struct Comment {
+        static let bubbleColor = UIColor.init(red: 0x1A/255.0, green: 0x76/255.0,blue: 0xFF/255.0, alpha: 1.0)
     }
 }
 
@@ -21,5 +25,11 @@ struct FontConstant {
     struct Default {
         static let text = UIFont.init(name: "FixedsysTTF", size: 16.0)!
         static let title = UIFont.init(name: "FixedsysTTF", size: 36.0)!
+    }
+    struct Comment {
+        static let name = UIFont.init(name: "System", size: 17.0)!
+        static let platform = UIFont.init(name: "System", size: 17.0)!
+        static let content = UIFont.init(name: "System", size: 17.0)!
+        static let createdTime = UIFont.init(name: "System", size: 17.0)!
     }
 }
