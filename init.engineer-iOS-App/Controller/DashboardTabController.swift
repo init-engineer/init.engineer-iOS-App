@@ -114,6 +114,8 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
             if let userToken = self.userToken {
                 let getUserProfileRequest = KBGetUserProfile.init(accessToken: userToken)
                 cell.insert(with: getUserProfileRequest, reload: self.userPostsTableView.reloadData)
+                let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showSettingActionSheet))
+                cell.addGestureRecognizer(gesture)
                 return cell
             }
         }

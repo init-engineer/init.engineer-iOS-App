@@ -54,8 +54,6 @@ class ProfileCell: UITableViewCell {
     
     func setupUI() {
         
-        self.backgroundColor = .clear
-        
         mainStack.translatesAutoresizingMaskIntoConstraints = false
         mainStack.axis = .horizontal
         mainStack.alignment = .fill
