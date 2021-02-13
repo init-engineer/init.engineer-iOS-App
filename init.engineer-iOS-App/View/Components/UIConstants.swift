@@ -19,6 +19,10 @@ struct ColorConstants {
     struct Comment {
         static let bubbleColor = UIColor.init(red: 0x1A/255.0, green: 0x76/255.0,blue: 0xFF/255.0, alpha: 1.0)
     }
+    struct Dashboard {
+        static let userName = UIColor.init(white: 1.0, alpha: 1.0)
+        static let userEmail = UIColor.init(white: 1.0, alpha: 1.0)
+    }
 }
 
 struct FontConstant {
@@ -31,5 +35,9 @@ struct FontConstant {
         static let platform = UIFont.init(name: "System", size: 17.0)!
         static let content = UIFont.init(name: "System", size: 17.0)!
         static let createdTime = UIFont.init(name: "System", size: 17.0)!
+    }
+    struct Dashboard {
+        static let userName = UIFont.init(name: "FixedsysTTF", size: 24.0)!
+        static let userEmail = UIFont.init(name: "FixedsysTTF", size: 22.0)!
     }
 }

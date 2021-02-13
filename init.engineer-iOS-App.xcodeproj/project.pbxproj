@@ -85,6 +85,7 @@
 		C4A2248125C3243300DEB3C5 /* IndexView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2247F25C3243300DEB3C5 /* IndexView.storyboard */; };
 		C4A2248725C3246B00DEB3C5 /* ReviewView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2248525C3246B00DEB3C5 /* ReviewView.storyboard */; };
 		C4A72FB725D821E300327B0E /* ArticleCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A72FB625D821E300327B0E /* ArticleCommentCell.swift */; };
+		C4A72FCB25D84A1600327B0E /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A72FCA25D84A1600327B0E /* ProfileCell.swift */; };
 		C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
 /* End PBXBuildFile section */
 
@@ -239,6 +240,7 @@
 		C4A2248025C3243300DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IndexView.storyboard; sourceTree = "<group>"; };
 		C4A2248625C3246B00DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ReviewView.storyboard; sourceTree = "<group>"; };
 		C4A72FB625D821E300327B0E /* ArticleCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentCell.swift; sourceTree = "<group>"; };
+		C4A72FCA25D84A1600327B0E /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fixedsys500c.ttf; sourceTree = "<group>"; };
 		DA3850D8518AC48AC774F3F2 /* Pods-KaobeiWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-KaobeiWidgetExtension/Pods-KaobeiWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		DF6AF4F39385A0B08C5A553C /* Pods_KaobeiAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaobeiAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -352,6 +354,7 @@
 				6A79BA6625D597410021F956 /* ReviewCell.swift */,
 				6AB6C09125C73271006662F8 /* TableViewGap.swift */,
 				6AB6C09625C73304006662F8 /* TableViewTitle.swift */,
+				C4A72FCA25D84A1600327B0E /* ProfileCell.swift */,
 				853D8F9E25C2715F00AD1548 /* UIConstants.swift */,
 				C48F826525C54F0200D98F93 /* IndexButtonCell.swift */,
 				C48F826A25C54F2200D98F93 /* IndexButtonCell.xib */,
@@ -899,6 +902,7 @@
 				85BB1BB925D16C7C0016CDCF /* ReviewDetailViewController.swift in Sources */,
 				C45A3A4F25B9897300F484F1 /* Constants.swift in Sources */,
 				C45DF73625C43D5100415094 /* ReviewTabController.swift in Sources */,
+				C4A72FCB25D84A1600327B0E /* ProfileCell.swift in Sources */,
 				C48F826625C54F0200D98F93 /* IndexButtonCell.swift in Sources */,
 				12CA61C9248C1B580020E606 /* ArticleViewController.swift in Sources */,
 				127FD91D248BAAC1002E9645 /* PublishTabController.swift in Sources */,
