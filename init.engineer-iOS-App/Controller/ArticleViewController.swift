@@ -30,6 +30,7 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var commentsTableViewHeight: NSLayoutConstraint!
     
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
+    var loadingImage = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     
     var commentsList = [Comment]()
     
@@ -47,12 +48,18 @@ class ArticleViewController: UIViewController {
         self.commentsTableView.allowsSelection = false
         self.commentsTableView.backgroundColor = .clear
         commentsTableView.register(UINib(nibName: K.articleCommentTableViewCell, bundle: nil), forCellReuseIdentifier: K.articleCommentTableViewCellIdentifier)
+        
+        self.loadingImage.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.loadingImage)
+        NSLayoutConstraint.init(item: self.loadingImage, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint.init(item: self.loadingImage, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
+        
         guard let id = self.articleID else { return } //back to article list
         
         articleTitleLabel.text = String.tagConvert(from: id)
         
         let detailRequest = KBGetArticleDetail(id: id)
-        
+        self.loadingImage.startAnimating()
         KaobeiConnection.sendRequest(api: detailRequest) { [weak self] (response) in
             switch response.result {
                 case .success(let data):
@@ -62,6 +69,7 @@ class ArticleViewController: UIViewController {
                             let articleImage = try UIImage(data: Data(contentsOf: URL(string: data.data.image)!))
                             DispatchQueue.main.async {
                                 self?.loadArticleImage(articleImage)
+                                self?.loadingImage.stopAnimating()
                             }
                         } catch is Error {
                             

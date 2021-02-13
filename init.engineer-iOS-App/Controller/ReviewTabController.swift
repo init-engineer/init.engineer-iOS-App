@@ -44,7 +44,7 @@ class ReviewTabController: UIViewController {
                 return
             }
             
-            self.adBanner.adUnitID = K.getInfoPlistByKey("GAD AdsBanner1") ?? ""
+            self.adBanner.adUnitID = K.getInfoPlistByKey("GAD Cell2") ?? ""
             self.adBanner.rootViewController = self
             self.adBanner.load(GADRequest())
             

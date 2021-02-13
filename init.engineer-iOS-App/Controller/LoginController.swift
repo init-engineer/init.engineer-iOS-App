@@ -31,7 +31,7 @@ class LoginController: UIViewController, GADBannerViewDelegate {
         navigationItem.hidesBackButton = true
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: kGADAdSizeLargeBanner)
-        bannerView.adUnitID = K.getInfoPlistByKey("GAD AdsBanner1") ?? ""
+        bannerView.adUnitID = K.getInfoPlistByKey("GAD Login") ?? ""
         bannerView.rootViewController = self
         bannerView.delegate = self
         bannerView.load(GADRequest())

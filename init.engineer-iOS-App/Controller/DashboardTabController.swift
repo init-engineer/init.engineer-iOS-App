@@ -120,7 +120,7 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
     func setupUI() {
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.adUnitID = K.getInfoPlistByKey("GAD AdsBanner1") ?? ""
+        bannerView.adUnitID = K.getInfoPlistByKey("GAD Banner") ?? ""
         bannerView.rootViewController = self
         bannerView.delegate = self
         bannerView.load(GADRequest())

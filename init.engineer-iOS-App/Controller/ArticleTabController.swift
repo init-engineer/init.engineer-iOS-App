@@ -29,7 +29,7 @@ class ArticleTabController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.adBanner.adUnitID = K.getInfoPlistByKey("GAD AdsBanner1") ?? ""
+        self.adBanner.adUnitID = K.getInfoPlistByKey("GAD Cell1") ?? ""
         self.adBanner.rootViewController = self
         self.adBanner.load(GADRequest())
         
