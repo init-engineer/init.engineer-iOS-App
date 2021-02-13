@@ -61,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="55R-nP-yfr">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="351"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="331"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2H-dF-NUz">
                                                 <rect key="frame" x="20" y="30" width="374" height="88"/>
@@ -197,13 +197,6 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X4v-Tt-Y2p">
-                                                <rect key="frame" x="20" y="321" width="374" height="0.0"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" id="uJc-gJ-dam"/>
-                                                </constraints>
-                                            </tableView>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="30" left="20" bottom="30" right="20"/>
                                     </stackView>
@@ -234,9 +227,8 @@
                         <outlet property="articleImageView" destination="oBV-K1-mkB" id="q5Q-Sd-WmV"/>
                         <outlet property="articleImageViewHeight" destination="Fbo-Av-4jI" id="7nG-QH-M4g"/>
                         <outlet property="articleScrollView" destination="M7E-Cf-BCK" id="6hA-4K-yPR"/>
+                        <outlet property="articleStackView" destination="55R-nP-yfr" id="vhg-xQ-nec"/>
                         <outlet property="articleTitleLabel" destination="xga-73-oZh" id="vzR-Q1-cry"/>
-                        <outlet property="commentsTableView" destination="X4v-Tt-Y2p" id="oOe-Fh-WqK"/>
-                        <outlet property="commentsTableViewHeight" destination="uJc-gJ-dam" id="hDe-QI-avJ"/>
                         <outlet property="plurkLikeLabel" destination="IX2-rc-zFY" id="EvO-P5-Adc"/>
                         <outlet property="plurkShareLabel" destination="XxE-rl-iNS" id="7eH-IK-5MH"/>
                         <outlet property="primaryFacebookLikeLabel" destination="woo-1m-cl8" id="Ocd-rE-Z5U"/>
@@ -275,9 +267,6 @@
         <namedColor name="backgroundColor">
             <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -13,6 +13,7 @@ import NVActivityIndicatorView
 
 class ArticleViewController: UIViewController {
     
+    @IBOutlet weak var articleStackView: UIStackView!
     @IBOutlet weak var articleScrollView: UIScrollView!
     @IBOutlet weak var articleTitleLabel: UILabel!
     @IBOutlet weak var articleImageView: UIImageView!
@@ -28,6 +29,7 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var twitterShareLabel: UILabel!
     @IBOutlet weak var commentsTableView: UITableView!
     @IBOutlet weak var commentsTableViewHeight: NSLayoutConstraint!
+
     
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     var loadingImage = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
@@ -41,14 +43,8 @@ class ArticleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.articleScrollView.delegate = self
-        self.commentsTableView.delegate = self
-        self.commentsTableView.dataSource = self
-        self.commentsTableView.allowsSelection = false
-        self.commentsTableView.backgroundColor = .clear
-        commentsTableView.register(UINib(nibName: K.articleCommentTableViewCell, bundle: nil), forCellReuseIdentifier: K.articleCommentTableViewCellIdentifier)
         
+        self.articleScrollView.delegate = self
         self.loadingImage.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.loadingImage)
         NSLayoutConstraint.init(item: self.loadingImage, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
@@ -115,10 +111,13 @@ class ArticleViewController: UIViewController {
             self?.reloadBlocker = false
             switch response.result {
                 case .success(let data):
-                    self?.commentsList.append(contentsOf: data.data)
+                    for c in data.data {
+                        let s = ArticleCommentCell()
+                        s.renderComment(with: c)
+                        self?.articleStackView.addArrangedSubview(s)
+                    }
                     self?.commentCurrentPage += 1
                     self?.commentMaxPage = data.meta.pagination.totalPages
-                    self?.commentsTableView.reloadData()
                     break
                 case .failure(_):
                     break
@@ -128,24 +127,10 @@ class ArticleViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.commentsTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-        self.commentsTableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.commentsTableView.removeObserver(self, forKeyPath: "contentSize")
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "contentSize" {
-            if object is UITableView {
-                if let newValue = change?[.newKey] {
-                    let newSize = newValue as! CGSize
-                    self.commentsTableViewHeight.constant = newSize.height
-                }
-            }
-        }
     }
     
     func loadArticleImage(_ presentImage: UIImage?) {
@@ -168,16 +153,21 @@ class ArticleViewController: UIViewController {
         guard let id = self.articleID else { return }
         guard let maxPage = self.commentMaxPage else { return }
         if maxPage + 1 >= self.commentCurrentPage {
+            articleStackView.addArrangedSubview(loadingView)
             loadingView.startAnimating()
             let commentRequest = KBGetArticleComments(id: id, page: self.commentCurrentPage)
             KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
                 self?.reloadBlocker = false
                 self?.loadingView.stopAnimating()
+                self?.articleStackView.removeArrangedSubview(self!.loadingView)
                 switch response.result {
                     case .success(let data):
-                        self?.commentsList.append(contentsOf: data.data)
+                        for c in data.data {
+                            let s = ArticleCommentCell()
+                            s.renderComment(with: c)
+                            self?.articleStackView.addArrangedSubview(s)
+                        }
                         self?.commentCurrentPage += 1
-                        self?.commentsTableView.reloadData()
                         break
                     case .failure(_):
                         break
@@ -196,75 +186,6 @@ extension ArticleViewController: UIScrollViewDelegate {
 
         if (maximumOffset - currentOffset <= 100.0) && !reloadBlocker {
             self.loadMoreComment()
-        }
-    }
-    
-}
-
-extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return self.commentsList.count
-        } else if section == 1 {
-            return 1
-        } else {
-            return 0
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: K.articleCommentTableViewCellIdentifier, for: indexPath) as! ArticleCommentTableViewCell
-            cell.commentUserAvaratImageView.image = UIImage(named: "no_avatar")
-            cell.commentUserContentLabel.text = commentsList[indexPath.row].content
-            cell.commentUserNameLabel.text = commentsList[indexPath.row].name
-            cell.commentCreateTimeLabel.text = commentsList[indexPath.row].created
-            if commentsList[indexPath.row].media.type == "plurk" {
-                cell.commentBubble.backgroundColor = .systemRed
-                cell.commentPlatformLabel.text = "Plurk"
-            }
-            else if commentsList[indexPath.row].media.type == "twitter" {
-                cell.commentBubble.backgroundColor = .systemTeal
-                cell.commentPlatformLabel.text = "Twitter"
-            }
-            else if commentsList[indexPath.row].media.type == "facebook" {
-                cell.commentBubble.backgroundColor = .systemBlue
-                if commentsList[indexPath.row].media.connections == "primary" {
-                    cell.commentPlatformLabel.text = "Facebook 主站"
-                }
-                else if commentsList[indexPath.row].media.connections == "secondary" {
-                    cell.commentPlatformLabel.text = "Facebook 次站"
-                }
-            }
-            
-            if commentsList[indexPath.row].avatar != "/img/frontend/user/nopic_192.gif" {
-                DispatchQueue.main.async {
-                    do {
-                        let commentUserAvatarImage = try UIImage(data: Data(contentsOf: URL(string: self.commentsList[indexPath.row].avatar)!))
-                        DispatchQueue.main.async {
-                            cell.commentUserAvaratImageView.image = commentUserAvatarImage
-                        }
-                    } catch is Error {
-                        
-                    }
-                }
-            }
-            return cell
-        } else {
-            let cell = UITableViewCell()
-            cell.backgroundColor = .clear
-            cell.addSubview(loadingView)
-            cell.addConstraint(NSLayoutConstraint(item: cell, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 70))
-            loadingView.translatesAutoresizingMaskIntoConstraints = false
-            let horizontalConstraint = NSLayoutConstraint(item: loadingView, attribute: .centerX, relatedBy: .equal, toItem: cell, attribute: .centerX, multiplier: 1.0, constant: 0)
-            let verticalConstraint = NSLayoutConstraint(item: loadingView, attribute: .centerY, relatedBy: .equal, toItem: cell, attribute: .centerY, multiplier: 1.0, constant: 0)
-            cell.addConstraints([horizontalConstraint, verticalConstraint])
-            return cell
         }
     }
     

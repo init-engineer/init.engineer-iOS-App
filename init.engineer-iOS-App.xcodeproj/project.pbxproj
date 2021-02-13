@@ -78,14 +78,13 @@
 		C48F830125C79A0400D98F93 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F830025C79A0400D98F93 /* FontManager.swift */; };
 		C48F830925C8464E00D98F93 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F830825C8464E00D98F93 /* ThemeManager.swift */; };
 		C48F830E25C8CEBA00D98F93 /* KaobeiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F830D25C8CEB900D98F93 /* KaobeiTabBarController.swift */; };
-		C49EBFFA25D4082800102BDF /* ArticleCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EBFF825D4082800102BDF /* ArticleCommentTableViewCell.swift */; };
-		C49EBFFB25D4082800102BDF /* ArticleCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49EBFF925D4082800102BDF /* ArticleCommentTableViewCell.xib */; };
 		C4A2246625C30D5000DEB3C5 /* ArticleView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2246425C30D5000DEB3C5 /* ArticleView.storyboard */; };
 		C4A2246C25C321CE00DEB3C5 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2246A25C321CE00DEB3C5 /* LoginView.storyboard */; };
 		C4A2247525C323C000DEB3C5 /* DashboardView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2247325C323C000DEB3C5 /* DashboardView.storyboard */; };
 		C4A2247B25C3240400DEB3C5 /* PublishView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2247925C3240400DEB3C5 /* PublishView.storyboard */; };
 		C4A2248125C3243300DEB3C5 /* IndexView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2247F25C3243300DEB3C5 /* IndexView.storyboard */; };
 		C4A2248725C3246B00DEB3C5 /* ReviewView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A2248525C3246B00DEB3C5 /* ReviewView.storyboard */; };
+		C4A72FB725D821E300327B0E /* ArticleCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A72FB625D821E300327B0E /* ArticleCommentCell.swift */; };
 		C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
 /* End PBXBuildFile section */
 
@@ -233,14 +232,13 @@
 		C48F830025C79A0400D98F93 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		C48F830825C8464E00D98F93 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		C48F830D25C8CEB900D98F93 /* KaobeiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiTabBarController.swift; sourceTree = "<group>"; };
-		C49EBFF825D4082800102BDF /* ArticleCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCommentTableViewCell.swift; sourceTree = "<group>"; };
-		C49EBFF925D4082800102BDF /* ArticleCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCommentTableViewCell.xib; sourceTree = "<group>"; };
 		C4A2246525C30D5000DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArticleView.storyboard; sourceTree = "<group>"; };
 		C4A2246B25C321CE00DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginView.storyboard; sourceTree = "<group>"; };
 		C4A2247425C323C000DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DashboardView.storyboard; sourceTree = "<group>"; };
 		C4A2247A25C3240400DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PublishView.storyboard; sourceTree = "<group>"; };
 		C4A2248025C3243300DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IndexView.storyboard; sourceTree = "<group>"; };
 		C4A2248625C3246B00DEB3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ReviewView.storyboard; sourceTree = "<group>"; };
+		C4A72FB625D821E300327B0E /* ArticleCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentCell.swift; sourceTree = "<group>"; };
 		C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fixedsys500c.ttf; sourceTree = "<group>"; };
 		DA3850D8518AC48AC774F3F2 /* Pods-KaobeiWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-KaobeiWidgetExtension/Pods-KaobeiWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		DF6AF4F39385A0B08C5A553C /* Pods_KaobeiAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaobeiAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -357,8 +355,7 @@
 				853D8F9E25C2715F00AD1548 /* UIConstants.swift */,
 				C48F826525C54F0200D98F93 /* IndexButtonCell.swift */,
 				C48F826A25C54F2200D98F93 /* IndexButtonCell.xib */,
-				C49EBFF825D4082800102BDF /* ArticleCommentTableViewCell.swift */,
-				C49EBFF925D4082800102BDF /* ArticleCommentTableViewCell.xib */,
+				C4A72FB625D821E300327B0E /* ArticleCommentCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -703,7 +700,6 @@
 				C4A2248125C3243300DEB3C5 /* IndexView.storyboard in Resources */,
 				C4A2246625C30D5000DEB3C5 /* ArticleView.storyboard in Resources */,
 				A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */,
-				C49EBFFB25D4082800102BDF /* ArticleCommentTableViewCell.xib in Resources */,
 				C48F826B25C54F2200D98F93 /* IndexButtonCell.xib in Resources */,
 				C4A2247B25C3240400DEB3C5 /* PublishView.storyboard in Resources */,
 				C4A2247525C323C000DEB3C5 /* DashboardView.storyboard in Resources */,
@@ -899,11 +895,11 @@
 			files = (
 				853D8F9F25C2715F00AD1548 /* UIConstants.swift in Sources */,
 				A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */,
+				C4A72FB725D821E300327B0E /* ArticleCommentCell.swift in Sources */,
 				85BB1BB925D16C7C0016CDCF /* ReviewDetailViewController.swift in Sources */,
 				C45A3A4F25B9897300F484F1 /* Constants.swift in Sources */,
 				C45DF73625C43D5100415094 /* ReviewTabController.swift in Sources */,
 				C48F826625C54F0200D98F93 /* IndexButtonCell.swift in Sources */,
-				C49EBFFA25D4082800102BDF /* ArticleCommentTableViewCell.swift in Sources */,
 				12CA61C9248C1B580020E606 /* ArticleViewController.swift in Sources */,
 				127FD91D248BAAC1002E9645 /* PublishTabController.swift in Sources */,
 				127FD91B248BAAA4002E9645 /* ArticleTabController.swift in Sources */,
