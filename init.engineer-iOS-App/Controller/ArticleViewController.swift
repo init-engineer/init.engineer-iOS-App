@@ -67,8 +67,13 @@ class ArticleViewController: UIViewController {
                                 self?.loadArticleImage(articleImage)
                                 self?.loadingImage.stopAnimating()
                             }
-                        } catch is Error {
-                            
+                        } catch {
+                            //let img = UIImage(named: "img_flag1")
+                            DispatchQueue.main.async {
+                                // TODO: Add failure image
+                                //self?.loadArticleImage(img)
+                                self?.loadingImage.stopAnimating()
+                            }
                         }
                     }
                     break

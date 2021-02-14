@@ -99,8 +99,8 @@ class ArticleCommentCell: UIView {
                     DispatchQueue.main.async {
                         self.userAvatarImageView.image = commentUserAvatarImage
                     }
-                } catch is Error {
-
+                } catch {
+                    print(error)
                 }
             }
         }

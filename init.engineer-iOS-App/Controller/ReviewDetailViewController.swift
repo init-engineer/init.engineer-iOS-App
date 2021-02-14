@@ -52,8 +52,11 @@ class ReviewDetailViewController: UIViewController {
                     self.loadingView.stopAnimating()
                     self.loadReviewArticleImage(img)
                 }
-            } catch is Error {
+            } catch {
+                //let img = UIImage(named: "img_flag1")
                 DispatchQueue.main.async {
+                    // TODO: Add failure image
+                    //self?.loadArticleImage(img)
                     self.loadingView.stopAnimating()
                 }
             }

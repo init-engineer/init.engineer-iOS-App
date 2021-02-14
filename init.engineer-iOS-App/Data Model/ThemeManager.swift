@@ -28,7 +28,7 @@ class ThemeManager {
                 themeExistSet.insert(element.name)
                 themeExistArray.append(element.name)
             }
-        } catch  {
+        } catch {
             print(error)
         }
     }

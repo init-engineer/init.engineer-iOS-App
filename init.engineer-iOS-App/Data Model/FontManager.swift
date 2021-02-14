@@ -28,7 +28,7 @@ class FontManager {
                 fontExistSet.insert(element.name)
                 fontExistArray.append(element.name)
             }
-        } catch  {
+        } catch {
             print(error)
         }
     }

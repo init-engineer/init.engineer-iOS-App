@@ -55,8 +55,8 @@ public struct KBPostUserPublishing: KaobeiRequestProtocol {
         self.token = accessToken
         
         httpBody["content"] = article
-        httpBody["themeStyle"] = theme // TODO: Needs to convert to string
-        httpBody["fontStyle"] = font // TODO: Needs to convert to string
+        httpBody["themeStyle"] = theme
+        httpBody["fontStyle"] = font
         httpBody["isFeatureToBeCoutinued"] = toBeContinued ? "1" : "0"
         
         if let image = image {

@@ -25,7 +25,7 @@ class ProfileCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func insert(with user: KBGetUserProfile, reload: @escaping () -> ()) {
+    func setup(with user: KBGetUserProfile, reload: @escaping () -> ()) {
         self.backgroundColor = .clear
         KaobeiConnection.sendRequest(api: user) { [weak self] response in
             switch response.result {
@@ -40,8 +40,11 @@ class ProfileCell: UITableViewCell {
                             self?.userAvatarImageView.image = userAvatarImage
                             reload()
                         }
-                    } catch is Error {
-
+                    } catch {
+                        DispatchQueue.main.async {
+                            self?.userAvatarImageView.image = UIImage(named: "no_avatar")
+                            reload()
+                        }
                     }
                 }
                 break
