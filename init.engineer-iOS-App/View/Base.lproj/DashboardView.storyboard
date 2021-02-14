@@ -36,6 +36,7 @@
                     <connections>
                         <outlet property="userPostsTableView" destination="CDK-2a-8w5" id="hLC-nr-368"/>
                         <segue destination="Qut-Ki-2E0" kind="show" identifier="DashboardToLogin" id="63W-j3-dLV"/>
+                        <segue destination="RmT-TL-OWT" kind="show" identifier="ToArticleDetails" id="Mgx-7q-dDi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MH1-zz-Msa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -68,6 +69,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhT-vR-4sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1820" y="500"/>
+        </scene>
+        <!--ArticleDetailView-->
+        <scene sceneID="bRk-gX-oEU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ArticleDetailView" id="RmT-TL-OWT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ddo-yH-hBo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgy-RK-7re" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1819" y="672"/>
         </scene>
     </scenes>
     <resources>
