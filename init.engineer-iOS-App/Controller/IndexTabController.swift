@@ -41,10 +41,10 @@ class IndexTabController: UIViewController, SFSafariViewControllerDelegate, Inde
     
     func indexButtonViewDelegate(urlString: String){
         if let url = URL(string: urlString) {
-            let vc = SFSafariViewController(url: url)
-            vc.delegate = self
+            let webView = SFSafariViewController(url: url)
+            webView.delegate = self
 
-            present(vc, animated: true)
+            present(webView, animated: true)
         }
     }
 }

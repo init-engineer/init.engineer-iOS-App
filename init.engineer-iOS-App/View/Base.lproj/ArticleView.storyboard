@@ -52,14 +52,6 @@
             </objects>
             <point key="canvasLocation" x="899" y="1209"/>
         </scene>
-        <!--DashboardView-->
-        <scene sceneID="R2R-Pe-fqh">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DashboardView" id="zWc-C4-zOj" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4tF-VB-ybT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1051" y="1621"/>
-        </scene>
         <!--文章列表-->
         <scene sceneID="QdW-h9-8AF">
             <objects>
