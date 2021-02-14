@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		011A7F81433BD78B6944CA62 /* Pods_init_engineer_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D02188F77B62C9B4DF421A /* Pods_init_engineer_iOS_App.framework */; };
-		0881FFC1687649BE8C1939EC /* Pods_KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC44641C6C82E7D81C2169A /* Pods_KaobeiAPI.framework */; };
 		127FD91B248BAAA4002E9645 /* ArticleTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FD91A248BAAA4002E9645 /* ArticleTabController.swift */; };
 		127FD91D248BAAC1002E9645 /* PublishTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FD91C248BAAC1002E9645 /* PublishTabController.swift */; };
 		127FD91F248BAACF002E9645 /* DashboardTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FD91E248BAACF002E9645 /* DashboardTabController.swift */; };
@@ -23,6 +22,9 @@
 		19A7A7371DAC5393260A287D /* Pods_KaobeiAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6AF4F39385A0B08C5A553C /* Pods_KaobeiAPITests.framework */; };
 		6A79BA6725D597410021F956 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A79BA6625D597410021F956 /* ReviewCell.swift */; };
 		6A79BB0525D99A080021F956 /* ArticleDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A79BB0425D99A080021F956 /* ArticleDetailView.storyboard */; };
+		6A79BB4225D9B8D10021F956 /* KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; };
+		6A79BB4325D9B8D10021F956 /* KaobeiAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6A79BB4D25D9B9370021F956 /* Pods_KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC44641C6C82E7D81C2169A /* Pods_KaobeiAPI.framework */; };
 		6AB6C09225C73271006662F8 /* TableViewGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C09125C73271006662F8 /* TableViewGap.swift */; };
 		6AB6C09725C73304006662F8 /* TableViewTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C09625C73304006662F8 /* TableViewTitle.swift */; };
 		6AE36BD325D44CDF004BDD1D /* NVActivityIndicatorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE36BD225D44CDF004BDD1D /* NVActivityIndicatorEx.swift */; };
@@ -112,6 +114,13 @@
 			remoteGlobalIDString = 12C8B0052533750C0072F653;
 			remoteInfo = KaobeiAPI;
 		};
+		6A79BB4425D9B8D10021F956 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7D2E83F244DE50E00953132 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12C8B0052533750C0072F653;
+			remoteInfo = KaobeiAPI;
+		};
 		853D8EE125BD205600AD1548 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A7D2E83F244DE50E00953132 /* Project object */;
@@ -129,6 +138,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				12C8B01C2533750C0072F653 /* KaobeiAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A79BB4625D9B8D10021F956 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6A79BB4325D9B8D10021F956 /* KaobeiAPI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,7 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0881FFC1687649BE8C1939EC /* Pods_KaobeiAPI.framework in Frameworks */,
+				6A79BB4D25D9B9370021F956 /* Pods_KaobeiAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +292,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A79BB4225D9B8D10021F956 /* KaobeiAPI.framework in Frameworks */,
 				853D8EDA25BD204B00AD1548 /* SwiftUI.framework in Frameworks */,
 				853D8ED825BD204B00AD1548 /* WidgetKit.framework in Frameworks */,
 				78007E4799F13AE29BEDD60F /* Pods_KaobeiWidgetExtension.framework in Frameworks */,
@@ -595,10 +616,12 @@
 				853D8ED225BD204B00AD1548 /* Sources */,
 				853D8ED325BD204B00AD1548 /* Frameworks */,
 				853D8ED425BD204B00AD1548 /* Resources */,
+				6A79BB4625D9B8D10021F956 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6A79BB4525D9B8D10021F956 /* PBXTargetDependency */,
 			);
 			name = KaobeiWidgetExtension;
 			productName = KaobeiWidgetExtension;
@@ -948,6 +971,11 @@
 			target = 12C8B0052533750C0072F653 /* KaobeiAPI */;
 			targetProxy = 12C8B0192533750C0072F653 /* PBXContainerItemProxy */;
 		};
+		6A79BB4525D9B8D10021F956 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12C8B0052533750C0072F653 /* KaobeiAPI */;
+			targetProxy = 6A79BB4425D9B8D10021F956 /* PBXContainerItemProxy */;
+		};
 		853D8EE225BD205600AD1548 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 853D8ED525BD204B00AD1548 /* KaobeiWidgetExtension */;
@@ -1027,6 +1055,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB64078BB32035F0DE07E9F0 /* Pods-KaobeiAPI.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -1060,6 +1089,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6AF4A8C2324C724E21FF0DDF /* Pods-KaobeiAPI.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1459,6 +1489,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B2FC4893AB8F71E6DB6F0830 /* Pods-KaobeiAPI.staging.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
