@@ -20,6 +20,7 @@ class ProfileCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -35,7 +36,7 @@ class ProfileCell: UITableViewCell {
         KaobeiConnection.sendRequest(api: user) { [weak self] response in
             switch response.result {
             case .success(let data):
-                self?.setupUI()
+//                self?.setupUI()
                 self?.userNameLabel.text = data.data.fullName
                 self?.userEmailLabel.text = data.data.email
                 DispatchQueue.global(qos: .userInitiated).async {
@@ -87,17 +88,18 @@ class ProfileCell: UITableViewCell {
         ])
         userAvatarImageView.layer.cornerRadius = 10
         userAvatarImageView.clipsToBounds = true
+        userAvatarImageView.image = UIImage(named: "no_avatar")
         
         mainStack.addArrangedSubview(userAvatarImageView)
         mainStack.addArrangedSubview(rightStack)
         rightStack.addArrangedSubview(userNameLabel)
         rightStack.addArrangedSubview(userEmailLabel)
         
-//        userNameLabel.text = userName
+        userNameLabel.text = "User Name"
         userNameLabel.font = FontConstant.Dashboard.userName
         userNameLabel.textColor = ColorConstants.Dashboard.userName
         
-//        userEmailLabel.text = userEmail
+        userEmailLabel.text = "User Email"
         userEmailLabel.font = FontConstant.Dashboard.userEmail
         userEmailLabel.textColor = ColorConstants.Dashboard.userEmail
     }
