@@ -16,6 +16,7 @@ class ProfileCell: UITableViewCell {
     let userAvatarImageView = UIImageView()
     let userNameLabel = UILabel()
     let userEmailLabel = UILabel()
+    var token = ""
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,6 +27,10 @@ class ProfileCell: UITableViewCell {
     }
     
     func setup(with user: KBGetUserProfile, reload: @escaping () -> ()) {
+        if self.token == user.token {
+            return
+        }
+        self.token = user.token
         self.backgroundColor = .clear
         KaobeiConnection.sendRequest(api: user) { [weak self] response in
             switch response.result {

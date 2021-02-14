@@ -28,7 +28,6 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showSettingActionSheet))
         self.adBanner.adUnitID = K.getInfoPlistByKey("GAD Cell1") ?? ""
         self.adBanner.rootViewController = self
         self.adBanner.load(GADRequest())
@@ -51,8 +50,6 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         if let accessToken = KeyChainManager.shared.getToken() {
             self.userToken = accessToken
-            let getUserProfileRequest = KBGetUserProfile.init(accessToken: accessToken)
-            
             
             reloadBlocker = true
             let getUserPostsRequest = KBGetUserPosts(accessToken: accessToken)
