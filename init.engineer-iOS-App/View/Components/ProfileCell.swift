@@ -27,7 +27,7 @@ class ProfileCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with user: KBGetUserProfile, reload: @escaping () -> ()) {
+    func setup(with user: KBGetUserProfile) {
         if self.token == user.token {
             return
         }
@@ -36,7 +36,6 @@ class ProfileCell: UITableViewCell {
         KaobeiConnection.sendRequest(api: user) { [weak self] response in
             switch response.result {
             case .success(let data):
-//                self?.setupUI()
                 self?.userNameLabel.text = data.data.fullName
                 self?.userEmailLabel.text = data.data.email
                 DispatchQueue.global(qos: .userInitiated).async {
@@ -44,13 +43,9 @@ class ProfileCell: UITableViewCell {
                         let userAvatarImage = try UIImage(data: Data(contentsOf: URL(string: data.data.avatar)!))
                         DispatchQueue.main.async {
                             self?.userAvatarImageView.image = userAvatarImage
-                            reload()
                         }
                     } catch {
-                        DispatchQueue.main.async {
-                            self?.userAvatarImageView.image = UIImage(named: "no_avatar")
-                            reload()
-                        }
+                        print(error)
                     }
                 }
                 break
@@ -95,11 +90,11 @@ class ProfileCell: UITableViewCell {
         rightStack.addArrangedSubview(userNameLabel)
         rightStack.addArrangedSubview(userEmailLabel)
         
-        userNameLabel.text = "User Name"
+        userNameLabel.text = "匿名者"
         userNameLabel.font = FontConstant.Dashboard.userName
         userNameLabel.textColor = ColorConstants.Dashboard.userName
         
-        userEmailLabel.text = "User Email"
+        userEmailLabel.text = "kaobei@init.engineer"
         userEmailLabel.font = FontConstant.Dashboard.userEmail
         userEmailLabel.textColor = ColorConstants.Dashboard.userEmail
     }

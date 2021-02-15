@@ -110,7 +110,7 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
             let cell = self.userPostsTableView.dequeueReusableCell(withIdentifier: PROFILE_ID) as! ProfileCell
             if let userToken = self.userToken {
                 let getUserProfileRequest = KBGetUserProfile.init(accessToken: userToken)
-                cell.setup(with: getUserProfileRequest, reload: self.userPostsTableView.reloadData)
+                cell.setup(with: getUserProfileRequest)
                 let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showSettingActionSheet))
                 cell.addGestureRecognizer(gesture)
                 return cell
