@@ -64,13 +64,13 @@ class ArticleCommentCell: UIView {
         
         platformLabel.translatesAutoresizingMaskIntoConstraints = false
         platformLabel.textColor = ColorConstants.Default.whiteTextColor
-        setPlatform()
         
         
         userNameAndPlatformStackView.addArrangedSubview(userNameLabel)
         userNameAndPlatformStackView.addArrangedSubview(platformLabel)
         
         setCommentBubble()
+        setPlatform()
         setCreatedTimeStackView()
         
         userAllContentWithoutAvatar.addArrangedSubview(userNameAndPlatformStackView)
