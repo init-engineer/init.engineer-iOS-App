@@ -115,7 +115,7 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = self.reviewTable.dequeueReusableCell(withIdentifier: TITLE_ID) as! TableViewTitle
-            cell.setupUI(with: "Review")
+            cell.setupUI(with: "審核文章 Review")
             return cell
         }
         
