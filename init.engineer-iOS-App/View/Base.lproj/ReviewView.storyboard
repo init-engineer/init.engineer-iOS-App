@@ -70,40 +70,29 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-f9-ehp">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="348"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="302"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFG-uW-Wyt">
-                                                <rect key="frame" x="20" y="30" width="374" height="88"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#純靠北工程師7122" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqH-D8-mvA">
-                                                        <rect key="frame" x="0.0" y="46" width="316.5" height="42"/>
-                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kqH-D8-mvA" secondAttribute="trailing" constant="20" symbolic="YES" id="cVb-y8-UG2"/>
-                                                    <constraint firstItem="kqH-D8-mvA" firstAttribute="leading" secondItem="LFG-uW-Wyt" secondAttribute="leading" id="eJd-NG-8ok"/>
-                                                    <constraint firstAttribute="bottom" secondItem="kqH-D8-mvA" secondAttribute="bottom" id="fnu-L6-yxg"/>
-                                                    <constraint firstAttribute="height" constant="88" id="oef-Uz-aAQ"/>
-                                                </constraints>
-                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#純靠北工程師7122" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqH-D8-mvA">
+                                                <rect key="frame" x="20" y="30" width="374" height="42"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xHV-su-aAF">
-                                                <rect key="frame" x="20" y="138" width="374" height="0.0"/>
+                                                <rect key="frame" x="20" y="92" width="374" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="HYE-0t-BzS"/>
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM2-jZ-S4C">
-                                                <rect key="frame" x="20" y="158" width="374" height="40"/>
+                                                <rect key="frame" x="20" y="112" width="374" height="40"/>
                                                 <color key="backgroundColor" name="backgroundColor"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ELs-cL-tEf">
-                                                <rect key="frame" x="20" y="218" width="374" height="100"/>
+                                                <rect key="frame" x="20" y="172" width="374" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzT-5Y-soe">
                                                         <rect key="frame" x="0.0" y="0.0" width="174.5" height="100"/>
