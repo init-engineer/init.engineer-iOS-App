@@ -23,7 +23,6 @@
 		6A79BA6725D597410021F956 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A79BA6625D597410021F956 /* ReviewCell.swift */; };
 		6A79BB0525D99A080021F956 /* ArticleDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A79BB0425D99A080021F956 /* ArticleDetailView.storyboard */; };
 		6A79BB4225D9B8D10021F956 /* KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; };
-		6A79BB4325D9B8D10021F956 /* KaobeiAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6A79BB4D25D9B9370021F956 /* Pods_KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC44641C6C82E7D81C2169A /* Pods_KaobeiAPI.framework */; };
 		6AB6C09225C73271006662F8 /* TableViewGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C09125C73271006662F8 /* TableViewGap.swift */; };
 		6AB6C09725C73304006662F8 /* TableViewTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C09625C73304006662F8 /* TableViewTitle.swift */; };
@@ -138,17 +137,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				12C8B01C2533750C0072F653 /* KaobeiAPI.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6A79BB4625D9B8D10021F956 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6A79BB4325D9B8D10021F956 /* KaobeiAPI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,7 +604,6 @@
 				853D8ED225BD204B00AD1548 /* Sources */,
 				853D8ED325BD204B00AD1548 /* Frameworks */,
 				853D8ED425BD204B00AD1548 /* Resources */,
-				6A79BB4625D9B8D10021F956 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1074,6 +1061,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1108,6 +1096,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1172,8 +1161,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = KaobeiWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E27MCP7UYM;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Yu-Ting Chen (H8HQMGH8V7)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = KaobeiWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1181,8 +1172,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer-iOS-App.KaobeiWidget";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer.KaobeiWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Widget Distribution";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1198,8 +1192,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = KaobeiWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E27MCP7UYM;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Yu-Ting Chen (H8HQMGH8V7)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = KaobeiWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1207,8 +1203,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer-iOS-App.KaobeiWidget";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer.KaobeiWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Widget Distribution";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1224,8 +1223,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = KaobeiWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E27MCP7UYM;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Yu-Ting Chen (H8HQMGH8V7)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = KaobeiWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1233,8 +1234,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer-iOS-App.KaobeiWidget";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer.KaobeiWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Widget Distribution";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1365,17 +1369,21 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Yu-Ting Chen (H8HQMGH8V7)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E27MCP7UYM;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer-iOS-App";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer";
 				PRODUCT_NAME = "純靠北工程師";
+				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Main Distribution";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1389,17 +1397,21 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Yu-Ting Chen (H8HQMGH8V7)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E27MCP7UYM;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer-iOS-App";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer";
 				PRODUCT_NAME = "純靠北工程師";
+				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Main Distribution";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1468,17 +1480,21 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Yu-Ting Chen (H8HQMGH8V7)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E27MCP7UYM;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer-iOS-App";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer";
 				PRODUCT_NAME = "純靠北工程師";
+				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Main Distribution";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1508,6 +1524,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

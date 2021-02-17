@@ -108,9 +108,10 @@ class ArticleCell: UITableViewCell {
         self.enterArticleBtn = UIButton()
         tagLabel.text = self.stringTag
         tagLabel.font = FontConstant.Default.text
+        tagLabel.textColor = .black
         timeLabel.text = self.publishTime
         timeLabel.font = FontConstant.Default.text
-        
+        timeLabel.textColor = .black
         
         guard let enterArticleBtn = self.enterArticleBtn else {
             return

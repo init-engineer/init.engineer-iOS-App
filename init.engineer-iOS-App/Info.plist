@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -15,34 +17,29 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-    <key>SKAdNetworkItems</key>
-        <array>
-            <dict>
-                <key>SKAdNetworkIdentifier</key>
-                <string>cstr6suwn9.skadnetwork</string>
-            </dict>
-        </array>
-	<key>GAD Banner</key>
-	<string>$(ADMOB_BANNER)</string>
-	<key>GAD Login</key>
-	<string>$(ADMOB_LOGIN)</string>
-	<key>GAD Cell1</key>
-	<string>$(ADMOB_CELL1)</string>
-	<key>GAD Cell2</key>
-	<string>$(ADMOB_CELL2)</string>
 	<key>GAD AdsInterstitial</key>
 	<string>$(ADMOB_INTER)</string>
 	<key>GAD AdsInterstitial Video</key>
 	<string>$(ADMOB_INTERV)</string>
 	<key>GAD AdsRewarded Video</key>
 	<string>$(ADMOB_REWARD)</string>
+	<key>GAD Banner</key>
+	<string>$(ADMOB_BANNER)</string>
+	<key>GAD Cell1</key>
+	<string>$(ADMOB_CELL1)</string>
+	<key>GAD Cell2</key>
+	<string>$(ADMOB_CELL2)</string>
+	<key>GAD Login</key>
+	<string>$(ADMOB_LOGIN)</string>
 	<key>GADApplicationIdentifier</key>
 	<string>$(ADMOB_ID)</string>
 	<key>Keychain Service Name</key>
 	<string>$(KEYCHAIN_SERVICE_NAME)</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.social-networking</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
