@@ -79,7 +79,7 @@ class ProfileCell: UITableViewCell {
         
         userAvatarImageView.addConstraints([
             NSLayoutConstraint(item: userAvatarImageView, attribute: .width, relatedBy: .equal, toItem: userAvatarImageView, attribute: .height, multiplier: 1.0, constant: 0.0),
-            NSLayoutConstraint(item: userAvatarImageView, attribute: .width, relatedBy: .equal, toItem: .none, attribute: .notAnAttribute, multiplier: 1.0, constant: 100.0)
+            NSLayoutConstraint(item: userAvatarImageView, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: .none, attribute: .notAnAttribute, multiplier: 1.0, constant: 100.0)
         ])
         userAvatarImageView.layer.cornerRadius = 10
         userAvatarImageView.clipsToBounds = true
