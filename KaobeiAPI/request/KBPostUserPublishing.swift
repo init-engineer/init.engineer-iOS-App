@@ -29,7 +29,7 @@ public struct KBPostUserPublishing: KaobeiRequestProtocol {
     
     public var token: String
     
-    public var contentTpye = ContentType.article
+    public var contentType = ContentType.article
     
     public var httpBody = [String: Any]()
     
@@ -40,7 +40,7 @@ public struct KBPostUserPublishing: KaobeiRequestProtocol {
         let authorization = "Bearer \(token)"
         
         header.add(name: "Accept", value: "application/json")
-        header.add(name: "Content-Type", value: contentTpye.rawValue)
+        header.add(name: "Content-Type", value: contentType.rawValue)
         header.add(name: "Authorization", value: authorization)
         
         return header
@@ -60,7 +60,7 @@ public struct KBPostUserPublishing: KaobeiRequestProtocol {
         httpBody["isFeatureToBeCoutinued"] = toBeContinued ? "1" : "0"
         
         if let image = image {
-            contentTpye = .image
+            contentType = .image
             // add image file to body
             httpBody["avatar"] = image
         }
