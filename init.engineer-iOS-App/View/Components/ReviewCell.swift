@@ -11,7 +11,7 @@ import GoogleMobileAds
 import KaobeiAPI
 
 protocol ReviewCellDelegate {
-    func cellClicked(with id: Int, and article: ArticleUnderReview?, updateCompletion: ((Int, Int) -> ())?)
+    func cellClicked(aye: Int, nay: Int, review: Int, and article: ArticleUnderReview?, updateCompletion: ((Int, Int, Int) -> ())?)
 }
 
 class ReviewCell: UITableViewCell {
@@ -191,11 +191,12 @@ class ReviewCell: UITableViewCell {
     }
     
     @objc func showArticle() {
-        guard let id = self.id else { return }
-        delegate?.cellClicked(with: id, and: self.reviewingArticle) {[weak self] (aye, nay) in
+        guard let aye = self.aye, let nay = self.nay, let review = self.review else { return }
+        delegate?.cellClicked(aye: aye, nay: nay, review: review, and: self.reviewingArticle) {[weak self] (aye, nay, review) in
             self?.aye = aye
             self?.nay = nay
             self?.vote = aye + nay
+            self?.review = review
             self?.ayeLabel.text = "\(aye)"
             self?.voteLabel.text = "\(aye + nay)"
             self?.nayLabel.text = "\(nay)"

@@ -22,9 +22,13 @@ class ReviewDetailViewController: UIViewController {
     @IBOutlet weak var deniedButton: UIButton!
     
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
-    var reloadBlock: ((Int, Int) -> ())?
+    var reloadBlock: ((Int, Int, Int) -> ())?
     var reviewStatus: ArticleUnderReview?
     var id: Int?
+    var aye: Int?
+    var nay: Int?
+    var review: Int?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +69,8 @@ class ReviewDetailViewController: UIViewController {
         // textview內容用：reviewStatus.content
         reviewArticleContentTextView.text = reviewStatus.content
         // 4. setVoteState(agree: 通過, denied: 否決, review: 使用者投票狀態)
-        setVoteState(agree: reviewStatus.succeeded, denied: reviewStatus.failed, review: reviewStatus.review)
+        guard let aye = self.aye, let nay = self.nay, let review = self.review else { return }
+        setVoteState(agree: aye, denied: nay, review: review)
         // Request Success End
         
     }
@@ -132,7 +137,7 @@ class ReviewDetailViewController: UIViewController {
                 let nay = data.data.failed
                 DispatchQueue.main.async {
                     self?.voteCountInButton(agree: aye, denied: nay)
-                    self?.reloadBlock?(aye, nay)
+                    self?.reloadBlock?(aye, nay, 1)
                 }
                 break
             case.failure(_):
@@ -159,7 +164,7 @@ class ReviewDetailViewController: UIViewController {
                 let nay = data.data.failed
                 DispatchQueue.main.async {
                     self?.voteCountInButton(agree: aye, denied: nay)
-                    self?.reloadBlock?(aye, nay)
+                    self?.reloadBlock?(aye, nay, -1)
                 }
                 break
             case.failure(_):
