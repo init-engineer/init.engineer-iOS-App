@@ -22,6 +22,7 @@ class PublishTabController: UIViewController {
     
     let fontOptions = FontManager.shared.fontExistArray
     let themeOptions = ThemeManager.shared.themeExistArray
+    var imageExtension = "jpg"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,32 +115,58 @@ class PublishTabController: UIViewController {
         let article = articleTextView.text ?? ""
         let font: String =  FontManager.shared.getFontValue(fontOptions[fontPickerView.selectedRow(inComponent: 0)])
         let theme: String = ThemeManager.shared.getThemeValue(themeOptions[themePickerView.selectedRow(inComponent: 0)])
-        let image: Data? = articleImageView.image?.jpegData(compressionQuality: 1.0)
+        let image: Data? = articleImageView.image?.jpegData(compressionQuality: 0.5)
         let toBeContinued = toBeContinuedDraw.isOn
         
         let request = KBPostUserPublishing(accessToken: accessToken, article: article, toBeContinued: toBeContinued, font: font, theme: theme, image: image)
         
-        KaobeiConnection.sendRequest(api: request) { [weak self] response in
-            switch response.result {
-            case .success(_):
-                /*
-                 如果 發送成功 則
-                 */
-                self?.publishSendSuccess()        // 顯示文章發送成功
-                self?.resetPublishArticleForm()   // 重置發表文章表單所有內容
-                self?.tabBarController?.selectedIndex = 2    // 跳轉到審核文章
-                break
-            case .failure(_):
-                if let failTitle = response.response?.statusCode {
-                    DispatchQueue.main.async {
-                        self?.publishCheckFailed(failTitle: String(failTitle), failedMessage: "上面的數字可以記下來給版主，但應該沒什麼用，重新發一篇如何？")
+        if let _ = request.imageData {
+            KaobeiConnection.uploadRequest(api: request, with: self.imageExtension) { [weak self] response in
+                switch response.result {
+                case .success(_):
+                    /*
+                     如果 發送成功 則
+                     */
+                    self?.publishSendSuccess()        // 顯示文章發送成功
+                    self?.resetPublishArticleForm()   // 重置發表文章表單所有內容
+                    self?.tabBarController?.selectedIndex = 2    // 跳轉到審核文章
+                    break
+                case .failure(_):
+                    if let failTitle = response.response?.statusCode {
+                        DispatchQueue.main.async {
+                            self?.publishCheckFailed(failTitle: String(failTitle), failedMessage: "上面的數字可以記下來給版主，但應該沒什麼用，重新發一篇如何？")
+                        }
                     }
+                    /*
+                     否則？？？？
+                     （如果是 Token 過期就 Delete Token 再用 willViewAppear 的 self.performSegue 那行強制進入 LoginVC）
+                     */
+                    break
                 }
-                /*
-                 否則？？？？
-                 （如果是 Token 過期就 Delete Token 再用 willViewAppear 的 self.performSegue 那行強制進入 LoginVC）
-                 */
-                break
+            }
+        } else {
+            KaobeiConnection.sendRequest(api: request) { [weak self] response in
+                switch response.result {
+                case .success(_):
+                    /*
+                     如果 發送成功 則
+                     */
+                    self?.publishSendSuccess()        // 顯示文章發送成功
+                    self?.resetPublishArticleForm()   // 重置發表文章表單所有內容
+                    self?.tabBarController?.selectedIndex = 2    // 跳轉到審核文章
+                    break
+                case .failure(_):
+                    if let failTitle = response.response?.statusCode {
+                        DispatchQueue.main.async {
+                            self?.publishCheckFailed(failTitle: String(failTitle), failedMessage: "上面的數字可以記下來給版主，但應該沒什麼用，重新發一篇如何？")
+                        }
+                    }
+                    /*
+                     否則？？？？
+                     （如果是 Token 過期就 Delete Token 再用 willViewAppear 的 self.performSegue 那行強制進入 LoginVC）
+                     */
+                    break
+                }
             }
         }
     }
@@ -214,8 +241,12 @@ extension PublishTabController: UIPickerViewDataSource, UIPickerViewDelegate {
 // MARK: - UIImagePickerControllerDelegate
 
 extension PublishTabController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {    // 選擇圖片
         if let image = info[.originalImage] as? UIImage {
+            if let imgURL = info[.imageURL] as? URL{
+                self.imageExtension = imgURL.pathExtension
+            }
             if let presentImage = image.compressTo(2) {
                 let ratio = presentImage.size.width / presentImage.size.height                      // 計算圖片寬高比
                 let newHeight = articleImageView.frame.width / ratio

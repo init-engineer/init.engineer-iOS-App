@@ -50,6 +50,8 @@ public struct KBPostUserPublishing: KaobeiRequestProtocol {
         return httpBody
     }
     
+    public var imageData: Data?
+    
     public init(accessToken: String, article: String, toBeContinued: Bool, font: String, theme: String, image: Data? = nil) {
         apiPath = String(format: KaobeiURL.userPublishing)
         self.token = accessToken
@@ -61,8 +63,7 @@ public struct KBPostUserPublishing: KaobeiRequestProtocol {
         
         if let image = image {
             contentType = .image
-            // add image file to body
-            httpBody["avatar"] = image
+            imageData = image
         }
     }
 }
