@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +32,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發表文章 Publish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByZ-r8-QqA">
                                                 <rect key="frame" x="20" y="29.999999999999996" width="374" height="39.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dv8-R0-Eln">
@@ -54,7 +55,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="繪製 To Be Coutinued" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0E-uk-DEn">
                                                         <rect key="frame" x="69" y="0.0" width="305" height="31"/>
                                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -83,37 +84,17 @@
                                                 <rect key="frame" x="20" y="904.66666666666652" width="374" height="856"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="板規">
-                                                        <attributes>
-                                                            <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="24" name="PingFangTC-Regular"/>
-                                                            <real key="NSKern" value="0.0"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                                <tabStops/>
-                                                            </paragraphStyle>
-                                                            <color key="NSStrokeColor" red="0.12941177189350128" green="0.14509804546833038" blue="0.16078431904315948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <real key="NSStrokeWidth" value="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
                                                     <fragment>
-                                                        <string key="content" base64-UTF8="YES">
-Cg
+                                                        <string key="content">板規
 </string>
                                                         <attributes>
-                                                            <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="15" name="PingFangTC-Regular"/>
-                                                            <real key="NSKern" value="0.0"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                                <tabStops/>
-                                                            </paragraphStyle>
-                                                            <color key="NSStrokeColor" red="0.12941177189350128" green="0.14509804546833038" blue="0.16078431904315948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <real key="NSStrokeWidth" value="0.0"/>
+                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                            <font key="NSFont" size="24" name="PingFangTC-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment>
-                                                        <string key="content">一、責任聲明：
+                                                        <mutableString key="content">一、責任聲明：
 本站使用者須對自己所張貼之每一篇文章負責，本站毋需對站內以及其他關聯之社群媒體的言論負擔起任何的責任，責任的歸屬權屬於各位發表人。
 
 二、發表文章時之注意事項：
@@ -134,17 +115,11 @@ Cg
 四、附註及補充說明：
 1. 本站歡迎網友互相討論發表己見，唯請務必遵守上述規定。
 2. 是否違反上述規定，由版主主觀認定，請謹慎用詞。
-3. 請學習包容各種意見，如遇惡意批評或攻擊之文章，切勿加入爭執，並且善用檢舉，版主會有適當之處理，否則雙方皆依上述規定處理。</string>
+3. 請學習包容各種意見，如遇惡意批評或攻擊之文章，切勿加入爭執，並且善用檢舉，版主會有適當之處理，否則雙方皆依上述規定處理。</mutableString>
                                                         <attributes>
-                                                            <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="NSColor" systemColor="labelColor"/>
                                                             <font key="NSFont" size="16" name="PingFangTC-Regular"/>
-                                                            <real key="NSKern" value="0.0"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                                <tabStops/>
-                                                            </paragraphStyle>
-                                                            <color key="NSStrokeColor" red="0.12941177189350128" green="0.14509804546833038" blue="0.16078431904315948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <real key="NSStrokeWidth" value="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -159,7 +134,7 @@ Cg
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="我已閱讀並同意以上的板規。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="210-kV-orE">
                                                         <rect key="frame" x="69" y="0.0" width="305" height="31"/>
                                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -188,7 +163,7 @@ Cg
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v5X-aM-Yal"/>
-                        <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="fww-ib-WxX" firstAttribute="trailing" secondItem="v5X-aM-Yal" secondAttribute="trailing" id="MuU-pk-keY"/>
                             <constraint firstItem="fww-ib-WxX" firstAttribute="top" secondItem="v5X-aM-Yal" secondAttribute="top" id="P3X-hd-UyK"/>
@@ -246,6 +221,12 @@ Cg
     <resources>
         <image name="baseline_edit_black_18pt" width="18" height="18"/>
         <image name="baseline_edit_black_24pt" width="24" height="24"/>
+        <namedColor name="backgroundColor">
+            <color red="0.96700000762939453" green="0.96700000762939453" blue="0.96700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

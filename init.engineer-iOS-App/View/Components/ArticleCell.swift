@@ -111,7 +111,9 @@ class ArticleCell: UITableViewCell {
         tagLabel.textColor = .black
         timeLabel.text = self.publishTime
         timeLabel.font = FontConstant.Default.text
-        timeLabel.textColor = .black
+        
+        bottomView.backgroundColor = .white
+        
         
         guard let enterArticleBtn = self.enterArticleBtn else {
             return
