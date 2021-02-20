@@ -41,7 +41,7 @@ class ArticleCell: UITableViewCell {
     func makePost(content: Post) {
         dispatchViews()
         contentView.layer.masksToBounds = true
-        contentView.layer.cornerRadius = 10
+//        contentView.layer.cornerRadius = 10
         self.id = content.id
         self.stringTag = String.tagConvert(from: content.id)
         self.publishTime = content.createdDiff
@@ -53,7 +53,7 @@ class ArticleCell: UITableViewCell {
     func makeArticle(content: Article) {
         dispatchViews()
         contentView.layer.masksToBounds = true
-        contentView.layer.cornerRadius = 10
+//        contentView.layer.cornerRadius = 10
         self.id = content.id
         self.stringTag = String.tagConvert(from: content.id)
         self.publishTime = content.createdDiff
@@ -69,8 +69,8 @@ class ArticleCell: UITableViewCell {
         upperView.tag = 2
         bottomView.tag = 3
         
-        upperView.backgroundColor = ColorConstants.Default.backgroundColor
-        bottomView.backgroundColor = .white
+        upperView.backgroundColor = ColorConstants.Card.backgroundColor
+        bottomView.backgroundColor = UIColor(named: "cardBackgroundColor")
         
         upperView.translatesAutoresizingMaskIntoConstraints = false
         bottomView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +89,7 @@ class ArticleCell: UITableViewCell {
         ])
         
         let articleView = UILabel()
-        articleView.textColor = ColorConstants.Default.textColor
+        articleView.textColor = ColorConstants.Card.textColor
         articleView.text = self.contentString
         articleView.numberOfLines = 7
         articleView.lineBreakMode = .byTruncatingTail
@@ -108,10 +108,10 @@ class ArticleCell: UITableViewCell {
         self.enterArticleBtn = UIButton()
         tagLabel.text = self.stringTag
         tagLabel.font = FontConstant.Default.text
-        tagLabel.textColor = .black
+//        tagLabel.textColor = .black
         timeLabel.text = self.publishTime
         timeLabel.font = FontConstant.Default.text
-        timeLabel.textColor = .black
+        
         
         guard let enterArticleBtn = self.enterArticleBtn else {
             return
@@ -119,7 +119,7 @@ class ArticleCell: UITableViewCell {
         
         enterArticleBtn.addTarget(self, action: #selector(showArticle), for: .touchUpInside)
         enterArticleBtn.setTitle("詳細內容", for: .normal)
-        enterArticleBtn.setTitleColor(ColorConstants.Default.buttonTextColor, for: .normal)
+        enterArticleBtn.setTitleColor(ColorConstants.Card.buttonTextColor, for: .normal)
         enterArticleBtn.titleLabel?.font = FontConstant.Default.text
         
         
@@ -131,6 +131,7 @@ class ArticleCell: UITableViewCell {
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
         stackView.alignment = .center
+        stackView.backgroundColor = .none
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         

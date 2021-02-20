@@ -42,7 +42,6 @@ class ReviewTabController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         if let accessToken = KeyChainManager.shared.getToken() {
             self.userToken = accessToken
-            print(accessToken)
             if self.reviewList.count > 0 {
                 return
             }

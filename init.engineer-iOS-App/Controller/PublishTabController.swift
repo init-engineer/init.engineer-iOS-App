@@ -230,9 +230,9 @@ extension PublishTabController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {   // 可以想說用主題顏色，但我懶得做，全都先用白色再說
         if pickerView.tag == 1 {
-            return NSAttributedString(string: fontOptions[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+            return NSAttributedString(string: fontOptions[row])
         } else {
-            return NSAttributedString(string: themeOptions[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+            return NSAttributedString(string: themeOptions[row])
         }
     }
     

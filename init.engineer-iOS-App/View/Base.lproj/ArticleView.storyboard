@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,19 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-Kw-WUX">
-                                <rect key="frame" x="20" y="100" width="374" height="762"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-Kw-WUX">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.1483450234" green="0.14836204049999999" blue="0.14833080770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ybK-Kw-WUX" secondAttribute="bottom" id="O2G-2t-l7C"/>
-                            <constraint firstItem="ybK-Kw-WUX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YUI-QM-PLc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ybK-Kw-WUX" secondAttribute="trailing" constant="20" id="pGU-Lt-fmG"/>
-                            <constraint firstItem="ybK-Kw-WUX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="sSb-aG-2OI"/>
+                            <constraint firstItem="ybK-Kw-WUX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YUI-QM-PLc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ybK-Kw-WUX" secondAttribute="trailing" id="pGU-Lt-fmG"/>
+                            <constraint firstItem="ybK-Kw-WUX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sSb-aG-2OI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="文章列表" id="R9B-7x-joA"/>
@@ -73,5 +74,8 @@
     <resources>
         <image name="baseline_dashboard_black_18pt" width="18" height="18"/>
         <image name="baseline_dashboard_black_24pt" width="24" height="24"/>
+        <namedColor name="backgroundColor">
+            <color red="0.96700000762939453" green="0.96700000762939453" blue="0.96700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
