@@ -69,7 +69,7 @@ class ArticleCell: UITableViewCell {
         upperView.tag = 2
         bottomView.tag = 3
         
-        upperView.backgroundColor = ColorConstants.Default.backgroundColor
+        upperView.backgroundColor = ColorConstants.Card.backgroundColor
         bottomView.backgroundColor = .white
         
         upperView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +89,7 @@ class ArticleCell: UITableViewCell {
         ])
         
         let articleView = UILabel()
-        articleView.textColor = ColorConstants.Default.textColor
+        articleView.textColor = ColorConstants.Card.textColor
         articleView.text = self.contentString
         articleView.numberOfLines = 7
         articleView.lineBreakMode = .byTruncatingTail
@@ -119,7 +119,7 @@ class ArticleCell: UITableViewCell {
         
         enterArticleBtn.addTarget(self, action: #selector(showArticle), for: .touchUpInside)
         enterArticleBtn.setTitle("詳細內容", for: .normal)
-        enterArticleBtn.setTitleColor(ColorConstants.Default.buttonTextColor, for: .normal)
+        enterArticleBtn.setTitleColor(ColorConstants.Card.buttonTextColor, for: .normal)
         enterArticleBtn.titleLabel?.font = FontConstant.Default.text
         
         

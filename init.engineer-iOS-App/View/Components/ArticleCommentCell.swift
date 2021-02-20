@@ -60,10 +60,10 @@ class ArticleCommentCell: UIView {
         
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         userNameLabel.text = comment.name
-        userNameLabel.textColor = ColorConstants.Default.whiteTextColor
+        userNameLabel.textColor = ColorConstants.Card.whiteTextColor
         
         platformLabel.translatesAutoresizingMaskIntoConstraints = false
-        platformLabel.textColor = ColorConstants.Default.whiteTextColor
+        platformLabel.textColor = ColorConstants.Card.whiteTextColor
         
         
         userNameAndPlatformStackView.addArrangedSubview(userNameLabel)
@@ -134,7 +134,7 @@ class ArticleCommentCell: UIView {
         
         commentLabel.translatesAutoresizingMaskIntoConstraints = false
         commentLabel.numberOfLines = 0
-        commentLabel.textColor = ColorConstants.Default.whiteTextColor
+        commentLabel.textColor = ColorConstants.Card.whiteTextColor
         commentLabel.text = comment.content
         commentBubble.addSubview(commentLabel)
         commentBubble.addConstraints([
@@ -154,7 +154,7 @@ class ArticleCommentCell: UIView {
         createdTimeStackView.alignment = .top
         createdTimeStackView.distribution = .fill
         
-        createdTimeLabel.textColor = ColorConstants.Default.whiteTextColor
+        createdTimeLabel.textColor = ColorConstants.Card.whiteTextColor
         createdTimeLabel.text = comment.created
         createdTimeStackView.addArrangedSubview(createdTimeLabel)
     }
