@@ -60,10 +60,10 @@ class ArticleCommentCell: UIView {
         
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         userNameLabel.text = comment.name
-        userNameLabel.textColor = ColorConstants.Card.whiteTextColor
+//        userNameLabel.textColor = ColorConstants.Card.whiteTextColor
         
         platformLabel.translatesAutoresizingMaskIntoConstraints = false
-        platformLabel.textColor = ColorConstants.Card.whiteTextColor
+//        platformLabel.textColor = ColorConstants.Card.whiteTextColor
         
         
         userNameAndPlatformStackView.addArrangedSubview(userNameLabel)
@@ -154,7 +154,7 @@ class ArticleCommentCell: UIView {
         createdTimeStackView.alignment = .top
         createdTimeStackView.distribution = .fill
         
-        createdTimeLabel.textColor = ColorConstants.Card.whiteTextColor
+//        createdTimeLabel.textColor = ColorConstants.Card.whiteTextColor
         createdTimeLabel.text = comment.created
         createdTimeStackView.addArrangedSubview(createdTimeLabel)
     }

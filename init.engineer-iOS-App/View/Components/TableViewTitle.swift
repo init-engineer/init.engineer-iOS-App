@@ -23,7 +23,6 @@ class TableViewTitle: UITableViewCell {
         label.text = title
         label.font = FontConstant.Default.title
         label.backgroundColor = .clear
-        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         
         self.backgroundColor = .clear

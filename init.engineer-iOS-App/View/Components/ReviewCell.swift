@@ -34,7 +34,7 @@ class ReviewCell: UITableViewCell {
         dispatchViews()
         ads.tag = 1
         contentView.layer.masksToBounds = true
-        contentView.layer.cornerRadius = 10
+//        contentView.layer.cornerRadius = 10
         ads.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = .clear
         contentView.addSubview(ads)
@@ -49,7 +49,7 @@ class ReviewCell: UITableViewCell {
     func makeArticleInReview(content: ArticleUnderReview) {
         dispatchViews()
         contentView.layer.masksToBounds = true
-        contentView.layer.cornerRadius = 10
+//        contentView.layer.cornerRadius = 10
         self.id = content.id
         self.reviewingArticle = content
         self.stringTag = String.tagConvert(from: content.id)
@@ -72,7 +72,7 @@ class ReviewCell: UITableViewCell {
         bottomView.tag = 3
         
         upperView.backgroundColor = ColorConstants.Card.backgroundColor
-        bottomView.backgroundColor = .white
+        bottomView.backgroundColor = UIColor(named: "cardBackgroundColor")
         
         upperView.translatesAutoresizingMaskIntoConstraints = false
         bottomView.translatesAutoresizingMaskIntoConstraints = false

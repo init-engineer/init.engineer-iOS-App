@@ -23,16 +23,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wQM-ub-tvo">
-                                <rect key="frame" x="20" y="108" width="374" height="754"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wQM-ub-tvo">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rxH-Oj-10V"/>
-                        <color key="backgroundColor" red="0.1483450234" green="0.14836204049999999" blue="0.14833080770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rxH-Oj-10V" firstAttribute="trailing" secondItem="wQM-ub-tvo" secondAttribute="trailing" constant="20" id="HTd-6c-s3j"/>
-                            <constraint firstItem="wQM-ub-tvo" firstAttribute="leading" secondItem="rxH-Oj-10V" secondAttribute="leading" constant="20" id="TSN-Bo-Ezp"/>
+                            <constraint firstItem="rxH-Oj-10V" firstAttribute="trailing" secondItem="wQM-ub-tvo" secondAttribute="trailing" id="HTd-6c-s3j"/>
+                            <constraint firstItem="wQM-ub-tvo" firstAttribute="leading" secondItem="rxH-Oj-10V" secondAttribute="leading" id="TSN-Bo-Ezp"/>
                             <constraint firstItem="wQM-ub-tvo" firstAttribute="top" secondItem="rxH-Oj-10V" secondAttribute="top" constant="20" id="Vvd-Yb-lTs"/>
                             <constraint firstItem="rxH-Oj-10V" firstAttribute="bottom" secondItem="wQM-ub-tvo" secondAttribute="bottom" id="YT9-wI-SFY"/>
                         </constraints>
@@ -75,7 +75,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#純靠北工程師7122" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqH-D8-mvA">
                                                 <rect key="frame" x="20" y="30" width="374" height="42"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xHV-su-aAF">
@@ -87,7 +87,7 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM2-jZ-S4C">
                                                 <rect key="frame" x="20" y="112" width="374" height="40"/>
                                                 <color key="backgroundColor" name="backgroundColor"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -185,8 +185,11 @@
         <image name="baseline_gavel_black_18pt" width="18" height="18"/>
         <image name="baseline_gavel_black_24pt" width="24" height="24"/>
         <namedColor name="backgroundColor">
-            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96700000762939453" green="0.96700000762939453" blue="0.96700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

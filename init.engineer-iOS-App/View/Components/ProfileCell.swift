@@ -92,11 +92,11 @@ class ProfileCell: UITableViewCell {
         
         userNameLabel.text = "匿名者"
         userNameLabel.font = FontConstant.Dashboard.userName
-        userNameLabel.textColor = ColorConstants.Dashboard.userName
+//        userNameLabel.textColor = ColorConstants.Dashboard.userName
         
         userEmailLabel.text = "kaobei@init.engineer"
         userEmailLabel.font = FontConstant.Dashboard.userEmail
-        userEmailLabel.textColor = ColorConstants.Dashboard.userEmail
+//        userEmailLabel.textColor = ColorConstants.Dashboard.userEmail
     }
     
 }

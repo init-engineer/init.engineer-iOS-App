@@ -41,7 +41,7 @@ class ArticleCell: UITableViewCell {
     func makePost(content: Post) {
         dispatchViews()
         contentView.layer.masksToBounds = true
-        contentView.layer.cornerRadius = 10
+//        contentView.layer.cornerRadius = 10
         self.id = content.id
         self.stringTag = String.tagConvert(from: content.id)
         self.publishTime = content.createdDiff
@@ -53,7 +53,7 @@ class ArticleCell: UITableViewCell {
     func makeArticle(content: Article) {
         dispatchViews()
         contentView.layer.masksToBounds = true
-        contentView.layer.cornerRadius = 10
+//        contentView.layer.cornerRadius = 10
         self.id = content.id
         self.stringTag = String.tagConvert(from: content.id)
         self.publishTime = content.createdDiff
@@ -70,7 +70,7 @@ class ArticleCell: UITableViewCell {
         bottomView.tag = 3
         
         upperView.backgroundColor = ColorConstants.Card.backgroundColor
-        bottomView.backgroundColor = .white
+        bottomView.backgroundColor = UIColor(named: "cardBackgroundColor")
         
         upperView.translatesAutoresizingMaskIntoConstraints = false
         bottomView.translatesAutoresizingMaskIntoConstraints = false
@@ -108,11 +108,9 @@ class ArticleCell: UITableViewCell {
         self.enterArticleBtn = UIButton()
         tagLabel.text = self.stringTag
         tagLabel.font = FontConstant.Default.text
-        tagLabel.textColor = .black
+//        tagLabel.textColor = .black
         timeLabel.text = self.publishTime
         timeLabel.font = FontConstant.Default.text
-        
-        bottomView.backgroundColor = .white
         
         
         guard let enterArticleBtn = self.enterArticleBtn else {
@@ -133,6 +131,7 @@ class ArticleCell: UITableViewCell {
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
         stackView.alignment = .center
+        stackView.backgroundColor = .none
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
