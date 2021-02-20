@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -36,6 +34,8 @@
 	<string>$(ADMOB_LOGIN)</string>
 	<key>GADApplicationIdentifier</key>
 	<string>$(ADMOB_ID)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>Keychain Service Name</key>
 	<string>$(KEYCHAIN_SERVICE_NAME)</string>
 	<key>LSApplicationCategoryType</key>
