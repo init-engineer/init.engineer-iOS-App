@@ -67,29 +67,8 @@ class ReviewTabController: UIViewController {
             NSLayoutConstraint.init(item: self.loadingView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
             NSLayoutConstraint.init(item: self.loadingView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
             
-            reloadBlocker = true
-            let listRequest = KBGetArticleReviewList.init(accessToken: accessToken, page: count)
             self.loadingView.startAnimating()
-            KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
-                self?.reloadBlocker = false
-                switch response.result {
-                case .success(let data):
-                    self?.reviewList.append(contentsOf: data.data)
-                    self?.reviewList.append(nil)
-                    self?.reviewTable.reloadData()
-                    self?.count += 1
-                    break
-                case .failure(let error):
-                    print(error.responseCode ?? "")
-                    self?.reviewList.append(nil)
-                    self?.reviewTable.reloadData()
-                    break
-                }
-                
-                DispatchQueue.main.async {
-                    self?.loadingView.stopAnimating()
-                }
-            }
+            loadMoreReviewArticle(firstLoad: true)
         }
         else {
             self.userToken = nil
@@ -103,6 +82,42 @@ class ReviewTabController: UIViewController {
         self.count = 1
         self.reloadBlocker = false
         self.reviewList.removeAll()
+    }
+    
+    func loadMoreReviewArticle(firstLoad: Bool) {
+        if reloadBlocker { return }
+        guard let userToken = self.userToken else { return }
+        reloadBlocker = true
+        let listRequest = KBGetArticleReviewList.init(accessToken: userToken, page: count)
+        KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
+            self?.reloadBlocker = false
+            switch response.result {
+            case .success(let data):
+                if data.meta.pagination.count == 0 {
+                    self?.reloadBlocker = true
+                    break
+                }
+                for r in data.data {
+                    if r.succeeded + r.failed >= -50 || r.id == 4584 {
+                        self?.reviewList.append(r)
+                    }
+                }
+                self?.reviewList.append(nil)
+                self?.reviewTable.reloadData()
+                self?.count += 1
+                break
+            case .failure(let error):
+                print(error.responseCode ?? "")
+                self?.reviewList.append(nil)
+                self?.reviewTable.reloadData()
+                break
+            }
+            if firstLoad {
+                DispatchQueue.main.async {
+                    self?.loadingView.stopAnimating()
+                }
+            }
+        }
     }
 }
 extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
@@ -149,31 +164,9 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if reloadBlocker == true { return }
-        guard let userToken = self.userToken else { return }
         
         if indexPath.section >= self.reviewList.count - 2 {
-            reloadBlocker = true
-            let listRequest = KBGetArticleReviewList.init(accessToken: userToken, page: count)
-            KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
-                self?.reloadBlocker = false
-                switch response.result {
-                case .success(let data):
-                    if data.meta.pagination.count == 0 {
-                        self?.reloadBlocker = true
-                        break
-                    }
-                    self?.reviewList.append(contentsOf: data.data)
-                    self?.reviewList.append(nil)
-                    self?.reviewTable.reloadData()
-                    self?.count += 1
-                    break
-                case .failure(let error):
-                    print(error.responseCode ?? "")
-                    self?.reviewList.append(nil)
-                    self?.reviewTable.reloadData()
-                    break
-                }
-            }
+            loadMoreReviewArticle(firstLoad: false)
         }
     }
 }

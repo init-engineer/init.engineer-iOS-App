@@ -21,7 +21,7 @@ class IndexTabController: UIViewController, SFSafariViewControllerDelegate, Inde
         ["Plurk 粉絲頁", "Very 純", #imageLiteral(resourceName: "img_plurk"), "https://www.plurk.com/kaobei_engineer"],
         ["Twitter 粉絲頁", "Super 純", #imageLiteral(resourceName: "img_twitter"), "https://twitter.com/kaobei_engineer"],
         ["Tumblr 粉絲頁", "湯現在不熱了", #imageLiteral(resourceName: "img_tumblr"), "https://kaobei-engineer.tumblr.com/"],
-        ["Mewe 粉絲頁", "weeeeeeee~~", #imageLiteral(resourceName: "img_mewe"), "https://mewe.com/p/init.kobeengineer"],
+        ["MeWe 粉絲頁", "weeeeeeee~~", #imageLiteral(resourceName: "img_mewe"), "https://mewe.com/p/init.kobeengineer"],
     ]
     
     override func viewDidLoad() {
