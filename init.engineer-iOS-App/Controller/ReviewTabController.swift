@@ -77,6 +77,10 @@ class ReviewTabController: UIViewController {
         self.count = 1
         self.reloadBlocker = false
         self.reviewList.removeAll()
+        self.loadingView.startAnimating()
+        self.reviewTable.reloadData()
+        self.reviewList.append(nil)
+        self.loadMoreReviewArticle()
     }
     
     func loadMoreReviewArticle() {

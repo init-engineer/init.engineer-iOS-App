@@ -130,6 +130,12 @@ class PublishTabController: UIViewController {
                     self?.publishSendSuccess()        // 顯示文章發送成功
                     self?.resetPublishArticleForm()   // 重置發表文章表單所有內容
                     self?.tabBarController?.selectedIndex = 2    // 跳轉到審核文章
+                    if let reviewNavi = self?.tabBarController?.selectedViewController as? UINavigationController {
+                        reviewNavi.popToRootViewController(animated: true)
+                        if let reviewListVC = reviewNavi.topViewController as? ReviewTabController {
+                            reviewListVC.reloadReviews()
+                        }
+                    }
                     break
                 case .failure(_):
                     if let failTitle = response.response?.statusCode {
@@ -172,6 +178,7 @@ class PublishTabController: UIViewController {
     }
     
     @IBAction func publishButtonPressed(_ sender: UIButton) {   // 發送文章按鈕動作
+
         if !agreePublishRule.isOn {
             publishCheckFailed(failTitle: "呃......", failedMessage: "您必須同意以上版規。")
         }
