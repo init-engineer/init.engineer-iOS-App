@@ -42,9 +42,7 @@ class ReviewTabController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         if let accessToken = KeyChainManager.shared.getToken() {
             self.userToken = accessToken
-            if self.reviewList.count > 0 {
-                return
-            }
+            if self.reviewList.isEmpty == false { return }
             
             self.adBanner.adUnitID = K.getInfoPlistByKey("GAD Cell2") ?? ""
             self.adBanner.rootViewController = self
@@ -68,7 +66,7 @@ class ReviewTabController: UIViewController {
             NSLayoutConstraint.init(item: self.loadingView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
             
             self.loadingView.startAnimating()
-            loadMoreReviewArticle(firstLoad: true)
+            loadMoreReviewArticle()
         }
         else {
             self.userToken = nil
@@ -84,7 +82,7 @@ class ReviewTabController: UIViewController {
         self.reviewList.removeAll()
     }
     
-    func loadMoreReviewArticle(firstLoad: Bool) {
+    func loadMoreReviewArticle() {
         if reloadBlocker { return }
         guard let userToken = self.userToken else { return }
         reloadBlocker = true
@@ -112,10 +110,9 @@ class ReviewTabController: UIViewController {
                 self?.reviewTable.reloadData()
                 break
             }
-            if firstLoad {
-                DispatchQueue.main.async {
-                    self?.loadingView.stopAnimating()
-                }
+            
+            DispatchQueue.main.async {
+                self?.loadingView.stopAnimating()
             }
         }
     }
@@ -166,7 +163,7 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
         if reloadBlocker == true { return }
         
         if indexPath.section >= self.reviewList.count - 2 {
-            loadMoreReviewArticle(firstLoad: false)
+            loadMoreReviewArticle()
         }
     }
 }

@@ -42,14 +42,15 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         self.userPostsTableView.register(TableViewTitle.self, forCellReuseIdentifier: TITLE_ID)
         self.userPostsTableView.register(ProfileCell.self, forCellReuseIdentifier: PROFILE_ID)
         self.userPostsTableView.register(TableViewGap.self, forHeaderFooterViewReuseIdentifier: GAP_ID)
-        self.userPosts.append(nil)
-        self.userPosts.append(nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         if let accessToken = KeyChainManager.shared.getToken() {
+            if self.userPosts.isEmpty == false { return }
             self.userToken = accessToken
+            self.userPosts.append(nil)
+            self.userPosts.append(nil)
             
             reloadBlocker = true
             let getUserPostsRequest = KBGetUserPosts(accessToken: accessToken)
