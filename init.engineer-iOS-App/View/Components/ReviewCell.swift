@@ -11,7 +11,7 @@ import GoogleMobileAds
 import KaobeiAPI
 
 protocol ReviewCellDelegate {
-    func cellClicked(aye: Int, nay: Int, review: Int, and article: ArticleUnderReview?, updateCompletion: ((Int, Int, Int) -> ())?)
+    func cellClicked(article: ReviewCellData?, updateCompletion: (() -> ())?)
 }
 
 class ReviewCell: UITableViewCell {
@@ -24,7 +24,7 @@ class ReviewCell: UITableViewCell {
     var nay: Int?
     var review: Int?
     var id: Int?
-    var reviewingArticle: ArticleUnderReview?
+    var reviewingArticle: ReviewCellData?
     var delegate: ReviewCellDelegate?
     var ayeLabel = UILabel()
     var voteLabel = UILabel()
@@ -46,19 +46,19 @@ class ReviewCell: UITableViewCell {
         ])
     }
     
-    func makeArticleInReview(content: ArticleUnderReview) {
+    func makeArticleInReview(content: ReviewCellData) {
         dispatchViews()
         contentView.layer.masksToBounds = true
 //        contentView.layer.cornerRadius = 10
         self.id = content.id
         self.reviewingArticle = content
         self.stringTag = String.tagConvert(from: content.id)
-        self.publishTime = content.createdDiff
+        self.publishTime = content.publishTime
         self.contentString = content.content
         self.backgroundColor = .clear
-        self.aye = content.succeeded
-        self.nay = content.failed
-        self.vote = content.succeeded + content.failed
+        self.aye = content.aye
+        self.nay = content.nay
+        self.vote = content.aye + content.nay
         self.review = content.review
         
         makeUI()
@@ -191,15 +191,16 @@ class ReviewCell: UITableViewCell {
     }
     
     @objc func showArticle() {
-        guard let aye = self.aye, let nay = self.nay, let review = self.review else { return }
-        delegate?.cellClicked(aye: aye, nay: nay, review: review, and: self.reviewingArticle) {[weak self] (aye, nay, review) in
-            self?.aye = aye
-            self?.nay = nay
-            self?.vote = aye + nay
-            self?.review = review
-            self?.ayeLabel.text = "\(aye)"
-            self?.voteLabel.text = "\(aye + nay)"
-            self?.nayLabel.text = "\(nay)"
+        delegate?.cellClicked(article: self.reviewingArticle) {[weak self] in
+            guard let updates = self?.reviewingArticle else { return }
+            
+            self?.aye = updates.aye
+            self?.nay = updates.nay
+            self?.vote = updates.aye + updates.nay
+            self?.review = updates.review
+            self?.ayeLabel.text = "\(updates.aye)"
+            self?.voteLabel.text = "\(updates.aye + updates.nay)"
+            self?.nayLabel.text = "\(updates.nay)"
         }
     }
 }

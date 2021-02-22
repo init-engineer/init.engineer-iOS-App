@@ -22,8 +22,8 @@ class ReviewDetailViewController: UIViewController {
     @IBOutlet weak var deniedButton: UIButton!
     
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
-    var reloadBlock: ((Int, Int, Int) -> ())?
-    var reviewStatus: ArticleUnderReview?
+    var reloadBlock: (() -> ())?
+    var reviewStatus: ReviewCellData?
     var id: Int?
     var aye: Int?
     var nay: Int?
@@ -32,6 +32,11 @@ class ReviewDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let reviewStatus = self.reviewStatus else { return }
+        self.id = reviewStatus.id
+        self.aye = reviewStatus.aye
+        self.nay = reviewStatus.nay
+        self.review = reviewStatus.review
         guard let id = self.id else { return }
         
         reviewArticleImageView.isHidden = true
@@ -43,7 +48,6 @@ class ReviewDetailViewController: UIViewController {
         NSLayoutConstraint.init(item: self.loadingView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint.init(item: self.loadingView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
         
-        guard let reviewStatus = self.reviewStatus else { return }
         // Request Success Start
         // 1. 設定 reviewArticleTitleLabel
         reviewArticleTitleLabel.text = String.tagConvert(from: id)
@@ -137,7 +141,8 @@ class ReviewDetailViewController: UIViewController {
                 let nay = data.data.failed
                 DispatchQueue.main.async {
                     self?.voteCountInButton(agree: aye, denied: nay)
-                    self?.reloadBlock?(aye, nay, 1)
+                    self?.reviewStatus?.updateVote(aye: aye, nay: nay)
+                    self?.reloadBlock?()
                 }
                 break
             case.failure(_):
@@ -164,7 +169,8 @@ class ReviewDetailViewController: UIViewController {
                 let nay = data.data.failed
                 DispatchQueue.main.async {
                     self?.voteCountInButton(agree: aye, denied: nay)
-                    self?.reloadBlock?(aye, nay, -1)
+                    self?.reviewStatus?.updateVote(aye: aye, nay: nay)
+                    self?.reloadBlock?()
                 }
                 break
             case.failure(_):

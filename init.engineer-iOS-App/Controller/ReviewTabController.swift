@@ -15,7 +15,7 @@ class ReviewTabController: UIViewController {
     
     var userToken: String?
     @IBOutlet weak var reviewTable: UITableView!
-    var reviewList = [ArticleUnderReview?]()
+    var reviewList = [ReviewCellData?]()
     var count = 1
     var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
     var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
@@ -26,10 +26,7 @@ class ReviewTabController: UIViewController {
     let TITLE_ID = "title"
     
     var reloadBlocker = false
-    var cellBlock: ((Int, Int, Int) -> ())?
-    var delegateAye = 0
-    var delegateNay = 0
-    var delegateReview = 0
+    var cellBlock: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,12 +92,16 @@ class ReviewTabController: UIViewController {
                     self?.reloadBlocker = true
                     break
                 }
+                var loadCount = 0
                 for r in data.data {
                     if r.succeeded + r.failed >= -50 || r.id == 4584 {
-                        self?.reviewList.append(r)
+                        self?.reviewList.append(ReviewCellData(cellData: r))
+                        loadCount += 1
                     }
                 }
-                self?.reviewList.append(nil)
+                if let listCount = self?.reviewList.count, loadCount > 0 || listCount < 2 {
+                    self?.reviewList.append(nil)
+                }
                 self?.reviewTable.reloadData()
                 self?.count += 1
                 break
@@ -169,26 +170,19 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ReviewTabController: ReviewCellDelegate {
-    func cellClicked(aye: Int, nay: Int, review: Int, and article: ArticleUnderReview?, updateCompletion: ((Int, Int, Int) -> ())?) {
+    func cellClicked(article: ReviewCellData?, updateCompletion: (() -> ())?) {
         guard let article = article, let block = updateCompletion else { return }
         if self.interstitial.isReady {
             self.interstitial.present(fromRootViewController: self)
         }
         self.cellBlock = block
-        self.delegateAye = aye
-        self.delegateNay = nay
-        self.delegateReview = review
         self.performSegue(withIdentifier: K.ToReviewDetailsSegue, sender: article)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.ToReviewDetailsSegue {
-            guard let vc = segue.destination as? ReviewDetailViewController, let article = sender as? ArticleUnderReview else { return }
-            vc.id = article.id
+            guard let vc = segue.destination as? ReviewDetailViewController, let article = sender as? ReviewCellData else { return }
             vc.reviewStatus = article
-            vc.aye = self.delegateAye
-            vc.nay = self.delegateNay
-            vc.review = self.delegateReview
             vc.reloadBlock = self.cellBlock
         }
     }
