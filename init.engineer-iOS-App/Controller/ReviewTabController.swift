@@ -21,6 +21,8 @@ class ReviewTabController: UIViewController {
     var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
     
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
+    let refreshControl = UIRefreshControl()
+    
     let GAP_ID = "gap"
     let REVIEW_ID = "review"
     let TITLE_ID = "title"
@@ -56,6 +58,8 @@ class ReviewTabController: UIViewController {
             self.reviewTable.register(TableViewTitle.self, forCellReuseIdentifier: TITLE_ID)
             self.reviewTable.register(TableViewGap.self, forHeaderFooterViewReuseIdentifier: GAP_ID)
             self.reviewList.append(nil)
+            self.reviewTable.addSubview(refreshControl)
+            self.refreshControl.addTarget(self, action: #selector(refreshReviews), for: .valueChanged)
             
             self.loadingView.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(self.loadingView)
@@ -81,6 +85,46 @@ class ReviewTabController: UIViewController {
         self.reviewTable.reloadData()
         self.reviewList.append(nil)
         self.loadMoreReviewArticle()
+    }
+    
+    @objc func refreshReviews() {
+        guard let userToken = self.userToken else { return }
+        reloadBlocker = true
+        let listRequest = KBGetArticleReviewList.init(accessToken: userToken, page: 1)
+        
+        KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
+            self?.reloadBlocker = false
+            switch response.result {
+            case .success(let data):
+                self?.reviewList.removeAll()
+                self?.reviewList.append(nil)
+                if data.meta.pagination.count == 0 {
+                    self?.reloadBlocker = true
+                    break
+                }
+                var loadCount = 0
+                for r in data.data {
+                    if r.succeeded + r.failed >= -50 || r.id == 4584 {
+                        self?.reviewList.append(ReviewCellData(cellData: r))
+                        loadCount += 1
+                    }
+                }
+                if let listCount = self?.reviewList.count, loadCount > 0 || listCount < 2 {
+                    self?.reviewList.append(nil)
+                }
+                self?.count = 2
+                self?.reviewTable.reloadData()
+                break
+            case .failure(let error):
+                print(error.responseCode ?? "")
+                break
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self?.refreshControl.endRefreshing()
+                self?.reviewTable.reloadData()
+            }
+        }
     }
     
     func loadMoreReviewArticle() {

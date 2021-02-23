@@ -20,6 +20,7 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
     var userToken: String?
     var reloadBlocker = false
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
+    let refreshControl = UIRefreshControl()
     
     var currentPage = 1
     
@@ -44,6 +45,8 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         self.userPostsTableView.register(TableViewTitle.self, forCellReuseIdentifier: TITLE_ID)
         self.userPostsTableView.register(ProfileCell.self, forCellReuseIdentifier: PROFILE_ID)
         self.userPostsTableView.register(TableViewGap.self, forHeaderFooterViewReuseIdentifier: GAP_ID)
+        self.userPostsTableView.addSubview(refreshControl)
+        self.refreshControl.addTarget(self, action: #selector(refreshDashboard), for: .valueChanged)
         
         self.loadingView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.loadingView)
@@ -108,6 +111,38 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
             }
         }
         //self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
+    }
+    
+    @objc func refreshDashboard() {
+        guard let userToken = self.userToken else { return }
+        self.reloadBlocker = true
+        
+        let getUserPostsRequest = KBGetUserPosts(accessToken: userToken)
+        
+        KaobeiConnection.sendRequest(api: getUserPostsRequest) { [weak self] response in
+            self?.reloadBlocker = false
+            switch response.result {
+            case .success(let data):
+                self?.userPosts.removeAll()
+                self?.userPosts.append(nil)
+                self?.userPosts.append(nil)
+                self?.userPosts.append(contentsOf: data.data)
+                self?.userPosts.append(nil)
+                self?.userPostsTableView.reloadData()
+                self?.currentPage = 2
+                break
+            case .failure(let error):
+                print(error.responseCode ?? "")
+                self?.userPosts.append(nil)
+                self?.userPostsTableView.reloadData()
+                break
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self?.refreshControl.endRefreshing()
+                self?.userPostsTableView.reloadData()
+            }
+        }
     }
 }
 

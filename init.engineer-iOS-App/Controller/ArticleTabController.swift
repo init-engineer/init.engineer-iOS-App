@@ -20,6 +20,8 @@ class ArticleTabController: UIViewController {
     var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
     
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
+    let refreshControl = UIRefreshControl()
+    
     let GAP_ID = "gap"
     let ARTICLE_ID = "article"
     let TITLE_ID = "title"
@@ -44,6 +46,8 @@ class ArticleTabController: UIViewController {
         self.articleTable.register(TableViewTitle.self, forCellReuseIdentifier: TITLE_ID)
         self.articleTable.register(TableViewGap.self, forHeaderFooterViewReuseIdentifier: GAP_ID)
         self.articleList.append(nil)
+        self.articleTable.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refreshArticles), for: .valueChanged)
         
         self.loadingView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.loadingView)
@@ -79,7 +83,33 @@ class ArticleTabController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
-
+    @objc func refreshArticles() {
+        self.reloadBlocker = true
+        
+        let listRequest = KBGetArticleList.init(page: 1)
+        
+        KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
+            self?.reloadBlocker = false
+            switch response.result {
+            case .success(let data):
+                self?.articleList.removeAll()
+                self?.articleList.append(nil)
+                self?.articleList.append(contentsOf: data.data)
+                self?.articleList.append(nil)
+                self?.articleTable.reloadData()
+                self?.count = 2
+                break
+            case .failure(let error):
+                print(error.responseCode ?? "")
+                break
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self?.refreshControl.endRefreshing()
+                self?.articleTable.reloadData()
+            }
+        }
+    }
 }
 
 extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
