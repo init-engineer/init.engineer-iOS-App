@@ -9,6 +9,7 @@
 import UIKit
 import KaobeiAPI
 import GoogleMobileAds
+import NVActivityIndicatorView
 
 class DashboardTabController: UIViewController, GADBannerViewDelegate {
     
@@ -18,6 +19,7 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
     var userPosts = [Post?]()
     var userToken: String?
     var reloadBlocker = false
+    var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     
     var currentPage = 1
     
@@ -42,6 +44,11 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         self.userPostsTableView.register(TableViewTitle.self, forCellReuseIdentifier: TITLE_ID)
         self.userPostsTableView.register(ProfileCell.self, forCellReuseIdentifier: PROFILE_ID)
         self.userPostsTableView.register(TableViewGap.self, forHeaderFooterViewReuseIdentifier: GAP_ID)
+        
+        self.loadingView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.loadingView)
+        NSLayoutConstraint.init(item: self.loadingView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint.init(item: self.loadingView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,9 +60,11 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
             self.userPosts.append(nil)
             
             reloadBlocker = true
+            self.loadingView.startAnimating()
             let getUserPostsRequest = KBGetUserPosts(accessToken: accessToken)
             KaobeiConnection.sendRequest(api: getUserPostsRequest) { [weak self] response in
                 self?.reloadBlocker = false
+                self?.loadingView.stopAnimating()
                 switch response.result {
                 case .success(let data):
                     self?.userPosts.append(contentsOf: data.data)
@@ -91,7 +100,14 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         self.currentPage = 1
         self.userPosts.removeAll()
         self.userPostsTableView.reloadData()
-        self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
+        if let tabbarVC = self.tabBarController as? KaobeiTabBarController {
+            loadingView.startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                tabbarVC.signedOut()
+                self.loadingView.stopAnimating()
+            }
+        }
+        //self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
     }
 }
 

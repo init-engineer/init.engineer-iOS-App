@@ -9,7 +9,11 @@
 import UIKit
 
 class KaobeiTabBarController: UITabBarController, UITabBarControllerDelegate {
-
+    var reviewFragment: UINavigationController?
+    var publishFragment: UINavigationController?
+    var dashboardFragment: UINavigationController?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -17,6 +21,15 @@ class KaobeiTabBarController: UITabBarController, UITabBarControllerDelegate {
             self.tabBar.tintColor = .green
         } else {
             self.tabBar.tintColor = .none
+        }
+        
+        guard let VCs = self.viewControllers else { return }
+        self.reviewFragment = VCs[2] as? UINavigationController
+        self.publishFragment = VCs[3] as? UINavigationController
+        self.dashboardFragment = VCs[4] as? UINavigationController
+        
+        if KeyChainManager.shared.getToken() == nil {
+            self.viewControllers?.replaceSubrange(2...4, with: repeatElement(UIStoryboard(name: "LoginView", bundle: nil).instantiateViewController(identifier: "LoginController"), count: 1))
         }
     }
     
@@ -29,7 +42,26 @@ class KaobeiTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        return (viewController != tabBarController.selectedViewController)
+        return true
+    }
+    
+    func signedIn() {
+        guard let review = self.reviewFragment, let publish = self.publishFragment, let dashboard = self.dashboardFragment else { return }
+        let VCs = [review, publish, dashboard]
+        
+        self.viewControllers?.replaceSubrange(2...2, with: VCs)
+        self.selectedIndex = 4
+        if let reviewList = self.reviewFragment?.topViewController as? ReviewTabController {
+            guard reviewList.reviewTable != nil else { return }
+            reviewList.reloadReviews()
+        }
+    }
+    
+    func signedOut() {
+        self.viewControllers?.replaceSubrange(2...4, with: repeatElement(UIStoryboard(name: "LoginView", bundle: nil).instantiateViewController(identifier: "LoginController"), count: 1))
+        self.selectedIndex = 2
+        
+        self.reviewFragment?.popToRootViewController(animated: false)
     }
 
 }

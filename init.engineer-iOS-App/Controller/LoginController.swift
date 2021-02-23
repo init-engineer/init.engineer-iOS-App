@@ -9,11 +9,14 @@
 import UIKit
 import AppAuth
 import GoogleMobileAds
+import NVActivityIndicatorView
 
 class LoginController: UIViewController, GADBannerViewDelegate {
     
     private var authState: OIDAuthState?
     var bannerView: GADBannerView!
+    
+    var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,11 @@ class LoginController: UIViewController, GADBannerViewDelegate {
         bannerView.rootViewController = self
         bannerView.delegate = self
         bannerView.load(GADRequest())
+        
+        self.loadingView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.loadingView)
+        NSLayoutConstraint.init(item: self.loadingView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint.init(item: self.loadingView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
     }
     
     
@@ -63,17 +71,24 @@ class LoginController: UIViewController, GADBannerViewDelegate {
         print("Initiating authorization request with scope: \(request.scope ?? "nil")")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.currentAuthorizationFlow =
-            OIDAuthState.authState(byPresenting: request, presenting: self) { authState, error in
+            OIDAuthState.authState(byPresenting: request, presenting: self) { [weak self] authState, error in
                 if let authState = authState {
-                    self.authState = authState
+                    self?.authState = authState
                     print("Got authorization tokens. Access token: " +
                             "\(authState.lastTokenResponse?.accessToken ?? "nil")")
                     KeyChainManager.shared.saveToken((authState.lastTokenResponse?.accessToken)!)
-                    self.navigationController?.popViewController(animated: true)
+                    //self.navigationController?.popViewController(animated: true)
+                    if let tabbarVC = self?.tabBarController as? KaobeiTabBarController {
+                        self?.loadingView.startAnimating()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            tabbarVC.signedIn()
+                            self?.loadingView.stopAnimating()
+                        }
+                    }
                 } else {
                     print("Authorization error: \(error?.localizedDescription ?? "Unknown error")")
-                    self.authState = nil
-                    self.loginFailed()
+                    self?.authState = nil
+                    self?.loginFailed()
                 }
             }
     }
