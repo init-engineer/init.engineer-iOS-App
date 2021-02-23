@@ -29,7 +29,7 @@ class KaobeiTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        return true //(viewController != tabBarController.selectedViewController)
+        return (viewController != tabBarController.selectedViewController)
     }
 
 }

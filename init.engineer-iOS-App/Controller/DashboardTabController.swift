@@ -88,6 +88,9 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
     
     func logout(_ action: UIAlertAction) { // Logout action
         KeyChainManager.shared.deleteToken()
+        self.currentPage = 1
+        self.userPosts.removeAll()
+        self.userPostsTableView.reloadData()
         self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
     }
 }
