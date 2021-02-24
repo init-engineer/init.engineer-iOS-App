@@ -30,6 +30,14 @@ class LoginController: UIViewController, GADBannerViewDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     func setupUI() {
         navigationItem.hidesBackButton = true
         // In this case, we instantiate the banner with desired ad size.
