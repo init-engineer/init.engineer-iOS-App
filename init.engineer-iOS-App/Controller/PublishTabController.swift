@@ -35,10 +35,10 @@ class PublishTabController: UIViewController {
         radiusTextView(ruleTextView)
         radiusTextView(articleTextView)
         initArticleTextView(articleTextView)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "發表文章", style: .done, target: self, action: #selector(publishButtonPressed))
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         if let accessToken = KeyChainManager.shared.getToken() {
             print(accessToken)
         }
@@ -143,10 +143,6 @@ class PublishTabController: UIViewController {
                             self?.publishCheckFailed(failTitle: String(failTitle), failedMessage: "上面的數字可以記下來給版主，但應該沒什麼用，重新發一篇如何？")
                         }
                     }
-                    /*
-                     否則？？？？
-                     （如果是 Token 過期就 Delete Token 再用 willViewAppear 的 self.performSegue 那行強制進入 LoginVC）
-                     */
                     break
                 }
             }
@@ -167,10 +163,6 @@ class PublishTabController: UIViewController {
                             self?.publishCheckFailed(failTitle: String(failTitle), failedMessage: "上面的數字可以記下來給版主，但應該沒什麼用，重新發一篇如何？")
                         }
                     }
-                    /*
-                     否則？？？？
-                     （如果是 Token 過期就 Delete Token 再用 willViewAppear 的 self.performSegue 那行強制進入 LoginVC）
-                     */
                     break
                 }
             }
@@ -183,7 +175,7 @@ class PublishTabController: UIViewController {
             publishCheckFailed(failTitle: "呃......", failedMessage: "您必須同意以上版規。")
         }
         else if articleTextView.text == K.publishArticlePlaceholderText && articleTextView.textColor == K.publishArticlePlaceholderTextColor {
-            publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "你根本沒打字 = =") // 加上：欠閃退嗎？
+            publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "欠閃退逆？你根本沒打字 = =")
         }
         else if articleTextView.text.count < 5 {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "至少 5 個字以上")
