@@ -25,8 +25,8 @@ class ArticleCell: UITableViewCell {
     func makeAds(ads: GADBannerView) {
         dispatchViews()
         ads.tag = 1
-        contentView.layer.masksToBounds = true
-        contentView.layer.cornerRadius = 10
+//        contentView.layer.masksToBounds = true
+//        contentView.layer.cornerRadius = 10
         ads.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = .clear
         contentView.addSubview(ads)
@@ -40,7 +40,7 @@ class ArticleCell: UITableViewCell {
     
     func makePost(content: Post) {
         dispatchViews()
-        contentView.layer.masksToBounds = true
+//        contentView.layer.masksToBounds = true
 //        contentView.layer.cornerRadius = 10
         self.id = content.id
         self.stringTag = String.tagConvert(from: content.id)
@@ -52,7 +52,7 @@ class ArticleCell: UITableViewCell {
     
     func makeArticle(content: Article) {
         dispatchViews()
-        contentView.layer.masksToBounds = true
+//        contentView.layer.masksToBounds = true
 //        contentView.layer.cornerRadius = 10
         self.id = content.id
         self.stringTag = String.tagConvert(from: content.id)
