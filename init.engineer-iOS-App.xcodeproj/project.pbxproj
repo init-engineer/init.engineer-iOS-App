@@ -71,6 +71,7 @@
 		A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E853244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld */; };
 		A7D2E857244DE50F00953132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E856244DE50F00953132 /* Assets.xcassets */; };
 		A7D2E85A244DE50F00953132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2E858244DE50F00953132 /* LaunchScreen.storyboard */; };
+		C414D7BA25E6BEA90075CF59 /* PreviewArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414D7B925E6BEA80075CF59 /* PreviewArticleController.swift */; };
 		C45A3A1C25B9363F00F484F1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C45A3A1B25B9363F00F484F1 /* Debug.xcconfig */; };
 		C45A3A4F25B9897300F484F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A3A4E25B9897300F484F1 /* Constants.swift */; };
 		C45DF73625C43D5100415094 /* ReviewTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF73525C43D5100415094 /* ReviewTabController.swift */; };
@@ -231,6 +232,7 @@
 		A7D2E85B244DE50F00953132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2FC4893AB8F71E6DB6F0830 /* Pods-KaobeiAPI.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPI.staging.xcconfig"; path = "Target Support Files/Pods-KaobeiAPI/Pods-KaobeiAPI.staging.xcconfig"; sourceTree = "<group>"; };
 		BB64078BB32035F0DE07E9F0 /* Pods-KaobeiAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPI.debug.xcconfig"; path = "Target Support Files/Pods-KaobeiAPI/Pods-KaobeiAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		C414D7B925E6BEA80075CF59 /* PreviewArticleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewArticleController.swift; sourceTree = "<group>"; };
 		C45A3A1B25B9363F00F484F1 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		C45A3A2525B9372E00F484F1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		C45A3A3025B945C600F484F1 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 		C4DCC3E52487F07F0061C1BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C414D7B925E6BEA80075CF59 /* PreviewArticleController.swift */,
 				A7D2E84E244DE50E00953132 /* IndexTabController.swift */,
 				127FD91A248BAAA4002E9645 /* ArticleTabController.swift */,
 				12CA61C8248C1B580020E606 /* ArticleViewController.swift */,
@@ -917,6 +920,7 @@
 				12CA61C9248C1B580020E606 /* ArticleViewController.swift in Sources */,
 				127FD91D248BAAC1002E9645 /* PublishTabController.swift in Sources */,
 				127FD91B248BAAA4002E9645 /* ArticleTabController.swift in Sources */,
+				C414D7BA25E6BEA90075CF59 /* PreviewArticleController.swift in Sources */,
 				6AFEB9FE25E4366000D01166 /* ReviewCellData.swift in Sources */,
 				6AB6C09725C73304006662F8 /* TableViewTitle.swift in Sources */,
 				6AB6C09225C73271006662F8 /* TableViewGap.swift in Sources */,

@@ -27,16 +27,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2QT-o7-UAT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="965.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發表文章 Publish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByZ-r8-QqA">
-                                                <rect key="frame" x="20" y="29.999999999999996" width="374" height="39.666666666666657"/>
+                                                <rect key="frame" x="20" y="30" width="374" height="42"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dv8-R0-Eln">
-                                                <rect key="frame" x="20" y="89.666666666666657" width="374" height="199.99999999999997"/>
+                                                <rect key="frame" x="20" y="92" width="374" height="200"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="Vwz-K3-2Wo"/>
@@ -46,8 +46,29 @@
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="26"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="H8q-XB-zfb">
+                                                <rect key="frame" x="20" y="312" width="374" height="33"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG8-Ih-G9e">
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="33"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                        <state key="normal" title="選擇主題"/>
+                                                        <connections>
+                                                            <action selector="themeChooseButtonPressed:" destination="Zzm-8s-lRu" eventType="touchUpInside" id="PFj-F7-zI4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7O-iQ-jwp">
+                                                        <rect key="frame" x="197" y="0.0" width="177" height="33"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                        <state key="normal" title="選擇字型"/>
+                                                        <connections>
+                                                            <action selector="fontChooseButtonPressed:" destination="Zzm-8s-lRu" eventType="touchUpInside" id="chH-du-iwc"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6tV-09-H56">
-                                                <rect key="frame" x="20" y="309.66666666666669" width="374" height="31"/>
+                                                <rect key="frame" x="20" y="365" width="374" height="31"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-az-bRZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -61,12 +82,12 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-Iy-1vF">
-                                                <rect key="frame" x="20" y="360.66666666666669" width="374" height="31"/>
+                                                <rect key="frame" x="20" y="416" width="374" height="31"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-jL-EVC">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                                     </switch>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="我已閱讀並同意以上的板規。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="210-kV-orE">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="我已閱讀並同意板規。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="210-kV-orE">
                                                         <rect key="frame" x="69" y="0.0" width="305" height="31"/>
                                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -75,27 +96,21 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CJ-c0-2Ox">
-                                                <rect key="frame" x="20" y="411.66666666666669" width="374" height="32"/>
+                                                <rect key="frame" x="20" y="467" width="374" height="33"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
                                                 <state key="normal" title="選擇圖片"/>
                                                 <connections>
                                                     <action selector="imageUploadButtonPressed:" destination="Zzm-8s-lRu" eventType="touchUpInside" id="eMU-Nb-eZv"/>
                                                 </connections>
                                             </button>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Tt-Gg-spE">
-                                                <rect key="frame" x="20" y="463.66666666666663" width="374" height="216"/>
-                                            </pickerView>
-                                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdJ-mg-nvR">
-                                                <rect key="frame" x="20" y="699.66666666666663" width="374" height="216"/>
-                                            </pickerView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-US-Mog">
-                                                <rect key="frame" x="20" y="935.66666666666663" width="374" height="0.0"/>
+                                                <rect key="frame" x="20" y="520" width="374" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="Cji-fX-NMd"/>
                                                 </constraints>
                                             </imageView>
                                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf5-lA-2df">
-                                                <rect key="frame" x="20" y="935.66666666666663" width="374" height="0.0"/>
+                                                <rect key="frame" x="20" y="520" width="374" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
@@ -170,17 +185,33 @@
                         <outlet property="articleImageView" destination="ENQ-US-Mog" id="Flr-XZ-Zoh"/>
                         <outlet property="articleImageViewConstraintsHeight" destination="Cji-fX-NMd" id="u4F-F5-nkg"/>
                         <outlet property="articleTextView" destination="Dv8-R0-Eln" id="sf1-EK-nq6"/>
-                        <outlet property="fontPickerView" destination="TdJ-mg-nvR" id="5Co-uz-OOk"/>
+                        <outlet property="fontChooseButton" destination="T7O-iQ-jwp" id="Pg2-bI-I5k"/>
                         <outlet property="publishScrollView" destination="fww-ib-WxX" id="NzF-lA-3Eg"/>
                         <outlet property="ruleTextView" destination="kf5-lA-2df" id="hjB-I4-wf5"/>
-                        <outlet property="themePickerView" destination="3Tt-Gg-spE" id="l9N-Bh-oyb"/>
+                        <outlet property="themeChooseButton" destination="LG8-Ih-G9e" id="6ro-OA-tZv"/>
                         <outlet property="toBeContinuedDraw" destination="nAb-az-bRZ" id="yBC-mG-5sh"/>
-                        <segue destination="Qut-Ki-2E0" kind="show" identifier="PublishToLogin" id="edM-bp-uxV"/>
+                        <segue destination="diw-0b-uL0" kind="show" identifier="publishToPreview" id="fi4-8u-3iD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ng-Dq-p4A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="-149.33035714285714"/>
+        </scene>
+        <!--Preview Article Controller-->
+        <scene sceneID="b9R-jf-Woa">
+            <objects>
+                <viewController id="diw-0b-uL0" customClass="PreviewArticleController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nca-pV-DCV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="v3Y-oc-eV2"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5zh-7i-GXd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLs-Pu-1si" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1968" y="-149"/>
         </scene>
         <!--發表文章-->
         <scene sceneID="tyz-R6-OoN">
@@ -198,16 +229,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQK-ge-Wjc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130" y="-149"/>
-        </scene>
-        <!--LoginView-->
-        <scene sceneID="AGP-XQ-EZp">
-            <objects>
-                <viewControllerPlaceholder storyboardName="LoginView" id="Qut-Ki-2E0" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="n0v-ED-UIB"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YhT-vR-4sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1739" y="-149"/>
         </scene>
     </scenes>
     <resources>

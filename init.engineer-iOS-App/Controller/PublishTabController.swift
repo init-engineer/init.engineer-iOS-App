@@ -14,37 +14,24 @@ class PublishTabController: UIViewController {
     @IBOutlet weak var articleImageView: UIImageView!                           // 使用者上傳的圖片預覽
     @IBOutlet weak var articleImageViewConstraintsHeight: NSLayoutConstraint!   // 圖片預覽的高度
     @IBOutlet weak var articleTextView: UITextView!                             // 使用者文章內容
+    @IBOutlet weak var themeChooseButton: UIButton!
+    @IBOutlet weak var fontChooseButton: UIButton!
     @IBOutlet weak var toBeContinuedDraw: UISwitch!                             // To Be Continued 繪製開關
     @IBOutlet weak var ruleTextView: UITextView!                                // 板規文字
-    @IBOutlet weak var themePickerView: UIPickerView!                           // 主題選擇器
-    @IBOutlet weak var fontPickerView: UIPickerView!                            // 字體選擇器
     @IBOutlet weak var agreePublishRule: UISwitch!                              // 同意板規開關
     
-    let fontOptions = FontManager.shared.fontExistArray
     let themeOptions = ThemeManager.shared.themeExistArray
+    let fontOptions = FontManager.shared.fontExistArray
     var imageExtension = "jpg"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         articleImageView.isHidden = true
         publishScrollView.delegate = self
-        themePickerView.dataSource = self
-        themePickerView.delegate = self
-        fontPickerView.dataSource = self
-        fontPickerView.delegate = self
         radiusTextView(ruleTextView)
         radiusTextView(articleTextView)
         initArticleTextView(articleTextView)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "發表文章", style: .done, target: self, action: #selector(publishButtonPressed))
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if let accessToken = KeyChainManager.shared.getToken() {
-            print(accessToken)
-        }
-        else {
-            self.performSegue(withIdentifier: K.publishToLoginSegue, sender: self)
-        }
     }
     
     private func radiusTextView(_ tv: UITextView) {     // 將 TextView 變得圓角
@@ -74,6 +61,32 @@ class PublishTabController: UIViewController {
         controller.delegate = self
     }
     
+    @IBAction func themeChooseButtonPressed(_ sender: UIButton) {
+        let controller = UIAlertController(title: "", message: "選擇主題", preferredStyle: .actionSheet)
+        for theme in themeOptions {
+            let action = UIAlertAction(title: theme, style: .default) { (action) in
+                self.themeChooseButton.setTitle(action.title, for: .normal)
+            }
+            controller.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
+    @IBAction func fontChooseButtonPressed(_ sender: UIButton) {
+        let controller = UIAlertController(title: "", message: "選擇字型", preferredStyle: .actionSheet)
+        for font in fontOptions {
+            let action = UIAlertAction(title: font, style: .default) { (action) in
+                self.fontChooseButton.setTitle(action.title, for: .normal)
+            }
+            controller.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
     func publishCheckFailed(failTitle: String, failedMessage: String) { // 顯示檢查錯誤訊息
         let controller = UIAlertController(title: failTitle, message: failedMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Peko~", style: .default, handler: nil)
@@ -81,96 +94,7 @@ class PublishTabController: UIViewController {
         present(controller, animated: true, completion: nil)
     }
     
-    func publishCheckSuccess() {        // 檢查正確則確認是否發表文章
-        let controller = UIAlertController(title: "您確定要發表文章嗎？", message: "如果您按下射射射，那文章就真的會射出去了。", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "射射射", style: .default, handler: sendArticle)
-        let cancelAction = UIAlertAction(title: "不要！", style: .cancel)
-        controller.addAction(okAction)
-        controller.addAction(cancelAction)
-        present(controller, animated: true, completion: nil)
-    }
-    
-    func publishSendSuccess() {        // 文章發送成功
-        let controller = UIAlertController(title: "射射射！", message: "文章射出去惹，自動前往審核文章頁面。", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Peko~", style: .default)
-        controller.addAction(okAction)
-        present(controller, animated: true, completion: nil)
-    }
-    
-    private func resetPublishArticleForm() {    // 重置發表文章表單所有內容
-        articleTextView.text = K.publishArticlePlaceholderText
-        articleTextView.textColor = K.publishArticlePlaceholderTextColor
-        themePickerView.selectRow(0, inComponent: 0, animated: true)
-        fontPickerView.selectRow(0, inComponent: 0, animated: true)
-        articleImageView.image = nil
-        articleImageView.isHidden = true
-        toBeContinuedDraw.setOn(false, animated: true)
-        agreePublishRule.setOn(false, animated: true)
-    }
-    
-    private func sendArticle(_ :UIAlertAction) {    // 發送文章實作
-        guard let accessToken = KeyChainManager.shared.getToken() else {
-            return
-        }
-        let article = articleTextView.text ?? ""
-        let font: String =  FontManager.shared.getFontValue(fontOptions[fontPickerView.selectedRow(inComponent: 0)])
-        let theme: String = ThemeManager.shared.getThemeValue(themeOptions[themePickerView.selectedRow(inComponent: 0)])
-        let image: Data? = articleImageView.image?.jpegData(compressionQuality: 0.5)
-        let toBeContinued = toBeContinuedDraw.isOn
-        
-        let request = KBPostUserPublishing(accessToken: accessToken, article: article, toBeContinued: toBeContinued, font: font, theme: theme, image: image)
-        
-        if let _ = request.imageData {
-            KaobeiConnection.uploadRequest(api: request, with: self.imageExtension) { [weak self] response in
-                switch response.result {
-                case .success(_):
-                    /*
-                     如果 發送成功 則
-                     */
-                    self?.publishSendSuccess()        // 顯示文章發送成功
-                    self?.resetPublishArticleForm()   // 重置發表文章表單所有內容
-                    self?.tabBarController?.selectedIndex = 2    // 跳轉到審核文章
-                    if let reviewNavi = self?.tabBarController?.selectedViewController as? UINavigationController {
-                        reviewNavi.popToRootViewController(animated: true)
-                        if let reviewListVC = reviewNavi.topViewController as? ReviewTabController {
-                            reviewListVC.reloadReviews()
-                        }
-                    }
-                    break
-                case .failure(_):
-                    if let failTitle = response.response?.statusCode {
-                        DispatchQueue.main.async {
-                            self?.publishCheckFailed(failTitle: String(failTitle), failedMessage: "上面的數字可以記下來給版主，但應該沒什麼用，重新發一篇如何？")
-                        }
-                    }
-                    break
-                }
-            }
-        } else {
-            KaobeiConnection.sendRequest(api: request) { [weak self] response in
-                switch response.result {
-                case .success(_):
-                    /*
-                     如果 發送成功 則
-                     */
-                    self?.publishSendSuccess()        // 顯示文章發送成功
-                    self?.resetPublishArticleForm()   // 重置發表文章表單所有內容
-                    self?.tabBarController?.selectedIndex = 2    // 跳轉到審核文章
-                    break
-                case .failure(_):
-                    if let failTitle = response.response?.statusCode {
-                        DispatchQueue.main.async {
-                            self?.publishCheckFailed(failTitle: String(failTitle), failedMessage: "上面的數字可以記下來給版主，但應該沒什麼用，重新發一篇如何？")
-                        }
-                    }
-                    break
-                }
-            }
-        }
-    }
-    
     @IBAction func publishButtonPressed(_ sender: UIButton) {   // 發送文章按鈕動作
-
         if !agreePublishRule.isOn {
             publishCheckFailed(failTitle: "呃......", failedMessage: "您必須同意以上版規。")
         }
@@ -181,7 +105,7 @@ class PublishTabController: UIViewController {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "至少 5 個字以上")
         }
         else {
-            publishCheckSuccess()
+            performSegue(withIdentifier: "publishToPreview", sender: nil)
         }
     }
 }
@@ -209,32 +133,6 @@ extension PublishTabController: UITextViewDelegate {
             textView.textColor = K.publishArticlePlaceholderTextColor
         }
     }
-}
-
-// MARK: - UIPickerViewDataSource, UIPickerViewDelegate
-
-extension PublishTabController: UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView.tag == 1 {
-            return fontOptions.count
-        } else {
-            return themeOptions.count
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {   // 可以想說用主題顏色，但我懶得做，全都先用白色再說
-        if pickerView.tag == 1 {
-            return NSAttributedString(string: fontOptions[row])
-        } else {
-            return NSAttributedString(string: themeOptions[row])
-        }
-    }
-    
 }
 
 // MARK: - UIImagePickerControllerDelegate
