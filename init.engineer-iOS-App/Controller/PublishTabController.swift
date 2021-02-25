@@ -22,6 +22,8 @@ class PublishTabController: UIViewController {
     
     let themeOptions = ThemeManager.shared.themeExistArray
     let fontOptions = FontManager.shared.fontExistArray
+    var themeChooseName = ""
+    var fontChooseName = ""
     var imageExtension = "jpg"
     
     override func viewDidLoad() {
@@ -31,7 +33,7 @@ class PublishTabController: UIViewController {
         radiusTextView(ruleTextView)
         radiusTextView(articleTextView)
         initArticleTextView(articleTextView)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "發表文章", style: .done, target: self, action: #selector(publishButtonPressed))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "預覽文章", style: .done, target: self, action: #selector(publishButtonPressed))
     }
     
     private func radiusTextView(_ tv: UITextView) {     // 將 TextView 變得圓角
@@ -66,6 +68,7 @@ class PublishTabController: UIViewController {
         for theme in themeOptions {
             let action = UIAlertAction(title: theme, style: .default) { (action) in
                 self.themeChooseButton.setTitle(action.title, for: .normal)
+                self.themeChooseName = action.title ?? ""
             }
             controller.addAction(action)
         }
@@ -79,6 +82,7 @@ class PublishTabController: UIViewController {
         for font in fontOptions {
             let action = UIAlertAction(title: font, style: .default) { (action) in
                 self.fontChooseButton.setTitle(action.title, for: .normal)
+                self.fontChooseName = action.title ?? ""
             }
             controller.addAction(action)
         }
@@ -97,15 +101,27 @@ class PublishTabController: UIViewController {
     @IBAction func publishButtonPressed(_ sender: UIButton) {   // 發送文章按鈕動作
         if !agreePublishRule.isOn {
             publishCheckFailed(failTitle: "呃......", failedMessage: "您必須同意以上版規。")
-        }
-        else if articleTextView.text == K.publishArticlePlaceholderText && articleTextView.textColor == K.publishArticlePlaceholderTextColor {
+        } else if articleTextView.text == K.publishArticlePlaceholderText && articleTextView.textColor == K.publishArticlePlaceholderTextColor {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "欠閃退逆？你根本沒打字 = =")
-        }
-        else if articleTextView.text.count < 5 {
+        } else if articleTextView.text.count < 5 {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "至少 5 個字以上")
-        }
-        else {
+        } else if themeChooseName == "" {
+            publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "你沒有選主題啊！")
+        } else if fontChooseName == "" {
+            publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "你沒有選字型啊！")
+        } else {
             performSegue(withIdentifier: "publishToPreview", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.publishToPreviewSegue {
+            let controller = segue.destination as? PreviewArticleController
+            controller?.articleText = articleTextView.text
+            controller?.themeChooseName = themeChooseName
+            controller?.fontChooseName = fontChooseName
+            controller?.articleImage = articleImageView.image
+            controller?.toBeContinue = toBeContinuedDraw.isOn
         }
     }
 }

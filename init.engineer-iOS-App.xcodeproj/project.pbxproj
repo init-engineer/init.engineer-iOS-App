@@ -490,13 +490,13 @@
 		C4DCC3E52487F07F0061C1BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C414D7B925E6BEA80075CF59 /* PreviewArticleController.swift */,
 				A7D2E84E244DE50E00953132 /* IndexTabController.swift */,
 				127FD91A248BAAA4002E9645 /* ArticleTabController.swift */,
 				12CA61C8248C1B580020E606 /* ArticleViewController.swift */,
 				C45DF73525C43D5100415094 /* ReviewTabController.swift */,
 				85BB1BB825D16C7C0016CDCF /* ReviewDetailViewController.swift */,
 				127FD91C248BAAC1002E9645 /* PublishTabController.swift */,
+				C414D7B925E6BEA80075CF59 /* PreviewArticleController.swift */,
 				127FD91E248BAACF002E9645 /* DashboardTabController.swift */,
 				12C64453248E129A005A2974 /* LoginController.swift */,
 				C48F830D25C8CEB900D98F93 /* KaobeiTabBarController.swift */,
