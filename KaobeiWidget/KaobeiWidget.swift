@@ -60,7 +60,7 @@ struct KaobeiWidgetEntryView : View {
     var body: some View {
         ZStack {
             ColorConstants.themeBackgroundColor.edgesIgnoringSafeArea(.all)
-            Text(entry.article).foregroundColor(ColorConstants.textColor).font(FontConstant.textFont)
+            Text(entry.article).foregroundColor(ColorConstants.textColor).font(FontConstant.textFont).padding()
         }
     }
     
