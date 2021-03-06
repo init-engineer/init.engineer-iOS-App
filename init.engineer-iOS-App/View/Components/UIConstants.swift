@@ -11,7 +11,7 @@ import UIKit
 
 struct ColorConstants {
     struct Card {
-        static let textColor = UIColor.init(red: 0x28/255.0, green: 0xa7/255.0, blue: 0x45/255.0, alpha: 1.0)
+        static let textColor = UIColor.init(red: 0x05/255.0, green: 0xee/255.0, blue: 0x37/255.0, alpha: 1.0)
         static let backgroundColor = UIColor.init(red: 0x18/255.0, green: 0x18/255.0, blue: 0x18/255.0, alpha: 1.0)
         static let buttonTextColor = UIColor.init(red: 0x00/255.0, green: 0x7b/255.0, blue: 0xff/255.0, alpha: 1.0)
         static let whiteTextColor = UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)

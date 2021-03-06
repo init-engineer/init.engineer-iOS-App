@@ -75,6 +75,7 @@
 		C45A3A1C25B9363F00F484F1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C45A3A1B25B9363F00F484F1 /* Debug.xcconfig */; };
 		C45A3A4F25B9897300F484F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A3A4E25B9897300F484F1 /* Constants.swift */; };
 		C45DF73625C43D5100415094 /* ReviewTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF73525C43D5100415094 /* ReviewTabController.swift */; };
+		C46476E525F288A100C9F8DD /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46476E425F288A100C9F8DD /* UIColorEx.swift */; };
 		C48F826625C54F0200D98F93 /* IndexButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F826525C54F0200D98F93 /* IndexButtonCell.swift */; };
 		C48F826B25C54F2200D98F93 /* IndexButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48F826A25C54F2200D98F93 /* IndexButtonCell.xib */; };
 		C48F830125C79A0400D98F93 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F830025C79A0400D98F93 /* FontManager.swift */; };
@@ -238,6 +239,7 @@
 		C45A3A3025B945C600F484F1 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		C45A3A4E25B9897300F484F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C45DF73525C43D5100415094 /* ReviewTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewTabController.swift; path = "init.engineer-iOS-App/Controller/ReviewTabController.swift"; sourceTree = SOURCE_ROOT; };
+		C46476E425F288A100C9F8DD /* UIColorEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorEx.swift; sourceTree = "<group>"; };
 		C48F826525C54F0200D98F93 /* IndexButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexButtonCell.swift; sourceTree = "<group>"; };
 		C48F826A25C54F2200D98F93 /* IndexButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexButtonCell.xib; sourceTree = "<group>"; };
 		C48F830025C79A0400D98F93 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				6AE36BD225D44CDF004BDD1D /* NVActivityIndicatorEx.swift */,
 				6AE36BE025D44D12004BDD1D /* StringEx.swift */,
+				C46476E425F288A100C9F8DD /* UIColorEx.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -922,6 +925,7 @@
 				127FD91B248BAAA4002E9645 /* ArticleTabController.swift in Sources */,
 				C414D7BA25E6BEA90075CF59 /* PreviewArticleController.swift in Sources */,
 				6AFEB9FE25E4366000D01166 /* ReviewCellData.swift in Sources */,
+				C46476E525F288A100C9F8DD /* UIColorEx.swift in Sources */,
 				6AB6C09725C73304006662F8 /* TableViewTitle.swift in Sources */,
 				6AB6C09225C73271006662F8 /* TableViewGap.swift in Sources */,
 				12C64454248E129A005A2974 /* LoginController.swift in Sources */,
