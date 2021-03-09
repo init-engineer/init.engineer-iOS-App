@@ -87,6 +87,7 @@
 		C4A72FB725D821E300327B0E /* ArticleCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A72FB625D821E300327B0E /* ArticleCommentCell.swift */; };
 		C4A72FCB25D84A1600327B0E /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A72FCA25D84A1600327B0E /* ProfileCell.swift */; };
 		C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
+		DCDF250525F7DB3000B9137A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A3A4E25B9897300F484F1 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -887,6 +888,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12C8B0162533750C0072F653 /* KaobeiAPITests.swift in Sources */,
+				DCDF250525F7DB3000B9137A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
