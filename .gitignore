@@ -96,4 +96,4 @@ iOSInjectionProject/
 
 **.xcconfig
 
-KaobeiAPITests/TestingConstants.swift
+# KaobeiAPITests/TestingConstants.swift
