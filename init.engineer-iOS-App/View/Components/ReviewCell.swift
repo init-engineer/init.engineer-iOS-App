@@ -37,8 +37,20 @@ class ReviewCell: UITableViewCell {
 //        contentView.layer.cornerRadius = 10
         ads.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = .clear
+        let placeHolder = UILabel()
+        placeHolder.translatesAutoresizingMaskIntoConstraints = false
+        placeHolder.text = "G站傲嬌中"
+        placeHolder.font = FontConstant.Default.text
+        placeHolder.textColor = ColorConstants.Card.textColor
+        placeHolder.textAlignment = .center
+        
+        contentView.addSubview(placeHolder)
         contentView.addSubview(ads)
         contentView.addConstraints([
+            placeHolder.topAnchor.constraint(equalTo: contentView.topAnchor),
+            placeHolder.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            placeHolder.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            placeHolder.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             ads.topAnchor.constraint(equalTo: contentView.topAnchor),
             ads.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             ads.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
