@@ -188,6 +188,17 @@
       "value": "32d2a897602ef652ed8e15d66128aa74"
     },
     {
+      "name": "Windows 最棒的畫面 測試人員組件",
+      "text_color": "#fafafa",
+      "background_color": "#0f7d12",
+      "additional": {
+        "header": "drawable.test2",
+        "footer": "drawable.test1",
+        "background_image": "0"
+      },
+      "value": "tumx453xqZLjf5kaFFBzNj4gqVXKWqXz"
+    },
+    {
       "name": "粉紅色",
       "text_color": "#ff5376",
       "background_color": "#f8c0c8",

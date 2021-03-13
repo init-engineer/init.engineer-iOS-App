@@ -11,6 +11,15 @@ import KaobeiAPI
 
 class PreviewArticleController: UIViewController {
     
+    @IBOutlet weak var windowsScreenHeader: UIImageView!
+    @IBOutlet weak var windowsScreenFooter: UIImageView!
+    @IBOutlet weak var windowsScreenHeaderHeight: NSLayoutConstraint!
+    @IBOutlet weak var windowsScreenFooterHeight: NSLayoutConstraint!
+    @IBOutlet weak var articleHeaderTextView: UITextView!
+    @IBOutlet weak var articleTextView: UITextView!
+    @IBOutlet weak var articleFooterStackView: UIStackView!
+    @IBOutlet weak var articleFooterLeftTextView: UITextView!
+    @IBOutlet weak var articleFooterRightTextView: UITextView!
     var articleText: String?
     var themeChooseName: String?
     var fontChooseName: String?
@@ -20,6 +29,27 @@ class PreviewArticleController: UIViewController {
     
     override func viewDidLoad() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "發表文章", style: .done, target: self, action: #selector(publishCheckSuccess))
+        
+        articleTextView.text = articleText
+        guard let themeChooseName = themeChooseName else { return }
+        if let theme = ThemeManager.shared.getThemeData(themeChooseName) {
+            articleTextView.backgroundColor = UIColor.init(hex: theme.background_color)
+            articleTextView.textColor = UIColor.init(hex: theme.text_color)
+            articleHeaderTextView.backgroundColor = UIColor.init(hex: theme.background_color)
+            articleFooterLeftTextView.backgroundColor = UIColor.init(hex: theme.background_color)
+            articleFooterLeftTextView.textColor = UIColor.init(hex: theme.text_color)
+            articleFooterRightTextView.backgroundColor = UIColor.init(hex: theme.background_color)
+            articleFooterRightTextView.textColor = UIColor.init(hex: theme.text_color)
+            if theme.name == "Windows 最棒的畫面 測試人員組件" {
+                articleHeaderTextView.isHidden = true
+                articleFooterStackView.isHidden = true
+                displayWindowsScreen(isGreen: true)
+            } else if theme.name == "Windows 最棒的畫面" {
+                articleHeaderTextView.isHidden = true
+                articleFooterStackView.isHidden = true
+                displayWindowsScreen(isGreen: false)
+            }
+        }
     }
     
     @objc func publishCheckSuccess() {
@@ -53,6 +83,27 @@ class PreviewArticleController: UIViewController {
 //        toBeContinuedDraw.setOn(false, animated: true)
 //        agreePublishRule.setOn(false, animated: true)
 //    }
+    
+    func displayWindowsScreen(isGreen: Bool = false) {
+        if isGreen {
+            windowsScreenHeader.image = UIImage(named: "green_screen_header")
+            windowsScreenFooter.image = UIImage(named: "green_screen_footer")
+        }
+        if let image = windowsScreenHeader.image {
+            let ratio = image.size.width / image.size.height
+            let newHeight = windowsScreenHeader.frame.width / ratio
+            windowsScreenHeaderHeight.constant = newHeight
+            view.layoutIfNeeded()
+            windowsScreenHeader.isHidden = false
+        }
+        if let image = windowsScreenFooter.image {
+            let ratio = image.size.width / image.size.height
+            let newHeight = windowsScreenFooter.frame.width / ratio
+            windowsScreenFooterHeight.constant = newHeight
+            view.layoutIfNeeded()
+            windowsScreenFooter.isHidden = false
+        }
+    }
     
     private func sendArticle(_ :UIAlertAction) {    // 發送文章實作
         guard let accessToken = KeyChainManager.shared.getToken() else {

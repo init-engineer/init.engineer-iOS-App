@@ -59,7 +59,6 @@
 		85AB745925B7611D00F6238A /* KBArticleVoteAye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */; };
 		85AB745D25B7612900F6238A /* KBArticleVoteNay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */; };
 		85AB746125B762D500F6238A /* KBCommonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB746025B762D500F6238A /* KBCommonTypes.swift */; };
-		85AB74B425BA2EFE00F6238A /* TestingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB74B325BA2EFE00F6238A /* TestingConstants.swift */; };
 		85BB1BB925D16C7C0016CDCF /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BB1BB825D16C7C0016CDCF /* ReviewDetailViewController.swift */; };
 		85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */; };
 		85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CB253E9A2200CEA9DF /* KBArticleList.swift */; };
@@ -215,7 +214,6 @@
 		85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleVoteAye.swift; sourceTree = "<group>"; };
 		85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBArticleVoteNay.swift; sourceTree = "<group>"; };
 		85AB746025B762D500F6238A /* KBCommonTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBCommonTypes.swift; sourceTree = "<group>"; };
-		85AB74B325BA2EFE00F6238A /* TestingConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingConstants.swift; sourceTree = "<group>"; };
 		85BB1BB825D16C7C0016CDCF /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
 		85C012C4253E63AC00CEA9DF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiRequestProtocol.swift; sourceTree = "<group>"; };
@@ -319,7 +317,6 @@
 			isa = PBXGroup;
 			children = (
 				12C8B0152533750C0072F653 /* KaobeiAPITests.swift */,
-				85AB74B325BA2EFE00F6238A /* TestingConstants.swift */,
 				12C8B0172533750C0072F653 /* Info.plist */,
 			);
 			path = KaobeiAPITests;
@@ -895,7 +892,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85AB74B425BA2EFE00F6238A /* TestingConstants.swift in Sources */,
 				12C8B0162533750C0072F653 /* KaobeiAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

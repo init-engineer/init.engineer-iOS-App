@@ -36,6 +36,10 @@ class ThemeManager {
     func getThemeValue(_ name: String) -> String {
         return themeList[name]?.value ?? ""
     }
+    
+    func getThemeData(_ name: String) -> Theme? {
+        return themeList[name] ?? nil
+    }
 }
 
 class ThemeResopnse: Codable {
