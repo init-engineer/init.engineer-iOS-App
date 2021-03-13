@@ -1,6 +1,12 @@
 # init.engineer-iOS-App
 這是一份純靠北工程師的 iOS App 專案。
 
+# 初始化
+
+```
+cd scripts
+./initialize.sh
+```
 
 
 # 著作權

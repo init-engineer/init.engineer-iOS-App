@@ -8,9 +8,30 @@
 
 import XCTest
 import Alamofire
+@testable import 純靠北工程師
 @testable import KaobeiAPI
 
 class KaobeiAPITests: XCTestCase {
+    
+    var token: String = ""
+    
+    var id: String = ""
+    
+    override func setUp() {
+        super.setUp()
+    
+        if let id = K.getInfoPlistByKey("KaobeiID"), !id.isEmpty {
+            self.id = id
+        } else {
+            fatalError("missing Kaobei id config value")
+        }
+        
+        if let token = K.getInfoPlistByKey("KaobeiToken"), !token.isEmpty {
+            self.token = token
+        } else {
+            fatalError("missing Kaobei token config value")
+        }
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -95,7 +116,6 @@ class KaobeiAPITests: XCTestCase {
     }
     
     func testUserProfile() throws {
-        let token = TestingConstrants.getToken()
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let request = KBGetUserProfile.init(accessToken: token)
@@ -111,7 +131,7 @@ class KaobeiAPITests: XCTestCase {
             case .success(let data):
                 print("Type of data is: \(type(of: data))")
                 XCTAssert(type(of: data) == KBUserProfile.self)
-                XCTAssertEqual(data.data.id, TestingConstrants.getID())
+                XCTAssertEqual(String(data.data.id), self.id)
                 break
             case .failure(let error):
                 XCTFail(error.errorDescription ?? "")
@@ -139,7 +159,7 @@ class KaobeiAPITests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        let request = KBPostUserPublishing.init(accessToken: TestingConstrants.getToken(), article: "純靠Android App測試\n靠！不小心送出了", font: "Auraka", theme: "黑底綠字")
+        let request = KBPostUserPublishing.init(accessToken: token, article: "純靠Android App測試\n靠！不小心送出了", toBeContinued: true, font: "Auraka", theme: "黑底綠字")
         
         let expect = expectation(description: "Waiting for response")
         
@@ -172,7 +192,7 @@ class KaobeiAPITests: XCTestCase {
     func testArticleReviewList() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let request = KBGetArticleReviewList.init(accessToken: TestingConstrants.getToken())
+        let request = KBGetArticleReviewList.init(accessToken: token, page: 0)
         
         let expect = expectation(description: "Waiting for response")
         

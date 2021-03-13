@@ -36,6 +36,10 @@
 	<string>$(ADMOB_ID)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>KaobeiID</key>
+	<string>$(KAOBEI_ID)</string>
+	<key>KaobeiToken</key>
+	<string>$(KAOBEI_TOKEN)</string>
 	<key>Keychain Service Name</key>
 	<string>$(KEYCHAIN_SERVICE_NAME)</string>
 	<key>LSApplicationCategoryType</key>

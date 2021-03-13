@@ -131,10 +131,13 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
                 self?.userPostsTableView.reloadData()
                 self?.currentPage = 2
                 break
-            case .failure(let error):
-                print(error.responseCode ?? "")
+            case .failure(let _):
+                print(response.response?.statusCode ?? "No status code")
                 self?.userPosts.append(nil)
                 self?.userPostsTableView.reloadData()
+                if response.response?.statusCode == 401 {
+                    print("請重新登入")
+                }
                 break
             }
             
