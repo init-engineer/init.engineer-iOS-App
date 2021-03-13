@@ -99,9 +99,7 @@ class PublishTabController: UIViewController {
     }
     
     @IBAction func publishButtonPressed(_ sender: UIButton) {   // 發送文章按鈕動作
-        if !agreePublishRule.isOn {
-            publishCheckFailed(failTitle: "呃......", failedMessage: "您必須同意以上版規。")
-        } else if articleTextView.text == K.publishArticlePlaceholderText && articleTextView.textColor == K.publishArticlePlaceholderTextColor {
+        if articleTextView.text == K.publishArticlePlaceholderText && articleTextView.textColor == K.publishArticlePlaceholderTextColor {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "欠閃退逆？你根本沒打字 = =")
         } else if articleTextView.text.count < 5 {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "至少 5 個字以上")
@@ -109,6 +107,8 @@ class PublishTabController: UIViewController {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "你沒有選主題啊！")
         } else if fontChooseName == "" {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "你沒有選字型啊！")
+        } else if !agreePublishRule.isOn {
+            publishCheckFailed(failTitle: "呃......", failedMessage: "您必須同意以上版規。")
         } else {
             performSegue(withIdentifier: "publishToPreview", sender: nil)
         }
@@ -122,6 +122,7 @@ class PublishTabController: UIViewController {
             controller?.fontChooseName = fontChooseName
             controller?.articleImage = articleImageView.image
             controller?.toBeContinue = toBeContinuedDraw.isOn
+            controller?.imageExtension = imageExtension;
         }
     }
 }

@@ -2,8 +2,8 @@
   "themes": [
     {
       "name": "黑底綠字",
-      "text_color": "#28a745",
-      "background_color": "#212529",
+      "text_color": "#01d731",
+      "background_color": "#000000",
       "value": "2e6046c7387d8fbe9acd700394a3add3",
       "additional": {
         "header": "0",
@@ -13,8 +13,8 @@
     },
     {
       "name": "黑底黃字",
-      "text_color": "#ffc107",
-      "background_color": "#212529",
+      "text_color": "#ebd443",
+      "background_color": "#000000",
       "value": "be551aa525b9d13790278b008a9ec7bf",
       "additional": {
         "header": "0",
@@ -25,7 +25,7 @@
     {
       "name": "黑底白字",
       "text_color": "#fafafa",
-      "background_color": "#212529",
+      "background_color": "#000000",
       "value": "8a755c0bd32e29f813c1aa4267357d5a",
       "additional": {
         "header": "0",
@@ -35,8 +35,8 @@
     },
     {
       "name": "黑底紅字",
-      "text_color": "#dc3545",
-      "background_color": "#212529",
+      "text_color": "#dc3646",
+      "background_color": "#000000",
       "value": "507d8c23bdcc98850c7be1c1286d5dcf",
       "additional": {
         "header": "0",

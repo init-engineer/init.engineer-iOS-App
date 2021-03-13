@@ -17,6 +17,10 @@ class PreviewArticleController: UIViewController {
     @IBOutlet weak var windowsScreenFooterHeight: NSLayoutConstraint!
     @IBOutlet weak var articleHeaderTextView: UITextView!
     @IBOutlet weak var articleTextView: UITextView!
+    @IBOutlet weak var toBeContinuedStackView: UIStackView!
+    @IBOutlet weak var toBeContinuedImageView: UIImageView!
+    @IBOutlet weak var toBeContinuedBlank: UITextView!
+    @IBOutlet weak var toBeContinuedImageHeight: NSLayoutConstraint!
     @IBOutlet weak var articleFooterStackView: UIStackView!
     @IBOutlet weak var articleFooterLeftTextView: UITextView!
     @IBOutlet weak var articleFooterRightTextView: UITextView!
@@ -36,6 +40,8 @@ class PreviewArticleController: UIViewController {
             articleTextView.backgroundColor = UIColor.init(hex: theme.background_color)
             articleTextView.textColor = UIColor.init(hex: theme.text_color)
             articleHeaderTextView.backgroundColor = UIColor.init(hex: theme.background_color)
+            toBeContinuedImageView.backgroundColor = UIColor.init(hex: theme.background_color)
+            toBeContinuedBlank.backgroundColor = UIColor.init(hex: theme.background_color)
             articleFooterLeftTextView.backgroundColor = UIColor.init(hex: theme.background_color)
             articleFooterLeftTextView.textColor = UIColor.init(hex: theme.text_color)
             articleFooterRightTextView.backgroundColor = UIColor.init(hex: theme.background_color)
@@ -49,6 +55,13 @@ class PreviewArticleController: UIViewController {
                 articleFooterStackView.isHidden = true
                 displayWindowsScreen(isGreen: false)
             }
+        }
+        
+        guard let toBeContinued = toBeContinue else { return }
+        if toBeContinued {
+            displayToBeContinued()
+        } else {
+            toBeContinuedStackView.isHidden = true
         }
     }
     
@@ -83,6 +96,17 @@ class PreviewArticleController: UIViewController {
 //        toBeContinuedDraw.setOn(false, animated: true)
 //        agreePublishRule.setOn(false, animated: true)
 //    }
+    
+    func displayToBeContinued() {
+        toBeContinuedStackView.isHidden = false
+        if let image = toBeContinuedImageView.image {
+            let ratio = image.size.width / image.size.height
+            let newHeight = toBeContinuedImageView.frame.width / ratio
+            toBeContinuedImageHeight.constant = newHeight
+            view.layoutIfNeeded()
+            toBeContinuedImageView.isHidden = false
+        }
+    }
     
     func displayWindowsScreen(isGreen: Bool = false) {
         if isGreen {
