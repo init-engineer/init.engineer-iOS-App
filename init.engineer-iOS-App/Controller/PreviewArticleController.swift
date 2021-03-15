@@ -66,7 +66,7 @@ class PreviewArticleController: UIViewController {
     }
     
     @objc func publishCheckSuccess() {
-        let controller = UIAlertController(title: "您確定要發表文章嗎？", message: "如果您按下射射射，那文章就真的會射出去了。", preferredStyle: .alert)
+        let controller = UIAlertController(title: "您確定要發表文章嗎？", message: "發表文章視為同意版規。\n如果您按下射射射，那文章就真的會射出去了。", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "射射射", style: .default, handler: sendArticle)
         let cancelAction = UIAlertAction(title: "不要！", style: .cancel)
         controller.addAction(okAction)

@@ -22,8 +22,8 @@ class PublishTabController: UIViewController {
     
     let themeOptions = ThemeManager.shared.themeExistArray
     let fontOptions = FontManager.shared.fontExistArray
-    var themeChooseName = ""
-    var fontChooseName = ""
+    var themeChooseName = "黑底綠字"
+    var fontChooseName = "AURAKA 點陣宋字型"
     var imageExtension = "jpg"
     
     override func viewDidLoad() {
@@ -107,11 +107,12 @@ class PublishTabController: UIViewController {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "你沒有選主題啊！")
         } else if fontChooseName == "" {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "你沒有選字型啊！")
-        } else if !agreePublishRule.isOn {
-            publishCheckFailed(failTitle: "呃......", failedMessage: "您必須同意以上版規。")
         } else {
             performSegue(withIdentifier: "publishToPreview", sender: nil)
         }
+//        else if !agreePublishRule.isOn {
+//           publishCheckFailed(failTitle: "呃......", failedMessage: "您必須同意以上版規。")
+//       }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
