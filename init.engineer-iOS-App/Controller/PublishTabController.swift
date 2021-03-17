@@ -101,8 +101,8 @@ class PublishTabController: UIViewController {
     @IBAction func publishButtonPressed(_ sender: UIButton) {   // 發送文章按鈕動作
         if articleTextView.text == K.publishArticlePlaceholderText && articleTextView.textColor == K.publishArticlePlaceholderTextColor {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "欠閃退逆？你根本沒打字 = =")
-        } else if articleTextView.text.count < 5 {
-            publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "至少 5 個字以上")
+        } else if articleTextView.text.count < 6 {
+            publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "至少 6 個字以上")
         } else if themeChooseName == "" {
             publishCheckFailed(failTitle: "您根本的內容不符合規範啊！", failedMessage: "你沒有選主題啊！")
         } else if fontChooseName == "" {
