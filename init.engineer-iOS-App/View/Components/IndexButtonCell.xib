@@ -41,19 +41,18 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="這是標題的啦" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJf-3Y-owe">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="55.5"/>
                                     <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="這欄是小說明的啦" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-e0-te9">
                                     <rect key="frame" x="0.0" y="55.5" width="200" height="44.5"/>
                                     <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="16"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="nNU-0M-nMw" firstAttribute="top" secondItem="zVN-cl-dIg" secondAttribute="top" id="HbM-Ga-N6S"/>
                         <constraint firstAttribute="bottom" secondItem="nNU-0M-nMw" secondAttribute="bottom" id="oYj-e2-qwc"/>
