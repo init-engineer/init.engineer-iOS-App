@@ -155,6 +155,12 @@ class ReviewTabController: UIViewController {
                 break
             case .failure(let error):
                 print(error.responseCode ?? "")
+                if response.response?.statusCode == 401 {
+                    self?.reloadBlocker = true
+                    if let vc = self?.tabBarController as? KaobeiTabBarController {
+                        vc.expiredTimeoutToLogout()
+                    }
+                }
                 self?.reviewList.append(nil)
                 self?.reviewTable.reloadData()
                 break

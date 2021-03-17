@@ -33,6 +33,16 @@ class KaobeiTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
     }
     
+    func expiredTimeoutToLogout() {
+        KeyChainManager.shared.deleteToken()
+        let controller = UIAlertController(title: "您的登入時效已過", message: "Token 已過期，請重新登入。", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Peko~", style: .default) { [weak self] _ in
+            self?.signedOut()
+        }
+        controller.addAction(okAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if self.traitCollection.userInterfaceStyle == .dark {
             self.tabBar.tintColor = .green
