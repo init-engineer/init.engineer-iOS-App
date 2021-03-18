@@ -48,6 +48,8 @@
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>如果要上傳自定圖片必須開啟此權限</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>第三方函式庫可能會用到一些使用者追蹤技術，我們也會盡可能限制其使用的內容，不過能同意的話APP運作會比較順利就是了。</string>
 	<key>OAuth2 Client ID</key>
 	<string>$(OAUTH2_CLIENT_ID)</string>
 	<key>OAuth2 Client Secret</key>
