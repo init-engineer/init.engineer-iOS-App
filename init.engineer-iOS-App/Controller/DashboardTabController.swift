@@ -36,7 +36,7 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         self.adBanner.load(GADRequest())
         self.interstitial.load(GADRequest())
         
-        self.userPostsTableView.allowsSelection = false
+        self.userPostsTableView.allowsSelection = true
         self.userPostsTableView.delegate = self
         self.userPostsTableView.dataSource = self
         self.userPostsTableView.backgroundColor = .clear
@@ -170,6 +170,7 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = self.userPostsTableView.dequeueReusableCell(withIdentifier: TITLE_ID) as! TableViewTitle
             cell.setupUI(with: "儀表板 Dashboard")
+            cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 1 {
             let cell = self.userPostsTableView.dequeueReusableCell(withIdentifier: PROFILE_ID) as! ProfileCell
@@ -178,17 +179,17 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
                 cell.setup(with: getUserProfileRequest)
                 let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showSettingActionSheet))
                 cell.addGestureRecognizer(gesture)
+                cell.selectionStyle = .none
                 return cell
             }
         }
         
         let cell = self.userPostsTableView.dequeueReusableCell(withIdentifier: ARTICLE_ID) as! ArticleCell
+        cell.selectionStyle = .none
         if let post = userPosts[indexPath.section] {
             cell.makePost(content: post)
-            cell.delegate = self
         } else {
             cell.makeAds(ads: self.adBanner)
-            cell.delegate = nil
         }
         return cell
     }
@@ -236,20 +237,15 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-}
-
-extension DashboardTabController: ArticleCellDelegate {
-    func cellClicked(with id: Int) {
-        if self.interstitial.isReady {
-            self.interstitial.present(fromRootViewController: self)
-        }
-        self.performSegue(withIdentifier: K.ToArticleDetailsSegue, sender: id)
-    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.ToArticleDetailsSegue {
-            guard let vc = segue.destination as? ArticleViewController, let id = sender as? Int else { return }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let id = userPosts[indexPath.section]?.id else {
+            return
+        }
+        
+        if let vc = UIStoryboard.init(name: "ArticleDetailView", bundle: nil).instantiateViewController(identifier: "ArticleViewController") as? ArticleViewController {
             vc.articleID = id
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
