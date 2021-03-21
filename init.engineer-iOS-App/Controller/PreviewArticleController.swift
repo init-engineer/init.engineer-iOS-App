@@ -161,6 +161,11 @@ class PreviewArticleController: UIViewController {
                     }
                     break
                 case .failure(_):
+                    if response.response?.statusCode == 401 {
+                        if let vc = self?.tabBarController as? KaobeiTabBarController {
+                            vc.expiredTimeoutToLogout()
+                        }
+                    }
                     if let failTitle = response.response?.statusCode {
                         DispatchQueue.main.async {
                             self?.publishSendFailed(failTitle: String(failTitle), failedMessage: "上面的數字可以記下來給版主，但應該沒什麼用，重新發一篇如何？")

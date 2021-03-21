@@ -113,13 +113,6 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         //self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
     }
     
-    func expiredTimeoutToLogout() {
-        let controller = UIAlertController(title: "您的登入時效已過", message: "Token 已過期，請重新登入。", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Peko~", style: .default, handler: logout(_:))
-        controller.addAction(okAction)
-        present(controller, animated: true, completion: nil)
-    }
-    
     @objc func refreshDashboard() {
         guard let userToken = self.userToken else { return }
         self.reloadBlocker = true
@@ -138,12 +131,15 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
                 self?.userPostsTableView.reloadData()
                 self?.currentPage = 2
                 break
-            case .failure(let _):
+            case .failure(_):
                 print(response.response?.statusCode ?? "No status code")
                 self?.userPosts.append(nil)
                 self?.userPostsTableView.reloadData()
                 if response.response?.statusCode == 401 {
-                    self?.expiredTimeoutToLogout()
+                    self?.reloadBlocker = true
+                    if let vc = self?.tabBarController as? KaobeiTabBarController {
+                        vc.expiredTimeoutToLogout()
+                    }
                 }
                 break
             }
