@@ -38,6 +38,21 @@ private extension String {
     }
 }
 
+extension UIColor {
+    func toHexString() -> String {
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
+
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+
+        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+
+        return String(format:"#%06x", rgb)
+    }
+}
+
 // KB 靠北工程師縮寫
 final class KBInteractiveLinkLabel: UILabel {
     
@@ -131,13 +146,8 @@ final class KBInteractiveLinkLabel: UILabel {
     func setAttributedTextWithHTMLStyle(source: String) {
         attributedText = String(format: """
             <style>
-                small {
-                    font-size: 0.8em;
-                    color: #1b85e8;
-                }
-                span {
-                    font-family: "-apple-system", "HelveticaNeue";
-                    font-size: \(font.pointSize);
+                * {
+                    color: \(textColor.toHexString());
                 }
                 img {
                     width: 200px;
