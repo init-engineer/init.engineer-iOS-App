@@ -28,7 +28,6 @@ class ReviewTabController: UIViewController {
     let TITLE_ID = "title"
     
     var reloadBlocker = false
-    var cellBlock: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +48,7 @@ class ReviewTabController: UIViewController {
             
             self.interstitial.load(GADRequest())
             
-            self.reviewTable.allowsSelection = false
+            self.reviewTable.allowsSelection = true
             self.reviewTable.delegate = self
             self.reviewTable.dataSource = self
             self.reviewTable.backgroundColor = .clear
@@ -179,16 +178,16 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = self.reviewTable.dequeueReusableCell(withIdentifier: TITLE_ID) as! TableViewTitle
             cell.setupUI(with: "審核文章 Review")
+            cell.selectionStyle = .none
             return cell
         }
         
         let cell = self.reviewTable.dequeueReusableCell(withIdentifier: REVIEW_ID) as! ReviewCell
+        cell.selectionStyle = .none
         if let review = reviewList[indexPath.section] {
             cell.makeArticleInReview(content: review)
-            cell.delegate = self
         } else {
             cell.makeAds(ads: self.adBanner)
-            cell.delegate = nil
         }
         return cell
     }
@@ -215,23 +214,17 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
             loadMoreReviewArticle()
         }
     }
-}
-
-extension ReviewTabController: ReviewCellDelegate {
-    func cellClicked(article: ReviewCellData?, updateCompletion: (() -> ())?) {
-        guard let article = article, let block = updateCompletion else { return }
-        if self.interstitial.isReady {
-            self.interstitial.present(fromRootViewController: self)
-        }
-        self.cellBlock = block
-        self.performSegue(withIdentifier: K.ToReviewDetailsSegue, sender: article)
-    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.ToReviewDetailsSegue {
-            guard let vc = segue.destination as? ReviewDetailViewController, let article = sender as? ReviewCellData else { return }
-            vc.reviewStatus = article
-            vc.reloadBlock = self.cellBlock
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let reviewData = reviewList[indexPath.section] else {
+            return
+        }
+        
+        if let vc = UIStoryboard.init(name: "ReviewView", bundle: nil).instantiateViewController(identifier: "ReviewDetailViewController") as? ReviewDetailViewController,
+           let cell = tableView.cellForRow(at: indexPath) as? ReviewCell {
+            vc.reviewStatus = reviewData
+            vc.reloadBlock = cell.updateTrigger
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
