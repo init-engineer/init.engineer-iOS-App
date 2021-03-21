@@ -62,8 +62,8 @@ class LoginController: UIViewController, GADBannerViewDelegate {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        let authorizationEndpoint = URL(string: "https://kaobei.engineer/oauth/authorize")!
-        let tokenEndpoint = URL(string: "https://kaobei.engineer/oauth/token")!
+        let authorizationEndpoint = URL(string: "https://init.engineer/oauth/authorize")!
+        let tokenEndpoint = URL(string: "https://init.engineer/oauth/token")!
         let configuration = OIDServiceConfiguration(authorizationEndpoint: authorizationEndpoint,
                                                     tokenEndpoint: tokenEndpoint)
         // builds authentication request
