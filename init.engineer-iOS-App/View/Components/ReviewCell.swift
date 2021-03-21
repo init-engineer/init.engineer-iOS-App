@@ -171,7 +171,7 @@ class ReviewCell: UITableViewCell {
             upperStackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
             upperStackView.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -19.0),
             bottomStackView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -10.0),
-            bottomStackView.topAnchor.constraint(equalTo: upperStackView.topAnchor, constant: 10.0),
+            bottomStackView.topAnchor.constraint(equalTo: upperStackView.bottomAnchor, constant: 10.0),
             bottomStackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 19.0),
             bottomStackView.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -19.0)
         ])
