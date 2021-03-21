@@ -56,8 +56,12 @@ extension UIColor {
 // KB 靠北工程師縮寫
 final class KBInteractiveLinkLabel: UILabel {
     
-    var handle: (() -> Void)?
-    
+    private lazy var tap: UITapGestureRecognizer = {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(actionTap))
+        tap.numberOfTapsRequired = 1
+        return tap
+    }()
+        
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         configure()
@@ -70,12 +74,18 @@ final class KBInteractiveLinkLabel: UILabel {
     
     func configure() {
         isUserInteractionEnabled = true
+        addGestureRecognizer(tap)
     }
     
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        
-        let superBool = super.point(inside: point, with: event)
-        
+    @objc func actionTap(tap: UITapGestureRecognizer) {
+        let point = tap.location(in: self)
+        isTapOnTopOfActivateLink(point: point)
+    }
+    
+    /// 使用者是否點擊在有效的連結上
+    ///
+    /// - Parameter point: User tap location point
+    private func isTapOnTopOfActivateLink(point: CGPoint) {
         // Configure NSTextContainer
         let textContainer = NSTextContainer(size: bounds.size)
         textContainer.lineFragmentPadding = 0.0
@@ -86,7 +96,9 @@ final class KBInteractiveLinkLabel: UILabel {
         let layoutManager = NSLayoutManager()
         layoutManager.addTextContainer(textContainer)
         
-        guard let attributedText = attributedText else {return false}
+        guard let attributedText = attributedText else {
+            return
+        }
         
         // Configure NSTextStorage and apply the layout manager
         let textStorage = NSTextStorage(attributedString: attributedText)
@@ -126,21 +138,21 @@ final class KBInteractiveLinkLabel: UILabel {
         let charsInLineTapped = layoutManager.characterIndex(for: rightMostPointInLineTapped, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
                 
         guard characterIndex < charsInLineTapped else {
-            return false
+            return
         }
         
         // Open safari while link available
         let attributeName = NSAttributedString.Key.link
-        let attributeValue = self.attributedText?.attribute(attributeName, at: characterIndex, effectiveRange: nil)
-        if let value = attributeValue {
-            guard let aURL = value as? URL,
-                  UIApplication.shared.canOpenURL(aURL) else {
-                return superBool
-            }
-            UIApplication.shared.open(aURL)
+        
+        guard let value =
+                self.attributedText?.attribute(attributeName, at: characterIndex, effectiveRange: nil) else {
+            return
         }
         
-        return superBool
+        guard let aURL = value as? URL, UIApplication.shared.canOpenURL(aURL) else {
+            return
+        }
+        UIApplication.shared.open(aURL)
     }
     
     func setAttributedTextWithHTMLStyle(source: String) {
