@@ -18,7 +18,7 @@
         <!--Article View Controller-->
         <scene sceneID="Y8F-jN-sva">
             <objects>
-                <viewController id="Ur2-dn-04n" customClass="ArticleViewController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleViewController" id="Ur2-dn-04n" customClass="ArticleViewController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zmj-QA-4Ei">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
