@@ -10,22 +10,16 @@ import UIKit
 import GoogleMobileAds
 import KaobeiAPI
 
-protocol ReviewCellDelegate {
-    func cellClicked(article: ReviewCellData?, updateCompletion: (() -> ())?)
-}
-
 class ReviewCell: UITableViewCell {
     var contentString: String?
     var stringTag: String?
     var publishTime: String?
-    var enterArticleBtn: UIButton?
     var vote: Int?
     var aye: Int?
     var nay: Int?
     var review: Int?
     var id: Int?
     var reviewingArticle: ReviewCellData?
-    var delegate: ReviewCellDelegate?
     var ayeLabel = UILabel()
     var voteLabel = UILabel()
     var nayLabel = UILabel()
@@ -119,26 +113,14 @@ class ReviewCell: UITableViewCell {
         
         let tagLabel = UILabel()
         let timeLabel = UILabel()
-        self.enterArticleBtn = UIButton()
+
         tagLabel.text = self.stringTag
         tagLabel.font = FontConstant.Default.text
         timeLabel.text = self.publishTime
         timeLabel.font = FontConstant.Default.text
         
-        
-        guard let enterArticleBtn = self.enterArticleBtn else {
-            return
-        }
-        
-        enterArticleBtn.addTarget(self, action: #selector(showArticle), for: .touchUpInside)
-        enterArticleBtn.setTitle("詳細內容", for: .normal)
-        enterArticleBtn.setTitleColor(ColorConstants.Card.buttonTextColor, for: .normal)
-        enterArticleBtn.titleLabel?.font = FontConstant.Default.text
-        
-        
         tagLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
-        enterArticleBtn.translatesAutoresizingMaskIntoConstraints = false
         
         let bottomStackView = UIStackView()
         bottomStackView.axis = .horizontal
@@ -149,7 +131,6 @@ class ReviewCell: UITableViewCell {
         
         bottomStackView.addArrangedSubview(tagLabel)
         bottomStackView.addArrangedSubview(timeLabel)
-        bottomStackView.addArrangedSubview(enterArticleBtn)
         
         self.ayeLabel = UILabel()
         self.voteLabel = UILabel()
@@ -202,17 +183,15 @@ class ReviewCell: UITableViewCell {
         contentView.viewWithTag(3)?.removeFromSuperview()
     }
     
-    @objc func showArticle() {
-        delegate?.cellClicked(article: self.reviewingArticle) {[weak self] in
-            guard let updates = self?.reviewingArticle else { return }
-            
-            self?.aye = updates.aye
-            self?.nay = updates.nay
-            self?.vote = updates.aye + updates.nay
-            self?.review = updates.review
-            self?.ayeLabel.text = "\(updates.aye)"
-            self?.voteLabel.text = "\(updates.aye + updates.nay)"
-            self?.nayLabel.text = "\(updates.nay)"
-        }
+    func updateTrigger() {
+        guard let updates = self.reviewingArticle else { return }
+        
+        self.aye = updates.aye
+        self.nay = updates.nay
+        self.vote = updates.aye + updates.nay
+        self.review = updates.review
+        self.ayeLabel.text = "\(updates.aye)"
+        self.voteLabel.text = "\(updates.aye + updates.nay)"
+        self.nayLabel.text = "\(updates.nay)"
     }
 }
