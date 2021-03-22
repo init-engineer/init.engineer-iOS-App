@@ -9,6 +9,7 @@
 
 import UIKit
 import SafariServices
+import AppTrackingTransparency
 
 class IndexTabController: UIViewController, SFSafariViewControllerDelegate, IndexButtonCellDelegate {
 
@@ -37,6 +38,7 @@ class IndexTabController: UIViewController, SFSafariViewControllerDelegate, Inde
             addView.delegate = self
             indexStackView.addArrangedSubview(addView)
         }
+        ATTRequest()
     }
     
     func indexButtonViewDelegate(urlString: String){
@@ -45,6 +47,14 @@ class IndexTabController: UIViewController, SFSafariViewControllerDelegate, Inde
             webView.delegate = self
 
             present(webView, animated: true)
+        }
+    }
+    
+    func ATTRequest() {
+        if #available(iOS 14.0, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                print("ATT status: \(status.rawValue)")
+            })
         }
     }
 }
