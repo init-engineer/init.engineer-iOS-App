@@ -36,7 +36,7 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         self.adBanner.load(GADRequest())
         self.interstitial.load(GADRequest())
         
-        self.userPostsTableView.allowsSelection = false
+        self.userPostsTableView.allowsSelection = true
         self.userPostsTableView.delegate = self
         self.userPostsTableView.dataSource = self
         self.userPostsTableView.backgroundColor = .clear
@@ -77,6 +77,11 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
                     break
                 case .failure(let error):
                     print(error.responseCode ?? "")
+                    if response.response?.statusCode == 401 {
+                        if let vc = self?.tabBarController as? KaobeiTabBarController {
+                            vc.expiredTimeoutToLogout()
+                        }
+                    }
                     self?.userPosts.append(nil)
                     self?.userPostsTableView.reloadData()
                     break
@@ -113,13 +118,6 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
         //self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
     }
     
-    func expiredTimeoutToLogout() {
-        let controller = UIAlertController(title: "您的登入時效已過", message: "Token 已過期，請重新登入。", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Peko~", style: .default, handler: logout(_:))
-        controller.addAction(okAction)
-        present(controller, animated: true, completion: nil)
-    }
-    
     @objc func refreshDashboard() {
         guard let userToken = self.userToken else { return }
         self.reloadBlocker = true
@@ -138,12 +136,14 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
                 self?.userPostsTableView.reloadData()
                 self?.currentPage = 2
                 break
-            case .failure(let _):
+            case .failure(_):
                 print(response.response?.statusCode ?? "No status code")
                 self?.userPosts.append(nil)
                 self?.userPostsTableView.reloadData()
                 if response.response?.statusCode == 401 {
-                    self?.expiredTimeoutToLogout()
+                    if let vc = self?.tabBarController as? KaobeiTabBarController {
+                        vc.expiredTimeoutToLogout()
+                    }
                 }
                 break
             }
@@ -170,6 +170,7 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = self.userPostsTableView.dequeueReusableCell(withIdentifier: TITLE_ID) as! TableViewTitle
             cell.setupUI(with: "儀表板 Dashboard")
+            cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 1 {
             let cell = self.userPostsTableView.dequeueReusableCell(withIdentifier: PROFILE_ID) as! ProfileCell
@@ -178,17 +179,17 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
                 cell.setup(with: getUserProfileRequest)
                 let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showSettingActionSheet))
                 cell.addGestureRecognizer(gesture)
+                cell.selectionStyle = .none
                 return cell
             }
         }
         
         let cell = self.userPostsTableView.dequeueReusableCell(withIdentifier: ARTICLE_ID) as! ArticleCell
+        cell.selectionStyle = .none
         if let post = userPosts[indexPath.section] {
             cell.makePost(content: post)
-            cell.delegate = self
         } else {
             cell.makeAds(ads: self.adBanner)
-            cell.delegate = nil
         }
         return cell
     }
@@ -228,6 +229,11 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
                     self?.currentPage += 1
                     break
                 case .failure(let error):
+                    if response.response?.statusCode == 401 {
+                        if let vc = self?.tabBarController as? KaobeiTabBarController {
+                            vc.expiredTimeoutToLogout()
+                        }
+                    }
                     print(error.responseCode ?? "")
                     self?.userPosts.append(nil)
                     self?.userPostsTableView.reloadData()
@@ -236,20 +242,15 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-}
-
-extension DashboardTabController: ArticleCellDelegate {
-    func cellClicked(with id: Int) {
-        if self.interstitial.isReady {
-            self.interstitial.present(fromRootViewController: self)
-        }
-        self.performSegue(withIdentifier: K.ToArticleDetailsSegue, sender: id)
-    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.ToArticleDetailsSegue {
-            guard let vc = segue.destination as? ArticleViewController, let id = sender as? Int else { return }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let id = userPosts[indexPath.section]?.id else {
+            return
+        }
+        
+        if let vc = UIStoryboard.init(name: "ArticleDetailView", bundle: nil).instantiateViewController(identifier: "ArticleViewController") as? ArticleViewController {
             vc.articleID = id
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

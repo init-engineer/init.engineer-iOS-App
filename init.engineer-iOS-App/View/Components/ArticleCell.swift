@@ -10,17 +10,11 @@ import UIKit
 import GoogleMobileAds
 import KaobeiAPI
 
-protocol ArticleCellDelegate {
-    func cellClicked(with id: Int)
-}
-
 class ArticleCell: UITableViewCell {
     var contentString: String?
     var stringTag: String?
     var publishTime: String?
-    var enterArticleBtn: UIButton?
     var id: Int?
-    var delegate: ArticleCellDelegate?
     
     func makeAds(ads: GADBannerView) {
         dispatchViews()
@@ -117,27 +111,14 @@ class ArticleCell: UITableViewCell {
         
         let tagLabel = UILabel()
         let timeLabel = UILabel()
-        self.enterArticleBtn = UIButton()
         tagLabel.text = self.stringTag
         tagLabel.font = FontConstant.Default.text
 //        tagLabel.textColor = .black
         timeLabel.text = self.publishTime
         timeLabel.font = FontConstant.Default.text
         
-        
-        guard let enterArticleBtn = self.enterArticleBtn else {
-            return
-        }
-        
-        enterArticleBtn.addTarget(self, action: #selector(showArticle), for: .touchUpInside)
-        enterArticleBtn.setTitle("詳細內容", for: .normal)
-        enterArticleBtn.setTitleColor(ColorConstants.Card.buttonTextColor, for: .normal)
-        enterArticleBtn.titleLabel?.font = FontConstant.Default.text
-        
-        
         tagLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
-        enterArticleBtn.translatesAutoresizingMaskIntoConstraints = false
         
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -149,7 +130,6 @@ class ArticleCell: UITableViewCell {
         
         stackView.addArrangedSubview(tagLabel)
         stackView.addArrangedSubview(timeLabel)
-        stackView.addArrangedSubview(enterArticleBtn)
         
         bottomView.addSubview(stackView)
         
@@ -165,10 +145,5 @@ class ArticleCell: UITableViewCell {
         contentView.viewWithTag(1)?.removeFromSuperview()
         contentView.viewWithTag(2)?.removeFromSuperview()
         contentView.viewWithTag(3)?.removeFromSuperview()
-    }
-    
-    @objc func showArticle() {
-        guard let id = self.id else { return }
-        delegate?.cellClicked(with: id)
     }
 }

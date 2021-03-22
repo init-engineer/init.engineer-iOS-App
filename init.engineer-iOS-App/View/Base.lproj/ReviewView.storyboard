@@ -61,7 +61,7 @@
         <!--Review Detail View Controller-->
         <scene sceneID="h6M-FX-X51">
             <objects>
-                <viewController id="n2c-oH-22z" customClass="ReviewDetailViewController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewDetailViewController" id="n2c-oH-22z" customClass="ReviewDetailViewController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KMW-Ox-kE2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
