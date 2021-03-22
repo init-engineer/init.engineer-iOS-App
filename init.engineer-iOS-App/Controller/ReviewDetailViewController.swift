@@ -146,6 +146,11 @@ class ReviewDetailViewController: UIViewController {
                 }
                 break
             case.failure(_):
+                if response.response?.statusCode == 401 {
+                    if let vc = self?.tabBarController as? KaobeiTabBarController {
+                        vc.expiredTimeoutToLogout()
+                    }
+                }
                 break
             }
         }
@@ -174,6 +179,11 @@ class ReviewDetailViewController: UIViewController {
                 }
                 break
             case.failure(_):
+                if response.response?.statusCode == 401 {
+                    if let vc = self?.tabBarController as? KaobeiTabBarController {
+                        vc.expiredTimeoutToLogout()
+                    }
+                }
                 break
             }
         }
