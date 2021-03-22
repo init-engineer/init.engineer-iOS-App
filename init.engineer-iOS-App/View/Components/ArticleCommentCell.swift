@@ -20,7 +20,16 @@ class ArticleCommentCell: UIView {
     let createdTimeStackView = UIStackView()
     let userNameLabel = UILabel()
     let platformLabel = UILabel()
-    let commentLabel = UILabel()
+    
+    /// Comment
+    private let commentLabel: KBInteractiveLinkLabel = {
+        let label = KBInteractiveLinkLabel()
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = ColorConstants.Card.whiteTextColor
+        return label
+    }()
+    
     let createdTimeLabel = UILabel()
     var comment: Comment?
     
@@ -130,12 +139,7 @@ class ArticleCommentCell: UIView {
         commentBubble.layer.cornerRadius = 9
         commentBubble.layer.masksToBounds = true
         
-        
-        
-        commentLabel.translatesAutoresizingMaskIntoConstraints = false
-        commentLabel.numberOfLines = 0
-        commentLabel.textColor = ColorConstants.Card.whiteTextColor
-        commentLabel.text = comment.content
+        commentLabel.setAttributedTextWithHTMLStyle(source: comment.content)
         commentBubble.addSubview(commentLabel)
         commentBubble.addConstraints([
             commentLabel.topAnchor.constraint(equalTo: commentBubble.topAnchor, constant: 10),

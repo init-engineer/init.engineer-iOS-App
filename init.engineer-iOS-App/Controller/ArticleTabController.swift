@@ -37,7 +37,7 @@ class ArticleTabController: UIViewController {
         
         self.interstitial.load(GADRequest())
         
-        self.articleTable.allowsSelection = false
+        self.articleTable.allowsSelection = true
         self.articleTable.delegate = self
         self.articleTable.dataSource = self
         self.articleTable.backgroundColor = .clear
@@ -126,16 +126,16 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = self.articleTable.dequeueReusableCell(withIdentifier: TITLE_ID) as! TableViewTitle
             cell.setupUI(with: "文章列表 Article")
+            cell.selectionStyle = .none
             return cell
         }
         
         let cell = self.articleTable.dequeueReusableCell(withIdentifier: ARTICLE_ID) as! ArticleCell
+        cell.selectionStyle = .none
         if let article = articleList[indexPath.section] {
             cell.makeArticle(content: article)
-            cell.delegate = self
         } else {
             cell.makeAds(ads: self.adBanner)
-            cell.delegate = nil
         }
         return cell
     }
@@ -182,20 +182,15 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-}
-
-extension ArticleTabController: ArticleCellDelegate {
-    func cellClicked(with id: Int) {
-        if self.interstitial.isReady {
-            self.interstitial.present(fromRootViewController: self)
-        }
-        self.performSegue(withIdentifier: K.ToArticleDetailsSegue, sender: id)
-    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.ToArticleDetailsSegue {
-            guard let vc = segue.destination as? ArticleViewController, let id = sender as? Int else { return }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let id = articleList[indexPath.section]?.id else {
+            return
+        }
+        
+        if let vc = UIStoryboard.init(name: "ArticleDetailView", bundle: nil).instantiateViewController(identifier: "ArticleViewController") as? ArticleViewController {
             vc.articleID = id
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
