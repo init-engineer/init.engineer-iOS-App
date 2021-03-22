@@ -12,7 +12,7 @@ class KaobeiTabBarController: UITabBarController, UITabBarControllerDelegate {
     var reviewFragment: UINavigationController?
     var publishFragment: UINavigationController?
     var dashboardFragment: UINavigationController?
-    
+    var expirationPopup: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +35,16 @@ class KaobeiTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func expiredTimeoutToLogout() {
         KeyChainManager.shared.deleteToken()
-        let controller = UIAlertController(title: "您的登入時效已過", message: "Token 已過期，請重新登入。", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Peko~", style: .default) { [weak self] _ in
-            self?.signedOut()
+        
+        if expirationPopup == nil {
+            expirationPopup = UIAlertController(title: "您的登入時效已過", message: "Token 已過期，請重新登入。", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Peko~", style: .default) { [weak self] _ in
+                self?.signedOut()
+                self?.expirationPopup = nil
+            }
+            expirationPopup!.addAction(okAction)
+            present(expirationPopup!, animated: true, completion: nil)
         }
-        controller.addAction(okAction)
-        present(controller, animated: true, completion: nil)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -56,6 +60,9 @@ class KaobeiTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func signedIn() {
+        if self.viewControllers?.count != 3 {
+            return
+        }
         guard let review = self.reviewFragment, let publish = self.publishFragment, let dashboard = self.dashboardFragment else { return }
         let VCs = [review, publish, dashboard]
         
@@ -68,6 +75,9 @@ class KaobeiTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func signedOut() {
+        if self.viewControllers?.count != 5 {
+            return
+        }
         self.viewControllers?.replaceSubrange(2...4, with: repeatElement(UIStoryboard(name: "LoginView", bundle: nil).instantiateViewController(identifier: "LoginController"), count: 1))
         self.selectedIndex = 2
         

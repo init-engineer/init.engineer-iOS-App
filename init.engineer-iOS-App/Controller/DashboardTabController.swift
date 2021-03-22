@@ -77,6 +77,11 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
                     break
                 case .failure(let error):
                     print(error.responseCode ?? "")
+                    if response.response?.statusCode == 401 {
+                        if let vc = self?.tabBarController as? KaobeiTabBarController {
+                            vc.expiredTimeoutToLogout()
+                        }
+                    }
                     self?.userPosts.append(nil)
                     self?.userPostsTableView.reloadData()
                     break
@@ -136,7 +141,6 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
                 self?.userPosts.append(nil)
                 self?.userPostsTableView.reloadData()
                 if response.response?.statusCode == 401 {
-                    self?.reloadBlocker = true
                     if let vc = self?.tabBarController as? KaobeiTabBarController {
                         vc.expiredTimeoutToLogout()
                     }
@@ -225,6 +229,11 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
                     self?.currentPage += 1
                     break
                 case .failure(let error):
+                    if response.response?.statusCode == 401 {
+                        if let vc = self?.tabBarController as? KaobeiTabBarController {
+                            vc.expiredTimeoutToLogout()
+                        }
+                    }
                     print(error.responseCode ?? "")
                     self?.userPosts.append(nil)
                     self?.userPostsTableView.reloadData()

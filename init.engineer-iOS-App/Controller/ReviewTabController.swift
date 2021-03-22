@@ -116,6 +116,11 @@ class ReviewTabController: UIViewController {
                 break
             case .failure(let error):
                 print(error.responseCode ?? "")
+                if response.response?.statusCode == 401 {
+                    if let vc = self?.tabBarController as? KaobeiTabBarController {
+                        vc.expiredTimeoutToLogout()
+                    }
+                }
                 break
             }
             
@@ -155,7 +160,6 @@ class ReviewTabController: UIViewController {
             case .failure(let error):
                 print(error.responseCode ?? "")
                 if response.response?.statusCode == 401 {
-                    self?.reloadBlocker = true
                     if let vc = self?.tabBarController as? KaobeiTabBarController {
                         vc.expiredTimeoutToLogout()
                     }
