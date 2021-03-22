@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-Kw-WUX">
-                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <rect key="frame" x="20" y="118" width="374" height="744"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -27,9 +27,9 @@
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ybK-Kw-WUX" secondAttribute="bottom" id="O2G-2t-l7C"/>
-                            <constraint firstItem="ybK-Kw-WUX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YUI-QM-PLc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ybK-Kw-WUX" secondAttribute="trailing" id="pGU-Lt-fmG"/>
-                            <constraint firstItem="ybK-Kw-WUX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sSb-aG-2OI"/>
+                            <constraint firstItem="ybK-Kw-WUX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YUI-QM-PLc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ybK-Kw-WUX" secondAttribute="trailing" constant="20" id="pGU-Lt-fmG"/>
+                            <constraint firstItem="ybK-Kw-WUX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="sSb-aG-2OI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="文章列表" id="R9B-7x-joA"/>

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CDK-2a-8w5">
-                                <rect key="frame" x="20" y="108" width="374" height="754"/>
+                                <rect key="frame" x="20" y="118" width="374" height="744"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -29,7 +29,7 @@
                             <constraint firstItem="CDK-2a-8w5" firstAttribute="leading" secondItem="aq3-Jp-RTS" secondAttribute="leading" constant="20" id="0Vs-xg-7du"/>
                             <constraint firstItem="CDK-2a-8w5" firstAttribute="bottom" secondItem="aq3-Jp-RTS" secondAttribute="bottom" id="87Y-1d-iP5"/>
                             <constraint firstItem="aq3-Jp-RTS" firstAttribute="trailing" secondItem="CDK-2a-8w5" secondAttribute="trailing" constant="20" id="itw-ag-aQg"/>
-                            <constraint firstItem="CDK-2a-8w5" firstAttribute="top" secondItem="aq3-Jp-RTS" secondAttribute="top" constant="20" id="nZh-Vo-nq4"/>
+                            <constraint firstItem="CDK-2a-8w5" firstAttribute="top" secondItem="aq3-Jp-RTS" secondAttribute="top" constant="30" id="nZh-Vo-nq4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="儀錶板" id="g8e-zp-7sM"/>

@@ -24,16 +24,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wQM-ub-tvo">
-                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <rect key="frame" x="20" y="118" width="374" height="744"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rxH-Oj-10V"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rxH-Oj-10V" firstAttribute="trailing" secondItem="wQM-ub-tvo" secondAttribute="trailing" id="HTd-6c-s3j"/>
-                            <constraint firstItem="wQM-ub-tvo" firstAttribute="leading" secondItem="rxH-Oj-10V" secondAttribute="leading" id="TSN-Bo-Ezp"/>
-                            <constraint firstItem="wQM-ub-tvo" firstAttribute="top" secondItem="rxH-Oj-10V" secondAttribute="top" constant="20" id="Vvd-Yb-lTs"/>
+                            <constraint firstItem="rxH-Oj-10V" firstAttribute="trailing" secondItem="wQM-ub-tvo" secondAttribute="trailing" constant="20" id="HTd-6c-s3j"/>
+                            <constraint firstItem="wQM-ub-tvo" firstAttribute="leading" secondItem="rxH-Oj-10V" secondAttribute="leading" constant="20" id="TSN-Bo-Ezp"/>
+                            <constraint firstItem="wQM-ub-tvo" firstAttribute="top" secondItem="rxH-Oj-10V" secondAttribute="top" constant="30" id="Vvd-Yb-lTs"/>
                             <constraint firstItem="rxH-Oj-10V" firstAttribute="bottom" secondItem="wQM-ub-tvo" secondAttribute="bottom" id="YT9-wI-SFY"/>
                         </constraints>
                     </view>
