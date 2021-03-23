@@ -21,6 +21,7 @@ struct K {
     static let publishArticlePlaceholderTextColor = UIColor(white: 0xD3/255.0, alpha: 0.7)
     static let publishToPreviewSegue = "publishToPreview"
     static let ToArticleDetailsSegue = "ToArticleDetails"
+    static let preivewToRuleSegue = "previewToRule"
     static let ToReviewDetailsSegue = "ToReviewDetails"
     static let articleTableViewCell = "ArticleTableViewCell"
     static let articleTableViewCellIdentifier = "ArticleTableViewCellIdentifier"
