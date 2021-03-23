@@ -38,7 +38,6 @@ class ArticleViewController: UIViewController {
     
     var articleID: Int?
     var commentCurrentPage = 1
-    var commentMaxPage: Int?
     var reloadBlocker = false
     
     override func viewDidLoad() {
@@ -116,13 +115,15 @@ class ArticleViewController: UIViewController {
             self?.reloadBlocker = false
             switch response.result {
                 case .success(let data):
+                    if data.meta.pagination.count == 0 {
+                        self?.reloadBlocker = true
+                    }
                     for c in data.data {
                         let s = ArticleCommentCell()
                         s.renderComment(with: c)
                         self?.articleStackView.addArrangedSubview(s)
                     }
                     self?.commentCurrentPage += 1
-                    self?.commentMaxPage = data.meta.pagination.totalPages
                     break
                 case .failure(_):
                     break
@@ -156,27 +157,29 @@ class ArticleViewController: UIViewController {
         print("LOADMORE")
         reloadBlocker = true
         guard let id = self.articleID else { return }
-        guard let maxPage = self.commentMaxPage else { return }
-        if maxPage + 1 >= self.commentCurrentPage {
-            articleStackView.addArrangedSubview(loadingView)
-            loadingView.startAnimating()
-            let commentRequest = KBGetArticleComments(id: id, page: self.commentCurrentPage)
-            KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
-                self?.reloadBlocker = false
-                self?.loadingView.stopAnimating()
-                self?.articleStackView.removeArrangedSubview(self!.loadingView)
-                switch response.result {
-                    case .success(let data):
-                        for c in data.data {
-                            let s = ArticleCommentCell()
-                            s.renderComment(with: c)
-                            self?.articleStackView.addArrangedSubview(s)
-                        }
-                        self?.commentCurrentPage += 1
-                        break
-                    case .failure(_):
-                        break
-                }
+        articleStackView.addArrangedSubview(loadingView)
+        loadingView.startAnimating()
+        let commentRequest = KBGetArticleComments(id: id, page: self.commentCurrentPage)
+        KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
+            self?.loadingView.stopAnimating()
+            self?.articleStackView.removeArrangedSubview(self!.loadingView)
+            switch response.result {
+                case .success(let data):
+                    for c in data.data {
+                        let s = ArticleCommentCell()
+                        s.renderComment(with: c)
+                        self?.articleStackView.addArrangedSubview(s)
+                    }
+                    self?.commentCurrentPage += 1
+                    if data.meta.pagination.count == 0 {
+                        self?.reloadBlocker = true
+                    } else {
+                        self?.reloadBlocker = false
+                    }
+                    break
+                case .failure(_):
+                    self?.reloadBlocker = false
+                    break
             }
         }
     }
