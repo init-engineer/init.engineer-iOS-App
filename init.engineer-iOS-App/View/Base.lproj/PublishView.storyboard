@@ -27,16 +27,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2QT-o7-UAT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="499"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="494.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發表文章 Publish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByZ-r8-QqA">
-                                                <rect key="frame" x="20" y="30" width="374" height="42"/>
+                                                <rect key="frame" x="20" y="29.999999999999996" width="374" height="39.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dv8-R0-Eln">
-                                                <rect key="frame" x="20" y="92" width="374" height="200"/>
+                                                <rect key="frame" x="20" y="89.666666666666657" width="374" height="199.99999999999997"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="Vwz-K3-2Wo"/>
@@ -47,10 +47,10 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="H8q-XB-zfb">
-                                                <rect key="frame" x="20" y="312" width="374" height="33"/>
+                                                <rect key="frame" x="20" y="309.66666666666669" width="374" height="32"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG8-Ih-G9e">
-                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="33"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="32"/>
                                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
                                                         <state key="normal" title="黑底綠字"/>
                                                         <connections>
@@ -58,7 +58,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7O-iQ-jwp">
-                                                        <rect key="frame" x="197" y="0.0" width="177" height="33"/>
+                                                        <rect key="frame" x="197" y="0.0" width="177" height="32"/>
                                                         <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
                                                         <state key="normal" title="AURAKA 點陣宋字型"/>
                                                         <connections>
@@ -68,7 +68,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6tV-09-H56">
-                                                <rect key="frame" x="20" y="365" width="374" height="31"/>
+                                                <rect key="frame" x="20" y="361.66666666666669" width="374" height="31"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-az-bRZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -82,7 +82,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-Iy-1vF">
-                                                <rect key="frame" x="20" y="406" width="374" height="0.0"/>
+                                                <rect key="frame" x="20" y="402.66666666666669" width="374" height="0.0"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-jL-EVC">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="0.0"/>
@@ -96,7 +96,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CJ-c0-2Ox">
-                                                <rect key="frame" x="20" y="416" width="374" height="33"/>
+                                                <rect key="frame" x="20" y="412.66666666666669" width="374" height="32"/>
                                                 <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
                                                 <state key="normal" title="選擇圖片"/>
                                                 <connections>
@@ -104,13 +104,13 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-US-Mog">
-                                                <rect key="frame" x="20" y="469" width="374" height="0.0"/>
+                                                <rect key="frame" x="20" y="464.66666666666663" width="374" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="Cji-fX-NMd"/>
                                                 </constraints>
                                             </imageView>
                                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf5-lA-2df">
-                                                <rect key="frame" x="20" y="469" width="374" height="0.0"/>
+                                                <rect key="frame" x="20" y="464.66666666666663" width="374" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
@@ -319,11 +319,101 @@
                         <outlet property="windowsScreenFooterHeight" destination="bsF-cu-Ynm" id="xlx-NM-V3i"/>
                         <outlet property="windowsScreenHeader" destination="d0n-2L-5Et" id="yEP-d0-Qld"/>
                         <outlet property="windowsScreenHeaderHeight" destination="QKV-IN-EGY" id="sto-m7-89w"/>
+                        <segue destination="AWE-aB-LK0" kind="showDetail" identifier="previewToRule" id="HZA-eB-9Mr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLs-Pu-1si" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1968" y="-149"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gTe-1K-MF1">
+            <objects>
+                <viewController id="AWE-aB-LK0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yhi-gk-3Ek">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHj-cv-dYA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WHA-x4-cX0">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="916"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghr-Yh-Gkz">
+                                                <rect key="frame" x="20" y="30" width="374" height="856"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">板規
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                            <font key="NSFont" size="24" name="PingFangTC-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content">一、責任聲明：
+本站使用者須對自己所張貼之每一篇文章負責，本站毋需對站內以及其他關聯之社群媒體的言論負擔起任何的責任，責任的歸屬權屬於各位發表人。
+
+二、發表文章時之注意事項：
+1. 尊重他人意見，注意用字遣詞與口氣，避免引起爭吵。
+2. 避免在公眾區域，討論私人事務。
+3. 避免發表文章於非相關區域，文章標題及內容不符合討論區之討論主題。
+4. 禁止重複刊登相同內容或相同意義之留言。
+5. 適度引用文章，避免引用過長文章，造成閱讀困擾。
+6. 不適當的廣告、宣傳活動或商業性留言。
+7. 禁止發表謾罵、脅迫、挑釁、猥褻或不雅之文字。
+8. 禁止發表個人測試用文章或散播不實消息之文章，張貼文章，應自負相關法律責任。
+9. 轉貼任何文章請附上原作者貨來源，否則版主會親自去問授權、處理方式，並且把您的帳號封鎖。
+10. 若有未規定的部份，由版主依主觀認定，視情況處理。
+
+三、違規處理辦法：
+違反上述規定之文章或作者，版主可刪除文章或行使禁貼之處份。
+
+四、附註及補充說明：
+1. 本站歡迎網友互相討論發表己見，唯請務必遵守上述規定。
+2. 是否違反上述規定，由版主主觀認定，請謹慎用詞。
+3. 請學習包容各種意見，如遇惡意批評或攻擊之文章，切勿加入爭執，並且善用檢舉，版主會有適當之處理，否則雙方皆依上述規定處理。</string>
+                                                        <attributes>
+                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                            <font key="NSFont" size="16" name="PingFangTC-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="30" left="20" bottom="30" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WHA-x4-cX0" firstAttribute="trailing" secondItem="Zw6-sB-7mS" secondAttribute="trailing" id="1vh-f2-f8o"/>
+                                    <constraint firstItem="WHA-x4-cX0" firstAttribute="top" secondItem="Zw6-sB-7mS" secondAttribute="top" id="rqJ-AB-49Q"/>
+                                    <constraint firstItem="WHA-x4-cX0" firstAttribute="leading" secondItem="Zw6-sB-7mS" secondAttribute="leading" id="sDc-RF-dNu"/>
+                                    <constraint firstItem="WHA-x4-cX0" firstAttribute="bottom" secondItem="Zw6-sB-7mS" secondAttribute="bottom" id="x5k-NN-HpS"/>
+                                    <constraint firstItem="WHA-x4-cX0" firstAttribute="width" secondItem="LgR-ah-cL4" secondAttribute="width" id="xFI-8m-9Oa"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Zw6-sB-7mS"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="LgR-ah-cL4"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Giy-3X-M05"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aHj-cv-dYA" firstAttribute="top" secondItem="Giy-3X-M05" secondAttribute="top" id="1HG-qW-p4e"/>
+                            <constraint firstItem="Giy-3X-M05" firstAttribute="trailing" secondItem="aHj-cv-dYA" secondAttribute="trailing" id="BRa-tn-RVi"/>
+                            <constraint firstItem="aHj-cv-dYA" firstAttribute="leading" secondItem="Giy-3X-M05" secondAttribute="leading" id="Hcr-Ag-Lwr"/>
+                            <constraint firstItem="Giy-3X-M05" firstAttribute="bottom" secondItem="aHj-cv-dYA" secondAttribute="bottom" id="RU9-oc-t6d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gwk-Xa-s6H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6b-gd-1Pz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2822" y="-149"/>
         </scene>
         <!--發表文章-->
         <scene sceneID="tyz-R6-OoN">
