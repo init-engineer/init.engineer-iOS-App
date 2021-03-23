@@ -160,6 +160,7 @@ final class KBInteractiveLinkLabel: UILabel {
             <style>
                 * {
                     color: \(textColor.toHexString());
+                    font-size: 18px
                 }
                 img {
                     width: 200px;
