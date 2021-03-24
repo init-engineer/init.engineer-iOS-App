@@ -44,12 +44,11 @@ PODS:
   - PromisesObjC (1.2.12)
 
 DEPENDENCIES:
-  - Alamofire
   - Alamofire (~> 5.4.0)
-  - AppAuth
-  - Google-Mobile-Ads-SDK
-  - KeychainAccess
-  - NVActivityIndicatorView
+  - AppAuth (~> 1.4.0)
+  - Google-Mobile-Ads-SDK (~> 7.69.0)
+  - KeychainAccess (~> 4.2.1)
+  - NVActivityIndicatorView (~> 5.1.1)
 
 SPEC REPOS:
   trunk:
@@ -76,6 +75,6 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 6cf36bab62a168ffd673ad945558c9e88f03c8e2
+PODFILE CHECKSUM: ef61afaa4a416d39e43f434d55f8d27b77cc94c9
 
 COCOAPODS: 1.10.1

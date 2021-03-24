@@ -6,11 +6,11 @@ target 'init.engineer-iOS-App' do
   use_frameworks!
   # Pods for init.engineer-iOS-App
   # pod 'MaterialComponents'
-  pod 'Alamofire'
-  pod 'AppAuth'
-  pod 'KeychainAccess'
-  pod 'Google-Mobile-Ads-SDK'
-  pod 'NVActivityIndicatorView'
+  pod 'Alamofire', '~> 5.4.0'
+  pod 'AppAuth', '~> 1.4.0'
+  pod 'KeychainAccess', '~> 4.2.1'
+  pod 'Google-Mobile-Ads-SDK', '~> 7.69.0'
+  pod 'NVActivityIndicatorView', '~> 5.1.1'
   
 end
 
