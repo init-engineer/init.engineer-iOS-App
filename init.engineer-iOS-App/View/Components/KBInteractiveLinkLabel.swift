@@ -170,7 +170,7 @@ final class KBInteractiveLinkLabel: UILabel {
      所以解法採用如果發現 link 的話，那就 replace 成 <a href="https://link1">https://link1</a>
      
      */
-    private func beforeSetAttributedTextWithHTMLStyle(input: String) -> String {
+    private func maybeTransform2HTML(input: String) -> String {
         
         guard let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue) else {
             // If fail to try, return origin sourece
@@ -192,6 +192,11 @@ final class KBInteractiveLinkLabel: UILabel {
         let point = tap.location(in: self)
         isTapOnTopOfActivateLink(point: point)
     }
+    
+    private func hasHTMLTag(_ value:String) -> Bool {
+        let validateTest = NSPredicate(format:"SELF MATCHES %@", ".*<[a-z][\\s\\S]*>.*")
+        return validateTest.evaluate(with: value)
+    }
 }
 
 // ******************************************
@@ -203,7 +208,9 @@ extension KBInteractiveLinkLabel {
     
     func setAttributedTextWithHTMLStyle(source: String) {
         
-        let converted = beforeSetAttributedTextWithHTMLStyle(input: source)
+//        print("source \(source)")
+            
+        let string = hasHTMLTag(source) ? source : maybeTransform2HTML(input: source)
         
         attributedText = String(format: """
             <style>
@@ -216,7 +223,7 @@ extension KBInteractiveLinkLabel {
                     height: 200px;
                 }
             </style>
-            %@
-            """, converted).getNSAttributedStringFromHTMLTag()
+            <span>%@</span>
+            """, string).getNSAttributedStringFromHTMLTag()
     }
 }
