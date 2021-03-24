@@ -183,7 +183,8 @@ final class KBInteractiveLinkLabel: UILabel {
         for match in matches {
             guard let range = Range(match.range, in: input) else { continue }
             let foundURL = input[range]
-            inputCopy = inputCopy.replacingOccurrences(of: foundURL, with: String(format: "<a href=\"%@\">%@</a>", foundURL as CVarArg, foundURL as CVarArg))
+            let display = (foundURL.removingPercentEncoding ?? String(foundURL))
+            inputCopy = inputCopy.replacingOccurrences(of: foundURL, with: String(format: "<a href=\"%@\">%@</a>", foundURL as CVarArg, display))
         }
         return inputCopy
     }
