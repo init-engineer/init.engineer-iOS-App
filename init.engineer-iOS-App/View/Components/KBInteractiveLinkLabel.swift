@@ -148,29 +148,6 @@ final class KBInteractiveLinkLabel: UILabel {
         let point = tap.location(in: self)
         isTapOnTopOfActivateLink(point: point)
     }
-    
-    
-    /**
-     
-     Test pass below
-     
-     let source2 = """
-             懷念以前會放全平臺留言網址的版本：<br /><a href="https://kaobei.engineer/cards/show/6003" class="ex_link meta" rel="nofollow" target="_blank"><img src="https://imgs.plurk.com/QzJ/5av/q13Zcyav6hjIhpIBjemKFrS2Qck_mt.jpg" height="40px">純靠北工程師 | 原來現在找免費勞工寫專案已經不稀奇了，最新的找法是上工程師社群找付費勞工，而且不是付勞...</a>
-     """
-     
-     let source = """
-             https://zh.wikipedia.org/wiki/%E5%BE%B7%E5%9B%BD%E5%9D%A6%E5%85%8B%E9%97%AE%E9%A2%98
-     """
-     
-     let source0 = """
-             <a href="https://www.facebook.com/init.kobeengineer/photos/a.1416496745064002/3792070824173237/" class="ex_link meta" rel="nofollow"><img src="https://imgs.plurk.com/QzJ/KKD/dW1Ftfknh3KQ661wcVKMQVSqFJU_mt.jpg" height="40px">純靠北工程師 - #純靠北工程師4mr ---------- 原來現在找免費勞工寫專案已經不稀奇了，最新...</a>
-     """
-     
-     */
-    private func hasHTMLTag(_ value:String) -> Bool {
-        let validateTest = NSPredicate(format:"SELF MATCHES %@", ".*<[a-z][\\s\\S]*>.*")
-        return validateTest.evaluate(with: value)
-    }
 }
 
 // ******************************************
@@ -182,9 +159,9 @@ extension KBInteractiveLinkLabel {
     
     func setAttributedTextWithHTMLStyle(source: String) {
         
-//        print("source \(source)")
-            
-        let string = hasHTMLTag(source) ? source : maybeTransform2HTML(input: source)
+//        print("source \(source)") 
+        
+        let string = source.hasHTMLTag ? source : maybeTransform2HTML(input: source)
         
         attributedText = String(format: """
             <style>
