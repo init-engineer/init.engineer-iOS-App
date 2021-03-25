@@ -112,6 +112,10 @@ extension KBInteractiveLinkTextView {
                     width: 200px;
                     height: 200px;
                 }
+                * {
+                    color: \(textColor?.toHexString() ?? "black");
+                    font-size: 18px
+                }
             </style>
             <span>%@</span>
             """, string).getNSAttributedStringFromHTMLTag()
