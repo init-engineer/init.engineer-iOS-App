@@ -91,18 +91,7 @@ final class KBInteractiveLinkLabel: UILabel {
             return
         }
         
-        // Open safari while link available
-        let attributeName = NSAttributedString.Key.link
-        
-        guard let value =
-                self.attributedText?.attribute(attributeName, at: characterIndex, effectiveRange: nil) else {
-            return
-        }
-        
-        guard let aURL = value as? URL, UIApplication.shared.canOpenURL(aURL) else {
-            return
-        }
-        UIApplication.shared.open(aURL)
+        Utility.maybeOpenSafari(attributedText: self.attributedText, location: characterIndex, effectiveRange: nil)
     }
 
     @objc func actionTap(tap: UITapGestureRecognizer) {

@@ -6,7 +6,7 @@
 //  Copyright © 2021 Kantai Developer. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum Utility {
     
@@ -47,5 +47,16 @@ enum Utility {
             inputCopy = inputCopy.replacingOccurrences(of: foundURL, with: String(format: "<a href=\"%@\">%@</a>", foundURL as CVarArg, display))
         }
         return inputCopy
+    }
+        
+    /// Open safari while link available
+    static func maybeOpenSafari(attributedText: NSAttributedString?, location: Int, effectiveRange range: NSRangePointer?) {
+        
+        let attributeName = NSAttributedString.Key.link
+        let value = attributedText?.attribute(attributeName, at: location, effectiveRange: range)
+            
+        if let aURL = value as? URL, UIApplication.shared.canOpenURL(aURL) {
+            UIApplication.shared.open(aURL)
+        }
     }
 }
