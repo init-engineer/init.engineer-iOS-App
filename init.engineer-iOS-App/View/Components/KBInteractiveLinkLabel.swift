@@ -8,36 +8,6 @@
 
 import UIKit
 
-private extension String {
-    
-    /**
-     Get NSAttributedString from HTML-string.
-     
-     ### Chinese description
-     將 HTML-string 轉換成 NSAttributedString
-    
-     - Returns: NSAttributedString? (return nil if not HTML-string)
-     */
-    func getNSAttributedStringFromHTMLTag() -> NSAttributedString? {
-        guard let data = self.data(using: .utf8) else {
-            return nil
-        }
-        do {
-            return try NSAttributedString(
-                data: data,
-                options: [
-                    .documentType: NSAttributedString.DocumentType.html,
-                    .characterEncoding: String.Encoding.utf8.rawValue
-                ],
-                documentAttributes: nil
-            )
-        } catch {
-            print(error.localizedDescription)
-            return  nil
-        }
-    }
-}
-
 extension UIColor {
     func toHexString() -> String {
         var r: CGFloat = 0

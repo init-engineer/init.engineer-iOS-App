@@ -23,4 +23,32 @@ extension String {
         let convertMap = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
         return convertMap[num]
     }
+    
+    
+    /**
+     Get NSAttributedString from HTML-string.
+     
+     ### Chinese description
+     將 HTML-string 轉換成 NSAttributedString
+    
+     - Returns: NSAttributedString? (return nil if not HTML-string)
+     */
+    func getNSAttributedStringFromHTMLTag() -> NSAttributedString? {
+        guard let data = self.data(using: .utf8) else {
+            return nil
+        }
+        do {
+            return try NSAttributedString(
+                data: data,
+                options: [
+                    .documentType: NSAttributedString.DocumentType.html,
+                    .characterEncoding: String.Encoding.utf8.rawValue
+                ],
+                documentAttributes: nil
+            )
+        } catch {
+            print(error.localizedDescription)
+            return  nil
+        }
+    }
 }
