@@ -18,7 +18,7 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var articleTitleLabel: UILabel!
     @IBOutlet weak var articleImageView: UIImageView!
     @IBOutlet weak var articleImageViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var articleContentTextView: UITextView!
+    @IBOutlet weak var articleContentTextView: KBInteractiveLinkTextView!
     @IBOutlet weak var primaryFacebookLikeLabel: UILabel!
     @IBOutlet weak var primaryFacebookShareLabel: UILabel!
     @IBOutlet weak var secondaryFacebookLikeLabel: UILabel!
@@ -29,7 +29,6 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var twitterShareLabel: UILabel!
     @IBOutlet weak var commentsTableView: UITableView!
     @IBOutlet weak var commentsTableViewHeight: NSLayoutConstraint!
-
     
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     var loadingImage = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
@@ -58,7 +57,7 @@ class ArticleViewController: UIViewController {
         KaobeiConnection.sendRequest(api: detailRequest) { [weak self] (response) in
             switch response.result {
                 case .success(let data):
-                    self?.articleContentTextView.text = data.data.content
+                    self?.articleContentTextView.setAttributedTextWithHTMLStyle(source: data.data.content)
                     DispatchQueue.global(qos: .userInitiated).async {
                         do {
                             let articleImage = try UIImage(data: Data(contentsOf: URL(string: data.data.image)!))
