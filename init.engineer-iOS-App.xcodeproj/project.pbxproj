@@ -89,6 +89,7 @@
 		C4DCC3EB2488041E0061C1BD /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
 		DC41933B260609EE006E38F8 /* KBInteractiveLinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC41933A260609EE006E38F8 /* KBInteractiveLinkLabel.swift */; };
 		DC502755260CC48400B3D5A4 /* KBInteractiveLinkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC502754260CC48400B3D5A4 /* KBInteractiveLinkTextView.swift */; };
+		DC50276C260CCA0100B3D5A4 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC50276B260CCA0100B3D5A4 /* Utility.swift */; };
 		DCDF250525F7DB3000B9137A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A3A4E25B9897300F484F1 /* Constants.swift */; };
 		F7769AE4515EAFECA91FD255 /* Pods_init_engineer_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB7835095CFCC106E3E1CBB /* Pods_init_engineer_iOS_App.framework */; };
 		FA0ADB9BEA73C3F6ECF9124B /* Pods_KaobeiWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C52278991D6B26FFCE26B7 /* Pods_KaobeiWidgetExtension.framework */; };
@@ -255,6 +256,7 @@
 		CF88C66D71E845756FD1E8EB /* Pods-KaobeiAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPI.release.xcconfig"; path = "Target Support Files/Pods-KaobeiAPI/Pods-KaobeiAPI.release.xcconfig"; sourceTree = "<group>"; };
 		DC41933A260609EE006E38F8 /* KBInteractiveLinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBInteractiveLinkLabel.swift; sourceTree = "<group>"; };
 		DC502754260CC48400B3D5A4 /* KBInteractiveLinkTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBInteractiveLinkTextView.swift; sourceTree = "<group>"; };
+		DC50276B260CCA0100B3D5A4 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		E166187F28AE322B0756B13F /* Pods-KaobeiAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPI.debug.xcconfig"; path = "Target Support Files/Pods-KaobeiAPI/Pods-KaobeiAPI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -446,6 +448,7 @@
 		A7D2E849244DE50E00953132 /* init.engineer-iOS-App */ = {
 			isa = PBXGroup;
 			children = (
+				DC50276A260CC9EE00B3D5A4 /* Utility */,
 				6AE36BD025D44CB6004BDD1D /* Extension */,
 				85AB740725B564F300F6238A /* 純靠北工程師.entitlements */,
 				A7D2E84A244DE50E00953132 /* AppDelegate.swift */,
@@ -537,6 +540,14 @@
 				4DBAC1F82C85E00ADC5B2A2D /* Pods-init.engineer-iOS-App.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DC50276A260CC9EE00B3D5A4 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				DC50276B260CCA0100B3D5A4 /* Utility.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -934,6 +945,7 @@
 				C48F830125C79A0400D98F93 /* FontManager.swift in Sources */,
 				C48F830E25C8CEBA00D98F93 /* KaobeiTabBarController.swift in Sources */,
 				6AE36BE125D44D12004BDD1D /* StringEx.swift in Sources */,
+				DC50276C260CCA0100B3D5A4 /* Utility.swift in Sources */,
 				6A79BA6725D597410021F956 /* ReviewCell.swift in Sources */,
 				A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */,
 				6AE36BD325D44CDF004BDD1D /* NVActivityIndicatorEx.swift in Sources */,
