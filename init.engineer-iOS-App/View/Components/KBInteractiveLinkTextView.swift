@@ -29,13 +29,17 @@ final class KBInteractiveLinkTextView: UITextView {
     private func configure() {
         isUserInteractionEnabled = true
         addGestureRecognizer(tap)
-        
     }
     
     /// 使用者是否點擊在有效的連結上
     ///
     /// - Parameter point: User tap location point
     private func isTapOnTopOfActivateLink(point: CGPoint) {
+    
+        // Avoid using self.textContainer
+        guard let textContainer = self.textContainer.copy() as? NSTextContainer else {
+            return
+        }
         
         // Configure NSLayoutManager and add the text container
         let layoutManager = NSLayoutManager()
