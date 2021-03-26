@@ -15,7 +15,7 @@ import NVActivityIndicatorView
 class ReviewDetailViewController: UIViewController {
     
     @IBOutlet weak var reviewArticleTitleLabel: UILabel!
-    @IBOutlet weak var reviewArticleContentTextView: UITextView!
+    @IBOutlet weak var reviewArticleContentTextView: KBInteractiveLinkTextView!
     @IBOutlet weak var reviewArticleImageView: UIImageView!
     @IBOutlet weak var reviewArticleImageViewConstraintsHeight: NSLayoutConstraint!
     @IBOutlet weak var agreeButton: UIButton!
@@ -71,7 +71,7 @@ class ReviewDetailViewController: UIViewController {
         }
         // 3. 設定 TextView（你自己文章列表用的，先替換掉 Storyboard 的東西）
         // textview內容用：reviewStatus.content
-        reviewArticleContentTextView.text = reviewStatus.content
+        reviewArticleContentTextView.setAttributedTextWithHTMLStyle(source: reviewStatus.content)
         // 4. setVoteState(agree: 通過, denied: 否決, review: 使用者投票狀態)
         guard let aye = self.aye, let nay = self.nay, let review = self.review else { return }
         setVoteState(agree: aye, denied: nay, review: review)
