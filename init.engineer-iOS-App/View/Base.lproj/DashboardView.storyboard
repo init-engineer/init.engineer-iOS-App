@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mji-zJ-1ZD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--儀錶板-->
+        <scene sceneID="r5F-2n-kl4">
+            <objects>
+                <viewController id="ifS-1X-e4W" customClass="DashboardTabController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LjI-ly-DiX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CDK-2a-8w5">
+                                <rect key="frame" x="20" y="118" width="374" height="744"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aq3-Jp-RTS"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CDK-2a-8w5" firstAttribute="leading" secondItem="aq3-Jp-RTS" secondAttribute="leading" constant="20" id="0Vs-xg-7du"/>
+                            <constraint firstItem="CDK-2a-8w5" firstAttribute="bottom" secondItem="aq3-Jp-RTS" secondAttribute="bottom" id="87Y-1d-iP5"/>
+                            <constraint firstItem="aq3-Jp-RTS" firstAttribute="trailing" secondItem="CDK-2a-8w5" secondAttribute="trailing" constant="20" id="itw-ag-aQg"/>
+                            <constraint firstItem="CDK-2a-8w5" firstAttribute="top" secondItem="aq3-Jp-RTS" secondAttribute="top" constant="30" id="nZh-Vo-nq4"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="儀錶板" id="g8e-zp-7sM"/>
+                    <navigationItem key="navigationItem" id="jgb-qh-ess"/>
+                    <connections>
+                        <outlet property="userPostsTableView" destination="CDK-2a-8w5" id="hLC-nr-368"/>
+                        <segue destination="Qut-Ki-2E0" kind="show" identifier="DashboardToLogin" id="63W-j3-dLV"/>
+                        <segue destination="RmT-TL-OWT" kind="show" identifier="ToArticleDetails" id="Mgx-7q-dDi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MH1-zz-Msa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="500"/>
+        </scene>
+        <!--儀錶板-->
+        <scene sceneID="SG3-3Z-eri">
+            <objects>
+                <navigationController id="Mji-zJ-1ZD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="儀錶板" image="baseline_person_black_24pt" landscapeImage="baseline_person_black_18pt" id="3bg-63-nfF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nfD-Sy-qC9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ifS-1X-e4W" kind="relationship" relationship="rootViewController" id="s6K-mc-aha"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ccc-gi-UsG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="500"/>
+        </scene>
+        <!--LoginView-->
+        <scene sceneID="AGP-XQ-EZp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginView" id="Qut-Ki-2E0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="n0v-ED-UIB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YhT-vR-4sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="500"/>
+        </scene>
+        <!--ArticleDetailView-->
+        <scene sceneID="bRk-gX-oEU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ArticleDetailView" id="RmT-TL-OWT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ddo-yH-hBo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgy-RK-7re" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1819" y="672"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="baseline_person_black_18pt" width="18" height="18"/>
+        <image name="baseline_person_black_24pt" width="24" height="24"/>
+        <namedColor name="backgroundColor">
+            <color red="0.96700000762939453" green="0.96700000762939453" blue="0.96700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

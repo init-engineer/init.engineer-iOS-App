@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dmE-e9-gNw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Fixedsys500c.ttf">
+            <string>FixedsysTTF</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--首頁-->
+        <scene sceneID="Uiw-0Y-SdL">
+            <objects>
+                <viewController id="dmE-e9-gNw" customClass="IndexTabController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0jz-nh-ysL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osA-tC-YTJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="y7p-D2-KA0">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="首頁 Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn4-XD-qDs">
+                                                <rect key="frame" x="20" y="30" width="374" height="42"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="30" left="20" bottom="30" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="y7p-D2-KA0" firstAttribute="top" secondItem="b0x-ts-2pd" secondAttribute="top" id="3mb-uk-28e"/>
+                                    <constraint firstItem="y7p-D2-KA0" firstAttribute="width" secondItem="X7z-Vm-GeV" secondAttribute="width" id="7yD-FG-nnK"/>
+                                    <constraint firstItem="y7p-D2-KA0" firstAttribute="leading" secondItem="b0x-ts-2pd" secondAttribute="leading" id="JO7-gv-yH3"/>
+                                    <constraint firstItem="y7p-D2-KA0" firstAttribute="trailing" secondItem="b0x-ts-2pd" secondAttribute="trailing" id="Ttp-27-Pxb"/>
+                                    <constraint firstItem="y7p-D2-KA0" firstAttribute="bottom" secondItem="b0x-ts-2pd" secondAttribute="bottom" id="zpA-HU-7kd"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="b0x-ts-2pd"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="X7z-Vm-GeV"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XyI-jv-bdt"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="osA-tC-YTJ" firstAttribute="top" secondItem="XyI-jv-bdt" secondAttribute="top" id="1Z9-TL-Viw"/>
+                            <constraint firstItem="osA-tC-YTJ" firstAttribute="trailing" secondItem="XyI-jv-bdt" secondAttribute="trailing" id="Cy2-Cg-TqN"/>
+                            <constraint firstItem="osA-tC-YTJ" firstAttribute="leading" secondItem="XyI-jv-bdt" secondAttribute="leading" id="RYo-yK-w7n"/>
+                            <constraint firstItem="osA-tC-YTJ" firstAttribute="bottom" secondItem="XyI-jv-bdt" secondAttribute="bottom" id="Sio-sb-ETs"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="首頁" image="baseline_home_black_24pt" landscapeImage="baseline_home_black_18pt" id="dp0-3C-EPp"/>
+                    <connections>
+                        <outlet property="indexStackView" destination="y7p-D2-KA0" id="Urj-Z5-42e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ich-0S-Lnl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-791.304347826087" y="-529.01785714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="baseline_home_black_18pt" width="18" height="18"/>
+        <image name="baseline_home_black_24pt" width="24" height="24"/>
+        <namedColor name="backgroundColor">
+            <color red="0.96700000762939453" green="0.96700000762939453" blue="0.96700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

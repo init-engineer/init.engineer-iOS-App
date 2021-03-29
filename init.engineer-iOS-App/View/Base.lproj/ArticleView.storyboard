@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mOY-C4-phr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--文章列表-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ArticleTabController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-Kw-WUX">
+                                <rect key="frame" x="20" y="118" width="374" height="744"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ybK-Kw-WUX" secondAttribute="bottom" id="O2G-2t-l7C"/>
+                            <constraint firstItem="ybK-Kw-WUX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YUI-QM-PLc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ybK-Kw-WUX" secondAttribute="trailing" constant="20" id="pGU-Lt-fmG"/>
+                            <constraint firstItem="ybK-Kw-WUX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="sSb-aG-2OI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="文章列表" id="R9B-7x-joA"/>
+                    <navigationItem key="navigationItem" id="Iz0-QP-aCe"/>
+                    <connections>
+                        <outlet property="articleTable" destination="ybK-Kw-WUX" id="k8l-C2-Wgj"/>
+                        <segue destination="eIa-Gf-1xi" kind="show" identifier="ToArticleDetails" id="gVi-m9-RBS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="1208.7053571428571"/>
+        </scene>
+        <!--ArticleDetailView-->
+        <scene sceneID="OVs-D3-J3X">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ArticleDetailView" id="eIa-Gf-1xi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BIf-Nv-bPC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQE-hU-zci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="899" y="1209"/>
+        </scene>
+        <!--文章列表-->
+        <scene sceneID="QdW-h9-8AF">
+            <objects>
+                <navigationController id="mOY-C4-phr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="文章列表" image="baseline_dashboard_black_24pt" landscapeImage="baseline_dashboard_black_18pt" id="FqJ-hO-lJb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OkH-Nt-rDT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QiZ-8m-Xa8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ukX-4k-bea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-791" y="1209"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="baseline_dashboard_black_18pt" width="18" height="18"/>
+        <image name="baseline_dashboard_black_24pt" width="24" height="24"/>
+        <namedColor name="backgroundColor">
+            <color red="0.96700000762939453" green="0.96700000762939453" blue="0.96700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mha-7H-uOT">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Fixedsys500c.ttf">
+            <string>FixedsysTTF</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--發表文章-->
+        <scene sceneID="wM2-So-pFy">
+            <objects>
+                <viewController id="Zzm-8s-lRu" customClass="PublishTabController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5jU-Ng-RCl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fww-ib-WxX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2QT-o7-UAT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="494.66666666666669"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發表文章 Publish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByZ-r8-QqA">
+                                                <rect key="frame" x="20" y="29.999999999999996" width="374" height="39.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="36"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dv8-R0-Eln">
+                                                <rect key="frame" x="20" y="89.666666666666657" width="374" height="199.99999999999997"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="Vwz-K3-2Wo"/>
+                                                </constraints>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                <color key="textColor" red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="0.69803921568627447" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="26"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="H8q-XB-zfb">
+                                                <rect key="frame" x="20" y="309.66666666666669" width="374" height="32"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG8-Ih-G9e">
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="32"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                        <state key="normal" title="黑底綠字"/>
+                                                        <connections>
+                                                            <action selector="themeChooseButtonPressed:" destination="Zzm-8s-lRu" eventType="touchUpInside" id="PFj-F7-zI4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7O-iQ-jwp">
+                                                        <rect key="frame" x="197" y="0.0" width="177" height="32"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                        <state key="normal" title="AURAKA 點陣宋字型"/>
+                                                        <connections>
+                                                            <action selector="fontChooseButtonPressed:" destination="Zzm-8s-lRu" eventType="touchUpInside" id="chH-du-iwc"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6tV-09-H56">
+                                                <rect key="frame" x="20" y="361.66666666666669" width="374" height="31"/>
+                                                <subviews>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-az-bRZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="繪製 To Be Continued" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0E-uk-DEn">
+                                                        <rect key="frame" x="69" y="0.0" width="305" height="31"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-Iy-1vF">
+                                                <rect key="frame" x="20" y="402.66666666666669" width="374" height="0.0"/>
+                                                <subviews>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-jL-EVC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="0.0"/>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="我已閱讀並同意板規。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="210-kV-orE">
+                                                        <rect key="frame" x="69" y="0.0" width="305" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CJ-c0-2Ox">
+                                                <rect key="frame" x="20" y="412.66666666666669" width="374" height="32"/>
+                                                <fontDescription key="fontDescription" name="FixedsysTTF" family="FixedsysTTF" pointSize="18"/>
+                                                <state key="normal" title="選擇圖片"/>
+                                                <connections>
+                                                    <action selector="imageUploadButtonPressed:" destination="Zzm-8s-lRu" eventType="touchUpInside" id="eMU-Nb-eZv"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-US-Mog">
+                                                <rect key="frame" x="20" y="464.66666666666663" width="374" height="0.0"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="Cji-fX-NMd"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf5-lA-2df">
+                                                <rect key="frame" x="20" y="464.66666666666663" width="374" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">板規
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                            <font key="NSFont" size="24" name="PingFangTC-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content">一、責任聲明：
+本站使用者須對自己所張貼之每一篇文章負責，本站毋需對站內以及其他關聯之社群媒體的言論負擔起任何的責任，責任的歸屬權屬於各位發表人。
+
+二、發表文章時之注意事項：
+1. 尊重他人意見，注意用字遣詞與口氣，避免引起爭吵。
+2. 避免在公眾區域，討論私人事務。
+3. 避免發表文章於非相關區域，文章標題及內容不符合討論區之討論主題。
+4. 禁止重複刊登相同內容或相同意義之留言。
+5. 適度引用文章，避免引用過長文章，造成閱讀困擾。
+6. 不適當的廣告、宣傳活動或商業性留言。
+7. 禁止發表謾罵、脅迫、挑釁、猥褻或不雅之文字。
+8. 禁止發表個人測試用文章或散播不實消息之文章，張貼文章，應自負相關法律責任。
+9. 轉貼任何文章請附上原作者貨來源，否則版主會親自去問授權、處理方式，並且把您的帳號封鎖。
+10. 若有未規定的部份，由版主依主觀認定，視情況處理。
+
+三、違規處理辦法：
+違反上述規定之文章或作者，版主可刪除文章或行使禁貼之處份。
+
+四、附註及補充說明：
+1. 本站歡迎網友互相討論發表己見，唯請務必遵守上述規定。
+2. 是否違反上述規定，由版主主觀認定，請謹慎用詞。
+3. 請學習包容各種意見，如遇惡意批評或攻擊之文章，切勿加入爭執，並且善用檢舉，版主會有適當之處理，否則雙方皆依上述規定處理。</string>
+                                                        <attributes>
+                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                            <font key="NSFont" size="16" name="PingFangTC-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="30" left="20" bottom="30" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2QT-o7-UAT" firstAttribute="trailing" secondItem="41O-YN-mPU" secondAttribute="trailing" id="MNo-D4-u4j"/>
+                                    <constraint firstItem="2QT-o7-UAT" firstAttribute="leading" secondItem="41O-YN-mPU" secondAttribute="leading" id="OtR-QT-DVa"/>
+                                    <constraint firstItem="2QT-o7-UAT" firstAttribute="bottom" secondItem="41O-YN-mPU" secondAttribute="bottom" id="Qae-ln-skU"/>
+                                    <constraint firstItem="2QT-o7-UAT" firstAttribute="top" secondItem="41O-YN-mPU" secondAttribute="top" id="qIL-bE-9PX"/>
+                                    <constraint firstItem="2QT-o7-UAT" firstAttribute="width" secondItem="Ibs-Gw-abq" secondAttribute="width" id="qtr-uv-v4w"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="41O-YN-mPU"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Ibs-Gw-abq"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v5X-aM-Yal"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fww-ib-WxX" firstAttribute="trailing" secondItem="v5X-aM-Yal" secondAttribute="trailing" id="MuU-pk-keY"/>
+                            <constraint firstItem="fww-ib-WxX" firstAttribute="top" secondItem="v5X-aM-Yal" secondAttribute="top" id="P3X-hd-UyK"/>
+                            <constraint firstItem="fww-ib-WxX" firstAttribute="leading" secondItem="v5X-aM-Yal" secondAttribute="leading" id="Wia-Qa-Rx3"/>
+                            <constraint firstItem="fww-ib-WxX" firstAttribute="bottom" secondItem="v5X-aM-Yal" secondAttribute="bottom" id="vjX-EF-p2Y"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="發表文章" id="WFH-pU-0Ld"/>
+                    <navigationItem key="navigationItem" id="O1b-93-HiR"/>
+                    <connections>
+                        <outlet property="agreePublishRule" destination="zVJ-jL-EVC" id="jHi-kt-01l"/>
+                        <outlet property="articleImageView" destination="ENQ-US-Mog" id="Flr-XZ-Zoh"/>
+                        <outlet property="articleImageViewConstraintsHeight" destination="Cji-fX-NMd" id="u4F-F5-nkg"/>
+                        <outlet property="articleTextView" destination="Dv8-R0-Eln" id="sf1-EK-nq6"/>
+                        <outlet property="fontChooseButton" destination="T7O-iQ-jwp" id="Pg2-bI-I5k"/>
+                        <outlet property="publishScrollView" destination="fww-ib-WxX" id="NzF-lA-3Eg"/>
+                        <outlet property="ruleTextView" destination="kf5-lA-2df" id="hjB-I4-wf5"/>
+                        <outlet property="themeChooseButton" destination="LG8-Ih-G9e" id="6ro-OA-tZv"/>
+                        <outlet property="toBeContinuedDraw" destination="nAb-az-bRZ" id="yBC-mG-5sh"/>
+                        <segue destination="diw-0b-uL0" kind="show" identifier="publishToPreview" id="fi4-8u-3iD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ng-Dq-p4A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="-149.33035714285714"/>
+        </scene>
+        <!--Preview Article Controller-->
+        <scene sceneID="b9R-jf-Woa">
+            <objects>
+                <viewController id="diw-0b-uL0" customClass="PreviewArticleController" customModule="純靠北工程師" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nca-pV-DCV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eql-md-09t">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aCz-nA-6eP">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="306.66666666666669"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_screen_header" translatesAutoresizingMaskIntoConstraints="NO" id="d0n-2L-5Et">
+                                                <rect key="frame" x="20" y="30" width="374" height="0.0"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="QKV-IN-EGY"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text=" " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjj-uI-TWJ">
+                                                <rect key="frame" x="20" y="30" width="374" height="17.333333333333329"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtY-s9-XKL">
+                                                <rect key="frame" x="20" y="47.333333333333343" width="374" height="47.333333333333343"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1d-DN-pr1">
+                                                <rect key="frame" x="20" y="94.666666666666657" width="374" height="149"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="to_be_continued" translatesAutoresizingMaskIntoConstraints="NO" id="qod-Pc-pF1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="249.33333333333334" height="149"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="149" id="A3m-m2-FKW"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-4A-gHT">
+                                                        <rect key="frame" x="249.33333333333329" y="0.0" width="124.66666666666666" height="149"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="s1e-4A-gHT" firstAttribute="width" secondItem="qod-Pc-pF1" secondAttribute="width" multiplier="0.5" id="O32-Dc-juG"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uch-BA-k2T">
+                                                <rect key="frame" x="20" y="243.66666666666669" width="374" height="33"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="發文傳送門 https://init.engineer" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFX-gk-tzf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="33"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="純靠北工程師" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc3-Y4-CMi">
+                                                        <rect key="frame" x="267" y="0.0" width="107" height="33"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="cFX-gk-tzf" firstAttribute="width" secondItem="Sc3-Y4-CMi" secondAttribute="width" multiplier="2.5" id="EeX-MZ-CLZ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_screen_footer" translatesAutoresizingMaskIntoConstraints="NO" id="bx3-FK-1dC">
+                                                <rect key="frame" x="20" y="276.66666666666669" width="374" height="0.0"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="bsF-cu-Ynm"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="30" left="20" bottom="30" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aCz-nA-6eP" firstAttribute="width" secondItem="mkc-vu-H3O" secondAttribute="width" id="VY5-r6-iDP"/>
+                                    <constraint firstItem="aCz-nA-6eP" firstAttribute="trailing" secondItem="iXM-AL-1rg" secondAttribute="trailing" id="Xgu-hy-uMI"/>
+                                    <constraint firstItem="aCz-nA-6eP" firstAttribute="top" secondItem="iXM-AL-1rg" secondAttribute="top" id="Z1E-L8-F6g"/>
+                                    <constraint firstItem="aCz-nA-6eP" firstAttribute="leading" secondItem="iXM-AL-1rg" secondAttribute="leading" id="aZF-43-0mT"/>
+                                    <constraint firstItem="aCz-nA-6eP" firstAttribute="bottom" secondItem="iXM-AL-1rg" secondAttribute="bottom" id="e2a-fR-1qh"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="iXM-AL-1rg"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="mkc-vu-H3O"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v3Y-oc-eV2"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eql-md-09t" firstAttribute="leading" secondItem="v3Y-oc-eV2" secondAttribute="leading" id="4PT-r5-tS9"/>
+                            <constraint firstItem="v3Y-oc-eV2" firstAttribute="bottom" secondItem="eql-md-09t" secondAttribute="bottom" id="Hsz-4R-rlZ"/>
+                            <constraint firstItem="eql-md-09t" firstAttribute="trailing" secondItem="v3Y-oc-eV2" secondAttribute="trailing" id="UZD-mE-3ir"/>
+                            <constraint firstItem="eql-md-09t" firstAttribute="top" secondItem="v3Y-oc-eV2" secondAttribute="top" id="f7p-8I-X91"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5zh-7i-GXd"/>
+                    <connections>
+                        <outlet property="articleFooterLeftTextView" destination="cFX-gk-tzf" id="kJq-be-KdT"/>
+                        <outlet property="articleFooterRightTextView" destination="Sc3-Y4-CMi" id="vgg-hu-51d"/>
+                        <outlet property="articleFooterStackView" destination="uch-BA-k2T" id="ATP-6h-GhG"/>
+                        <outlet property="articleHeaderTextView" destination="wjj-uI-TWJ" id="Uj4-d7-7r9"/>
+                        <outlet property="articleTextView" destination="VtY-s9-XKL" id="tCg-tF-lFg"/>
+                        <outlet property="toBeContinuedBlank" destination="s1e-4A-gHT" id="MLA-2a-twU"/>
+                        <outlet property="toBeContinuedImageHeight" destination="A3m-m2-FKW" id="Gnt-2y-twD"/>
+                        <outlet property="toBeContinuedImageView" destination="qod-Pc-pF1" id="kJm-wA-jFE"/>
+                        <outlet property="toBeContinuedStackView" destination="G1d-DN-pr1" id="GOY-mh-CxV"/>
+                        <outlet property="windowsScreenFooter" destination="bx3-FK-1dC" id="0fT-RG-dk3"/>
+                        <outlet property="windowsScreenFooterHeight" destination="bsF-cu-Ynm" id="xlx-NM-V3i"/>
+                        <outlet property="windowsScreenHeader" destination="d0n-2L-5Et" id="yEP-d0-Qld"/>
+                        <outlet property="windowsScreenHeaderHeight" destination="QKV-IN-EGY" id="sto-m7-89w"/>
+                        <segue destination="AWE-aB-LK0" kind="showDetail" identifier="previewToRule" id="HZA-eB-9Mr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLs-Pu-1si" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1968" y="-149"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gTe-1K-MF1">
+            <objects>
+                <viewController id="AWE-aB-LK0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yhi-gk-3Ek">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHj-cv-dYA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WHA-x4-cX0">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="916"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghr-Yh-Gkz">
+                                                <rect key="frame" x="20" y="30" width="374" height="856"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">板規
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                            <font key="NSFont" size="24" name="PingFangTC-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content">一、責任聲明：
+本站使用者須對自己所張貼之每一篇文章負責，本站毋需對站內以及其他關聯之社群媒體的言論負擔起任何的責任，責任的歸屬權屬於各位發表人。
+
+二、發表文章時之注意事項：
+1. 尊重他人意見，注意用字遣詞與口氣，避免引起爭吵。
+2. 避免在公眾區域，討論私人事務。
+3. 避免發表文章於非相關區域，文章標題及內容不符合討論區之討論主題。
+4. 禁止重複刊登相同內容或相同意義之留言。
+5. 適度引用文章，避免引用過長文章，造成閱讀困擾。
+6. 不適當的廣告、宣傳活動或商業性留言。
+7. 禁止發表謾罵、脅迫、挑釁、猥褻或不雅之文字。
+8. 禁止發表個人測試用文章或散播不實消息之文章，張貼文章，應自負相關法律責任。
+9. 轉貼任何文章請附上原作者貨來源，否則版主會親自去問授權、處理方式，並且把您的帳號封鎖。
+10. 若有未規定的部份，由版主依主觀認定，視情況處理。
+
+三、違規處理辦法：
+違反上述規定之文章或作者，版主可刪除文章或行使禁貼之處份。
+
+四、附註及補充說明：
+1. 本站歡迎網友互相討論發表己見，唯請務必遵守上述規定。
+2. 是否違反上述規定，由版主主觀認定，請謹慎用詞。
+3. 請學習包容各種意見，如遇惡意批評或攻擊之文章，切勿加入爭執，並且善用檢舉，版主會有適當之處理，否則雙方皆依上述規定處理。</string>
+                                                        <attributes>
+                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                            <font key="NSFont" size="16" name="PingFangTC-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="30" left="20" bottom="30" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WHA-x4-cX0" firstAttribute="trailing" secondItem="Zw6-sB-7mS" secondAttribute="trailing" id="1vh-f2-f8o"/>
+                                    <constraint firstItem="WHA-x4-cX0" firstAttribute="top" secondItem="Zw6-sB-7mS" secondAttribute="top" id="rqJ-AB-49Q"/>
+                                    <constraint firstItem="WHA-x4-cX0" firstAttribute="leading" secondItem="Zw6-sB-7mS" secondAttribute="leading" id="sDc-RF-dNu"/>
+                                    <constraint firstItem="WHA-x4-cX0" firstAttribute="bottom" secondItem="Zw6-sB-7mS" secondAttribute="bottom" id="x5k-NN-HpS"/>
+                                    <constraint firstItem="WHA-x4-cX0" firstAttribute="width" secondItem="LgR-ah-cL4" secondAttribute="width" id="xFI-8m-9Oa"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Zw6-sB-7mS"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="LgR-ah-cL4"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Giy-3X-M05"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aHj-cv-dYA" firstAttribute="top" secondItem="Giy-3X-M05" secondAttribute="top" id="1HG-qW-p4e"/>
+                            <constraint firstItem="Giy-3X-M05" firstAttribute="trailing" secondItem="aHj-cv-dYA" secondAttribute="trailing" id="BRa-tn-RVi"/>
+                            <constraint firstItem="aHj-cv-dYA" firstAttribute="leading" secondItem="Giy-3X-M05" secondAttribute="leading" id="Hcr-Ag-Lwr"/>
+                            <constraint firstItem="Giy-3X-M05" firstAttribute="bottom" secondItem="aHj-cv-dYA" secondAttribute="bottom" id="RU9-oc-t6d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gwk-Xa-s6H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6b-gd-1Pz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2822" y="-149"/>
+        </scene>
+        <!--發表文章-->
+        <scene sceneID="tyz-R6-OoN">
+            <objects>
+                <navigationController id="mha-7H-uOT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="發表文章" image="baseline_edit_black_24pt" landscapeImage="baseline_edit_black_18pt" id="IHW-XO-mgn"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e8M-XN-J6T">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Zzm-8s-lRu" kind="relationship" relationship="rootViewController" id="fwW-fS-xmR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQK-ge-Wjc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="-149"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="baseline_edit_black_18pt" width="18" height="18"/>
+        <image name="baseline_edit_black_24pt" width="24" height="24"/>
+        <image name="blue_screen_footer" width="798" height="195"/>
+        <image name="blue_screen_header" width="798" height="211"/>
+        <image name="to_be_continued" width="665" height="149"/>
+        <namedColor name="backgroundColor">
+            <color red="0.96700000762939453" green="0.96700000762939453" blue="0.96700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
