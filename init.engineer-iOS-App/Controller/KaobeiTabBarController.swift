@@ -29,7 +29,7 @@ class KaobeiTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.dashboardFragment = VCs[3] as? UINavigationController
         
         if KeyChainManager.shared.getToken() == nil {
-            self.viewControllers?.replaceSubrange(2...4, with: repeatElement(UIStoryboard(name: "LoginView", bundle: nil).instantiateViewController(identifier: "LoginController"), count: 1))
+            self.viewControllers?.replaceSubrange(1...3, with: repeatElement(UIStoryboard(name: "LoginView", bundle: nil).instantiateViewController(identifier: "LoginController"), count: 1))
         }
     }
     
