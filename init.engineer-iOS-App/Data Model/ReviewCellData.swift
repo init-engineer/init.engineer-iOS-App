@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import KaobeiAPI
+
 
 class ReviewCellData {
     let content: String

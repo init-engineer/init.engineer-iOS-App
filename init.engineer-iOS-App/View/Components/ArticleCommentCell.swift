@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import KaobeiAPI
 
 class ArticleCommentCell: UIView {
     
