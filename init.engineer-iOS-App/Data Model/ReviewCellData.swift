@@ -2,8 +2,7 @@
 //  ReviewCellData.swift
 //  init.engineer-iOS-App
 //
-//  Created by Chen, Yuting | Eric | RP on 2021/02/23.
-//  Copyright © 2021 Kantai Developer. All rights reserved.
+//  Created by horo on 2021/02/23.
 //
 
 import Foundation
