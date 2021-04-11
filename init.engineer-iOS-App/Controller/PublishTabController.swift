@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KaobeiAPI
+
 
 class PublishTabController: UIViewController {
     @IBOutlet weak var publishScrollView: UIScrollView!                         // 捲動畫面

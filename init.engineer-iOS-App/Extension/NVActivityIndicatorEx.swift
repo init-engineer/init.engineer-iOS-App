@@ -10,6 +10,6 @@ import NVActivityIndicatorView
 
 extension NVActivityIndicatorType {
     static func randomPick() -> NVActivityIndicatorType {
-        return NVActivityIndicatorType.allCases.randomElement() ?? NVActivityIndicatorType.audioEqualizer
+        return NVActivityIndicatorType.audioEqualizer
     }
 }

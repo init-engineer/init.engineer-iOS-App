@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KaobeiAPI
+
 
 class ProfileCell: UITableViewCell {
     

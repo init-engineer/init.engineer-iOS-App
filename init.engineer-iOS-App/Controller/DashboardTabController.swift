@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KaobeiAPI
+
 import GoogleMobileAds
 import NVActivityIndicatorView
 
@@ -95,7 +95,13 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
     
     
     @objc func showSettingActionSheet(sender: UITapGestureRecognizer) {
-        let controller = UIAlertController(title: "", message: "你確定要登出嗎？", preferredStyle: .actionSheet)
+        var controller = UIAlertController()
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            controller = UIAlertController(title: "", message: "你確定要登出嗎？", preferredStyle: .alert)
+        } else {
+            controller = UIAlertController(title: "", message: "你確定要登出嗎？", preferredStyle: .actionSheet)
+        }
+        
         let action = UIAlertAction(title: "登出", style: .destructive, handler: logout)
         controller.addAction(action)
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)

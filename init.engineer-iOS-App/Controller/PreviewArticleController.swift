@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KaobeiAPI
+
 
 class PreviewArticleController: UIViewController {
     

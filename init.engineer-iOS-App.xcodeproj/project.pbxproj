@@ -11,56 +11,42 @@
 		127FD91D248BAAC1002E9645 /* PublishTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FD91C248BAAC1002E9645 /* PublishTabController.swift */; };
 		127FD91F248BAACF002E9645 /* DashboardTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FD91E248BAACF002E9645 /* DashboardTabController.swift */; };
 		12C64454248E129A005A2974 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C64453248E129A005A2974 /* LoginController.swift */; };
-		12C8B00F2533750C0072F653 /* KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; };
-		12C8B0162533750C0072F653 /* KaobeiAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8B0152533750C0072F653 /* KaobeiAPITests.swift */; };
-		12C8B0182533750C0072F653 /* KaobeiAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 12C8B0082533750C0072F653 /* KaobeiAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		12C8B01B2533750C0072F653 /* KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; };
-		12C8B01C2533750C0072F653 /* KaobeiAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		12C8B027253375430072F653 /* KaobeiConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8B026253375430072F653 /* KaobeiConnection.swift */; };
 		12CA61C9248C1B580020E606 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA61C8248C1B580020E606 /* ArticleViewController.swift */; };
-		4B101CD350B918650CC689D0 /* Pods_KaobeiAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378DEBDA1B935BC95C6DF376 /* Pods_KaobeiAPITests.framework */; };
-		64905508D51D6033F8657AF7 /* Pods_KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9069EE99467EB2067C330D4 /* Pods_KaobeiAPI.framework */; };
+		6A3ED64B2620B07B00B24B57 /* KaobeiConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8B026253375430072F653 /* KaobeiConnection.swift */; };
+		6A3ED64C2620B07B00B24B57 /* KaobeiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */; };
+		6A3ED64D2620B07B00B24B57 /* KaobeiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6C3C625AC918B00544802 /* KaobeiURL.swift */; };
+		6A3ED64E2620B07B00B24B57 /* KBGetArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */; };
+		6A3ED64F2620B07B00B24B57 /* KBGetArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */; };
+		6A3ED6502620B07B00B24B57 /* KBGetArticleStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734D25B1FE6200F6238A /* KBGetArticleStats.swift */; };
+		6A3ED6512620B07B00B24B57 /* KBGetArticleComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735525B2002500F6238A /* KBGetArticleComments.swift */; };
+		6A3ED6522620B07B00B24B57 /* KBGetUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742025B7603100F6238A /* KBGetUserProfile.swift */; };
+		6A3ED6532620B07B00B24B57 /* KBGetUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742425B7604900F6238A /* KBGetUserPosts.swift */; };
+		6A3ED6542620B07B00B24B57 /* KBPostUserPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742825B7605800F6238A /* KBPostUserPublishing.swift */; };
+		6A3ED6552620B07B00B24B57 /* KBGetArticleReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB743425B7609000F6238A /* KBGetArticleReviewList.swift */; };
+		6A3ED6562620B07B00B24B57 /* KBGetArticleVoteAye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB743825B760A100F6238A /* KBGetArticleVoteAye.swift */; };
+		6A3ED6572620B07B00B24B57 /* KBGetArticleVoteNay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB743C25B760B100F6238A /* KBGetArticleVoteNay.swift */; };
+		6A3ED6582620B07B00B24B57 /* KBCommonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB746025B762D500F6238A /* KBCommonTypes.swift */; };
+		6A3ED6592620B07B00B24B57 /* KBArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CB253E9A2200CEA9DF /* KBArticleList.swift */; };
+		6A3ED65A2620B07B00B24B57 /* KBArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */; };
+		6A3ED65B2620B07B00B24B57 /* KBArticleStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735125B1FE6E00F6238A /* KBArticleStats.swift */; };
+		6A3ED65C2620B07B00B24B57 /* KBArticleComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735C25B2003400F6238A /* KBArticleComments.swift */; };
+		6A3ED65D2620B07B00B24B57 /* KBUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB744025B760C600F6238A /* KBUserProfile.swift */; };
+		6A3ED65E2620B07B00B24B57 /* KBUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB744425B760D500F6238A /* KBUserPosts.swift */; };
+		6A3ED65F2620B07B00B24B57 /* KBUserPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB744825B760E700F6238A /* KBUserPublishing.swift */; };
+		6A3ED6602620B07B00B24B57 /* KBArticleReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745425B7611100F6238A /* KBArticleReviewList.swift */; };
+		6A3ED6612620B07B00B24B57 /* KBArticleVoteAye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */; };
+		6A3ED6622620B07B00B24B57 /* KBArticleVoteNay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */; };
 		6A79BA6725D597410021F956 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A79BA6625D597410021F956 /* ReviewCell.swift */; };
 		6A79BB0525D99A080021F956 /* ArticleDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A79BB0425D99A080021F956 /* ArticleDetailView.storyboard */; };
-		6A79BB4225D9B8D10021F956 /* KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; };
 		6AB6C09225C73271006662F8 /* TableViewGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C09125C73271006662F8 /* TableViewGap.swift */; };
 		6AB6C09725C73304006662F8 /* TableViewTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C09625C73304006662F8 /* TableViewTitle.swift */; };
 		6AE36BD325D44CDF004BDD1D /* NVActivityIndicatorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE36BD225D44CDF004BDD1D /* NVActivityIndicatorEx.swift */; };
 		6AE36BE125D44D12004BDD1D /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE36BE025D44D12004BDD1D /* StringEx.swift */; };
 		6AFEB9FE25E4366000D01166 /* ReviewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFEB9FD25E4366000D01166 /* ReviewCellData.swift */; };
-		853D8ED825BD204B00AD1548 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853D8ED725BD204B00AD1548 /* WidgetKit.framework */; };
-		853D8EDA25BD204B00AD1548 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853D8ED925BD204B00AD1548 /* SwiftUI.framework */; };
-		853D8EDD25BD204B00AD1548 /* KaobeiWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D8EDC25BD204B00AD1548 /* KaobeiWidget.swift */; };
-		853D8EDF25BD205600AD1548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853D8EDE25BD205600AD1548 /* Assets.xcassets */; };
-		853D8EE325BD205600AD1548 /* KaobeiWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 853D8ED625BD204B00AD1548 /* KaobeiWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		853D8F0B25BD528600AD1548 /* Fixedsys500c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DCC3EA2488041E0061C1BD /* Fixedsys500c.ttf */; };
 		853D8F9A25C23C4000AD1548 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D8F9925C23C4000AD1548 /* ArticleCell.swift */; };
 		853D8F9F25C2715F00AD1548 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D8F9E25C2715F00AD1548 /* UIConstants.swift */; };
-		85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6C3C625AC918B00544802 /* KaobeiURL.swift */; };
-		85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */; };
-		85AB734A25B1F4ED00F6238A /* KBArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */; };
-		85AB734E25B1FE6200F6238A /* KBGetArticleStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB734D25B1FE6200F6238A /* KBGetArticleStats.swift */; };
-		85AB735225B1FE6E00F6238A /* KBArticleStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735125B1FE6E00F6238A /* KBArticleStats.swift */; };
-		85AB735625B2002500F6238A /* KBGetArticleComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735525B2002500F6238A /* KBGetArticleComments.swift */; };
-		85AB735D25B2003400F6238A /* KBArticleComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB735C25B2003400F6238A /* KBArticleComments.swift */; };
 		85AB736B25B359C400F6238A /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB736A25B359C400F6238A /* KeyChainManager.swift */; };
-		85AB742125B7603100F6238A /* KBGetUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742025B7603100F6238A /* KBGetUserProfile.swift */; };
-		85AB742525B7604900F6238A /* KBGetUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742425B7604900F6238A /* KBGetUserPosts.swift */; };
-		85AB742925B7605800F6238A /* KBPostUserPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB742825B7605800F6238A /* KBPostUserPublishing.swift */; };
-		85AB743525B7609000F6238A /* KBGetArticleReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB743425B7609000F6238A /* KBGetArticleReviewList.swift */; };
-		85AB743925B760A100F6238A /* KBGetArticleVoteAye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB743825B760A100F6238A /* KBGetArticleVoteAye.swift */; };
-		85AB743D25B760B100F6238A /* KBGetArticleVoteNay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB743C25B760B100F6238A /* KBGetArticleVoteNay.swift */; };
-		85AB744125B760C600F6238A /* KBUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB744025B760C600F6238A /* KBUserProfile.swift */; };
-		85AB744525B760D500F6238A /* KBUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB744425B760D500F6238A /* KBUserPosts.swift */; };
-		85AB744925B760E700F6238A /* KBUserPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB744825B760E700F6238A /* KBUserPublishing.swift */; };
-		85AB745525B7611100F6238A /* KBArticleReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745425B7611100F6238A /* KBArticleReviewList.swift */; };
-		85AB745925B7611D00F6238A /* KBArticleVoteAye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */; };
-		85AB745D25B7612900F6238A /* KBArticleVoteNay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */; };
-		85AB746125B762D500F6238A /* KBCommonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB746025B762D500F6238A /* KBCommonTypes.swift */; };
 		85BB1BB925D16C7C0016CDCF /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BB1BB825D16C7C0016CDCF /* ReviewDetailViewController.swift */; };
-		85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */; };
-		85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CB253E9A2200CEA9DF /* KBArticleList.swift */; };
-		85C012CF253F25D900CEA9DF /* KBGetArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */; };
 		A7D2E84B244DE50E00953132 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84A244DE50E00953132 /* AppDelegate.swift */; };
 		A7D2E84D244DE50E00953132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84C244DE50E00953132 /* SceneDelegate.swift */; };
 		A7D2E84F244DE50E00953132 /* IndexTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2E84E244DE50E00953132 /* IndexTabController.swift */; };
@@ -90,48 +76,8 @@
 		DC41933B260609EE006E38F8 /* KBInteractiveLinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC41933A260609EE006E38F8 /* KBInteractiveLinkLabel.swift */; };
 		DC502755260CC48400B3D5A4 /* KBInteractiveLinkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC502754260CC48400B3D5A4 /* KBInteractiveLinkTextView.swift */; };
 		DC50276C260CCA0100B3D5A4 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC50276B260CCA0100B3D5A4 /* Utility.swift */; };
-		DCDF250525F7DB3000B9137A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A3A4E25B9897300F484F1 /* Constants.swift */; };
 		F7769AE4515EAFECA91FD255 /* Pods_init_engineer_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB7835095CFCC106E3E1CBB /* Pods_init_engineer_iOS_App.framework */; };
-		FA0ADB9BEA73C3F6ECF9124B /* Pods_KaobeiWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C52278991D6B26FFCE26B7 /* Pods_KaobeiWidgetExtension.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		12C8B0102533750C0072F653 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A7D2E83F244DE50E00953132 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 12C8B0052533750C0072F653;
-			remoteInfo = KaobeiAPI;
-		};
-		12C8B0122533750C0072F653 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A7D2E83F244DE50E00953132 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A7D2E846244DE50E00953132;
-			remoteInfo = "init.engineer-iOS-App";
-		};
-		12C8B0192533750C0072F653 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A7D2E83F244DE50E00953132 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 12C8B0052533750C0072F653;
-			remoteInfo = KaobeiAPI;
-		};
-		6A79BB4425D9B8D10021F956 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A7D2E83F244DE50E00953132 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 12C8B0052533750C0072F653;
-			remoteInfo = KaobeiAPI;
-		};
-		853D8EE125BD205600AD1548 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A7D2E83F244DE50E00953132 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 853D8ED525BD204B00AD1548;
-			remoteInfo = KaobeiWidgetExtension;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		12C8B01D2533750C0072F653 /* Embed Frameworks */ = {
@@ -140,7 +86,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				12C8B01C2533750C0072F653 /* KaobeiAPI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,7 +96,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				853D8EE325BD205600AD1548 /* KaobeiWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,12 +109,6 @@
 		127FD91E248BAACF002E9645 /* DashboardTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabController.swift; sourceTree = "<group>"; };
 		12C52278991D6B26FFCE26B7 /* Pods_KaobeiWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaobeiWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C64453248E129A005A2974 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		12C8B0062533750C0072F653 /* KaobeiAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KaobeiAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		12C8B0082533750C0072F653 /* KaobeiAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KaobeiAPI.h; sourceTree = "<group>"; };
-		12C8B0092533750C0072F653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		12C8B00E2533750C0072F653 /* KaobeiAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaobeiAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		12C8B0152533750C0072F653 /* KaobeiAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiAPITests.swift; sourceTree = "<group>"; };
-		12C8B0172533750C0072F653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12C8B026253375430072F653 /* KaobeiConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiConnection.swift; sourceTree = "<group>"; };
 		12CA61C8248C1B580020E606 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		378DEBDA1B935BC95C6DF376 /* Pods_KaobeiAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaobeiAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,12 +123,8 @@
 		6AFEB9FD25E4366000D01166 /* ReviewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCellData.swift; sourceTree = "<group>"; };
 		79B5849E905BB7F6DA0B9EE3 /* Pods-init.engineer-iOS-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.debug.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.debug.xcconfig"; sourceTree = "<group>"; };
 		7C6BFC3D83D02672BD8CF349 /* Pods-KaobeiAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPITests.debug.xcconfig"; path = "Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests.debug.xcconfig"; sourceTree = "<group>"; };
-		853D8ED625BD204B00AD1548 /* KaobeiWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KaobeiWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		853D8ED725BD204B00AD1548 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		853D8ED925BD204B00AD1548 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		853D8EDC25BD204B00AD1548 /* KaobeiWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaobeiWidget.swift; sourceTree = "<group>"; };
-		853D8EDE25BD205600AD1548 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		853D8EE025BD205600AD1548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		853D8EE425BD205900AD1548 /* KaobeiWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KaobeiWidgetExtension.entitlements; sourceTree = "<group>"; };
 		853D8F9925C23C4000AD1548 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		853D8F9E25C2715F00AD1548 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
@@ -261,39 +195,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		12C8B0032533750C0072F653 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64905508D51D6033F8657AF7 /* Pods_KaobeiAPI.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		12C8B00B2533750C0072F653 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				12C8B00F2533750C0072F653 /* KaobeiAPI.framework in Frameworks */,
-				4B101CD350B918650CC689D0 /* Pods_KaobeiAPITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		853D8ED325BD204B00AD1548 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A79BB4225D9B8D10021F956 /* KaobeiAPI.framework in Frameworks */,
-				853D8EDA25BD204B00AD1548 /* SwiftUI.framework in Frameworks */,
-				853D8ED825BD204B00AD1548 /* WidgetKit.framework in Frameworks */,
-				FA0ADB9BEA73C3F6ECF9124B /* Pods_KaobeiWidgetExtension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A7D2E844244DE50E00953132 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12C8B01B2533750C0072F653 /* KaobeiAPI.framework in Frameworks */,
 				F7769AE4515EAFECA91FD255 /* Pods_init_engineer_iOS_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,29 +206,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		12C8B0072533750C0072F653 /* KaobeiAPI */ = {
-			isa = PBXGroup;
-			children = (
-				12C8B0082533750C0072F653 /* KaobeiAPI.h */,
-				12C8B0092533750C0072F653 /* Info.plist */,
-				12C8B026253375430072F653 /* KaobeiConnection.swift */,
-				85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */,
-				85A6C3C625AC918B00544802 /* KaobeiURL.swift */,
-				85C012CD253F259400CEA9DF /* request */,
-				85C012CA253E99F800CEA9DF /* response */,
-			);
-			path = KaobeiAPI;
-			sourceTree = "<group>";
-		};
-		12C8B0142533750C0072F653 /* KaobeiAPITests */ = {
-			isa = PBXGroup;
-			children = (
-				12C8B0152533750C0072F653 /* KaobeiAPITests.swift */,
-				12C8B0172533750C0072F653 /* Info.plist */,
-			);
-			path = KaobeiAPITests;
-			sourceTree = "<group>";
-		};
 		44F76C77391FABA8FEB885E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +220,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6A3ED64A2620B01D00B24B57 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				12C8B026253375430072F653 /* KaobeiConnection.swift */,
+				85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */,
+				85A6C3C625AC918B00544802 /* KaobeiURL.swift */,
+				85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */,
+				85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */,
+				85AB734D25B1FE6200F6238A /* KBGetArticleStats.swift */,
+				85AB735525B2002500F6238A /* KBGetArticleComments.swift */,
+				85AB742025B7603100F6238A /* KBGetUserProfile.swift */,
+				85AB742425B7604900F6238A /* KBGetUserPosts.swift */,
+				85AB742825B7605800F6238A /* KBPostUserPublishing.swift */,
+				85AB743425B7609000F6238A /* KBGetArticleReviewList.swift */,
+				85AB743825B760A100F6238A /* KBGetArticleVoteAye.swift */,
+				85AB743C25B760B100F6238A /* KBGetArticleVoteNay.swift */,
+				85AB746025B762D500F6238A /* KBCommonTypes.swift */,
+				85C012CB253E9A2200CEA9DF /* KBArticleList.swift */,
+				85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */,
+				85AB735125B1FE6E00F6238A /* KBArticleStats.swift */,
+				85AB735C25B2003400F6238A /* KBArticleComments.swift */,
+				85AB744025B760C600F6238A /* KBUserProfile.swift */,
+				85AB744425B760D500F6238A /* KBUserPosts.swift */,
+				85AB744825B760E700F6238A /* KBUserPublishing.swift */,
+				85AB745425B7611100F6238A /* KBArticleReviewList.swift */,
+				85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */,
+				85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		6AE36BD025D44CB6004BDD1D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,16 +259,6 @@
 				C46476E425F288A100C9F8DD /* UIColorEx.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		853D8EDB25BD204B00AD1548 /* KaobeiWidget */ = {
-			isa = PBXGroup;
-			children = (
-				853D8EDC25BD204B00AD1548 /* KaobeiWidget.swift */,
-				853D8EDE25BD205600AD1548 /* Assets.xcassets */,
-				853D8EE025BD205600AD1548 /* Info.plist */,
-			);
-			path = KaobeiWidget;
 			sourceTree = "<group>";
 		};
 		853D8F8B25C23A2B00AD1548 /* Components */ = {
@@ -384,50 +287,12 @@
 			path = Token;
 			sourceTree = "<group>";
 		};
-		85C012CA253E99F800CEA9DF /* response */ = {
-			isa = PBXGroup;
-			children = (
-				85AB746025B762D500F6238A /* KBCommonTypes.swift */,
-				85C012CB253E9A2200CEA9DF /* KBArticleList.swift */,
-				85AB734925B1F4ED00F6238A /* KBArticleDetail.swift */,
-				85AB735125B1FE6E00F6238A /* KBArticleStats.swift */,
-				85AB735C25B2003400F6238A /* KBArticleComments.swift */,
-				85AB744025B760C600F6238A /* KBUserProfile.swift */,
-				85AB744425B760D500F6238A /* KBUserPosts.swift */,
-				85AB744825B760E700F6238A /* KBUserPublishing.swift */,
-				85AB745425B7611100F6238A /* KBArticleReviewList.swift */,
-				85AB745825B7611D00F6238A /* KBArticleVoteAye.swift */,
-				85AB745C25B7612900F6238A /* KBArticleVoteNay.swift */,
-			);
-			path = response;
-			sourceTree = "<group>";
-		};
-		85C012CD253F259400CEA9DF /* request */ = {
-			isa = PBXGroup;
-			children = (
-				85C012CE253F25D900CEA9DF /* KBGetArticleList.swift */,
-				85AB734525B1F4E400F6238A /* KBGetArticleDetail.swift */,
-				85AB734D25B1FE6200F6238A /* KBGetArticleStats.swift */,
-				85AB735525B2002500F6238A /* KBGetArticleComments.swift */,
-				85AB742025B7603100F6238A /* KBGetUserProfile.swift */,
-				85AB742425B7604900F6238A /* KBGetUserPosts.swift */,
-				85AB742825B7605800F6238A /* KBPostUserPublishing.swift */,
-				85AB743425B7609000F6238A /* KBGetArticleReviewList.swift */,
-				85AB743825B760A100F6238A /* KBGetArticleVoteAye.swift */,
-				85AB743C25B760B100F6238A /* KBGetArticleVoteNay.swift */,
-			);
-			path = request;
-			sourceTree = "<group>";
-		};
 		A7D2E83E244DE50E00953132 = {
 			isa = PBXGroup;
 			children = (
 				853D8EE425BD205900AD1548 /* KaobeiWidgetExtension.entitlements */,
 				C45A3A1A25B9363F00F484F1 /* BuildConfigure */,
 				A7D2E849244DE50E00953132 /* init.engineer-iOS-App */,
-				12C8B0072533750C0072F653 /* KaobeiAPI */,
-				12C8B0142533750C0072F653 /* KaobeiAPITests */,
-				853D8EDB25BD204B00AD1548 /* KaobeiWidget */,
 				A7D2E848244DE50E00953132 /* Products */,
 				C6D4AA7D36DF06C8FA96CF7B /* Pods */,
 				44F76C77391FABA8FEB885E1 /* Frameworks */,
@@ -438,9 +303,6 @@
 			isa = PBXGroup;
 			children = (
 				A7D2E847244DE50E00953132 /* 純靠北工程師.app */,
-				12C8B0062533750C0072F653 /* KaobeiAPI.framework */,
-				12C8B00E2533750C0072F653 /* KaobeiAPITests.xctest */,
-				853D8ED625BD204B00AD1548 /* KaobeiWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -461,6 +323,7 @@
 				A7D2E85B244DE50F00953132 /* Info.plist */,
 				C4DCC3E92487FFCE0061C1BD /* Fonts */,
 				C45A3A4E25B9897300F484F1 /* Constants.swift */,
+				6A3ED64A2620B01D00B24B57 /* API */,
 			);
 			path = "init.engineer-iOS-App";
 			sourceTree = "<group>";
@@ -552,77 +415,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		12C8B0012533750C0072F653 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				12C8B0182533750C0072F653 /* KaobeiAPI.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		12C8B0052533750C0072F653 /* KaobeiAPI */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 12C8B0222533750C0072F653 /* Build configuration list for PBXNativeTarget "KaobeiAPI" */;
-			buildPhases = (
-				6372E1F8E31F2F3A86A29357 /* [CP] Check Pods Manifest.lock */,
-				12C8B0012533750C0072F653 /* Headers */,
-				12C8B0022533750C0072F653 /* Sources */,
-				12C8B0032533750C0072F653 /* Frameworks */,
-				12C8B0042533750C0072F653 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = KaobeiAPI;
-			productName = KaobeiAPI;
-			productReference = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		12C8B00D2533750C0072F653 /* KaobeiAPITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 12C8B0232533750C0072F653 /* Build configuration list for PBXNativeTarget "KaobeiAPITests" */;
-			buildPhases = (
-				DE4963F84A6B3ED4EE56E689 /* [CP] Check Pods Manifest.lock */,
-				12C8B00A2533750C0072F653 /* Sources */,
-				12C8B00B2533750C0072F653 /* Frameworks */,
-				12C8B00C2533750C0072F653 /* Resources */,
-				A25E1B9ABB2808C7D3ADA610 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				12C8B0112533750C0072F653 /* PBXTargetDependency */,
-				12C8B0132533750C0072F653 /* PBXTargetDependency */,
-			);
-			name = KaobeiAPITests;
-			productName = KaobeiAPITests;
-			productReference = 12C8B00E2533750C0072F653 /* KaobeiAPITests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		853D8ED525BD204B00AD1548 /* KaobeiWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 853D8EE925BD205900AD1548 /* Build configuration list for PBXNativeTarget "KaobeiWidgetExtension" */;
-			buildPhases = (
-				F8901AF2FBF2DE35625B900B /* [CP] Check Pods Manifest.lock */,
-				853D8ED225BD204B00AD1548 /* Sources */,
-				853D8ED325BD204B00AD1548 /* Frameworks */,
-				853D8ED425BD204B00AD1548 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6A79BB4525D9B8D10021F956 /* PBXTargetDependency */,
-			);
-			name = KaobeiWidgetExtension;
-			productName = KaobeiWidgetExtension;
-			productReference = 853D8ED625BD204B00AD1548 /* KaobeiWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		A7D2E846244DE50E00953132 /* init.engineer-iOS-App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D2E85E244DE50F00953132 /* Build configuration list for PBXNativeTarget "init.engineer-iOS-App" */;
@@ -638,8 +431,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				12C8B01A2533750C0072F653 /* PBXTargetDependency */,
-				853D8EE225BD205600AD1548 /* PBXTargetDependency */,
 			);
 			name = "init.engineer-iOS-App";
 			productName = "init.engineer-iOS-App";
@@ -656,17 +447,6 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Kantai Developer";
 				TargetAttributes = {
-					12C8B0052533750C0072F653 = {
-						CreatedOnToolsVersion = 12.0.1;
-						LastSwiftMigration = 1200;
-					};
-					12C8B00D2533750C0072F653 = {
-						CreatedOnToolsVersion = 12.0.1;
-						TestTargetID = A7D2E846244DE50E00953132;
-					};
-					853D8ED525BD204B00AD1548 = {
-						CreatedOnToolsVersion = 12.3;
-					};
 					A7D2E846244DE50E00953132 = {
 						CreatedOnToolsVersion = 11.4;
 					};
@@ -686,37 +466,11 @@
 			projectRoot = "";
 			targets = (
 				A7D2E846244DE50E00953132 /* init.engineer-iOS-App */,
-				12C8B0052533750C0072F653 /* KaobeiAPI */,
-				12C8B00D2533750C0072F653 /* KaobeiAPITests */,
-				853D8ED525BD204B00AD1548 /* KaobeiWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		12C8B0042533750C0072F653 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		12C8B00C2533750C0072F653 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		853D8ED425BD204B00AD1548 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				853D8EDF25BD205600AD1548 /* Assets.xcassets in Resources */,
-				853D8F0B25BD528600AD1548 /* Fixedsys500c.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A7D2E845244DE50E00953132 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -740,28 +494,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6372E1F8E31F2F3A86A29357 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KaobeiAPI-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		749A65F18AB64FC122628528 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -777,23 +509,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A25E1B9ABB2808C7D3ADA610 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B7CCFC168A7694E423A9CBF2 /* [CP] Check Pods Manifest.lock */ = {
@@ -818,105 +533,37 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE4963F84A6B3ED4EE56E689 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KaobeiAPITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8901AF2FBF2DE35625B900B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KaobeiWidgetExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		12C8B0022533750C0072F653 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				85AB745525B7611100F6238A /* KBArticleReviewList.swift in Sources */,
-				85AB735D25B2003400F6238A /* KBArticleComments.swift in Sources */,
-				85AB743525B7609000F6238A /* KBGetArticleReviewList.swift in Sources */,
-				85AB744125B760C600F6238A /* KBUserProfile.swift in Sources */,
-				85A6C3C725AC918B00544802 /* KaobeiURL.swift in Sources */,
-				85AB742925B7605800F6238A /* KBPostUserPublishing.swift in Sources */,
-				85AB744525B760D500F6238A /* KBUserPosts.swift in Sources */,
-				85AB734625B1F4E400F6238A /* KBGetArticleDetail.swift in Sources */,
-				85AB734E25B1FE6200F6238A /* KBGetArticleStats.swift in Sources */,
-				85C012C9253E7E4100CEA9DF /* KaobeiRequestProtocol.swift in Sources */,
-				85AB734A25B1F4ED00F6238A /* KBArticleDetail.swift in Sources */,
-				85AB746125B762D500F6238A /* KBCommonTypes.swift in Sources */,
-				85C012CC253E9A2200CEA9DF /* KBArticleList.swift in Sources */,
-				85AB735625B2002500F6238A /* KBGetArticleComments.swift in Sources */,
-				85AB744925B760E700F6238A /* KBUserPublishing.swift in Sources */,
-				85AB743925B760A100F6238A /* KBGetArticleVoteAye.swift in Sources */,
-				85AB742525B7604900F6238A /* KBGetUserPosts.swift in Sources */,
-				85AB745925B7611D00F6238A /* KBArticleVoteAye.swift in Sources */,
-				85C012CF253F25D900CEA9DF /* KBGetArticleList.swift in Sources */,
-				85AB735225B1FE6E00F6238A /* KBArticleStats.swift in Sources */,
-				85AB743D25B760B100F6238A /* KBGetArticleVoteNay.swift in Sources */,
-				85AB742125B7603100F6238A /* KBGetUserProfile.swift in Sources */,
-				85AB745D25B7612900F6238A /* KBArticleVoteNay.swift in Sources */,
-				12C8B027253375430072F653 /* KaobeiConnection.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		12C8B00A2533750C0072F653 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				12C8B0162533750C0072F653 /* KaobeiAPITests.swift in Sources */,
-				DCDF250525F7DB3000B9137A /* Constants.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		853D8ED225BD204B00AD1548 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				853D8EDD25BD204B00AD1548 /* KaobeiWidget.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A7D2E843244DE50E00953132 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A3ED64B2620B07B00B24B57 /* KaobeiConnection.swift in Sources */,
+				6A3ED64C2620B07B00B24B57 /* KaobeiRequestProtocol.swift in Sources */,
+				6A3ED64D2620B07B00B24B57 /* KaobeiURL.swift in Sources */,
+				6A3ED64E2620B07B00B24B57 /* KBGetArticleList.swift in Sources */,
+				6A3ED64F2620B07B00B24B57 /* KBGetArticleDetail.swift in Sources */,
+				6A3ED6502620B07B00B24B57 /* KBGetArticleStats.swift in Sources */,
+				6A3ED6512620B07B00B24B57 /* KBGetArticleComments.swift in Sources */,
+				6A3ED6522620B07B00B24B57 /* KBGetUserProfile.swift in Sources */,
+				6A3ED6532620B07B00B24B57 /* KBGetUserPosts.swift in Sources */,
+				6A3ED6542620B07B00B24B57 /* KBPostUserPublishing.swift in Sources */,
+				6A3ED6552620B07B00B24B57 /* KBGetArticleReviewList.swift in Sources */,
+				6A3ED6562620B07B00B24B57 /* KBGetArticleVoteAye.swift in Sources */,
+				6A3ED6572620B07B00B24B57 /* KBGetArticleVoteNay.swift in Sources */,
+				6A3ED6582620B07B00B24B57 /* KBCommonTypes.swift in Sources */,
+				6A3ED6592620B07B00B24B57 /* KBArticleList.swift in Sources */,
+				6A3ED65A2620B07B00B24B57 /* KBArticleDetail.swift in Sources */,
+				6A3ED65B2620B07B00B24B57 /* KBArticleStats.swift in Sources */,
+				6A3ED65C2620B07B00B24B57 /* KBArticleComments.swift in Sources */,
+				6A3ED65D2620B07B00B24B57 /* KBUserProfile.swift in Sources */,
+				6A3ED65E2620B07B00B24B57 /* KBUserPosts.swift in Sources */,
+				6A3ED65F2620B07B00B24B57 /* KBUserPublishing.swift in Sources */,
+				6A3ED6602620B07B00B24B57 /* KBArticleReviewList.swift in Sources */,
+				6A3ED6612620B07B00B24B57 /* KBArticleVoteAye.swift in Sources */,
+				6A3ED6622620B07B00B24B57 /* KBArticleVoteNay.swift in Sources */,
 				853D8F9F25C2715F00AD1548 /* UIConstants.swift in Sources */,
 				A7D2E855244DE50E00953132 /* init_engineer_iOS_App.xcdatamodeld in Sources */,
 				C4A72FB725D821E300327B0E /* ArticleCommentCell.swift in Sources */,
@@ -953,34 +600,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		12C8B0112533750C0072F653 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 12C8B0052533750C0072F653 /* KaobeiAPI */;
-			targetProxy = 12C8B0102533750C0072F653 /* PBXContainerItemProxy */;
-		};
-		12C8B0132533750C0072F653 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A7D2E846244DE50E00953132 /* init.engineer-iOS-App */;
-			targetProxy = 12C8B0122533750C0072F653 /* PBXContainerItemProxy */;
-		};
-		12C8B01A2533750C0072F653 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 12C8B0052533750C0072F653 /* KaobeiAPI */;
-			targetProxy = 12C8B0192533750C0072F653 /* PBXContainerItemProxy */;
-		};
-		6A79BB4525D9B8D10021F956 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 12C8B0052533750C0072F653 /* KaobeiAPI */;
-			targetProxy = 6A79BB4425D9B8D10021F956 /* PBXContainerItemProxy */;
-		};
-		853D8EE225BD205600AD1548 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 853D8ED525BD204B00AD1548 /* KaobeiWidgetExtension */;
-			targetProxy = 853D8EE125BD205600AD1548 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A7D2E850244DE50E00953132 /* Main.storyboard */ = {
@@ -1050,185 +669,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		12C8B01E2533750C0072F653 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E166187F28AE322B0756B13F /* Pods-KaobeiAPI.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8HQMGH8V7;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KaobeiAPI/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPI;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		12C8B01F2533750C0072F653 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF88C66D71E845756FD1E8EB /* Pods-KaobeiAPI.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8HQMGH8V7;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_TESTABILITY = NO;
-				INFOPLIST_FILE = KaobeiAPI/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPI;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		12C8B0202533750C0072F653 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C6BFC3D83D02672BD8CF349 /* Pods-KaobeiAPITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E27MCP7UYM;
-				INFOPLIST_FILE = KaobeiAPITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/純靠北工程師.app/純靠北工程師";
-			};
-			name = Debug;
-		};
-		12C8B0212533750C0072F653 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 663E963A8BEECEF2EE41233B /* Pods-KaobeiAPITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E27MCP7UYM;
-				INFOPLIST_FILE = KaobeiAPITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/純靠北工程師.app/純靠北工程師";
-			};
-			name = Release;
-		};
-		853D8EE625BD205900AD1548 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC004913BF7408C620A953D1 /* Pods-KaobeiWidgetExtension.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = KaobeiWidgetExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 16;
-				DEVELOPMENT_TEAM = H8HQMGH8V7;
-				INFOPLIST_FILE = KaobeiWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer.KaobeiWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Widget Development";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		853D8EE725BD205900AD1548 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11F7D87896CC11B1D64EF433 /* Pods-KaobeiWidgetExtension.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = KaobeiWidgetExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 16;
-				DEVELOPMENT_TEAM = H8HQMGH8V7;
-				INFOPLIST_FILE = KaobeiWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer.KaobeiWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Widget Distribution";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		A7D2E85C244DE50F00953132 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C45A3A1B25B9363F00F484F1 /* Debug.xcconfig */;
@@ -1350,12 +790,12 @@
 			baseConfigurationReference = 79B5849E905BB7F6DA0B9EE3 /* Pods-init.engineer-iOS-App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconSP;
 				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1363,7 +803,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer";
 				PRODUCT_NAME = "純靠北工程師";
 				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Main Development";
@@ -1379,12 +819,12 @@
 			baseConfigurationReference = 4DBAC1F82C85E00ADC5B2A2D /* Pods-init.engineer-iOS-App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconSP;
 				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1392,7 +832,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer";
 				PRODUCT_NAME = "純靠北工程師";
 				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Main Distribution";
@@ -1406,33 +846,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		12C8B0222533750C0072F653 /* Build configuration list for PBXNativeTarget "KaobeiAPI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				12C8B01E2533750C0072F653 /* Debug */,
-				12C8B01F2533750C0072F653 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		12C8B0232533750C0072F653 /* Build configuration list for PBXNativeTarget "KaobeiAPITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				12C8B0202533750C0072F653 /* Debug */,
-				12C8B0212533750C0072F653 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		853D8EE925BD205900AD1548 /* Build configuration list for PBXNativeTarget "KaobeiWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				853D8EE625BD205900AD1548 /* Debug */,
-				853D8EE725BD205900AD1548 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A7D2E842244DE50E00953132 /* Build configuration list for PBXProject "init.engineer-iOS-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

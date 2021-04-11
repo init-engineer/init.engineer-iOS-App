@@ -8,7 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
-import KaobeiAPI
+
 
 class ArticleCell: UITableViewCell {
     var contentString: String?
