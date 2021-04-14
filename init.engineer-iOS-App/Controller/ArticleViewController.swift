@@ -52,82 +52,13 @@ class ArticleViewController: UIViewController {
         
         articleTitleLabel.text = String.tagConvert(from: id)
         
-        let detailRequest = KBGetArticleDetail(id: id)
         self.loadingImage.startAnimating()
-        KaobeiConnection.sendRequest(api: detailRequest) { [weak self] (response) in
-            switch response.result {
-                case .success(let data):
-                    self?.articleContentTextView.setAttributedTextWithHTMLStyle(source: data.data.content)
-                    DispatchQueue.global(qos: .userInitiated).async {
-                        do {
-                            let articleImage = try UIImage(data: Data(contentsOf: URL(string: data.data.image)!))
-                            DispatchQueue.main.async {
-                                self?.loadArticleImage(articleImage)
-                                self?.loadingImage.stopAnimating()
-                            }
-                        } catch {
-                            //let img = UIImage(named: "img_flag1")
-                            DispatchQueue.main.async {
-                                // TODO: Add failure image
-                                //self?.loadArticleImage(img)
-                                self?.loadingImage.stopAnimating()
-                            }
-                        }
-                    }
-                    break
-                case .failure(_):
-                    break
-            }
-        }
+        KaobeiConnection.sendRequest() {}
         
-        let statsRequest = KBGetArticleStats(id: id)
-        
-        KaobeiConnection.sendRequest(api: statsRequest) { [weak self] (response) in
-            switch response.result {
-                case .success(let data):
-                    for item in data.data {
-                        if item.type == "twitter" {
-                            self?.twitterLikeLabel.text = "♥︎ \(item.like)"
-                            self?.twitterShareLabel.text = "↻ \(item.share)"
-                        } else if item.type == "plurk" {
-                            self?.plurkLikeLabel.text = "♥︎ \(item.like)"
-                            self?.plurkShareLabel.text = "↻ \(item.share)"
-                        } else if item.type == "facebook" {
-                            if item.connections == "primary" {
-                                self?.primaryFacebookLikeLabel.text = "♥︎ \(item.like)"
-                                self?.primaryFacebookShareLabel.text = "↻ \(item.share)"
-                            } else if item.connections == "secondary" {
-                                self?.secondaryFacebookLikeLabel.text = "♥︎ \(item.like)"
-                                self?.secondaryFacebookShareLabel.text = "↻ \(item.share)"
-                            }
-                        }
-                    }
-                   break
-                case .failure(_):
-                   break
-            }
-        }
+        KaobeiConnection.sendRequest() {}
         
         reloadBlocker = true
-        let commentRequest = KBGetArticleComments(id: id)
-        KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
-            self?.reloadBlocker = false
-            switch response.result {
-                case .success(let data):
-                    if data.meta.pagination.count == 0 {
-                        self?.reloadBlocker = true
-                    }
-                    for c in data.data {
-                        let s = ArticleCommentCell()
-                        s.renderComment(with: c)
-                        self?.articleStackView.addArrangedSubview(s)
-                    }
-                    self?.commentCurrentPage += 1
-                    break
-                case .failure(_):
-                    break
-            }
-        }
+        KaobeiConnection.sendRequest() {}
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,28 +89,7 @@ class ArticleViewController: UIViewController {
         guard let id = self.articleID else { return }
         articleStackView.addArrangedSubview(loadingView)
         loadingView.startAnimating()
-        let commentRequest = KBGetArticleComments(id: id, page: self.commentCurrentPage)
-        KaobeiConnection.sendRequest(api: commentRequest) { [weak self] (response) in
-            self?.loadingView.stopAnimating()
-            self?.articleStackView.removeArrangedSubview(self!.loadingView)
-            switch response.result {
-                case .success(let data):
-                    for c in data.data {
-                        let s = ArticleCommentCell()
-                        s.renderComment(with: c)
-                        self?.articleStackView.addArrangedSubview(s)
-                    }
-                    self?.commentCurrentPage += 1
-                    if data.meta.pagination.count == 0 {
-                        self?.reloadBlocker = true
-                    } else {
-                        self?.reloadBlocker = false
-                    }
-                    break
-                case .failure(_):
-                    self?.reloadBlocker = false
-                    break
-            }
+        KaobeiConnection.sendRequest() {
         }
     }
     

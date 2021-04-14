@@ -64,29 +64,6 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
             
             reloadBlocker = true
             self.loadingView.startAnimating()
-            let getUserPostsRequest = KBGetUserPosts(accessToken: accessToken)
-            KaobeiConnection.sendRequest(api: getUserPostsRequest) { [weak self] response in
-                self?.reloadBlocker = false
-                self?.loadingView.stopAnimating()
-                switch response.result {
-                case .success(let data):
-                    self?.userPosts.append(contentsOf: data.data)
-                    self?.userPosts.append(nil)
-                    self?.userPostsTableView.reloadData()
-                    self?.currentPage += 1
-                    break
-                case .failure(let error):
-                    print(error.responseCode ?? "")
-                    if response.response?.statusCode == 401 {
-                        if let vc = self?.tabBarController as? KaobeiTabBarController {
-                            vc.expiredTimeoutToLogout()
-                        }
-                    }
-                    self?.userPosts.append(nil)
-                    self?.userPostsTableView.reloadData()
-                    break
-                }
-            }
         }
         else {
             self.performSegue(withIdentifier: K.dashboardToLoginSegue, sender: self)
@@ -127,38 +104,6 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
     @objc func refreshDashboard() {
         guard let userToken = self.userToken else { return }
         self.reloadBlocker = true
-        
-        let getUserPostsRequest = KBGetUserPosts(accessToken: userToken)
-        
-        KaobeiConnection.sendRequest(api: getUserPostsRequest) { [weak self] response in
-            self?.reloadBlocker = false
-            switch response.result {
-            case .success(let data):
-                self?.userPosts.removeAll()
-                self?.userPosts.append(nil)
-                self?.userPosts.append(nil)
-                self?.userPosts.append(contentsOf: data.data)
-                self?.userPosts.append(nil)
-                self?.userPostsTableView.reloadData()
-                self?.currentPage = 2
-                break
-            case .failure(_):
-                print(response.response?.statusCode ?? "No status code")
-                self?.userPosts.append(nil)
-                self?.userPostsTableView.reloadData()
-                if response.response?.statusCode == 401 {
-                    if let vc = self?.tabBarController as? KaobeiTabBarController {
-                        vc.expiredTimeoutToLogout()
-                    }
-                }
-                break
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self?.refreshControl.endRefreshing()
-                self?.userPostsTableView.reloadData()
-            }
-        }
     }
 }
 
@@ -181,8 +126,6 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 1 {
             let cell = self.userPostsTableView.dequeueReusableCell(withIdentifier: PROFILE_ID) as! ProfileCell
             if let userToken = self.userToken {
-                let getUserProfileRequest = KBGetUserProfile.init(accessToken: userToken)
-                cell.setup(with: getUserProfileRequest)
                 let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showSettingActionSheet))
                 cell.addGestureRecognizer(gesture)
                 cell.selectionStyle = .none
@@ -220,31 +163,8 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section >= self.userPosts.count - 2 {
             reloadBlocker = true
             guard let userToken = self.userToken else { return }
-            let listRequest = KBGetUserPosts.init(accessToken: userToken, page: currentPage)
-            KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
-                self?.reloadBlocker = false
-                switch response.result {
-                case .success(let data):
-                    if data.meta.pagination.count == 0 {
-                        self?.reloadBlocker = true
-                        break
-                    }
-                    self?.userPosts.append(contentsOf: data.data)
-                    self?.userPosts.append(nil)
-                    self?.userPostsTableView.reloadData()
-                    self?.currentPage += 1
-                    break
-                case .failure(let error):
-                    if response.response?.statusCode == 401 {
-                        if let vc = self?.tabBarController as? KaobeiTabBarController {
-                            vc.expiredTimeoutToLogout()
-                        }
-                    }
-                    print(error.responseCode ?? "")
-                    self?.userPosts.append(nil)
-                    self?.userPostsTableView.reloadData()
-                    break
-                }
+            KaobeiConnection.sendRequest() { 
+                
             }
         }
     }

@@ -55,27 +55,8 @@ class ArticleTabController: UIViewController {
         NSLayoutConstraint.init(item: self.loadingView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
         
         reloadBlocker = true
-        let listRequest = KBGetArticleList.init(page: count)
         self.loadingView.startAnimating()
-        KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
-            self?.reloadBlocker = false
-            switch response.result {
-            case .success(let data):
-                self?.articleList.append(contentsOf: data.data)
-                self?.articleList.append(nil)
-                self?.articleTable.reloadData()
-                self?.count += 1
-                break
-            case .failure(let error):
-                print(error.responseCode ?? "")
-                self?.articleList.append(nil)
-                self?.articleTable.reloadData()
-                break
-            }
-            
-            DispatchQueue.main.async {
-                self?.loadingView.stopAnimating()
-            }
+        KaobeiConnection.sendRequest() {
         }
     }
     
@@ -86,28 +67,7 @@ class ArticleTabController: UIViewController {
     @objc func refreshArticles() {
         self.reloadBlocker = true
         
-        let listRequest = KBGetArticleList.init(page: 1)
-        
-        KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
-            self?.reloadBlocker = false
-            switch response.result {
-            case .success(let data):
-                self?.articleList.removeAll()
-                self?.articleList.append(nil)
-                self?.articleList.append(contentsOf: data.data)
-                self?.articleList.append(nil)
-                self?.articleTable.reloadData()
-                self?.count = 2
-                break
-            case .failure(let error):
-                print(error.responseCode ?? "")
-                break
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self?.refreshControl.endRefreshing()
-                self?.articleTable.reloadData()
-            }
+        KaobeiConnection.sendRequest() {
         }
     }
 }
@@ -159,26 +119,7 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
         if reloadBlocker == true { return }
         if indexPath.section >= self.articleList.count - 2 {
             reloadBlocker = true
-            let listRequest = KBGetArticleList.init(page: count)
-            KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
-                self?.reloadBlocker = false
-                switch response.result {
-                case .success(let data):
-                    if data.meta.pagination.count == 0 {
-                        self?.reloadBlocker = true
-                        break
-                    }
-                    self?.articleList.append(contentsOf: data.data)
-                    self?.articleList.append(nil)
-                    self?.articleTable.reloadData()
-                    self?.count += 1
-                    break
-                case .failure(let error):
-                    print(error.responseCode ?? "")
-                    self?.articleList.append(nil)
-                    self?.articleTable.reloadData()
-                    break
-                }
+            KaobeiConnection.sendRequest() {
             }
         }
     }

@@ -18,15 +18,15 @@ class ReviewCellData {
     let publishTime: String
     let image: String
     
-    init(cellData: ArticleUnderReview) {
-        self.content = cellData.content
-        self.id = cellData.id
-        self.aye = cellData.succeeded
-        self.nay = cellData.failed
-        self.review = cellData.review
+    init() {
+        self.content = "100"
+        self.id = 100
+        self.aye = 0
+        self.nay = 0
+        self.review = 0
         self.vote = self.aye + self.nay
-        self.publishTime = cellData.createdDiff
-        self.image = cellData.image
+        self.publishTime = "cellData.createdDiff"
+        self.image = "cellData.image"
     }
     
     func updateVote(aye: Int, nay: Int) {
