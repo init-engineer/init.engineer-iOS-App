@@ -17,15 +17,6 @@ public struct Pagination: Codable {
     public let total, count, perPage, currentPage: Int
     public let totalPages: Int
     public let links: Links?
-    
-    public enum CodingKeys: String, CodingKey {
-        case total
-        case count
-        case perPage = "per_page"
-        case currentPage = "current_page"
-        case totalPages = "total_pages"
-        case links
-    }
 }
 
 // MARK: - Links
@@ -40,13 +31,6 @@ public struct VotedArticle: Codable {
     public let succeeded, failed: Int
     public let createdAt, createdDiff, updatedAt, updatedDiff: String
 
-    public enum CodingKeys: String, CodingKey {
-        case id, content, image, succeeded, failed
-        case createdAt = "created_at"
-        case createdDiff = "created_diff"
-        case updatedAt = "updated_at"
-        case updatedDiff = "updated_diff"
-    }
 }
 
 // MARK: - Article
@@ -56,11 +40,4 @@ public struct Article: Codable {
     public let image: String
     public let createdAt, createdDiff, updatedAt, updatedDiff: String
 
-    public enum CodingKeys: String, CodingKey {
-        case id, content, image
-        case createdAt = "created_at"
-        case createdDiff = "created_diff"
-        case updatedAt = "updated_at"
-        case updatedDiff = "updated_diff"
-    }
 }

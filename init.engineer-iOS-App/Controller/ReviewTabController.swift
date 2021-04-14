@@ -89,90 +89,12 @@ class ReviewTabController: UIViewController {
     @objc func refreshReviews() {
         guard let userToken = self.userToken else { return }
         reloadBlocker = true
-        let listRequest = KBGetArticleReviewList.init(accessToken: userToken, page: 1)
-        
-        KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
-            self?.reloadBlocker = false
-            switch response.result {
-            case .success(let data):
-                self?.reviewList.removeAll()
-                self?.reviewList.append(nil)
-                if data.meta.pagination.count == 0 {
-                    self?.reloadBlocker = true
-                    break
-                }
-                var loadCount = 0
-                for r in data.data {
-                    if r.succeeded + r.failed >= -50 || r.id == 4584 {
-                        self?.reviewList.append(ReviewCellData(cellData: r))
-                        loadCount += 1
-                    }
-                }
-                if let listCount = self?.reviewList.count, loadCount > 0 || listCount < 2 {
-                    self?.reviewList.append(nil)
-                }
-                self?.count = 2
-                self?.reviewTable.reloadData()
-                break
-            case .failure(let error):
-                print(error.responseCode ?? "")
-                if response.response?.statusCode == 401 {
-                    if let vc = self?.tabBarController as? KaobeiTabBarController {
-                        vc.expiredTimeoutToLogout()
-                    }
-                }
-                break
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self?.refreshControl.endRefreshing()
-                self?.reviewTable.reloadData()
-            }
-        }
     }
     
     func loadMoreReviewArticle() {
         if reloadBlocker { return }
         guard let userToken = self.userToken else { return }
         reloadBlocker = true
-        let listRequest = KBGetArticleReviewList.init(accessToken: userToken, page: count)
-        KaobeiConnection.sendRequest(api: listRequest) { [weak self] response in
-            self?.reloadBlocker = false
-            switch response.result {
-            case .success(let data):
-                if data.meta.pagination.count == 0 {
-                    self?.reloadBlocker = true
-                    break
-                }
-                var loadCount = 0
-                for r in data.data {
-                    if r.succeeded + r.failed >= -50 || r.id == 4584 {
-                        self?.reviewList.append(ReviewCellData(cellData: r))
-                        loadCount += 1
-                    }
-                }
-                if let listCount = self?.reviewList.count, loadCount > 0 || listCount < 2 {
-                    self?.reviewList.append(nil)
-                }
-                self?.reviewTable.reloadData()
-                self?.count += 1
-                break
-            case .failure(let error):
-                print(error.responseCode ?? "")
-                if response.response?.statusCode == 401 {
-                    if let vc = self?.tabBarController as? KaobeiTabBarController {
-                        vc.expiredTimeoutToLogout()
-                    }
-                }
-                self?.reviewList.append(nil)
-                self?.reviewTable.reloadData()
-                break
-            }
-            
-            DispatchQueue.main.async {
-                self?.loadingView.stopAnimating()
-            }
-        }
     }
 }
 extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {

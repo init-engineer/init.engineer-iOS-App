@@ -27,33 +27,12 @@ class ProfileCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with user: KBGetUserProfile) {
-        if self.token == user.token {
+    func setup(with user: String) {
+        if self.token == user {
             return
         }
-        self.token = user.token
+        self.token = user
         self.backgroundColor = .clear
-        KaobeiConnection.sendRequest(api: user) { [weak self] response in
-            switch response.result {
-            case .success(let data):
-                self?.userNameLabel.text = data.data.fullName
-                self?.userEmailLabel.text = data.data.email
-                DispatchQueue.global(qos: .userInitiated).async {
-                    do {
-                        let userAvatarImage = try UIImage(data: Data(contentsOf: URL(string: data.data.avatar)!))
-                        DispatchQueue.main.async {
-                            self?.userAvatarImageView.image = userAvatarImage
-                        }
-                    } catch {
-                        print(error)
-                    }
-                }
-                break
-            case .failure(let error):
-                print(error.responseCode ?? "")
-                break
-            }
-        }
     }
     
     func setupUI() {

@@ -131,29 +131,7 @@ class ReviewDetailViewController: UIViewController {
         // Agree Request Success Start
         deniedButton.backgroundColor = #colorLiteral(red: 0.8985503316, green: 0.3016347587, blue: 0.3388397694, alpha: 0.5) // #dc3545 0.5
         guard let id = self.id, let accessToken = KeyChainManager.shared.getToken() else { return }
-        
-        let ayeRequest = KBGetArticleVoteAye(accessToken: accessToken, id: id)
-        
-        KaobeiConnection.sendRequest(api: ayeRequest) {[weak self] (response) in
-            switch response.result {
-            case.success(let data):
-                let aye = data.data.succeeded
-                let nay = data.data.failed
-                DispatchQueue.main.async {
-                    self?.voteCountInButton(agree: aye, denied: nay)
-                    self?.reviewStatus?.updateVote(aye: aye, nay: nay)
-                    self?.reloadBlock?()
-                }
-                break
-            case.failure(_):
-                if response.response?.statusCode == 401 {
-                    if let vc = self?.tabBarController as? KaobeiTabBarController {
-                        vc.expiredTimeoutToLogout()
-                    }
-                }
-                break
-            }
-        }
+
         // voteCountInButton(agree: 1, denied: -1) // 投票後回傳的結果就會是已經加上使用者投票的結果，直接寫入即可
         // Agree Request Success End
     }
@@ -164,29 +142,7 @@ class ReviewDetailViewController: UIViewController {
         // Reject Request Success Start
         agreeButton.backgroundColor = #colorLiteral(red: 0.1690405011, green: 0.6988298297, blue: 0.3400650322, alpha: 0.5) // #28a745 0.5
         guard let id = self.id, let accessToken = KeyChainManager.shared.getToken() else { return }
-        
-        let nayRequest = KBGetArticleVoteNay(accessToken: accessToken, id: id)
-        
-        KaobeiConnection.sendRequest(api: nayRequest) {[weak self] (response) in
-            switch response.result {
-            case.success(let data):
-                let aye = data.data.succeeded
-                let nay = data.data.failed
-                DispatchQueue.main.async {
-                    self?.voteCountInButton(agree: aye, denied: nay)
-                    self?.reviewStatus?.updateVote(aye: aye, nay: nay)
-                    self?.reloadBlock?()
-                }
-                break
-            case.failure(_):
-                if response.response?.statusCode == 401 {
-                    if let vc = self?.tabBarController as? KaobeiTabBarController {
-                        vc.expiredTimeoutToLogout()
-                    }
-                }
-                break
-            }
-        }
+    
         // voteCountInButton(agree: 1, denied: -1) // 投票後回傳的結果就會是已經加上使用者投票的結果，直接寫入即可
         // Reject Request Success End
     }
